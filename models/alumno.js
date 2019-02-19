@@ -46,7 +46,13 @@ const AlumnoSchema = mongoose.Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  materias: [{
+    nombreMateria: {
+      type: String
+    },
+    calificaciones: [Number]
+  }]
 });
 
 // Create alumno / Use this from outside / Send it to the mongoDB
@@ -86,4 +92,44 @@ module.exports.deleteAlumno = function(matricula, callback) {
     matricula: matricula
   }
   Alumno.findOneAndRemove(query, callback);
+}
+
+module.exports.addMateria = function(matricula, nombreMateria, callback) {
+  const materia = {
+    nombreMateria: nombreMateria,
+    calificaciones: [0, 0, 0, 0]
+  }
+
+  Alumno.updateOne({
+      matricula: matricula
+    }, {
+      $push: {
+        materias: materia
+      }
+    },
+    callback);
+}
+
+module.exports.materiaExist = function(matricula, nombreMateria, callback) {
+  const query = {
+    matricula: matricula,
+    materias: {
+      $elemMatch: {
+        nombreMateria: nombreMateria
+      }
+    }
+  }
+  Alumno.findOne(query, callback);
+}
+
+module.exports.deleteMateria = function(matricula, nombreMateria, callback) {
+  const query = {
+    matricula: matricula,
+    $pull: {
+      materias: {
+        nombreMateria: nombreMateria
+      }
+    }
+  }
+  Alumno.updateOne(query, callback);
 }

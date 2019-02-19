@@ -130,4 +130,83 @@ router.post('/delete', (req, res, next) => {
   });
 });
 
+router.post('/addMateria', (req, res, next) => {
+  let matricula = req.body.matricula;
+  let nombreMateria = req.body.nombreMateria;
+
+  Alumno.getAlumnoByMatricula(matricula, (err, alumno) => {
+    if (err) throw err;
+    if (!alumno) {
+      return res.json({
+        success: false,
+        msg: 'No se encontro al alumno'
+      });
+    } else {
+      Alumno.materiaExist(matricula, nombreMateria, (err, materia) => {
+        if (err) throw err;
+        if (!materia) {
+          Alumno.addMateria(matricula, nombreMateria, (err, alumno) => {
+            if (err) {
+              res.json({
+                success: false,
+                msg: 'No se pudo agregar la materia al alumno'
+              });
+            } else {
+              res.json({
+                success: true,
+                msg: 'La materia se ha agregado exitosamente'
+              });
+            }
+          });
+        } else {
+          res.json({
+            success: false,
+            msg: 'La materia ya existe en el alumno'
+          });
+        }
+      });
+    }
+  });
+});
+
+router.post('/deleteMateria', (req, res, next) => {
+  let matricula = req.body.matricula;
+  let nombreMateria = req.body.nombreMateria;
+
+  Alumno.getAlumnoByMatricula(matricula, (err, alumno) => {
+    if (err) throw err;
+    if (!alumno) {
+      return res.json({
+        success: false,
+        msg: 'No se encontro al alumno'
+      });
+    } else {
+      Alumno.materiaExist(matricula, nombreMateria, (err, materia) => {
+        if (err) throw err;
+        if (!materia) {
+          res.json({
+            success: false,
+            msg: 'La materia no existe en el alumno'
+          });
+        } else {
+          Alumno.deleteMateria(matricula, nombreMateria, (err, alumno) => {
+            if (err) {
+              res.json({
+                success: false,
+                msg: 'No se pudo eliminar la materia del alumno'
+              });
+            } else {
+              res.json({
+                success: true,
+                msg: 'La materia se ha eliminado exitosamente'
+              });
+            }
+          });
+
+        }
+      });
+    }
+  });
+});
+
 module.exports = router;
