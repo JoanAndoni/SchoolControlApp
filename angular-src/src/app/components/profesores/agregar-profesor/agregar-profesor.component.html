@@ -1,0 +1,81 @@
+<div class="position-relative overflow-hidden p-3 m-md-1 bg-light">
+  <form>
+    <h2>Agregar Profesor</h2><br>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Matricula</label>
+      <div class="col-sm-7 pull-left text-left">
+        <input type="text" class="form-control" placeholder="Matricula . ." [(ngModel)]="matricula" [ngModelOptions]="{standalone: true}">
+        <small id="passwordHelpBlock" class="form-text text-muted">
+          Ejemplo: P12 <br>
+          (P)12 - Profesor<br>
+          P(12) - Número de profesor
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Nombre(s)</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="Nombre(s) . ." [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Apellido Paterno</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="Paterno . ." [(ngModel)]="paterno" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Apellido Materno</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="Materno . ." [(ngModel)]="materno" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Posición</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="Posición . ." [(ngModel)]="posicion" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Teléfono</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="Teléfono . ." [(ngModel)]="telefono" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Correo</label>
+      <div class="col-sm-7">
+        <input type="mail" class="form-control" placeholder="Correo . ." [(ngModel)]="correo" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="contrasena" class="col-sm-5 col-form-label">Contraseña</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="Contraseña . ." [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Confirmación de contraseña</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="Confirmacion . ." [(ngModel)]="passwordConfirmation" [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <!-- HACER LOS NGMODEL -->
+    <div class="form-group row">
+      <div class="col-sm-12" *ngIf="matricula && posicion && nombre && paterno && materno && telefono && correo && password && passwordConfirmation">
+        <button type="submit" (click)="agregarProfesor()" class="btn btn-primary btn-md btn-block">Confirmar</button>
+      </div>
+    </div>
+
+  </form>
+</div>

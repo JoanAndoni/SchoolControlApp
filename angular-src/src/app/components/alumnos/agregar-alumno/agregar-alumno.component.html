@@ -1,0 +1,120 @@
+<div class="position-relative overflow-hidden p-3 m-md-1 bg-light">
+  <form>
+    <h2>Agregar Alumno</h2><br>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Matricula</label>
+      <div class="col-sm-7 pull-left text-left">
+        <input type="text" class="form-control" [(ngModel)]="matricula" placeholder="Matricula . ." [ngModelOptions]="{standalone: true}">
+        <small id="passwordHelpBlock" class="form-text text-muted">
+          Ejemplo: K208 <br>
+          (k)208 - Nivel Escolar <br>
+          K: Preescolar<br>
+          P: Primaria <br>
+          S: Secundaria <br>
+          k(2)08 - Número de grado <br>
+          k2(08) - Número de alumno
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">CURP</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="curp" [(ngModel)]="curp" placeholder="CURP . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Nombre(s)</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="nombre" placeholder="Nombre(s) . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Apellido Paterno</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="paterno" [(ngModel)]="paterno" placeholder="Paterno . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Apellido Materno</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="materno" [(ngModel)]="materno" placeholder="Materno . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Nivel</label>
+      <div class="col-sm-7 pull-left text-left">
+        <label class="checkbox-inline">
+          <input type="checkbox" [(ngModel)]="preescolar" [ngModelOptions]="{standalone: true}">Preescolar</label>
+        <br>
+        <label class="checkbox-inline">
+          <input type="checkbox" [(ngModel)]="primaria" [ngModelOptions]="{standalone: true}">Primaria</label>
+        <br>
+        <label class="checkbox-inline">
+          <input type="checkbox" [(ngModel)]="secundaria" [ngModelOptions]="{standalone: true}">Secundaria</label>
+      </div>
+    </div>
+
+    <div class=" form-group row">
+      <label for="grado" class="col-sm-5 col-form-label">Grado</label>
+      <div class="col-sm-7">
+        <select class="form-control" *ngIf="(preescolar && !secundaria && !primaria) || (!preescolar && secundaria && !primaria)" [(ngModel)]="grado" [ngModelOptions]="{standalone: true}">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+        <select class="form-control" *ngIf="primaria && !preescolar && !secundaria" [(ngModel)]="grado" [ngModelOptions]="{standalone: true}">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+        </select>
+        <select class="form-control" *ngIf="(!preescolar && !primaria && !secundaria) || (preescolar && primaria && secundaria) || (primaria && secundaria) || (preescolar && primaria) || (preescolar && secundaria)">
+          <option> </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Grupo</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="grupo" [(ngModel)]="grupo" placeholder="Grupo . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Fecha de nacimiento</label>
+      <div class="col-sm-7">
+        <input type="date" class="form-control" name="fecha" [(ngModel)]="fechaNacimiento" placeholder="Fecha de nacimiento . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Contraseña</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="contrasena" [(ngModel)]="password" placeholder="Contraseña . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 col-form-label">Confirmación de contraseña</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="confirmacion" [(ngModel)]="passwordConfirmation" placeholder="Confirmacion . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-12" *ngIf="matricula && curp && nombre && paterno && materno && grado && fechaNacimiento && password && passwordConfirmation">
+        <button type="submit" (click)="agregarAlumno()" class="btn btn-primary btn-md btn-block">Confirmar</button>
+      </div>
+    </div>
+
+  </form>
+</div>
