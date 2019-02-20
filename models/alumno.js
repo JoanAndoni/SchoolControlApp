@@ -52,6 +52,17 @@ const AlumnoSchema = mongoose.Schema({
       type: String
     },
     calificaciones: [Number]
+  }],
+  comentarios: [{
+    profesor: {
+      type: String
+    },
+    titulo: {
+      type: String
+    },
+    texto: {
+      type: String
+    }
   }]
 });
 
@@ -128,6 +139,58 @@ module.exports.deleteMateria = function(matricula, nombreMateria, callback) {
     $pull: {
       materias: {
         nombreMateria: nombreMateria
+      }
+    }
+  }
+  Alumno.updateOne(query, callback);
+}
+
+module.exports.updateCalificaciones = function(matricula, nombreMateria, calificaciones, callback) {
+  Alumno.updateOne({
+    matricula: matricula,
+    "materias.nombreMateria": nombreMateria
+  }, {
+    $set: {
+      "materias.$.calificaciones": calificaciones
+    }
+  }, callback);
+}
+
+module.exports.addComentario = function(matricula, profesor, titulo, texto, callback) {
+  const comentario = {
+    profesor: profesor,
+    titulo: titulo,
+    texto: texto
+  }
+
+  Alumno.updateOne({
+      matricula: matricula
+    }, {
+      $push: {
+        comentarios: comentario
+      }
+    },
+    callback);
+}
+
+module.exports.comentarioExist = function(matricula, titulo, callback) {
+  const query = {
+    matricula: matricula,
+    comentarios: {
+      $elemMatch: {
+        titulo: titulo
+      }
+    }
+  }
+  Alumno.findOne(query, callback);
+}
+
+module.exports.deleteComentario = function(matricula, titulo, callback) {
+  const query = {
+    matricula: matricula,
+    $pull: {
+      comentarios: {
+        titulo: titulo
       }
     }
   }
