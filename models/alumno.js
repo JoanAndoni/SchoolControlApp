@@ -51,6 +51,9 @@ const AlumnoSchema = mongoose.Schema({
     nombreMateria: {
       type: String
     },
+    profesor: {
+      type: String
+    },
     calificaciones: [Number]
   }],
   comentarios: [{
@@ -105,9 +108,10 @@ module.exports.deleteAlumno = function(matricula, callback) {
   Alumno.findOneAndRemove(query, callback);
 }
 
-module.exports.addMateria = function(matricula, nombreMateria, callback) {
+module.exports.addMateria = function(matricula, nombreMateria, profesor, callback) {
   const materia = {
     nombreMateria: nombreMateria,
+    profesor: profesor,
     calificaciones: [0, 0, 0, 0]
   }
 

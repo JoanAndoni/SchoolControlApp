@@ -25,6 +25,9 @@ import { AgregarProfesorComponent } from './components/profesores/agregar-profes
 import { ListarProfesoresComponent } from './components/profesores/listar-profesores/listar-profesores.component';
 import { ProfesorComponent } from './components/profesores/listar-profesores/profesor/profesor.component';
 
+// Components admins
+import { AdminsComponent } from './components/admins/admins.component';
+
 // Services
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
@@ -61,7 +64,8 @@ const appRoutes: Routes = [
     ProfesoresComponent,
     AgregarProfesorComponent,
     ListarProfesoresComponent,
-    ProfesorComponent
+    ProfesorComponent,
+    AdminsComponent
   ],
   imports: [
     BrowserModule,

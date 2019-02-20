@@ -135,6 +135,7 @@ router.post('/delete', (req, res, next) => {
 router.post('/addMateria', (req, res, next) => {
   let matricula = req.body.matricula;
   let nombreMateria = req.body.nombreMateria;
+  let profesor = req.body.profesor;
 
   Alumno.getAlumnoByMatricula(matricula, (err, alumno) => {
     if (err) throw err;
@@ -147,7 +148,7 @@ router.post('/addMateria', (req, res, next) => {
       Alumno.materiaExist(matricula, nombreMateria, (err, materia) => {
         if (err) throw err;
         if (!materia) {
-          Alumno.addMateria(matricula, nombreMateria, (err, alumno) => {
+          Alumno.addMateria(matricula, nombreMateria, profesor, (err, alumno) => {
             if (err) {
               res.json({
                 success: false,
