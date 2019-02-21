@@ -28,14 +28,21 @@ module.exports.getAdminByUsername = function(username, callback) {
   Admin.findOne(query, callback);
 }
 
-module.exports.addAdmin = function(newAdmin, callback) {
+module.exports.addAdmin = function(admin, callback) {
   bcrypt.genSalt(10, (err, salt) => {
-    bcrypt.hash(newAdmin.password, salt, (err, hash) => {
+    bcrypt.hash(admin.password, salt, (err, hash) => {
       if (err) throw err;
-      newAdmin.password = hash;
-      newAdmin.save(callback);
+      admin.password = hash;
+      admin.save(callback);
     });
   });
+}
+
+module.exports.deleteAdmin = function(username, callback) {
+  const query = {
+    username: username
+  }
+  Admin.findOneAndRemove(query, callback);
 }
 
 module.exports.comparePassword = function(candidatePassword, hash, callback) {

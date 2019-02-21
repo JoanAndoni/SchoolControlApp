@@ -6,8 +6,9 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto ">
       <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/']">Principal</a></li>
-      <li *ngIf="authService.adminLoggedIn()" class="authService.adminActivate() nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/alumnos']">Alumnos</a></li>
+      <li *ngIf="authService.adminLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/alumnos']">Alumnos</a></li>
       <li *ngIf="authService.adminLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/profesores']">Profesores</a></li>
+      <li *ngIf="authService.adminLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/admins']">Administradores</a></li>
     </ul>
     <ul class=" navbar-nav mt-auto">
       <li *ngIf="authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a></li>

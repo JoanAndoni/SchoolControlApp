@@ -54,10 +54,10 @@ export class AgregarProfesorComponent implements OnInit {
       this.authService.registerProfesor(profesor).subscribe(data => {
         if (data.success) {
           this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
-          this.router.navigate(['/login']);
+          // this.router.navigate(['/login']);
         } else {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-          this.router.navigate(['/profesores']);
+          // this.router.navigate(['/profesores']);
         }
       });
     }

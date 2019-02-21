@@ -18,23 +18,19 @@ export class AuthService {
   authToken: any;
   user: any;
   permisions: any;
+  matriculaVerAlumno: any;
 
   constructor(
     private http: Http,
     public jwtHelper: JwtHelperService
   ) { }
 
+  /************ ALUMNO ************/
+
   registerAlumno(alumno) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/alumnos/register', alumno, { headers: headers })
-      .pipe(map(res => res.json()));
-  }
-
-  registerProfesor(profesor) {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/profesores/register', profesor, { headers: headers })
       .pipe(map(res => res.json()));
   }
 
@@ -45,10 +41,88 @@ export class AuthService {
       .pipe(map(res => res.json()));
   }
 
+  alumnoLoggedIn() {
+    if (localStorage.getItem('permisions') === '0')
+      return !this.jwtHelper.isTokenExpired();
+  }
+
+  buscarAlumnoMatricula(alumno) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/alumnos/getAlumno', alumno, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  buscarAlumnosNombre(alumno) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/alumnos/getAlumnosNombre', alumno, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  eliminarAlumno(alumno) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/alumnos/delete', alumno, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  setMatriculaVerAlumno(matricula) {
+    this.matriculaVerAlumno = matricula;
+  }
+
+  getMatricualVerAlumno() {
+    return this.matriculaVerAlumno;
+  }
+
+  /************ PROFESOR ************/
+
+  registerProfesor(profesor) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/profesores/register', profesor, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
   authenticateProfesor(profesor) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/profesores/authenticate', profesor, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  profesorLoggedIn() {
+    if (localStorage.getItem('permisions') === '1')
+      return !this.jwtHelper.isTokenExpired();
+  }
+
+  buscarProfesorMatricula(profesor) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/profesores/getProfesor', profesor, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  buscarProfesoresNombre(profesor) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/profesores/getProfesoresNombre', profesor, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  eliminarProfesor(profesor) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/profesores/delete', profesor, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  /************ ADMIN ************/
+
+  registerAdmin(admin) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/admin/register', admin, { headers: headers })
       .pipe(map(res => res.json()));
   }
 
@@ -58,6 +132,13 @@ export class AuthService {
     return this.http.post('http://localhost:3000/admin/authenticate', admin, { headers: headers })
       .pipe(map(res => res.json()));
   }
+
+  adminLoggedIn() {
+    if (localStorage.getItem('permisions') === '2')
+      return !this.jwtHelper.isTokenExpired();
+  }
+
+  /************ GENERAL ************/
 
   getProfile() {
     let headers = new Headers();
@@ -84,21 +165,6 @@ export class AuthService {
 
   loggedIn() {
     return !this.jwtHelper.isTokenExpired();
-  }
-
-  adminLoggedIn() {
-    if (localStorage.getItem('permisions') === '2')
-      return !this.jwtHelper.isTokenExpired();
-  }
-
-  profesorLoggedIn() {
-    if (localStorage.getItem('permisions') === '1')
-      return !this.jwtHelper.isTokenExpired();
-  }
-
-  alumnoLoggedIn() {
-    if (localStorage.getItem('permisions') === '0')
-      return !this.jwtHelper.isTokenExpired();
   }
 
   logout() {

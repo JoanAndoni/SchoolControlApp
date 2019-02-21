@@ -17,16 +17,16 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { AgregarAlumnoComponent } from './components/alumnos/agregar-alumno/agregar-alumno.component';
 import { ListarAlumnosComponent } from './components/alumnos/listar-alumnos/listar-alumnos.component';
-import { AlumnoComponent } from './components/alumnos/listar-alumnos/alumno/alumno.component';
+import { VerAlumnoComponent } from './components/alumnos/ver-alumno/ver-alumno.component';
 
 // Components profesor
 import { ProfesoresComponent } from './components/profesores/profesores.component';
 import { AgregarProfesorComponent } from './components/profesores/agregar-profesor/agregar-profesor.component';
 import { ListarProfesoresComponent } from './components/profesores/listar-profesores/listar-profesores.component';
-import { ProfesorComponent } from './components/profesores/listar-profesores/profesor/profesor.component';
 
 // Components admins
 import { AdminsComponent } from './components/admins/admins.component';
+import { AgregarAdminComponent } from './components/admins/agregar-admin/agregar-admin.component';
 
 // Services
 import { ValidateService } from './services/validate.service';
@@ -42,8 +42,10 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'alumnos', component: AlumnosComponent, canActivate: [AuthGuard] },
+  { path: 'verAlumno', component: VerAlumnoComponent, canActivate: [AuthGuard] },
   // { path: 'grupos', component: RegisterComponent },
   { path: 'profesores', component: ProfesoresComponent, canActivate: [AuthGuard] },
+  { path: 'admins', component: AdminsComponent, canActivate: [AuthGuard] },
   // Protect the following routes if youre logged in
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
@@ -60,12 +62,12 @@ const appRoutes: Routes = [
     AlumnosComponent,
     AgregarAlumnoComponent,
     ListarAlumnosComponent,
-    AlumnoComponent,
     ProfesoresComponent,
     AgregarProfesorComponent,
     ListarProfesoresComponent,
-    ProfesorComponent,
-    AdminsComponent
+    AdminsComponent,
+    AgregarAdminComponent,
+    VerAlumnoComponent
   ],
   imports: [
     BrowserModule,

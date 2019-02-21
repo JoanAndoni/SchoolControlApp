@@ -84,6 +84,14 @@ module.exports.getAlumnoByMatricula = function(matricula, callback) {
   Alumno.findOne(query, callback);
 }
 
+// Make the query and bring one alumno by the matricula from the DB
+module.exports.getAlumnosByNombre = function(nombre, callback) {
+  const query = {
+    nombre: nombre
+  }
+  Alumno.find(query, callback);
+}
+
 module.exports.addAlumno = function(newAlumno, callback) {
   bcrypt.genSalt(10, (err, salt) => {
     bcrypt.hash(newAlumno.password, salt, (err, hash) => {
@@ -112,7 +120,7 @@ module.exports.addMateria = function(matricula, nombreMateria, profesor, callbac
   const materia = {
     nombreMateria: nombreMateria,
     profesor: profesor,
-    calificaciones: [0, 0, 0, 0]
+    calificaciones: [0, 0, 0]
   }
 
   Alumno.updateOne({

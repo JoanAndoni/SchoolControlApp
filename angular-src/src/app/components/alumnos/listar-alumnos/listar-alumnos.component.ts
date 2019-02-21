@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
-import { Alumno } from '../../../models/alumno.model'
+// Import of the services
+import { AuthService } from '../../../services/auth.service';
+
+// Import of the module for the flash messages
+import { FlashMessagesService } from 'angular2-flash-messages';
+
+// Bring out the Router so we can redirect from the code
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-alumnos',
@@ -8,16 +15,70 @@ import { Alumno } from '../../../models/alumno.model'
   styleUrls: ['./listar-alumnos.component.css']
 })
 export class ListarAlumnosComponent implements OnInit {
-  alumnos = [
-    new Alumno('S302', 'G092JDNQ91029', 'Joan Andoni', 'González', 'Rioz', 'Secundaria', 3, 'A', '20/07/1996', 'ContraseñaJoan'),
-    new Alumno('S203', 'GORJJDNQ03459', 'Ian Gaél', 'González', 'Rioz', 'Secundaria', 2, 'B', '21/04/2005', 'ContraseñaIan'),
-    new Alumno('K201', 'SUGRDNDQ91029', 'Susan Ixchel', 'González', 'Rioz', 'Preescolar', 2, 'A', '05/08/2000', 'ContraseñaSusan')
-  ];
+  matricula: String;
+  nombre: String;
 
-  constructor() {
+  alumno: any;
+  alumnos: any;
+
+  constructor(
+    private flashMessage: FlashMessagesService,
+    private authService: AuthService,
+    private router: Router
+  ) {
   }
 
   ngOnInit() {
+  }
+
+  buscarAlumnoMatricula() {
+    const alumno = {
+      matricula: this.matricula
+    }
+    this.authService.buscarAlumnoMatricula(alumno).subscribe(data => {
+      if (data.success) {
+        this.alumno = data.alumno;
+      } else {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+      }
+    });
+    this.alumnos = null;
+    this.matricula = null;
+  }
+
+  buscarAlumnosNombre() {
+    const alumno = {
+      nombre: this.nombre
+    }
+    this.authService.buscarAlumnosNombre(alumno).subscribe(data => {
+      if (data.success) {
+        this.alumnos = data.alumnos;
+      } else {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+      }
+    });
+    this.alumno = null;
+    this.nombre = null;
+  }
+
+  verAlumno(matricula) {
+    this.authService.setMatriculaVerAlumno(matricula);
+    this.router.navigate(['/verAlumno']);
+  }
+
+  eliminarAlumno(matricula) {
+    const alumno = {
+      matricula: matricula
+    }
+    this.authService.eliminarAlumno(alumno).subscribe(data => {
+      if (data.success) {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+        this.alumno = null;
+        this.alumnos = null;
+      } else {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+      }
+    });
   }
 
 }

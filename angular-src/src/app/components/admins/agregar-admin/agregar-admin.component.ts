@@ -11,25 +11,13 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-agregar-alumno',
-  templateUrl: './agregar-alumno.component.html',
-  styleUrls: ['./agregar-alumno.component.css']
+  selector: 'app-agregar-admin',
+  templateUrl: './agregar-admin.component.html',
+  styleUrls: ['./agregar-admin.component.css']
 })
-export class AgregarAlumnoComponent implements OnInit {
+export class AgregarAdminComponent implements OnInit {
 
-  private preescolar: boolean = false;
-  private primaria: boolean = false;
-  private secundaria: boolean = false;
-
-  matricula: String;
-  curp: String;
-  nombre: String;
-  paterno: String;
-  materno: String;
-  nivel: String;
-  grado: String;
-  grupo: String;
-  fechaNacimiento: String;
+  username: String;
   password: String;
   passwordConfirmation: String;
 
@@ -37,43 +25,26 @@ export class AgregarAlumnoComponent implements OnInit {
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
     private router: Router
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
   }
 
-  agregarAlumno() {
-    if (this.preescolar) {
-      this.nivel = "Preescolar";
-    } else if (this.primaria) {
-      this.nivel = "Primaria";
-    } else if (this.secundaria) {
-      this.nivel = "Secundaria";
-    }
-
-    const alumno = {
-      permiso: 0,
-      matricula: this.matricula,
-      curp: this.curp,
-      nombre: this.nombre,
-      paterno: this.paterno,
-      materno: this.materno,
-      nivel: this.nivel,
-      grado: this.grado,
-      grupo: this.grupo,
-      fechaNacimiento: this.fechaNacimiento,
+  agregarAdmin() {
+    const admin = {
+      permiso: 2,
+      username: this.username,
       password: this.password
     }
 
     if (this.password === this.passwordConfirmation) {
-      this.authService.registerAlumno(alumno).subscribe(data => {
+      this.authService.registerAdmin(admin).subscribe(data => {
         if (data.success) {
           this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
           // this.router.navigate(['/login']);
         } else {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-          // this.router.navigate(['/alumnos']);
+          // this.router.navigate(['/admins']);
         }
       });
     }

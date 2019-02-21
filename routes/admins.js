@@ -19,50 +19,37 @@ router.post('/register', (req, res, next) => {
     if (err) {
       res.json({
         success: false,
-        msg: 'Failed to register admin'
+        msg: 'No se ha podido crear el administrador'
       });
       // Return the success state as true if it could be registered
     } else {
       res.json({
         success: true,
-        msg: 'Admin registered'
+        msg: 'El administrador se creo exitosamente'
       });
     }
   });
 });
 
-// Authenticate the user that we passed with the parameters
 router.post('/authenticate', (req, res, next) => {
-  // We just need to authenticate the username and the password
   const username = req.body.username;
   const password = req.body.password;
 
-  // Get user by username and then compare the password
   Admin.getAdminByUsername(username, (err, admin) => {
     if (err) throw err;
     if (!admin) {
       return res.json({
         success: false,
-        msg: 'admin'
+        msg: 'No se encontro un administrador con ese nombre de usuario'
       });
     }
 
-    // Check if the password that we send is correct
     Admin.comparePassword(password, admin.password, (err, isMatch) => {
-      // Check some error
       if (err) throw err;
-
-      // Check the password by encripting it and compare it with the one in the db
       if (isMatch) {
-        /*const token = jwt.sign(user, config.secret, {
-          expiresIn: 604800 // 1 week
-        });*/
-        // Create a token that is going to be useful for one week
         const token = jwt.sign(admin.toJSON(), config.secret, {
           expiresIn: 604800 // 1 week
         });
-
-        // Response of the success match returning the user, token and the success state ad true
         res.json({
           success: true,
           token: 'JWT ' + token,
@@ -71,7 +58,6 @@ router.post('/authenticate', (req, res, next) => {
             username: admin.username
           }
         });
-        // If the authentication is wrong return the success state as false
       } else {
         return res.json({
           success: false,
@@ -84,17 +70,52 @@ router.post('/authenticate', (req, res, next) => {
 
 // Profile, access to the data using the token that we generated and check if it still valid
 router.get('/profile', passport.authenticate('jwt', {
-  // if it is not valid return session as false
   session: false
 }), (req, res, next) => {
-  // if it is valid return the user
   res.json({
-    // The req.user it has to be always like that is part of the passport library
     admin: req.user
   });
 });
 
+router.post('/delete', (req, res, next) => {
+  const username = req.body.username;
+  const password = req.body.password;
 
+  Admin.getAdminByUsername(username, (err, admin) => {
+    if (err) throw err;
+    if (!admin) {
+      return res.json({
+        success: false,
+        msg: 'No se encontro un administrador con ese nombre de usuario'
+      });
+    }
+
+    Admin.comparePassword(password, admin.password, (err, isMatch) => {
+      if (err) throw err;
+      if (isMatch) {
+        Admin.deleteAdmin(username, (err, borrado) => {
+          if (err) throw err;
+          if (!borrado) {
+            return res.json({
+              success: false,
+              msg: 'No se pudo eliminar el administrador'
+            });
+          } else {
+            return res.json({
+              success: true,
+              msg: 'Administrador eliminado'
+            });
+          }
+        })
+      } else {
+        return res.json({
+          success: false,
+          msg: 'Contraseña incorrecta'
+        });
+      }
+    });
+  });
+});
 
 // Router module for make the petitions
 module.exports = router;

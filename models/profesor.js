@@ -38,7 +38,21 @@ const ProfesorSchema = mongoose.Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  clases: [{
+    nombreClase: {
+      type: String
+    },
+    nivel: {
+      type: String
+    },
+    grado: {
+      type: String
+    },
+    grupo: {
+      type: String
+    }
+  }]
 });
 
 // Create alumno / Use this from outside / Send it to the mongoDB
@@ -54,6 +68,14 @@ module.exports.getProfesorByMatricula = function(matricula, callback) {
     matricula: matricula
   }
   Profesor.findOne(query, callback);
+}
+
+// Make the query and bring one alumno by the matricula from the DB
+module.exports.getProfesoresByNombre = function(nombre, callback) {
+  const query = {
+    nombre: nombre
+  }
+  Profesor.find(query, callback);
 }
 
 module.exports.addProfesor = function(newProfesor, callback) {
@@ -78,4 +100,46 @@ module.exports.deleteProfesor = function(matricula, callback) {
     matricula: matricula
   }
   Profesor.findOneAndRemove(query, callback);
+}
+
+module.exports.addClase = function(matricula, nombreClase, nivel, grado, grupo, callback) {
+  const clase = {
+    nombreClase: nombreClase,
+    nivel: nivel,
+    grado: grado,
+    grupo: grupo
+  }
+
+  Profesor.updateOne({
+      matricula: matricula
+    }, {
+      $push: {
+        clases: clase
+      }
+    },
+    callback);
+}
+
+module.exports.claseExist = function(matricula, nombreClase, callback) {
+  const query = {
+    matricula: matricula,
+    clases: {
+      $elemMatch: {
+        nombreClase: nombreClase
+      }
+    }
+  }
+  Profesor.findOne(query, callback);
+}
+
+module.exports.deleteClase = function(matricula, nombreClase, callback) {
+  const query = {
+    matricula: matricula,
+    $pull: {
+      clases: {
+        nombreClase: nombreClase
+      }
+    }
+  }
+  Profesor.updateOne(query, callback);
 }

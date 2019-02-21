@@ -1,0 +1,36 @@
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <h2>Calificaciones de {{alumno?.nombre}} {{alumno?.materno}} {{alumno?.paterno}}</h2>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th> </th>
+          <th class="font-weight-bold">Primer trimestre</th>
+          <th class="font-weight-bold">Segundo trimestre</th>
+          <th class="font-weight-bold">Tercer trimestre</th>
+          <th class="font-weight-bold">Promedio por materia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let materia of alumno?.materias; index as i">
+          <td class="font-weight-bold">{{materia.nombreMateria}}
+            <small id="passwordHelpBlock" class="form-text text-muted">
+              {{materia.profesor}}
+            </small>
+          </td>
+          <td>{{materia.calificaciones[0]}}</td>
+          <td>{{materia.calificaciones[1]}}</td>
+          <td>{{materia.calificaciones[2]}}</td>
+          <td class="font-weight-bold">{{promediosMaterias[i]}}</td>
+        </tr>
+        <tr class="font-weight-bold">
+          <td class="text-uppercase">Promedio trimestral</td>
+          <td>{{promediosTrimestres[0]}}</td>
+          <td>{{promediosTrimestres[1]}}</td>
+          <td>{{promediosTrimestres[2]}}</td>
+          <td>{{promedioFinal}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -7,7 +7,6 @@ const Alumno = require('../models/alumno');
 
 
 router.post('/register', (req, res, next) => {
-
   let newAlumno = new Alumno({
     permiso: req.body.permiso,
     matricula: req.body.matricula,
@@ -49,7 +48,6 @@ router.post('/register', (req, res, next) => {
 
 
 router.post('/authenticate', (req, res, next) => {
-
   const matricula = req.body.matricula;
   const password = req.body.password;
 
@@ -103,6 +101,54 @@ router.get('/profile', passport.authenticate('jwt', {
   res.json({
     alumno: req.user
   });
+});
+
+router.post('/getAlumno', (req, res, next) => {
+  let matricula = req.body.matricula;
+  Alumno.getAlumnoByMatricula(matricula, (err, alumno) => {
+    if (err) throw err;
+    if (alumno) {
+      return res.json({
+        success: true,
+        alumno: {
+          matricula: alumno.matricula,
+          curp: alumno.curp,
+          nombre: alumno.nombre,
+          paterno: alumno.paterno,
+          materno: alumno.materno,
+          nivel: alumno.nivel,
+          grado: alumno.grado,
+          grupo: alumno.grupo,
+          fechaNacimiento: alumno.fechaNacimiento,
+          materias: alumno.materias,
+          comentarios: alumno.comentarios
+        }
+      });
+    } else {
+      return res.json({
+        success: false,
+        msg: 'No existe un alumno con esa matricula'
+      });
+    }
+  })
+});
+
+router.post('/getAlumnosNombre', (req, res, next) => {
+  let nombre = req.body.nombre;
+  Alumno.getAlumnosByNombre(nombre, (err, alumnos) => {
+    if (err) throw err;
+    if (alumnos.length > 0) {
+      return res.json({
+        success: true,
+        alumnos
+      });
+    } else {
+      return res.json({
+        success: false,
+        msg: 'No existe ningun alumno con ese nombre'
+      });
+    }
+  })
 });
 
 router.post('/delete', (req, res, next) => {
@@ -273,7 +319,7 @@ router.post('/addComentario', (req, res, next) => {
             if (err) {
               res.json({
                 success: false,
-                msg: 'No se agregar comentario al alumno'
+                msg: 'No se pudo agregar el comentario al alumno'
               });
             } else {
               res.json({

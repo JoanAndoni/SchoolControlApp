@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
-import { Profesor } from '../../../models/profesor.model'
+// Import of the services
+import { AuthService } from '../../../services/auth.service';
+
+// Import of the module for the flash messages
+import { FlashMessagesService } from 'angular2-flash-messages';
+
+// Bring out the Router so we can redirect from the code
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-profesores',
@@ -8,16 +15,70 @@ import { Profesor } from '../../../models/profesor.model'
   styleUrls: ['./listar-profesores.component.css']
 })
 export class ListarProfesoresComponent implements OnInit {
-  profesores = [
-    new Profesor('P01', 'Joan Andoni', 'González', 'Rioz', 'Director', '5591088716', 'mcr_joan@hotmail.com', 'ContraseñaJoan'),
-    new Profesor('P02', 'Ian Gaél', 'González', 'Rioz', 'Director', '5591088716', 'mcr_joan@hotmail.com', 'ContraseñaJoan'),
-    new Profesor('P05', 'Susan Ixchel', 'González', 'Rioz', 'Director', '5591088716', 'mcr_joan@hotmail.com', 'ContraseñaJoan')
-  ];
+  matricula: String;
+  nombre: String;
 
-  constructor() {
+  profesor: any;
+  profesores: any;
+
+  constructor(
+    private flashMessage: FlashMessagesService,
+    private authService: AuthService,
+    private router: Router
+  ) {
   }
 
   ngOnInit() {
+  }
+
+  buscarProfesorMatricula() {
+    const profesor = {
+      matricula: this.matricula
+    }
+    this.authService.buscarProfesorMatricula(profesor).subscribe(data => {
+      if (data.success) {
+        this.profesor = data.profesor;
+      } else {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+      }
+    });
+    this.profesores = null;
+    this.matricula = null;
+  }
+
+  buscarProfesoresNombre() {
+    const profesor = {
+      nombre: this.nombre
+    }
+    this.authService.buscarProfesoresNombre(profesor).subscribe(data => {
+      if (data.success) {
+        this.profesores = data.profesores;
+      } else {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+      }
+    });
+    this.profesor = null;
+    this.nombre = null;
+  }
+
+  verProfesor(matricula) {
+    console.log("Ver el profesor con matricula: " + matricula);
+    // this.router.navigate(['/verAlumno']);
+  }
+
+  eliminarProfesor(matricula) {
+    const profesor = {
+      matricula: matricula
+    }
+    this.authService.eliminarProfesor(profesor).subscribe(data => {
+      if (data.success) {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+        this.profesor = null;
+        this.profesores = null;
+      } else {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+      }
+    });
   }
 
 }
