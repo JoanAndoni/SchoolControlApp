@@ -151,6 +151,29 @@ router.post('/getAlumnosNombre', (req, res, next) => {
   })
 });
 
+router.post('/getAlumnosGrupo', (req, res, next) => {
+  let nivel = req.body.nivel;
+  let grado = req.body.grado;
+  let grupo = req.body.grupo;
+  let nombreMateria = req.body.nombreMateria;
+  let profesor = req.body.profesor;
+
+  Alumno.getAlumnosByGrupo(nivel, grado, grupo, nombreMateria, profesor, (err, alumnos) => {
+    if (err) throw err;
+    if (alumnos.length > 0) {
+      return res.json({
+        success: true,
+        alumnos
+      });
+    } else {
+      return res.json({
+        success: false,
+        msg: 'No existe ningun alumno con ese nombre'
+      });
+    }
+  })
+});
+
 router.post('/delete', (req, res, next) => {
   let matricula = req.body.matricula;
   Alumno.getAlumnoByMatricula(matricula, (err, alumno) => {

@@ -216,3 +216,18 @@ module.exports.deleteComentario = function(matricula, titulo, callback) {
   }
   Alumno.updateOne(query, callback);
 }
+
+module.exports.getAlumnosByGrupo = function(nivel, grado, grupo, nombreMateria, profesor, callback) {
+  const query = {
+    nivel: nivel,
+    grado: grado,
+    grupo: grupo,
+    materias: {
+      $elemMatch: {
+        nombreMateria: nombreMateria,
+        profesor: profesor
+      }
+    }
+  }
+  Alumno.find(query, callback);
+}
