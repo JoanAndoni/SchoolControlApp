@@ -117,5 +117,22 @@ router.post('/delete', (req, res, next) => {
   });
 });
 
+router.post('/getAdmins', (req, res, next) => {
+  Admin.getAllAdmins((err, admins) => {
+    if (err) throw err;
+    if (!admins) {
+      return res.json({
+        success: false,
+        msg: 'No hay administradores'
+      });
+    } else {
+      return res.json({
+        success: true,
+        admins
+      });
+    }
+  });
+});
+
 // Router module for make the petitions
 module.exports = router;

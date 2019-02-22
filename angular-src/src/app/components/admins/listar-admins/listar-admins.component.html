@@ -1,0 +1,8 @@
+<h2>Listar administradores</h2><br>
+
+<hr *ngIf="admins" class="featurette-divider">
+<div *ngFor="let admin of admins" class="overflow-hidden position-relative p-4 m-md-1 bg-light">
+  <div class="row">
+    <h4 class="list-group-item-heading m-1">{{ admin.username }}</h4>
+  </div>
+</div>

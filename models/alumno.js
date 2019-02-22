@@ -60,6 +60,12 @@ const AlumnoSchema = mongoose.Schema({
     profesor: {
       type: String
     },
+    materia: {
+      type: String
+    },
+    fecha: {
+      type: String
+    },
     titulo: {
       type: String
     },
@@ -168,9 +174,11 @@ module.exports.updateCalificaciones = function(matricula, nombreMateria, calific
   }, callback);
 }
 
-module.exports.addComentario = function(matricula, profesor, titulo, texto, callback) {
+module.exports.addComentario = function(matricula, profesor, materia, fecha, titulo, texto, callback) {
   const comentario = {
     profesor: profesor,
+    materia: materia,
+    fecha: fecha,
     titulo: titulo,
     texto: texto
   }

@@ -3,7 +3,7 @@
     <h2>Agregar Alumno</h2><br>
 
     <div class="form-group row">
-      <label class="col-sm-5 col-form-label text-center">Matricula</label>
+      <label class="col-sm-5 col-form-label p-2 text-center">Matricula</label>
       <div class="col-sm-7 pull-left text-left">
         <input type="text" class="form-control" name="matricula" [(ngModel)]="matricula" placeholder="Matricula . ." [ngModelOptions]="{standalone: true}">
         <small id="passwordHelpBlock" class="form-text text-muted">
@@ -19,35 +19,35 @@
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-5 col-form-label">CURP</label>
+      <label class="col-sm-5 p-2 col-form-label">CURP</label>
       <div class="col-sm-7">
         <input type="text" class="form-control" name="curp" [(ngModel)]="curp" placeholder="CURP . ." [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-5 col-form-label">Nombre(s)</label>
+      <label class="col-sm-5 p-2 col-form-label">Nombre(s)</label>
       <div class="col-sm-7">
         <input type="text" class="form-control" name="nombre" [(ngModel)]="nombre" placeholder="Nombre(s) . ." [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-5 col-form-label">Apellido Paterno</label>
+      <label class="col-sm-5 p-2 col-form-label">Apellido Paterno</label>
       <div class="col-sm-7">
         <input type="text" class="form-control" name="paterno" [(ngModel)]="paterno" placeholder="Paterno . ." [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-5 col-form-label">Apellido Materno</label>
+      <label class="col-sm-5 p-2 col-form-label">Apellido Materno</label>
       <div class="col-sm-7">
         <input type="text" class="form-control" name="materno" [(ngModel)]="materno" placeholder="Materno . ." [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-5 col-form-label">Nivel</label>
+      <label class="col-sm-5 p-2 col-form-label">Nivel</label>
       <div class="col-sm-7 pull-left text-left">
         <label class="checkbox-inline">
           <input type="checkbox" [(ngModel)]="preescolar" [ngModelOptions]="{standalone: true}"> Preescolar</label>
@@ -61,7 +61,7 @@
     </div>
 
     <div class=" form-group row">
-      <label for="grado" class="col-sm-5 col-form-label">Grado</label>
+      <label for="grado" class="col-sm-5 p-2 col-form-label">Grado</label>
       <div class="col-sm-7">
         <select class="form-control" *ngIf="(preescolar && !secundaria && !primaria) || (!preescolar && secundaria && !primaria)" [(ngModel)]="grado" [ngModelOptions]="{standalone: true}">
           <option>1</option>
@@ -83,28 +83,28 @@
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-5 col-form-label">Grupo</label>
+      <label class="col-sm-5 p-2 col-form-label">Grupo</label>
       <div class="col-sm-7">
         <input type="text" class="form-control" name="grupo" [(ngModel)]="grupo" placeholder="Grupo . ." [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-5 col-form-label">Fecha de nacimiento</label>
+      <label class="col-sm-5 p-2 col-form-label">Fecha de nacimiento</label>
       <div class="col-sm-7">
         <input type="date" class="form-control" name="fecha" [(ngModel)]="fechaNacimiento" placeholder="Fecha de nacimiento . ." [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-5 col-form-label">Contraseña</label>
+      <label class="col-sm-5 p-2 col-form-label">Contraseña</label>
       <div class="col-sm-7">
         <input type="text" class="form-control" name="contrasena" [(ngModel)]="password" placeholder="Contraseña . ." [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-5 col-form-label">Confirmación de contraseña</label>
+      <label class="col-sm-5 p-2 col-form-label">Confirmación de contraseña</label>
       <div class="col-sm-7">
         <input type="text" class="form-control" name="confirmacion" [(ngModel)]="passwordConfirmation" placeholder="Confirmacion . ." [ngModelOptions]="{standalone: true}">
       </div>

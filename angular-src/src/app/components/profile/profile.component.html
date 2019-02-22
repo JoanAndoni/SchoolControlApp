@@ -1,9 +1,110 @@
-<div class="position-relative overflow-hidden p-3 p-md-3 m-md-3 text-center bg-light">
-  <div class="col-md-8 p-lg-5 mx-auto my-6" *ngIf="user">
-    <h2 class="page-header">{{user.name}}</h2>
+<div *ngIf="user" class="position-relative overflow-hidden p-3 p-md-3 m-md-3 text-center bg-light">
+  <div class="col-md-8 p-lg-5 mx-auto my-6" *ngIf="typeUser === 0">
+    <h2 class="page-header">{{user.nombre}} {{user.materno}} {{user.paterno}}</h2>
+    <hr class="featurette-divider">
     <ul class="list-group">
-      <li class="list-group-item">Username: {{user.username}}</li>
-      <li class="list-group-item">Email: {{user.email}}</li>
+      <a class="m-sm-1 list-group-item flex-column align-items-start ">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Matricula</h5>
+          <p class="mb-1">{{user.matricula}}</p>
+        </div>
+      </a>
+      <a class="m-sm-1 list-group-item flex-column align-items-start ">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">CURP</h5>
+          <p class="mb-1">{{user.curp}}</p>
+        </div>
+      </a>
+      <a class="m-sm-1 list-group-item flex-column align-items-start ">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Nivel</h5>
+          <p class="mb-1">{{user.nivel}}</p>
+        </div>
+      </a>
+      <a class="m-sm-1 list-group-item flex-column align-items-start ">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Grado</h5>
+          <p class="mb-1">{{user.grado}}°</p>
+        </div>
+      </a>
+      <a class="m-sm-1 list-group-item flex-column align-items-start ">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Grupo</h5>
+          <p class="mb-1">"{{user.grupo}}"</p>
+        </div>
+      </a>
+      <a class="m-sm-1 list-group-item flex-column align-items-start ">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Fecha de nacimiento</h5>
+          <p class="mb-1">{{user.fechaNacimiento}}</p>
+        </div>
+      </a>
     </ul>
+  </div>
+  <div class="col-md-8 p-lg-5 mx-auto my-6" *ngIf="typeUser === 1">
+    <h2 class="page-header">{{user.nombre}} {{user.materno}} {{user.paterno}}</h2>
+    <hr class="featurette-divider">
+    <ul class="list-group">
+      <a class="m-sm-1 list-group-item flex-column align-items-start ">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Matricula</h5>
+          <p class="mb-1">{{user.matricula}}</p>
+        </div>
+      </a>
+      <a class="m-sm-1 list-group-item flex-column align-items-start ">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Posición</h5>
+          <p class="mb-1">{{user.posicion}}</p>
+        </div>
+      </a>
+      <a class="m-sm-1 list-group-item flex-column align-items-start ">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Teléfono</h5>
+          <p class="mb-1">{{user.telefono}}</p>
+        </div>
+      </a>
+      <a class="m-sm-1 list-group-item flex-column align-items-start ">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Correo</h5>
+          <p class="mb-1">{{user.correo}}</p>
+        </div>
+      </a>
+    </ul>
+  </div>
+  <div class="col-md-8 p-lg-5 mx-auto my-6" *ngIf="typeUser === 2">
+    <h2 class="page-header">{{user.username}}</h2>
+    <hr class="featurette-divider">
+    <p>ELIMINAR CUENTA DE ADMINISTRADOR<br>Al hacer esto perderas la cuenta que tiene todos los permisos de administración en la aplicación y base de datos.</p>
+    <form>
+      <div class="form-group row">
+        <div class="col-sm-5">
+          <label class="col-sm-12 col-form-label">Ingresa el siguiente texto: </label>
+          <small id="passwordHelpBlock" class="form-text text-muted">"Acepto eliminar mi cuenta"</small>
+        </div>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" name="textoConfirmacion" [(ngModel)]="textoConfirmacion" placeholder="Texto . ." [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-5 p-3 col-form-label">Contraseña</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" name="adminPassword" [(ngModel)]="adminPassword" placeholder="Contraseña . ." [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-5 p-3 col-form-label">Confirmación de contraseña</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" name="adminPasswordConfirmation" [(ngModel)]="adminPasswordConfirmation" placeholder="Confirmación de contraseña . ." [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-12" *ngIf="allCorrect()">
+          <button type="submit" (click)="eliminarAdmin()" class="btn btn-danger btn-md btn-block">Confirmar</button>
+        </div>
+      </div>
+    </form>
   </div>
 </div>

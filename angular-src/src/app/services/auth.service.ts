@@ -19,6 +19,7 @@ export class AuthService {
   user: any;
   permisions: any;
   matriculaVerAlumno: any;
+  matriculaVerProfesor: any;
 
   constructor(
     private http: Http,
@@ -64,6 +65,15 @@ export class AuthService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/alumnos/delete', alumno, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  getProfileAlumno() {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/alumnos/profile', { headers: headers })
       .pipe(map(res => res.json()));
   }
 
@@ -117,6 +127,23 @@ export class AuthService {
       .pipe(map(res => res.json()));
   }
 
+  getProfileProfesor() {
+    let headers = new Headers();
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/profesores/profile', { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  setMatriculaVerProfesor(matricula) {
+    this.matriculaVerProfesor = matricula;
+  }
+
+  getMatricualVerProfesor() {
+    return this.matriculaVerProfesor;
+  }
+
   /************ ADMIN ************/
 
   registerAdmin(admin) {
@@ -138,16 +165,24 @@ export class AuthService {
       return !this.jwtHelper.isTokenExpired();
   }
 
-  /************ GENERAL ************/
-
-  getProfile() {
+  getProfileAdmin() {
     let headers = new Headers();
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/users/profile', { headers: headers })
+    return this.http.get('http://localhost:3000/admin/profile', { headers: headers })
       .pipe(map(res => res.json()));
   }
+
+  getAdmins() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/admin/getAdmins', { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  /************ GENERAL ************/
+
 
   storeUserData(token, user, permisions) {
     localStorage.setItem('id_token', token);

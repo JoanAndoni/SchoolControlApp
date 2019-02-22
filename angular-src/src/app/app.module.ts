@@ -23,9 +23,11 @@ import { VerAlumnoComponent } from './components/alumnos/ver-alumno/ver-alumno.c
 import { ProfesoresComponent } from './components/profesores/profesores.component';
 import { AgregarProfesorComponent } from './components/profesores/agregar-profesor/agregar-profesor.component';
 import { ListarProfesoresComponent } from './components/profesores/listar-profesores/listar-profesores.component';
+import { ClasesComponent } from './components/profesores/clases/clases.component';
 
 // Components admins
 import { AdminsComponent } from './components/admins/admins.component';
+import { ListarAdminsComponent } from './components/admins/listar-admins/listar-admins.component';
 import { AgregarAdminComponent } from './components/admins/agregar-admin/agregar-admin.component';
 
 // Services
@@ -35,19 +37,27 @@ import { AuthService } from './services/auth.service';
 // Libraries
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { JwtModule } from '@auth0/angular-jwt';
+
+// Guards
 import { AuthGuard } from './guards/auth.guard';
+import { NotAuthGuard } from './guards/notAuth.guard';
+import { AlumnoGuard } from './guards/alumno.guard';
+import { AlumnoAdminGuard } from './guards/alumnoAdmin.guard';
+import { ProfesorGuard } from './guards/profesor.guard';
+import { ProfesorAdminGuard } from './guards/profesorAdmin.guard';
+import { AdminGuard } from './guards/admin.guard';
 
 // Array for the routing
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'alumnos', component: AlumnosComponent, canActivate: [AuthGuard] },
-  { path: 'verAlumno', component: VerAlumnoComponent, canActivate: [AuthGuard] },
-  // { path: 'grupos', component: RegisterComponent },
-  { path: 'profesores', component: ProfesoresComponent, canActivate: [AuthGuard] },
-  { path: 'admins', component: AdminsComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent, canActivate: [NotAuthGuard] },
+  { path: 'alumnos', component: AlumnosComponent, canActivate: [AdminGuard] },
+  { path: 'verAlumno', component: VerAlumnoComponent, canActivate: [AlumnoAdminGuard] },
+  { path: 'profesores', component: ProfesoresComponent, canActivate: [AdminGuard] },
+  { path: 'clases', component: ClasesComponent, canActivate: [ProfesorAdminGuard] },
+  { path: 'admins', component: AdminsComponent, canActivate: [AdminGuard] },
   // Protect the following routes if youre logged in
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
 ]
 
@@ -67,7 +77,9 @@ const appRoutes: Routes = [
     ListarProfesoresComponent,
     AdminsComponent,
     AgregarAdminComponent,
-    VerAlumnoComponent
+    VerAlumnoComponent,
+    ListarAdminsComponent,
+    ClasesComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +100,13 @@ const appRoutes: Routes = [
   providers: [
     ValidateService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    NotAuthGuard,
+    AlumnoGuard,
+    AlumnoAdminGuard,
+    ProfesorGuard,
+    ProfesorAdminGuard,
+    AdminGuard
   ],
   bootstrap: [AppComponent]
 })

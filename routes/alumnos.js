@@ -301,6 +301,8 @@ router.post('/updateCalificaciones', (req, res, next) => {
 router.post('/addComentario', (req, res, next) => {
   let matricula = req.body.matricula;
   let profesor = req.body.profesor;
+  let materia = req.body.materia;
+  let fecha = req.body.fecha;
   let titulo = req.body.titulo;
   let texto = req.body.texto;
 
@@ -315,7 +317,7 @@ router.post('/addComentario', (req, res, next) => {
       Alumno.comentarioExist(matricula, titulo, (err, comentario) => {
         if (err) throw err;
         if (!comentario) {
-          Alumno.addComentario(matricula, profesor, titulo, texto, (err, comentario) => {
+          Alumno.addComentario(matricula, profesor, materia, fecha, titulo, texto, (err, comentario) => {
             if (err) {
               res.json({
                 success: false,

@@ -62,14 +62,15 @@ export class ListarProfesoresComponent implements OnInit {
   }
 
   verProfesor(matricula) {
-    console.log("Ver el profesor con matricula: " + matricula);
-    // this.router.navigate(['/verAlumno']);
+    this.authService.setMatriculaVerProfesor(matricula);
+    this.router.navigate(['/clases']);
   }
 
   eliminarProfesor(matricula) {
     const profesor = {
       matricula: matricula
     }
+
     this.authService.eliminarProfesor(profesor).subscribe(data => {
       if (data.success) {
         this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });

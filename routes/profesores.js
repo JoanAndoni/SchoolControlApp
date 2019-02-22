@@ -246,11 +246,12 @@ router.post('/deleteClase', (req, res, next) => {
               });
             }
           });
-
         }
       });
     }
   });
 });
+
+
 
 module.exports = router;
