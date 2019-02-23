@@ -17,7 +17,7 @@ import { Router } from '@angular/router';
 export class VerAlumnoComponent implements OnInit {
   matricula: String = "";
   alumno: Object;
-  promediosMaterias: number[] = [0, 0, 0];
+  promediosMaterias: number[] = [0, 0, 0, 0, 0, 0, 0];
   promediosTrimestres: number[] = [];
   promedioFinal: number;
 
@@ -29,7 +29,7 @@ export class VerAlumnoComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.adminLoggedIn()) {
-      this.matricula = this.authService.getMatricualVerAlumno();
+      this.matricula = this.authService.getMatriculaAlumno();
       const alumno = {
         matricula: this.matricula
       }

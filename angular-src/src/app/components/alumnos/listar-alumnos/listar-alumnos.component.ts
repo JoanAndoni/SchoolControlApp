@@ -62,7 +62,7 @@ export class ListarAlumnosComponent implements OnInit {
   }
 
   verAlumno(matricula) {
-    this.authService.setMatriculaVerAlumno(matricula);
+    this.authService.setMatriculaAlumno(matricula);
     this.router.navigate(['/verAlumno']);
   }
 

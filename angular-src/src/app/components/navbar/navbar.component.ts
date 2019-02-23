@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
   onLogoutClick() {
     // Send the instruction to clear the local storage and the memory of the user logged in
     this.authService.logout()
-    this.flashMessage.show('You are logged out', {
+    this.flashMessage.show('Has cerrado sesion', {
       cssClass: 'alert-warning',
       timeout: 3000
     });

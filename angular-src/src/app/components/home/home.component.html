@@ -2,8 +2,8 @@
   <div class="col-md-12 p-lg-5 mx-auto my-6">
     <h1 class="display-4 font-weight-normal">Control de alumnos</h1>
     <p class="lead font-weight-normal">Aplicación web que lleva el control de calificaciones tareas con roles de profesores, alumnos y un admin</p>
-    <div>
-      <a class="btn btn-outline-secondary buttonsMargins" [routerLink]="['/login']">Ingresar</a>
+    <div *ngIf="!this.authService.loggedIn()">
+      <a class="btn btn-outline-primary buttonsMargins" [routerLink]="['/login']">Ingresar</a>
     </div>
   </div>
 </div>

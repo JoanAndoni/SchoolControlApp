@@ -1,0 +1,25 @@
+<div *ngIf="alumnos" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <h1>{{grupo.nombreMateria}}</h1>
+  <h3>{{grupo.nivel}} {{grupo.grado}}° "{{grupo.grupo}}"</h3>
+  <hr class="featurette-divider">
+  <div *ngFor="let alumno of alumnos" class="overflow-hidden col-md-12 position-relative p-4 m-md-1 bg-light">
+    <div class="row">
+      <div class="col-md-9 pull-left text-left">
+        <h4 class="list-group-item-heading m-1">{{ alumno.nombre }} {{ alumno.paterno }} {{ alumno.materno }}</h4>
+        <div class="row">
+          <div class="col-md-10">
+            <h6 class="font-weight-bold text-uppercase m-1">
+              Matricula: <small class="list-group-item-text m-1">{{ alumno.matricula }}</small>
+              CURP: <small class="list-group-item-text m-1">{{ alumno.curp }}</small>
+              Fecha de nacimiento: <small class="list-group-item-text m-1">{{ alumno.fechaNacimiento }}</small>
+            </h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 pull-right">
+        <br>
+        <button *ngIf="this.authService.profesorLoggedIn()" type="button" (click)="editarAlumno(alumno.matricula)" class="btn btn-outline-info btn-md btn-block">Editar</button>
+      </div>
+    </div>
+  </div>
+</div>

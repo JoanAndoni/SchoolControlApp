@@ -168,7 +168,7 @@ router.post('/getAlumnosGrupo', (req, res, next) => {
     } else {
       return res.json({
         success: false,
-        msg: 'No existe ningun alumno con ese nombre'
+        msg: 'No existe ningun alumno en ese grupo'
       });
     }
   })

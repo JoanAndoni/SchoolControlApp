@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     this.authService.authenticateAlumno(alumnoprofesor).subscribe(data => {
       if (data.success) {
         this.authService.storeUserData(data.token, data.alumno, 0)
-        this.flashMessage.show("Bienvenido alumno", {
+        this.flashMessage.show("Bienvenido/a " + data.alumno.nombre + " " + data.alumno.paterno + " " + data.alumno.materno, {
           cssClass: 'alert-success',
           timeout: 5000
         });
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         this.authService.authenticateProfesor(alumnoprofesor).subscribe(data => {
           if (data.success) {
             this.authService.storeUserData(data.token, data.profesor, 1)
-            this.flashMessage.show("Bienvenido profesor", {
+            this.flashMessage.show("Bienvenido/a " + data.profesor.nombre + " " + data.profesor.paterno + " " + data.profesor.materno, {
               cssClass: 'alert-success',
               timeout: 5000
             });
@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
             this.authService.authenticateAdmin(admin).subscribe(data => {
               if (data.success) {
                 this.authService.storeUserData(data.token, data.admin, 2)
-                this.flashMessage.show("Bienvenido Admin", {
+                this.flashMessage.show("Bienvenido/a " + data.admin.username, {
                   cssClass: 'alert-success',
                   timeout: 5000
                 });

@@ -21,6 +21,14 @@ export class AuthService {
   matriculaVerAlumno: any;
   matriculaVerProfesor: any;
 
+  grupoAlumnos: Object = {
+    nivel: String,
+    grado: String,
+    grupo: String,
+    nombreMateria: String,
+    profesor: String
+  };
+
   constructor(
     private http: Http,
     public jwtHelper: JwtHelperService
@@ -47,17 +55,24 @@ export class AuthService {
       return !this.jwtHelper.isTokenExpired();
   }
 
-  buscarAlumnoMatricula(alumno) {
+  buscarAlumnoMatricula(matriculaAlumno) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/alumnos/getAlumno', alumno, { headers: headers })
+    return this.http.post('http://localhost:3000/alumnos/getAlumno', matriculaAlumno, { headers: headers })
       .pipe(map(res => res.json()));
   }
 
-  buscarAlumnosNombre(alumno) {
+  buscarAlumnosNombre(nombreAlumno) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/alumnos/getAlumnosNombre', alumno, { headers: headers })
+    return this.http.post('http://localhost:3000/alumnos/getAlumnosNombre', nombreAlumno, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  buscarAlumnosGrupo(grupo) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/alumnos/getAlumnosGrupo', grupo, { headers: headers })
       .pipe(map(res => res.json()));
   }
 
@@ -77,12 +92,22 @@ export class AuthService {
       .pipe(map(res => res.json()));
   }
 
-  setMatriculaVerAlumno(matricula) {
+  setMatriculaAlumno(matricula) {
     this.matriculaVerAlumno = matricula;
   }
 
-  getMatricualVerAlumno() {
+  getMatriculaAlumno() {
     return this.matriculaVerAlumno;
+    this.matriculaVerAlumno = null;
+  }
+
+  setGrupo(grupo) {
+    this.grupoAlumnos = grupo;
+  }
+
+  getGrupo() {
+    return this.grupoAlumnos;
+    this.grupoAlumnos = null;
   }
 
   /************ PROFESOR ************/

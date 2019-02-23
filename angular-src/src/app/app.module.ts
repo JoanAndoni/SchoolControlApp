@@ -18,6 +18,7 @@ import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { AgregarAlumnoComponent } from './components/alumnos/agregar-alumno/agregar-alumno.component';
 import { ListarAlumnosComponent } from './components/alumnos/listar-alumnos/listar-alumnos.component';
 import { VerAlumnoComponent } from './components/alumnos/ver-alumno/ver-alumno.component';
+import { EditarAlumnoComponent } from './components/alumnos/editar-alumno/editar-alumno.component';
 
 // Components profesor
 import { ProfesoresComponent } from './components/profesores/profesores.component';
@@ -29,6 +30,9 @@ import { ClasesComponent } from './components/profesores/clases/clases.component
 import { AdminsComponent } from './components/admins/admins.component';
 import { ListarAdminsComponent } from './components/admins/listar-admins/listar-admins.component';
 import { AgregarAdminComponent } from './components/admins/agregar-admin/agregar-admin.component';
+
+// Grupos
+import { VerAlumnosGrupoComponent } from './components/grupos/ver-alumnos-grupo/ver-alumnos-grupo.component';
 
 // Services
 import { ValidateService } from './services/validate.service';
@@ -53,8 +57,10 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [NotAuthGuard] },
   { path: 'alumnos', component: AlumnosComponent, canActivate: [AdminGuard] },
   { path: 'verAlumno', component: VerAlumnoComponent, canActivate: [AlumnoAdminGuard] },
+  { path: 'editarAlumno', component: EditarAlumnoComponent, canActivate: [ProfesorGuard] },
   { path: 'profesores', component: ProfesoresComponent, canActivate: [AdminGuard] },
   { path: 'clases', component: ClasesComponent, canActivate: [ProfesorAdminGuard] },
+  { path: 'grupo', component: VerAlumnosGrupoComponent, canActivate: [ProfesorAdminGuard] },
   { path: 'admins', component: AdminsComponent, canActivate: [AdminGuard] },
   // Protect the following routes if youre logged in
   { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
@@ -79,7 +85,9 @@ const appRoutes: Routes = [
     AgregarAdminComponent,
     VerAlumnoComponent,
     ListarAdminsComponent,
-    ClasesComponent
+    ClasesComponent,
+    VerAlumnosGrupoComponent,
+    EditarAlumnoComponent
   ],
   imports: [
     BrowserModule,

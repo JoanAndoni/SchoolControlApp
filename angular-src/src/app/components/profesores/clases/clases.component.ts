@@ -16,7 +16,8 @@ export class ClasesComponent implements OnInit {
   matricula: String = "";
   profesor: any;
 
-  constructor(private flashMessage: FlashMessagesService,
+  constructor(
+    private flashMessage: FlashMessagesService,
     private authService: AuthService,
     private router: Router
   ) { }
@@ -25,7 +26,7 @@ export class ClasesComponent implements OnInit {
     if (this.authService.profesorLoggedIn()) {
       this.authService.getProfileProfesor().subscribe(profile => {
         this.profesor = profile.profesor;
-        console.log(this.profesor);
+        // console.log(this.profesor);
       });
     } else if (this.authService.adminLoggedIn()) {
       this.matricula = this.authService.getMatricualVerProfesor();
@@ -35,14 +36,26 @@ export class ClasesComponent implements OnInit {
       this.authService.buscarProfesorMatricula(profesor).subscribe(data => {
         if (data.success) {
           this.profesor = data.profesor;
-          console.log(this.profesor);
+          // console.log(this.profesor);
         } else {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-          this.router.navigate(['/alumnos']);
+          this.router.navigate(['/profesores']);
         }
       });
     } else {
       this.router.navigate(['/']);
     }
+  }
+
+  saveGrupoAlumnos(nivel, grado, grupo, nombreMateria, profesor) {
+    const grupoSend = {
+      nivel: nivel,
+      grado: grado,
+      grupo: grupo,
+      nombreMateria: nombreMateria,
+      profesor: profesor
+    }
+    this.authService.setGrupo(grupoSend);
+    this.router.navigate(['/grupo']);
   }
 }
