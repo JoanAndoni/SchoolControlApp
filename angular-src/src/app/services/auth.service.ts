@@ -92,13 +92,26 @@ export class AuthService {
       .pipe(map(res => res.json()));
   }
 
+  agregarComentario(comentario) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/alumnos/addComentario', comentario, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  eliminarComentario(comentario) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/alumnos/deleteComentario', comentario, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
   setMatriculaAlumno(matricula) {
     this.matriculaVerAlumno = matricula;
   }
 
   getMatriculaAlumno() {
     return this.matriculaVerAlumno;
-    this.matriculaVerAlumno = null;
   }
 
   setGrupo(grupo) {
@@ -107,7 +120,6 @@ export class AuthService {
 
   getGrupo() {
     return this.grupoAlumnos;
-    this.grupoAlumnos = null;
   }
 
   /************ PROFESOR ************/
@@ -158,6 +170,20 @@ export class AuthService {
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
     return this.http.get('http://localhost:3000/profesores/profile', { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  addClaseProfesor(clase) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/profesores/addClase', clase, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  deleteClaseProfesor(clase) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/profesores/deleteClase', clase, { headers: headers })
       .pipe(map(res => res.json()));
   }
 

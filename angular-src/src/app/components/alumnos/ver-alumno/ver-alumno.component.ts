@@ -21,6 +21,9 @@ export class VerAlumnoComponent implements OnInit {
   promediosTrimestres: number[] = [];
   promedioFinal: number;
 
+  editComentario: boolean;
+  comentarioEdit: any;
+
   constructor(
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
@@ -99,6 +102,45 @@ export class VerAlumnoComponent implements OnInit {
         });
     } else {
       this.router.navigate(['/']);
+    }
+  }
+
+  editarComentario(titulo, fecha, profesor, materia, texto) {
+    this.editComentario = true;
+    this.comentarioEdit = {
+      titulo: titulo,
+      texto: texto,
+      profesor: profesor,
+      materia: materia,
+      fecha: fecha
+    }
+  }
+
+  cancelarPost() {
+    this.editComentario = false;
+  }
+
+  editarPost() {
+    alert("NO HE HECHO EL BACKEND PARA EDITAR POST");
+  }
+
+  eliminarComentario(titulo) {
+    if (this.authService.adminLoggedIn()) {
+      const comentario = {
+        matricula: this.matricula,
+        titulo: titulo
+      }
+      this.authService.eliminarComentario(comentario).subscribe(data => {
+        if (data.success) {
+          this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+          this.router.navigate(['/alumnos']);
+        } else {
+          this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+          this.router.navigate(['/alumnos']);
+        }
+      });
+    } else {
+      this.router.navigate(['/alumnos']);
     }
   }
 }

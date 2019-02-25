@@ -16,6 +16,12 @@ export class ClasesComponent implements OnInit {
   matricula: String = "";
   profesor: any;
 
+  //ADD CLASE
+  nombreClase: String;
+  nivel: String;
+  grado: String;
+  grupo: String;
+
   constructor(
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
@@ -36,7 +42,6 @@ export class ClasesComponent implements OnInit {
       this.authService.buscarProfesorMatricula(profesor).subscribe(data => {
         if (data.success) {
           this.profesor = data.profesor;
-          // console.log(this.profesor);
         } else {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
           this.router.navigate(['/profesores']);
@@ -57,5 +62,47 @@ export class ClasesComponent implements OnInit {
     }
     this.authService.setGrupo(grupoSend);
     this.router.navigate(['/grupo']);
+  }
+
+  addClase() {
+    if (this.authService.adminLoggedIn()) {
+      const clase = {
+        matricula: this.matricula,
+        nombreClase: this.nombreClase,
+        nivel: this.nivel,
+        grado: this.grado,
+        grupo: this.grupo
+      }
+      this.authService.addClaseProfesor(clase).subscribe(data => {
+        if (data.success) {
+          this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+        } else {
+          this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+        }
+        this.router.navigate(['/profesores']);
+      });
+    } else {
+      this.router.navigate(['/profesores']);
+    }
+  }
+
+  deleteClase(nombreClase) {
+    if (this.authService.adminLoggedIn()) {
+      const clase = {
+        matricula: this.matricula,
+        nombreClase: nombreClase
+      }
+      this.authService.deleteClaseProfesor(clase).subscribe(data => {
+        if (data.success) {
+          this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+          this.router.navigate(['/profesores']);
+        } else {
+          this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+          this.router.navigate(['/profesores']);
+        }
+      });
+    } else {
+      this.router.navigate(['/profesores']);
+    }
   }
 }

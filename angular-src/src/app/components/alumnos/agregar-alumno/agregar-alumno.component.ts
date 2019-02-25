@@ -16,11 +16,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./agregar-alumno.component.css']
 })
 export class AgregarAlumnoComponent implements OnInit {
-
-  private preescolar: boolean = false;
-  private primaria: boolean = false;
-  private secundaria: boolean = false;
-
   matricula: String;
   curp: String;
   nombre: String;
@@ -44,14 +39,6 @@ export class AgregarAlumnoComponent implements OnInit {
   }
 
   agregarAlumno() {
-    if (this.preescolar) {
-      this.nivel = "Preescolar";
-    } else if (this.primaria) {
-      this.nivel = "Primaria";
-    } else if (this.secundaria) {
-      this.nivel = "Secundaria";
-    }
-
     const alumno = {
       permiso: 0,
       matricula: this.matricula,

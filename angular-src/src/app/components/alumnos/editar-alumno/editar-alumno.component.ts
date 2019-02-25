@@ -17,10 +17,11 @@ import { Router } from '@angular/router';
 export class EditarAlumnoComponent implements OnInit {
   matricula: any;
   alumno: any;
-  materia: any;
+  grupo: any;
+  fecha: any;
+  titulo: any;
   comentario: any;
   nombreMateria: any;
-
   promediosMaterias: number[] = [0, 0, 0];
 
   constructor(
@@ -30,15 +31,25 @@ export class EditarAlumnoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    var today: any = new Date();
+    var dd: any = today.getDate();
+    var mm: any = today.getMonth() + 1;
+    var yyyy: any = today.getFullYear();
+    if (dd < 10)
+      dd = '0' + dd;
+    if (mm < 10)
+      mm = '0' + mm;
+    today = mm + '/' + dd + '/' + yyyy;
+    this.fecha = today;
+
     this.matricula = this.authService.getMatriculaAlumno();
-    // this.materia = this.authService.ge();
+    this.grupo = this.authService.getGrupo();
     const alumno = {
       matricula: this.matricula
     }
     this.authService.buscarAlumnoMatricula(alumno).subscribe(data => {
       if (data.success) {
         this.alumno = data.alumno;
-        console.log(data.alumno);
         let indexMateria: number = 0;
         let sumaMateria: number = 0;
         let sum1: number = 0;
@@ -63,7 +74,23 @@ export class EditarAlumnoComponent implements OnInit {
   }
 
   comentar() {
-    console.log(this.nombreMateria, this.comentario);
+    const comentario = {
+      matricula: this.matricula,
+      profesor: this.grupo.profesor,
+      materia: this.grupo.nombreMateria,
+      fecha: this.fecha,
+      titulo: this.titulo,
+      texto: this.comentario
+    }
+
+    this.authService.agregarComentario(comentario).subscribe(data => {
+      if (data.success) {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+        this.router.navigate(['/clases']);
+      } else {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+      }
+    });
   }
 
 }

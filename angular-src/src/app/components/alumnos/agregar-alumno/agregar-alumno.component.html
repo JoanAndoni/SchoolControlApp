@@ -49,36 +49,18 @@
     <div class="form-group row">
       <label class="col-sm-5 p-2 col-form-label">Nivel</label>
       <div class="col-sm-7 pull-left text-left">
-        <label class="checkbox-inline">
-          <input type="checkbox" [(ngModel)]="preescolar" [ngModelOptions]="{standalone: true}"> Preescolar</label>
+        <input type="radio" value="Preescolar" name="nivel" [(ngModel)]="nivel" required> Preescolar
         <br>
-        <label class="checkbox-inline">
-          <input type="checkbox" [(ngModel)]="primaria" [ngModelOptions]="{standalone: true}"> Primaria</label>
+        <input type="radio" value="Primaria" name="nivel" [(ngModel)]="nivel" required> Primaria
         <br>
-        <label class="checkbox-inline">
-          <input type="checkbox" [(ngModel)]="secundaria" [ngModelOptions]="{standalone: true}"> Secundaria</label>
+        <input type="radio" value="Secundaria" name="nivel" [(ngModel)]="nivel" required> Secundaria
       </div>
     </div>
 
     <div class=" form-group row">
       <label for="grado" class="col-sm-5 p-2 col-form-label">Grado</label>
       <div class="col-sm-7">
-        <select class="form-control" *ngIf="(preescolar && !secundaria && !primaria) || (!preescolar && secundaria && !primaria)" [(ngModel)]="grado" [ngModelOptions]="{standalone: true}">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-        </select>
-        <select class="form-control" *ngIf="primaria && !preescolar && !secundaria" [(ngModel)]="grado" [ngModelOptions]="{standalone: true}">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-        </select>
-        <select class="form-control" *ngIf="(!preescolar && !primaria && !secundaria) || (preescolar && primaria && secundaria) || (primaria && secundaria) || (preescolar && primaria) || (preescolar && secundaria)">
-          <option> </option>
-        </select>
+        <input type="number" class="form-control" name="grado" [(ngModel)]="grado" placeholder="Grado . ." [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
