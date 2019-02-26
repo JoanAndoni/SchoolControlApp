@@ -18,6 +18,10 @@ export class ListarAlumnosComponent implements OnInit {
   matricula: String;
   nombre: String;
 
+  nivel: String;
+  grado: String;
+  grupo: String;
+
   alumno: any;
   alumnos: any;
 
@@ -61,6 +65,25 @@ export class ListarAlumnosComponent implements OnInit {
     this.nombre = null;
   }
 
+  buscarAlumnosGrupo() {
+    const grupo = {
+      nivel: this.nivel,
+      grado: this.grado,
+      grupo: this.grupo
+    }
+    this.authService.buscarAlumnosGrupoRaw(grupo).subscribe(data => {
+      if (data.success) {
+        this.alumnos = data.alumnos;
+      } else {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+      }
+    });
+    this.alumno = null;
+    this.nivel = null;
+    this.grado = null;
+    this.grupo = null;
+  }
+
   verAlumno(matricula) {
     this.authService.setMatriculaAlumno(matricula);
     this.router.navigate(['/verAlumno']);
@@ -78,6 +101,7 @@ export class ListarAlumnosComponent implements OnInit {
       } else {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
       }
+      this.ngOnInit();
     });
   }
 

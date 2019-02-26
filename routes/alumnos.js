@@ -21,7 +21,9 @@ router.post('/register', (req, res, next) => {
     password: req.body.password
   });
 
-  Alumno.getAlumnoByMatricula(newAlumno.matricula, (err, alumno) => {
+  let matricula = req.body.matricula;
+
+  Alumno.getAlumnoByMatricula(matricula, (err, alumno) => {
     if (err) throw err;
     if (alumno) {
       return res.json({
@@ -151,7 +153,7 @@ router.post('/getAlumnosNombre', (req, res, next) => {
   })
 });
 
-router.post('/getAlumnosGrupo', (req, res, next) => {
+router.post('/getAlumnosClase', (req, res, next) => {
   let nivel = req.body.nivel;
   let grado = req.body.grado;
   let grupo = req.body.grupo;
@@ -159,6 +161,27 @@ router.post('/getAlumnosGrupo', (req, res, next) => {
   let profesor = req.body.profesor;
 
   Alumno.getAlumnosByGrupo(nivel, grado, grupo, nombreMateria, profesor, (err, alumnos) => {
+    if (err) throw err;
+    if (alumnos.length > 0) {
+      return res.json({
+        success: true,
+        alumnos
+      });
+    } else {
+      return res.json({
+        success: false,
+        msg: 'No existe ningun alumno en ese grupo'
+      });
+    }
+  })
+});
+
+router.post('/getAlumnosGrupo', (req, res, next) => {
+  let nivel = req.body.nivel;
+  let grado = req.body.grado;
+  let grupo = req.body.grupo;
+
+  Alumno.alumnosClase(nivel, grado, grupo, (err, alumnos) => {
     if (err) throw err;
     if (alumnos.length > 0) {
       return res.json({
@@ -357,6 +380,46 @@ router.post('/addComentario', (req, res, next) => {
           res.json({
             success: false,
             msg: 'El comentario con ese titulo ya existe en el alumno'
+          });
+        }
+      });
+    }
+  });
+});
+
+router.post('/editComentario', (req, res, next) => {
+  let matricula = req.body.matricula;
+  let titulo = req.body.titulo;
+  let texto = req.body.texto;
+
+  Alumno.getAlumnoByMatricula(matricula, (err, alumno) => {
+    if (err) throw err;
+    if (!alumno) {
+      return res.json({
+        success: false,
+        msg: 'No se encontro al alumno'
+      });
+    } else {
+      Alumno.comentarioExist(matricula, titulo, (err, comentario) => {
+        if (err) throw err;
+        if (comentario) {
+          Alumno.editComentario(matricula, titulo, texto, (err, comentario) => {
+            if (err) {
+              res.json({
+                success: false,
+                msg: 'No se pudo editar el comentario del alumno'
+              });
+            } else {
+              res.json({
+                success: true,
+                msg: 'El comentario se ha editado exitosamente'
+              });
+            }
+          });
+        } else {
+          res.json({
+            success: false,
+            msg: 'El comentario con ese titulo no existe en el alumno'
           });
         }
       });

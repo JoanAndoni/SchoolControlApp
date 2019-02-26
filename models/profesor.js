@@ -75,7 +75,12 @@ module.exports.getProfesoresByNombre = function(nombre, callback) {
   const query = {
     nombre: nombre
   }
-  Profesor.find(query, callback);
+
+  Profesor.find(query, null, {
+    sort: {
+      paterno: 1
+    }
+  }, callback);
 }
 
 module.exports.addProfesor = function(newProfesor, callback) {
@@ -133,13 +138,48 @@ module.exports.claseExist = function(matricula, nombreClase, callback) {
 }
 
 module.exports.deleteClase = function(matricula, nombreClase, callback) {
-  const query = {
-    matricula: matricula,
+  const filter = {
+    matricula: matricula
+  }
+  const update = {
     $pull: {
       clases: {
         nombreClase: nombreClase
       }
     }
   }
-  Profesor.updateOne(query, callback);
+  Profesor.updateOne(filter, update, callback);
+}
+
+module.exports.profesoresClase = function(nivel, grado, grupo, callback) {
+  const query = {
+    clases: {
+      $elemMatch: {
+        nivel: nivel,
+        grado: grado,
+        grupo: grupo
+      }
+    }
+  }
+
+  const projection = {
+    nombre: 1,
+    clases: {
+      $elemMatch: {
+        nivel: nivel,
+        grado: grado,
+        grupo: grupo
+      }
+    }
+  }
+
+  Profesor.find(query, projection, callback);
+}
+
+module.exports.getAllProfesores = function(callback) {
+  Profesor.find({}, null, {
+    sort: {
+      nombre: 1
+    }
+  }, callback);
 }

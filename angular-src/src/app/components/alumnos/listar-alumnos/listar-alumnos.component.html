@@ -1,9 +1,9 @@
 <div class="position-relative overflow-hidden p-3 m-md-1 bg-light">
   <form>
-    <h2>Buscar Alumno</h2><br>
+    <h2>Buscar Alumnos</h2><br>
 
     <div class="form-group row">
-      <label class="col-sm-4 p-2 col-form-label">Matricula</label>
+      <label class="col-sm-4 p-2 col-form-label">Por matricula</label>
       <div class="col-sm-8 pull-left text-left">
         <input type="text" class="form-control" name="matricula" [(ngModel)]="matricula" placeholder="Matricula . ." [ngModelOptions]="{standalone: true}">
       </div>
@@ -12,18 +12,36 @@
     <hr class="featurette-divider">
 
     <div class="form-group row">
-      <label class="col-sm-4 p-2 col-form-label">Nombre(s)</label>
+      <label class="col-sm-4 p-2 col-form-label">Por nombre(s)</label>
       <div class="col-sm-8">
         <input type="text" class="form-control" name="nombre" [(ngModel)]="nombre" placeholder="Nombre(s) . ." [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
+    <hr class="featurette-divider">
+
+    <label class="col-sm-4 p-2 col-form-label">Por grupo</label>
     <div class="form-group row">
-      <div class="col-sm-12" *ngIf="matricula && !nombre">
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="nivel" [(ngModel)]="nivel" placeholder="Nivel . ." [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="grado" [(ngModel)]="grado" placeholder="Grado . ." [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="grupo" [(ngModel)]="grupo" placeholder="Grupo . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-12" *ngIf="matricula && !nombre && !nivel && !grado && !grupo">
         <button type="submit" (click)="buscarAlumnoMatricula()" class="btn btn-primary btn-md btn-block">Buscar</button>
       </div>
-      <div class="col-sm-12" *ngIf="!matricula && nombre">
+      <div class="col-sm-12" *ngIf="!matricula && nombre && !nivel && !grado && !grupo">
         <button type="submit" (click)="buscarAlumnosNombre()" class="btn btn-primary btn-md btn-block">Buscar</button>
+      </div>
+      <div class="col-sm-12" *ngIf="!matricula && !nombre && nivel && grado && grupo">
+        <button type="submit" (click)="buscarAlumnosGrupo()" class="btn btn-primary btn-md btn-block">Buscar</button>
       </div>
     </div>
   </form>

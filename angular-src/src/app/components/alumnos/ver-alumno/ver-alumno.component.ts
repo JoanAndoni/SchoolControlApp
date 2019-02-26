@@ -21,8 +21,15 @@ export class VerAlumnoComponent implements OnInit {
   promediosTrimestres: number[] = [];
   promedioFinal: number;
 
+  profesoresGrupo: any;
+
   editComentario: boolean;
   comentarioEdit: any;
+
+  newNombreProfesor: String;
+  newNombreMateria: String;
+
+  nombreMateriaDelete: String;
 
   constructor(
     private flashMessage: FlashMessagesService,
@@ -39,6 +46,16 @@ export class VerAlumnoComponent implements OnInit {
       this.authService.buscarAlumnoMatricula(alumno).subscribe(data => {
         if (data.success) {
           this.alumno = data.alumno;
+          const grupo = {
+            nivel: data.alumno.nivel,
+            grado: data.alumno.grado,
+            grupo: data.alumno.grupo
+          }
+          this.authService.getProfesoresGrupo(grupo).subscribe(data => {
+            if (data.success) {
+              this.profesoresGrupo = data.profesores;
+            }
+          });
           let indexMateria: number = 0;
           let sumaMateria: number = 0;
           let sum1: number = 0;
@@ -105,6 +122,39 @@ export class VerAlumnoComponent implements OnInit {
     }
   }
 
+  agregarMateria() {
+    const materia = {
+      matricula: this.matricula,
+      nombreMateria: this.newNombreMateria,
+      profesor: this.newNombreProfesor
+    }
+
+    this.authService.agregarMateria(materia).subscribe(data => {
+      if (data.success) {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+      } else {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+      }
+      this.ngOnInit();
+    });
+  }
+
+  eliminarMateria() {
+    const materia = {
+      matricula: this.matricula,
+      nombreMateria: this.nombreMateriaDelete
+    }
+
+    this.authService.eliminarMateria(materia).subscribe(data => {
+      if (data.success) {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+      } else {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+      }
+      this.ngOnInit();
+    });
+  }
+
   editarComentario(titulo, fecha, profesor, materia, texto) {
     this.editComentario = true;
     this.comentarioEdit = {
@@ -121,7 +171,21 @@ export class VerAlumnoComponent implements OnInit {
   }
 
   editarPost() {
-    alert("NO HE HECHO EL BACKEND PARA EDITAR POST");
+    const comentario = {
+      matricula: this.matricula,
+      titulo: this.comentarioEdit.titulo,
+      texto: this.comentarioEdit.texto
+    }
+
+    this.authService.editarComentario(comentario).subscribe(data => {
+      if (data.success) {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+      } else {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+      }
+      this.ngOnInit();
+    });
+    this.editComentario = false;
   }
 
   eliminarComentario(titulo) {
@@ -133,14 +197,16 @@ export class VerAlumnoComponent implements OnInit {
       this.authService.eliminarComentario(comentario).subscribe(data => {
         if (data.success) {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-          this.router.navigate(['/alumnos']);
+          // this.router.navigate(['/alumnos']);
         } else {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-          this.router.navigate(['/alumnos']);
+          // this.router.navigate(['/alumnos']);
         }
+        this.ngOnInit();
       });
     } else {
       this.router.navigate(['/alumnos']);
     }
+
   }
 }

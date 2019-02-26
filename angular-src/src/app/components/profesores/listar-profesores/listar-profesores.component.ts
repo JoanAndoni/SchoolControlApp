@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 // Import of the services
 import { AuthService } from '../../../services/auth.service';
@@ -29,6 +29,12 @@ export class ListarProfesoresComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.authService.getAllProfesores().subscribe(data => {
+      if (data.profesores.length > 0) {
+        this.profesores = data.profesores;
+        console.log(this.profesores);
+      }
+    });
   }
 
   buscarProfesorMatricula() {
@@ -79,6 +85,7 @@ export class ListarProfesoresComponent implements OnInit {
       } else {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
       }
+      this.ngOnInit();
     });
   }
 

@@ -19,7 +19,9 @@ router.post('/register', (req, res, next) => {
     password: req.body.password
   });
 
-  Profesor.getProfesorByMatricula(newProfesor.matricula, (err, profesor) => {
+  let matricula = req.body.matricula;
+
+  Profesor.getProfesorByMatricula(matricula, (err, profesor) => {
     if (err) throw err;
     if (profesor) {
       return res.json({
@@ -169,7 +171,26 @@ router.post('/getProfesoresNombre', (req, res, next) => {
   })
 });
 
-//////////////////////////////////
+router.post('/getProfesoresNombreByGroup', (req, res, next) => {
+  let nivel = req.body.nivel;
+  let grado = req.body.grado;
+  let grupo = req.body.grupo;
+
+  Profesor.profesoresClase(nivel, grado, grupo, (err, profesores) => {
+    if (err) throw err;
+    if (profesores.length > 0) {
+      return res.json({
+        success: true,
+        profesores
+      });
+    } else {
+      return res.json({
+        success: false,
+        msg: 'No existe ningun profesor con clases en ese grupo'
+      });
+    }
+  })
+});
 
 router.post('/addClase', (req, res, next) => {
   let matricula = req.body.matricula;
@@ -252,6 +273,21 @@ router.post('/deleteClase', (req, res, next) => {
   });
 });
 
-
+router.post('/getAllProfesores', (req, res, next) => {
+  Profesor.getAllProfesores((err, profesores) => {
+    if (err) throw err;
+    if (!profesores) {
+      return res.json({
+        success: false,
+        msg: 'No hay profesores'
+      });
+    } else {
+      return res.json({
+        success: true,
+        profesores
+      });
+    }
+  });
+});
 
 module.exports = router;

@@ -53,5 +53,9 @@ module.exports.comparePassword = function(candidatePassword, hash, callback) {
 }
 
 module.exports.getAllAdmins = function(callback) {
-  Admin.find(callback);
+  Admin.find({}, null, {
+    sort: {
+      username: 1
+    }
+  }, callback);
 }

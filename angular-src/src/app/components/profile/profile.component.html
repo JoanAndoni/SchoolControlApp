@@ -102,7 +102,7 @@
 
       <div class="form-group row">
         <div class="col-sm-12" *ngIf="allCorrect()">
-          <button type="submit" (click)="eliminarAdmin()" class="btn btn-danger btn-md btn-block">Confirmar</button>
+          <button type="submit" (click)="eliminarAdmin(user.username)" class="btn btn-danger btn-md btn-block">Confirmar</button>
         </div>
       </div>
     </form>

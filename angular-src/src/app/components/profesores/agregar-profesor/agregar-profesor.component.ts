@@ -54,10 +54,18 @@ export class AgregarProfesorComponent implements OnInit {
       this.authService.registerProfesor(profesor).subscribe(data => {
         if (data.success) {
           this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
-          // this.router.navigate(['/login']);
+          this.matricula = null;
+          this.nombre = null;
+          this.paterno = null;
+          this.materno = null;
+          this.posicion = null;
+          this.telefono = null;
+          this.correo = null;
+          this.password = null;
+          this.passwordConfirmation = null;
+          this.router.navigate(['/profesores']);
         } else {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-          // this.router.navigate(['/profesores']);
         }
       });
     }

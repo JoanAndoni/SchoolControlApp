@@ -5,27 +5,35 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const Admin = require('../models/admin');
 
-//Register a user
+
 router.post('/register', (req, res, next) => {
-  // Create a new user with the information that they subscribed
   let newAdmin = new Admin({
     username: req.body.username,
     password: req.body.password
   });
 
-  // Add the user to the db
-  Admin.addAdmin(newAdmin, (err, user) => {
-    // Return the success state as false if it couldn't be registered
-    if (err) {
+  const username = req.body.username;
+
+  Admin.getAdminByUsername(username, (err, user) => {
+    if (user) {
       res.json({
         success: false,
-        msg: 'No se ha podido crear el administrador'
+        msg: 'Ya existe un administrador con ese username'
       });
-      // Return the success state as true if it could be registered
     } else {
-      res.json({
-        success: true,
-        msg: 'El administrador se creo exitosamente'
+      // Add the user to the db
+      Admin.addAdmin(newAdmin, (err, user) => {
+        if (err) {
+          res.json({
+            success: false,
+            msg: 'No se ha podido crear el administrador'
+          });
+        } else {
+          res.json({
+            success: true,
+            msg: 'El administrador se creo exitosamente'
+          });
+        }
       });
     }
   });

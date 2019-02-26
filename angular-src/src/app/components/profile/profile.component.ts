@@ -50,7 +50,6 @@ export class ProfileComponent implements OnInit {
       this.authService.getProfileAdmin().subscribe(profile => {
         this.user = profile.admin;
         this.typeUser = 2;
-        console.log(this.user);
       },
         err => {
           console.log(err);
@@ -62,9 +61,26 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  eliminarAdmin() {
-    this.flashMessage.show("Administrador eliminado", { cssClass: 'alert-danger', timeout: 3000 });
-    // this.router.navigate(['/login']);
+  eliminarAdmin(username) {
+    const eliminar = {
+      username: username,
+      password: this.adminPassword
+    }
+    this.authService.deleteAdmin(eliminar).subscribe(data => {
+      console.log(data)
+      if (data.success) {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+        this.authService.logout();
+        this.router.navigate(['/login']);
+      } else {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+        this.router.navigate(['/profile']);
+      }
+    },
+      err => {
+        console.log(err);
+        return false;
+      });
   }
 
   allCorrect() {

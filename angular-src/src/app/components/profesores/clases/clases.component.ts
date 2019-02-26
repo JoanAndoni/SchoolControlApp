@@ -79,7 +79,7 @@ export class ClasesComponent implements OnInit {
         } else {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
         }
-        this.router.navigate(['/profesores']);
+        this.ngOnInit();
       });
     } else {
       this.router.navigate(['/profesores']);
@@ -94,12 +94,11 @@ export class ClasesComponent implements OnInit {
       }
       this.authService.deleteClaseProfesor(clase).subscribe(data => {
         if (data.success) {
-          this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-          this.router.navigate(['/profesores']);
+          this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
         } else {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-          this.router.navigate(['/profesores']);
         }
+        this.ngOnInit();
       });
     } else {
       this.router.navigate(['/profesores']);

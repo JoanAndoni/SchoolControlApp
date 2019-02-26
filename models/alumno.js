@@ -95,7 +95,25 @@ module.exports.getAlumnosByNombre = function(nombre, callback) {
   const query = {
     nombre: nombre
   }
-  Alumno.find(query, callback);
+  Alumno.find(query, null, {
+    sort: {
+      paterno: 1
+    }
+  }, callback);
+}
+
+module.exports.alumnosClase = function(nivel, grado, grupo, callback) {
+  const query = {
+    nivel: nivel,
+    grado: grado,
+    grupo: grupo
+  }
+
+  Alumno.find(query, null, {
+    sort: {
+      nombre: 1
+    }
+  }, callback);
 }
 
 module.exports.addAlumno = function(newAlumno, callback) {
@@ -217,6 +235,19 @@ module.exports.deleteComentario = function(matricula, titulo, callback) {
   Alumno.updateOne(query, callback);
 }
 
+module.exports.editComentario = function(matricula, titulo, texto, callback) {
+  Alumno.updateOne({
+    matricula: matricula,
+    "comentarios.titulo": titulo
+  }, {
+    $set: {
+      "comentarios.$.texto": texto
+    }
+  }, callback);
+}
+
+// db.alumnos.updateOne({matricula:'S201', comentarios:{titulo:'Joan Andoni'}},{$set: {comentarios.$.texto:'Nuevo texto on edit'}})
+
 module.exports.getAlumnosByGrupo = function(nivel, grado, grupo, nombreMateria, profesor, callback) {
   const query = {
     nivel: nivel,
@@ -229,5 +260,9 @@ module.exports.getAlumnosByGrupo = function(nivel, grado, grupo, nombreMateria, 
       }
     }
   }
-  Alumno.find(query, callback);
+  Alumno.find(query, null, {
+    sort: {
+      nombre: 1
+    }
+  }, callback);
 }

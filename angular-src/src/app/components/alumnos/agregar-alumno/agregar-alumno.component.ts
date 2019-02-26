@@ -57,10 +57,19 @@ export class AgregarAlumnoComponent implements OnInit {
       this.authService.registerAlumno(alumno).subscribe(data => {
         if (data.success) {
           this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
-          // this.router.navigate(['/login']);
+          this.matricula = null;
+          this.curp = null;
+          this.nombre = null;
+          this.paterno = null;
+          this.materno = null;
+          this.nivel = null;
+          this.grado = null;
+          this.grupo = null;
+          this.fechaNacimiento = null;
+          this.password = null;
+          this.passwordConfirmation = null;
         } else {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-          // this.router.navigate(['/alumnos']);
         }
       });
     }

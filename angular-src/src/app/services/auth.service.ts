@@ -72,6 +72,13 @@ export class AuthService {
   buscarAlumnosGrupo(grupo) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/alumnos/getAlumnosClase', grupo, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  buscarAlumnosGrupoRaw(grupo) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/alumnos/getAlumnosGrupo', grupo, { headers: headers })
       .pipe(map(res => res.json()));
   }
@@ -96,6 +103,34 @@ export class AuthService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/alumnos/addComentario', comentario, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  editarComentario(comentario) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/alumnos/editComentario', comentario, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  agregarMateria(materia) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/alumnos/addMateria', materia, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  cambiarCalificaciones(calificaciones) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/alumnos/updateCalificaciones', calificaciones, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  eliminarMateria(materia) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/alumnos/deleteMateria', materia, { headers: headers })
       .pipe(map(res => res.json()));
   }
 
@@ -154,6 +189,20 @@ export class AuthService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/profesores/getProfesoresNombre', profesor, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  getAllProfesores() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/profesores/getAllProfesores', { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  getProfesoresGrupo(grupo) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/profesores/getProfesoresNombreByGroup', grupo, { headers: headers })
       .pipe(map(res => res.json()));
   }
 
@@ -229,6 +278,13 @@ export class AuthService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/admin/getAdmins', { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  deleteAdmin(admin) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/admin/delete', admin, { headers: headers })
       .pipe(map(res => res.json()));
   }
 
