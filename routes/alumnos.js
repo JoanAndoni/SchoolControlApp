@@ -97,6 +97,46 @@ router.post('/authenticate', (req, res, next) => {
   });
 });
 
+router.post('/editPassword', (req, res, next) => {
+  let matricula = req.body.matricula;
+  let password = req.body.password;
+  let newPassword = req.body.newPassword;
+
+  Alumno.getAlumnoByMatricula(matricula, (err, alumno) => {
+    if (err) throw err;
+    if (!alumno) {
+      return res.json({
+        success: false,
+        msg: 'No se encontro un alumno con esa matricula'
+      });
+    }
+    Alumno.comparePassword(password, alumno.password, (err, isMatch) => {
+      if (err) throw err;
+      if (isMatch) {
+        Alumno.editPassword(matricula, newPassword, (err, editado) => {
+          if (err) throw err;
+          if (!editado) {
+            return res.json({
+              success: false,
+              msg: 'No se pudo editar la contraseña del alumno'
+            });
+          } else {
+            return res.json({
+              success: true,
+              msg: 'Se ha editado la contraseña correctamente'
+            });
+          }
+        })
+      } else {
+        return res.json({
+          success: false,
+          msg: 'Contraseña incorrecta'
+        });
+      }
+    });
+  });
+});
+
 router.get('/profile', passport.authenticate('jwt', {
   session: false
 }), (req, res, next) => {
@@ -218,6 +258,36 @@ router.post('/delete', (req, res, next) => {
         res.json({
           success: true,
           msg: 'Alumno eliminado exitosamente'
+        });
+      }
+    });
+  });
+});
+
+router.post('/updateGrupo', (req, res, next) => {
+  let matricula = req.body.matricula;
+  let nivel = req.body.nivel;
+  let grado = req.body.grado;
+  let grupo = req.body.grupo;
+
+  Alumno.getAlumnoByMatricula(matricula, (err, alumno) => {
+    if (err) throw err;
+    if (!alumno) {
+      return res.json({
+        success: false,
+        msg: 'No se encontro al alumno'
+      });
+    }
+    Alumno.editGrupoAlumno(matricula, nivel, grado, grupo, (err, req) => {
+      if (err) {
+        res.json({
+          success: false,
+          msg: 'No se pudo editar el grupo del alumno'
+        });
+      } else {
+        res.json({
+          success: true,
+          msg: 'El grupo del alumno se ha editado exitosamente'
         });
       }
     });

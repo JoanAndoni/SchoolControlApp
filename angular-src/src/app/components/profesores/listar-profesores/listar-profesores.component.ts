@@ -32,7 +32,6 @@ export class ListarProfesoresComponent implements OnInit {
     this.authService.getAllProfesores().subscribe(data => {
       if (data.profesores.length > 0) {
         this.profesores = data.profesores;
-        console.log(this.profesores);
       }
     });
   }

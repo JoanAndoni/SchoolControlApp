@@ -128,7 +128,7 @@ module.exports.addAlumno = function(newAlumno, callback) {
 
 module.exports.comparePassword = function(candidatePassword, hash, callback) {
   bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
-    if (err) throw err;
+    if (err) console.log(err);
     callback(null, isMatch);
   });
 }
@@ -246,8 +246,6 @@ module.exports.editComentario = function(matricula, titulo, texto, callback) {
   }, callback);
 }
 
-// db.alumnos.updateOne({matricula:'S201', comentarios:{titulo:'Joan Andoni'}},{$set: {comentarios.$.texto:'Nuevo texto on edit'}})
-
 module.exports.getAlumnosByGrupo = function(nivel, grado, grupo, nombreMateria, profesor, callback) {
   const query = {
     nivel: nivel,
@@ -265,4 +263,31 @@ module.exports.getAlumnosByGrupo = function(nivel, grado, grupo, nombreMateria, 
       nombre: 1
     }
   }, callback);
+}
+
+module.exports.editPassword = function(matricula, newPassword, callback) {
+  bcrypt.genSalt(10, (err, salt) => {
+    bcrypt.hash(newPassword, salt, (err, hash) => {
+      if (err) console.log(err);
+      const query = {
+        matricula: matricula,
+      }
+      Alumno.updateOne(query, {
+        password: hash
+      }, callback);
+    });
+  });
+}
+
+module.exports.editGrupoAlumno = function(matricula, nivel, grado, grupo, callback) {
+  const query = {
+    matricula: matricula,
+  }
+
+  Alumno.updateOne(query, {
+    nivel: nivel,
+    grado: grado,
+    grupo: grupo
+  }, callback);
+
 }

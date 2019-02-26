@@ -76,6 +76,13 @@ export class AuthService {
       .pipe(map(res => res.json()));
   }
 
+  editarGrupo(grupo) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/alumnos/updateGrupo', grupo, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
   buscarAlumnosGrupoRaw(grupo) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -87,6 +94,13 @@ export class AuthService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/alumnos/delete', alumno, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  editarPasswordAlumno(alumno) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/alumnos/editPassword', alumno, { headers: headers })
       .pipe(map(res => res.json()));
   }
 
@@ -178,6 +192,13 @@ export class AuthService {
       return !this.jwtHelper.isTokenExpired();
   }
 
+  editarPasswordProfesor(profesor) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/profesores/editPassword', profesor, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
   buscarProfesorMatricula(profesor) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -257,6 +278,13 @@ export class AuthService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/admin/authenticate', admin, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  editarPasswordAdmin(admin) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/admin/editPassword', admin, { headers: headers })
       .pipe(map(res => res.json()));
   }
 

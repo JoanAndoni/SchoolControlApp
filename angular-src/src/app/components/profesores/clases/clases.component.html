@@ -1,9 +1,9 @@
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
   <h1>Clases de {{profesor?.nombre}} {{profesor?.materno}} {{profesor?.paterno}}</h1>
   <hr class="featurette-divider">
-  <div class="card-deck mb-3 text-center">
+  <div class="card-deck mb-3 text-center justify-content-around">
 
-    <div *ngFor="let clase of profesor?.clases; let i = index" class="card mb-4 shadow-sm">
+    <div *ngFor="let clase of profesor?.clases; let i = index" class="card mb-4 shadow-sm" style="min-width: 350px; max-width: 350px">
       <div class="card-header">
         <h3 class="my-0 font-weight-normal">{{clase.nombreClase}}</h3>
       </div>
@@ -13,7 +13,7 @@
           <li>{{clase.nivel}}</li>
         </ul>
         <button (click)="saveGrupoAlumnos(clase.nivel, clase.grado, clase.grupo, clase.nombreClase, profesor.nombre)" type="button" class="btn btn-outline-info btn-md btn-block">Ver grupo</button>
-        <button *ngIf="this.authService.adminLoggedIn()" (click)="deleteClase(clase.nombreClase)" type="button" class="btn btn-outline-danger btn-md btn-block">Eliminar grupo</button>
+        <button *ngIf="this.authService.adminLoggedIn()" (click)="deleteClase(clase.nombreClase, clase.nivel, clase.grado, clase.grupo)" type="button" class="btn btn-outline-danger btn-md btn-block">Eliminar grupo</button>
       </div>
     </div>
 
@@ -36,9 +36,11 @@
             <label class="col-md-12 p-2 col-form-label">Nivel</label>
             <div class="form-group row">
               <div class="col-sm-12">
-                <input type="radio" value="Preescolar" name="nivel" [(ngModel)]="nivel" required> Preescolar
-                <input type="radio" value="Primaria" name="nivel" [(ngModel)]="nivel" required> Primaria
-                <input type="radio" value="Secundaria" name="nivel" [(ngModel)]="nivel" required> Secundaria
+                <select class="form-control" name="nivel" [(ngModel)]="nivel" placeholder="Grado . .">
+                  <option value="Preescolar">Preescolar</option>
+                  <option value="Primaria">Primaria</option>
+                  <option value="Secundaria">Secundaria</option>
+                </select>
               </div>
             </div>
             <label class="col-md-12 p-2 col-form-label">Grado</label>
@@ -57,7 +59,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button *ngIf="nombreClase && nivel && grado && grupo" type="button" (click)="addClase()" class="btn btn-primary">Agregar</button>
+        <button *ngIf="nombreClase && nivel && grado && grupo" type="button" (click)="addClase()" class="btn btn-outline-info">Agregar</button>
       </div>
     </div>
   </div>

@@ -13,14 +13,12 @@ const AdminSchema = mongoose.Schema({
   }
 });
 
-// Create user / Use this from outside / Send it to the mongoDB
 const Admin = module.exports = mongoose.model('Admin', AdminSchema);
 
 module.exports.getAdminById = function(id, callback) {
   Admin.findById(id, callback);
 }
 
-// Make the query and bring one user by the username from the DB
 module.exports.getAdminByUsername = function(username, callback) {
   const query = {
     username: username
@@ -31,9 +29,23 @@ module.exports.getAdminByUsername = function(username, callback) {
 module.exports.addAdmin = function(admin, callback) {
   bcrypt.genSalt(10, (err, salt) => {
     bcrypt.hash(admin.password, salt, (err, hash) => {
-      if (err) throw err;
+      if (err) console.log(err);
       admin.password = hash;
       admin.save(callback);
+    });
+  });
+}
+
+module.exports.editPassword = function(username, newPassword, callback) {
+  bcrypt.genSalt(10, (err, salt) => {
+    bcrypt.hash(newPassword, salt, (err, hash) => {
+      if (err) console.log(err);
+      const query = {
+        username: username,
+      }
+      Admin.updateOne(query, {
+        password: hash
+      }, callback);
     });
   });
 }

@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
           cssClass: 'alert-success',
           timeout: 5000
         });
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/']);
       } else {
         this.authService.authenticateProfesor(alumnoprofesor).subscribe(data => {
           if (data.success) {
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
               cssClass: 'alert-success',
               timeout: 5000
             });
-            this.router.navigate(['/dashboard']);
+            this.router.navigate(['/']);
           } else {
             this.authService.authenticateAdmin(admin).subscribe(data => {
               if (data.success) {
@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
                   cssClass: 'alert-success',
                   timeout: 5000
                 });
-                this.router.navigate(['/dashboard']);
+                this.router.navigate(['/']);
               } else {
                 this.flashMessage.show("Los campos son incorrectos", {
                   cssClass: 'alert-danger',

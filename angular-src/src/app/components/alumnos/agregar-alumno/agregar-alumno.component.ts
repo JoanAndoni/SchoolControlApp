@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 // Import of the services
 // import { ValidateService } from '../../../services/validate.service';

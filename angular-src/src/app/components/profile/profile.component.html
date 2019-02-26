@@ -89,20 +89,71 @@
       <div class="form-group row">
         <label class="col-sm-5 p-3 col-form-label">Contraseña</label>
         <div class="col-sm-7">
-          <input type="text" class="form-control" name="adminPassword" [(ngModel)]="adminPassword" placeholder="Contraseña . ." [ngModelOptions]="{standalone: true}">
+          <input type="password" class="form-control" name="adminPassword" [(ngModel)]="adminPassword" placeholder="Contraseña . ." [ngModelOptions]="{standalone: true}">
         </div>
       </div>
 
       <div class="form-group row">
         <label class="col-sm-5 p-3 col-form-label">Confirmación de contraseña</label>
         <div class="col-sm-7">
-          <input type="text" class="form-control" name="adminPasswordConfirmation" [(ngModel)]="adminPasswordConfirmation" placeholder="Confirmación de contraseña . ." [ngModelOptions]="{standalone: true}">
+          <input type="password" class="form-control" name="adminPasswordConfirmation" [(ngModel)]="adminPasswordConfirmation" placeholder="Confirmación de contraseña . ." [ngModelOptions]="{standalone: true}">
         </div>
       </div>
 
       <div class="form-group row">
         <div class="col-sm-12" *ngIf="allCorrect()">
           <button type="submit" (click)="eliminarAdmin(user.username)" class="btn btn-danger btn-md btn-block">Confirmar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-8 p-lg-5 mx-auto my-6">
+    <h5 class="page-header">Cambiar contraseña</h5>
+    <hr class="featurette-divider">
+    <p>Al hacer esto cambiaras de la contraseña asignada por los administradores.</p>
+    <form>
+      <div class="form-group row">
+        <div class="col-sm-5">
+          <label class="col-sm-12 col-form-label">Ingresa el siguiente texto: </label>
+          <small id="passwordHelpBlock" class="form-text text-muted">"Acepto cambiar mi contraseña"</small>
+        </div>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" name="textoConfirmacionPassword" [(ngModel)]="textoConfirmacionPassword" placeholder="Texto . ." [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-5 p-3 col-form-label">Contraseña</label>
+        <div class="col-sm-7">
+          <input type="password" class="form-control" name="password" [(ngModel)]="password" placeholder="Contraseña . ." [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-5 p-3 col-form-label">Confirmación de contraseña</label>
+        <div class="col-sm-7">
+          <input type="password" class="form-control" name="passwordConfirmation" [(ngModel)]="passwordConfirmation" placeholder="Confirmación de contraseña . ." [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-5 p-3 col-form-label">Contraseña nueva</label>
+        <div class="col-sm-7">
+          <input type="password" class="form-control" name="passwordNew" [(ngModel)]="passwordNew" placeholder="Contraseña nueva . ." [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-5 p-3 col-form-label">Confirmación de contraseña nueva</label>
+        <div class="col-sm-7">
+          <input type="password" class="form-control" name="passwordNewConfirmacion" [(ngModel)]="passwordNewConfirmacion" placeholder="Contraseña nueva confirmación . ." [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-12" *ngIf="allCorrectChangePassword()">
+          <button type="submit" (click)="cambiarPassword()" class="btn btn-warning btn-md btn-block">Confirmar</button>
         </div>
       </div>
     </form>

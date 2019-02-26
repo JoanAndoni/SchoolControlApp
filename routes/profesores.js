@@ -90,6 +90,46 @@ router.post('/authenticate', (req, res, next) => {
   });
 });
 
+router.post('/editPassword', (req, res, next) => {
+  let matricula = req.body.matricula;
+  let password = req.body.password;
+  let newPassword = req.body.newPassword;
+
+  Profesor.getProfesorByMatricula(matricula, (err, profesor) => {
+    if (err) throw err;
+    if (!profesor) {
+      return res.json({
+        success: false,
+        msg: 'No se encontro un profesor con esa matricula'
+      });
+    }
+    Profesor.comparePassword(password, profesor.password, (err, isMatch) => {
+      if (err) throw err;
+      if (isMatch) {
+        Profesor.editPassword(matricula, newPassword, (err, editado) => {
+          if (err) throw err;
+          if (!editado) {
+            return res.json({
+              success: false,
+              msg: 'No se pudo editar la contraseña del profesor'
+            });
+          } else {
+            return res.json({
+              success: true,
+              msg: 'Se ha editado la contraseña correctamente'
+            });
+          }
+        })
+      } else {
+        return res.json({
+          success: false,
+          msg: 'Contraseña incorrecta'
+        });
+      }
+    });
+  });
+});
+
 router.get('/profile', passport.authenticate('jwt', {
   session: false
 }), (req, res, next) => {
@@ -207,7 +247,7 @@ router.post('/addClase', (req, res, next) => {
         msg: 'No se encontro al profesor'
       });
     } else {
-      Profesor.claseExist(matricula, nombreClase, (err, clase) => {
+      Profesor.claseExistGrupo(matricula, nombreClase, nivel, grado, grupo, (err, clase) => {
         if (err) throw err;
         if (!clase) {
           Profesor.addClase(matricula, nombreClase, nivel, grado, grupo, (err, clase) => {
@@ -226,7 +266,7 @@ router.post('/addClase', (req, res, next) => {
         } else {
           res.json({
             success: false,
-            msg: 'La clase con ese nombre ya existe en el profesor'
+            msg: 'La clase ya existe en el profesor'
           });
         }
       });
@@ -237,6 +277,9 @@ router.post('/addClase', (req, res, next) => {
 router.post('/deleteClase', (req, res, next) => {
   let matricula = req.body.matricula;
   let nombreClase = req.body.nombreClase;
+  let nivel = req.body.nivel;
+  let grado = req.body.grado;
+  let grupo = req.body.grupo;
 
   Profesor.getProfesorByMatricula(matricula, (err, profesor) => {
     if (err) throw err;
@@ -254,7 +297,7 @@ router.post('/deleteClase', (req, res, next) => {
             msg: 'La clase no existe en el profesor'
           });
         } else {
-          Profesor.deleteClase(matricula, nombreClase, (err, clase) => {
+          Profesor.deleteClase(matricula, nombreClase, nivel, grado, grupo, (err, clase) => {
             if (err) {
               res.json({
                 success: false,

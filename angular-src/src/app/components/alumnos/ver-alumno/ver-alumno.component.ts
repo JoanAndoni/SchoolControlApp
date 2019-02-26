@@ -31,6 +31,12 @@ export class VerAlumnoComponent implements OnInit {
 
   nombreMateriaDelete: String;
 
+  niveles: String[] = ["Preescolar", "Primaria", "Secundaria"];
+
+  nivel: String;
+  grado: String;
+  grupo: String;
+
   constructor(
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
@@ -197,16 +203,37 @@ export class VerAlumnoComponent implements OnInit {
       this.authService.eliminarComentario(comentario).subscribe(data => {
         if (data.success) {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-          // this.router.navigate(['/alumnos']);
         } else {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-          // this.router.navigate(['/alumnos']);
         }
         this.ngOnInit();
       });
     } else {
       this.router.navigate(['/alumnos']);
     }
+  }
 
+  editarGrupoAlumno() {
+    if (this.authService.adminLoggedIn()) {
+      const grupo = {
+        matricula: this.matricula,
+        nivel: this.nivel,
+        grado: this.grado,
+        grupo: this.grupo
+      }
+      this.authService.editarGrupo(grupo).subscribe(data => {
+        if (data.success) {
+          this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+          this.nivel = null;
+          this.grado = null;
+          this.grupo = null;
+        } else {
+          this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+        }
+        this.ngOnInit();
+      });
+    } else {
+      this.router.navigate(['/alumnos']);
+    }
   }
 }

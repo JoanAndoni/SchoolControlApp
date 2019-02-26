@@ -39,6 +39,46 @@ router.post('/register', (req, res, next) => {
   });
 });
 
+router.post('/editPassword', (req, res, next) => {
+  let username = req.body.username;
+  let password = req.body.password;
+  let newPassword = req.body.newPassword;
+
+  Admin.getAdminByUsername(username, (err, admin) => {
+    if (err) throw err;
+    if (!admin) {
+      return res.json({
+        success: false,
+        msg: 'No se encontro un administrador con ese nombre de usuario'
+      });
+    }
+    Admin.comparePassword(password, admin.password, (err, isMatch) => {
+      if (err) throw err;
+      if (isMatch) {
+        Admin.editPassword(username, newPassword, (err, editado) => {
+          if (err) throw err;
+          if (!editado) {
+            return res.json({
+              success: false,
+              msg: 'No se pudo editar la contraseña del administrador'
+            });
+          } else {
+            return res.json({
+              success: true,
+              msg: 'Se ha editado la contraseña correctamente'
+            });
+          }
+        })
+      } else {
+        return res.json({
+          success: false,
+          msg: 'Contraseña incorrecta'
+        });
+      }
+    });
+  });
+});
+
 router.post('/authenticate', (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;

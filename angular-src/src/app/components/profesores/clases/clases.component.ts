@@ -32,7 +32,6 @@ export class ClasesComponent implements OnInit {
     if (this.authService.profesorLoggedIn()) {
       this.authService.getProfileProfesor().subscribe(profile => {
         this.profesor = profile.profesor;
-        // console.log(this.profesor);
       });
     } else if (this.authService.adminLoggedIn()) {
       this.matricula = this.authService.getMatricualVerProfesor();
@@ -76,6 +75,11 @@ export class ClasesComponent implements OnInit {
       this.authService.addClaseProfesor(clase).subscribe(data => {
         if (data.success) {
           this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+          this.matricula = null;
+          this.nombreClase = null;
+          this.nivel = null;
+          this.grado = null;
+          this.grupo = null;
         } else {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
         }
@@ -86,11 +90,14 @@ export class ClasesComponent implements OnInit {
     }
   }
 
-  deleteClase(nombreClase) {
+  deleteClase(nombreClase, nivel, grado, grupo) {
     if (this.authService.adminLoggedIn()) {
       const clase = {
         matricula: this.matricula,
-        nombreClase: nombreClase
+        nombreClase: nombreClase,
+        nivel: nivel,
+        grado: grado,
+        grupo: grupo
       }
       this.authService.deleteClaseProfesor(clase).subscribe(data => {
         if (data.success) {

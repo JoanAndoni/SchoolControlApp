@@ -1,23 +1,22 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <button class=" navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand">Colegio 123</a>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-    <ul class="navbar-nav mr-auto ">
-      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/']">Principal</a></li>
-      <li *ngIf="authService.alumnoLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/verAlumno']">Calificaciones</a></li>
-      <li *ngIf="authService.profesorLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/clases']">Clases</a></li>
-      <li *ngIf="authService.adminLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/alumnos']">Alumnos</a></li>
-      <li *ngIf="authService.adminLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/profesores']">Profesores</a></li>
-      <li *ngIf="authService.adminLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/admins']">Administradores</a></li>
-    </ul>
-    <ul class=" navbar-nav mt-auto">
-      <li *ngIf="authService.adminLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a></li>
-      <li *ngIf="authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/profile']">Perfil</a></li>
-
-      <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/login']">Ingresar</a></li>
-      <li *ngIf="authService.loggedIn()" class="nav-item"><a class="nav-link" (click)="onLogoutClick()" href="#">Salir</a></li>
-    </ul>
-  </div>
+  <a class="navbar-brand">Colegio Example</a>
+  <ul class="navbar-nav mr-auto p-2">
+    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/']">Principal</a></li>
+    <li *ngIf="authService.alumnoLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/verAlumno']">Calificaciones</a></li>
+    <li *ngIf="authService.profesorLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/clases']">Clases</a></li>
+    <li ngbDropdown *ngIf="authService.adminLoggedIn()" class="nav-item dropdown show">
+      <a ngbDropdownToggle class="nav-link dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;" role="button" aria-haspopup="true" aria-expanded="true">Administración</a>
+      <div ngbDropdownMenu class="dropdown-menu show" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">
+        <a class="dropdown-item"><a class="nav-link dropdown-item" [routerLink]="['/alumnos']" style="color: black;">Alumnos</a></a>
+        <a class="dropdown-item"><a class="nav-link dropdown-item" [routerLink]="['/profesores']" style="color: black;">Profesores</a></a>
+        <a class="dropdown-item"><a class="nav-link dropdown-item" [routerLink]="['/admins']" style="color: black;">Administradores</a></a>
+      </div>
+    </li>
+  </ul>
+  <ul class="navbar-nav ">
+    <!-- <li *ngIf="authService.adminLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a></li> -->
+    <li *ngIf="authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/profile']">Perfil</a></li>
+    <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/login']">Ingresar</a></li>
+    <li *ngIf="authService.loggedIn()" class="nav-item"><a class="nav-link" (click)="onLogoutClick()" href="#">Salir</a></li>
+  </ul>
 </nav>

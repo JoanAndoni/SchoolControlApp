@@ -83,6 +83,20 @@ module.exports.getProfesoresByNombre = function(nombre, callback) {
   }, callback);
 }
 
+module.exports.editPassword = function(matricula, newPassword, callback) {
+  bcrypt.genSalt(10, (err, salt) => {
+    bcrypt.hash(newPassword, salt, (err, hash) => {
+      if (err) console.log(err);
+      const query = {
+        matricula: matricula,
+      }
+      Profesor.updateOne(query, {
+        password: hash
+      }, callback);
+    });
+  });
+}
+
 module.exports.addProfesor = function(newProfesor, callback) {
   bcrypt.genSalt(10, (err, salt) => {
     bcrypt.hash(newProfesor.password, salt, (err, hash) => {
@@ -137,14 +151,32 @@ module.exports.claseExist = function(matricula, nombreClase, callback) {
   Profesor.findOne(query, callback);
 }
 
-module.exports.deleteClase = function(matricula, nombreClase, callback) {
+module.exports.claseExistGrupo = function(matricula, nombreClase, nivel, grado, grupo, callback) {
+  const query = {
+    matricula: matricula,
+    clases: {
+      $elemMatch: {
+        nombreClase: nombreClase,
+        nivel: nivel,
+        grado: grado,
+        grupo: grupo
+      }
+    }
+  }
+  Profesor.findOne(query, callback);
+}
+
+module.exports.deleteClase = function(matricula, nombreClase, nivel, grado, grupo, callback) {
   const filter = {
     matricula: matricula
   }
   const update = {
     $pull: {
       clases: {
-        nombreClase: nombreClase
+        nombreClase: nombreClase,
+        nivel: nivel,
+        grado: grado,
+        grupo: grupo
       }
     }
   }

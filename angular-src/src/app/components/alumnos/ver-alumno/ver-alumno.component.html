@@ -1,5 +1,33 @@
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
   <h1>Calificaciones de {{alumno?.nombre}} {{alumno?.materno}} {{alumno?.paterno}}</h1>
+  <h5 class="m-3">{{alumno?.nivel}} {{alumno?.grado}}° "{{alumno?.grupo}}"</h5>
+  <hr class="featurette-divider">
+
+  <div *ngIf="this.authService.adminLoggedIn()">
+    <div class="row justify-content-around text-center">
+      <div class="form-group row justify-content-center">
+        <label class="col-md-1 p-2 col-form-label">Nivel</label>
+        <div class="col-md-3">
+          <select class="form-control" name="nivel" [(ngModel)]="nivel">
+            <option *ngFor="let nivel of niveles" [value]="nivel">{{nivel}}</option>
+          </select>
+        </div>
+        <label class="col-md-1 p-2 col-form-label">Grado</label>
+        <div class="col-md-3">
+          <input type="number" class="form-control" name="grado" [(ngModel)]="grado" placeholder="Grado . ." [ngModelOptions]="{standalone: true}">
+        </div>
+        <label class="col-md-1 p-2 col-form-label">Grupo</label>
+        <div class="col-md-3">
+          <input type="text" class="form-control" name="grupo" [(ngModel)]="grupo" placeholder="Grupo . ." [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <small id="emailHelp" class="form-text text-muted">Al editar el grupo del alumno se tendran que editar las clases correspondientes</small>
+      <button type="button" (click)="editarGrupoAlumno()" class="btn btn-outline-info">Editar grupo </button>
+    </div>
+  </div>
+
   <div class="table-responsive">
     <table class="table table-striped table-sm">
       <thead>
