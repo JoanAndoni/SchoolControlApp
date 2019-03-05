@@ -103,7 +103,8 @@ router.post('/authenticate', (req, res, next) => {
           token: 'JWT ' + token,
           admin: {
             id: admin._id,
-            username: admin.username
+            username: admin.username,
+            comentarios: admin.comentarios
           }
         });
       } else {
@@ -177,6 +178,69 @@ router.post('/getAdmins', (req, res, next) => {
       return res.json({
         success: true,
         admins
+      });
+    }
+  });
+});
+
+router.post('/addComentario', (req, res, next) => {
+  let matricula = req.body.matricula;
+  let profesor = req.body.profesor;
+  let materia = req.body.materia;
+  let fecha = req.body.fecha;
+  let titulo = req.body.titulo;
+  let texto = req.body.texto;
+
+  Admin.comentarioExist(matricula, titulo, (err, comentario) => {
+    if (err) throw err;
+    if (!comentario) {
+      Admin.addComentario(matricula, profesor, materia, fecha, titulo, texto, (err, comentario) => {
+        if (err) {
+          res.json({
+            success: false,
+            msg: 'No se pudo agregar el comentario al alumno'
+          });
+        } else {
+          res.json({
+            success: true,
+            msg: 'El comentario se ha agregado exitosamente'
+          });
+        }
+      });
+    } else {
+      res.json({
+        success: false,
+        msg: 'El comentario con ese titulo ya existe'
+      });
+    }
+  });
+});
+
+
+router.post('/deleteComentario', (req, res, next) => {
+  let matricula = req.body.matricula;
+  let titulo = req.body.titulo;
+
+  Admin.comentarioExist(matricula, titulo, (err, comentario) => {
+    if (err) throw err;
+    if (!comentario) {
+      res.json({
+        success: false,
+        msg: 'El comentario no existe'
+      });
+    } else {
+      Admin.deleteComentario(matricula, titulo, (err, comentario) => {
+        if (err) {
+          res.json({
+            success: false,
+            msg: 'No se pudo eliminar comentario'
+          });
+        } else {
+          res.json({
+            success: true,
+            msg: 'El comentario se ha eliminado'
+          });
+        }
       });
     }
   });

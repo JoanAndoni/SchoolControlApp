@@ -10,7 +10,27 @@ const AdminSchema = mongoose.Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  comentarios: [{
+    matricula: {
+      type: String
+    },
+    profesor: {
+      type: String
+    },
+    materia: {
+      type: String
+    },
+    fecha: {
+      type: String
+    },
+    titulo: {
+      type: String
+    },
+    texto: {
+      type: String
+    }
+  }]
 });
 
 const Admin = module.exports = mongoose.model('Admin', AdminSchema);
@@ -70,4 +90,46 @@ module.exports.getAllAdmins = function(callback) {
       username: 1
     }
   }, callback);
+}
+
+module.exports.addComentario = function(matriculaAlumno, profesor, materia, fecha, titulo, texto, callback) {
+  const comentario = {
+    matricula: matriculaAlumno,
+    profesor: profesor,
+    materia: materia,
+    fecha: fecha,
+    titulo: titulo,
+    texto: texto
+  }
+
+  Admin.updateMany({}, {
+      $push: {
+        comentarios: comentario
+      }
+    },
+    callback);
+}
+
+module.exports.comentarioExist = function(matriculaAlumno, titulo, callback) {
+  const query = {
+    comentarios: {
+      $elemMatch: {
+        matricula: matriculaAlumno,
+        titulo: titulo
+      }
+    }
+  }
+  Admin.findOne(query, callback);
+}
+
+module.exports.deleteComentario = function(matriculaAlumno, titulo, callback) {
+  const query = {
+    $pull: {
+      comentarios: {
+        matricula: matriculaAlumno,
+        titulo: titulo
+      }
+    }
+  }
+  Admin.updateMany(query, callback);
 }
