@@ -4,6 +4,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const Admin = require('../models/admin');
+const Alumno = require('../models/alumno');
 
 
 router.post('/register', (req, res, next) => {
@@ -215,31 +216,38 @@ router.post('/addComentario', (req, res, next) => {
   });
 });
 
-router.post('/editComentario', (req, res, next) => {
+router.post('/addComentario', (req, res, next) => {
   let matricula = req.body.matricula;
+  let profesor = req.body.profesor;
+  let materia = req.body.materia;
   let titulo = req.body.titulo;
   let texto = req.body.texto;
 
-  Admin.comentarioExist(matricula, titulo, (err, comentario) => {
+  Alumno.comentarioExist(matricula, titulo, (err, comentario) => {
     if (err) throw err;
-    if (comentario) {
-      Admin.editComentario(matricula, titulo, texto, (err, comentario) => {
-        if (err) {
-          res.json({
-            success: false,
-            msg: 'No se pudo editar el comentario'
+    if (!comentario) {
+      Admin.comentarioExist(matricula, titulo, (err, comentario) => {
+        if (err) throw err;
+        if (!comentario) {
+          Admin.addComentario(matricula, profesor, materia, titulo, texto, (err, comentario) => {
+            if (err) {
+              res.json({
+                success: false,
+                msg: 'No se pudo agregar el comentario al alumno'
+              });
+            } else {
+              res.json({
+                success: true,
+                msg: 'El comentario se ha mandado a revisar exitosamente'
+              });
+            }
           });
         } else {
           res.json({
-            success: true,
-            msg: 'El comentario se ha editado exitosamente'
+            success: false,
+            msg: 'El comentario con ese titulo ya existe en el alumno'
           });
         }
-      });
-    } else {
-      res.json({
-        success: false,
-        msg: 'El comentario no existe para modificar'
       });
     }
   });
