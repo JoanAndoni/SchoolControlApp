@@ -18,7 +18,6 @@ export class EditarAlumnoComponent implements OnInit {
   matricula: any;
   alumno: any;
   grupo: any;
-  fecha: any;
   titulo: any;
   comentario: any;
   nombreMateria: any;
@@ -36,17 +35,6 @@ export class EditarAlumnoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    var today: any = new Date();
-    var dd: any = today.getDate();
-    var mm: any = today.getMonth() + 1;
-    var yyyy: any = today.getFullYear();
-    if (dd < 10)
-      dd = '0' + dd;
-    if (mm < 10)
-      mm = '0' + mm;
-    today = mm + '/' + dd + '/' + yyyy;
-    this.fecha = today;
-
     this.matricula = this.authService.getMatriculaAlumno();
     this.grupo = this.authService.getGrupo();
     const alumno = {
@@ -83,12 +71,11 @@ export class EditarAlumnoComponent implements OnInit {
       matricula: this.matricula,
       profesor: this.grupo.profesor,
       materia: this.grupo.nombreMateria,
-      fecha: this.fecha,
       titulo: this.titulo,
       texto: this.comentario
     }
 
-    this.authService.agregarComentario(comentario).subscribe(data => {
+    this.authService.agregarAdminComentario(comentario).subscribe(data => {
       if (data.success) {
         this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
       } else {

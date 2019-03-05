@@ -12,6 +12,7 @@
         <a class="dropdown-item"><a class="nav-link dropdown-item" [routerLink]="['/admins']" style="color: black;">Administradores</a></a>
       </div>
     </li>
+    <li *ngIf="authService.adminLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/comentarios']">Comentarios</a></li>
   </ul>
   <ul class="navbar-nav ">
     <!-- <li *ngIf="authService.adminLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a></li> -->

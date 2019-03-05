@@ -31,6 +31,7 @@ import { ClasesComponent } from './components/profesores/clases/clases.component
 import { AdminsComponent } from './components/admins/admins.component';
 import { ListarAdminsComponent } from './components/admins/listar-admins/listar-admins.component';
 import { AgregarAdminComponent } from './components/admins/agregar-admin/agregar-admin.component';
+import { ListComentariosComponent } from './components/admins/list-comentarios/list-comentarios.component';
 
 // Grupos
 import { VerAlumnosGrupoComponent } from './components/grupos/ver-alumnos-grupo/ver-alumnos-grupo.component';
@@ -63,6 +64,7 @@ const appRoutes: Routes = [
   { path: 'clases', component: ClasesComponent, canActivate: [ProfesorAdminGuard] },
   { path: 'grupo', component: VerAlumnosGrupoComponent, canActivate: [ProfesorAdminGuard] },
   { path: 'admins', component: AdminsComponent, canActivate: [AdminGuard] },
+  { path: 'comentarios', component: ListComentariosComponent, canActivate: [AdminGuard] },
   // Protect the following routes if youre logged in
   { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
@@ -88,7 +90,8 @@ const appRoutes: Routes = [
     ListarAdminsComponent,
     ClasesComponent,
     VerAlumnosGrupoComponent,
-    EditarAlumnoComponent
+    EditarAlumnoComponent,
+    ListComentariosComponent
   ],
   imports: [
     BrowserModule,

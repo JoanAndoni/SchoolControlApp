@@ -190,6 +190,7 @@ export class VerAlumnoComponent implements OnInit {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
       }
       this.ngOnInit();
+      this.comentarioEdit = null;
     });
     this.editComentario = false;
   }

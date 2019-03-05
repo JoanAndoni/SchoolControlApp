@@ -302,6 +302,27 @@ export class AuthService {
       .pipe(map(res => res.json()));
   }
 
+  agregarAdminComentario(comentario) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/admin/addComentario', comentario, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  editarAdminComentario(comentario) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/admin/editComentario', comentario, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  eliminarAdminComentario(comentario) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/admin/deleteComentario', comentario, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
   getAdmins() {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');

@@ -1,0 +1,57 @@
+<div *ngIf="user?.comentarios.length > 0" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+
+  <h1 *ngIf="!editComentario">Comentarios</h1>
+  <h1 *ngIf="editComentario">Editar comentario</h1>
+
+  <div *ngIf="!editComentario">
+    <div *ngFor="let comentario of user?.comentarios; index as i" class="overflow-hidden position-relative p-4 m-md-1 bg-light">
+      <div class="row">
+        <div class="col-md-12 pull-left text-left">
+          <div class="d-flex justify-content-between">
+            <h3 class="mb-1">{{ comentario.titulo }}</h3>
+          </div>
+          <h4 class="list-group-item-heading m-1">Alumno: {{ comentario.matricula }}</h4>
+          <h6 class="list-group-item-heading m-1">Profesor: {{ comentario.profesor }}</h6>
+          <h6 class="list-group-item-heading m-1">Materia: {{ comentario.materia }}</h6>
+          <div class="row">
+            <div class="col-md-12">
+              <p class="m-2">{{ comentario.texto }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="this.authService.adminLoggedIn()" class="modal-footer">
+        <button type="button" (click)="eliminarComentario(comentario.matricula, comentario.titulo)" class="btn btn-outline-danger btn-md m-2">No autorizar</button>
+        <button type="button" (click)="editarComentario(comentario.matricula, comentario.profesor, comentario.materia, comentario.titulo, comentario.texto)" class="btn btn-outline-warning btn-md m-2">Editar</button>
+        <button type="button" (click)="autorizarComentario(comentario.matricula, comentario.profesor, comentario.materia, comentario.titulo, comentario.texto)" class="btn btn-outline-success btn-md m-2">Autorizar</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="editComentario" class="overflow-hidden position-relative p-4 m-md-1 bg-light">
+    <div class="row">
+      <div class="col-md-12 pull-left text-left">
+        <div class="d-flex justify-content-between">
+          <h3 class="mb-1">{{ this.comentarioEdit.titulo }}</h3>
+        </div>
+        <h4 class="list-group-item-heading m-1">Alumno: {{ this.comentarioEdit.matricula }}</h4>
+        <h6 class="list-group-item-heading m-1">Profesor: {{ this.comentarioEdit.profesor }}</h6>
+        <h6 class="list-group-item-heading m-1">Materia: {{ this.comentarioEdit.materia }}</h6>
+        <div class="row">
+          <div class="col-md-12">
+            <textarea class="form-control" name="comentarioTexto" [(ngModel)]="this.comentarioEdit.texto" placeholder="Comentario . ." [ngModelOptions]="{standalone: true}" rows="4"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" (click)="cancelarPost()" class="btn btn-danger">Cancelar</button>
+      <button type="button" (click)="editarPost()" class="btn btn-info">Aceptar</button>
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf="user?.comentarios.length == 0" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <h1>No hay comentarios para revisar</h1>
+</div>

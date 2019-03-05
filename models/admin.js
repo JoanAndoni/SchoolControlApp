@@ -92,12 +92,11 @@ module.exports.getAllAdmins = function(callback) {
   }, callback);
 }
 
-module.exports.addComentario = function(matriculaAlumno, profesor, materia, fecha, titulo, texto, callback) {
+module.exports.addComentario = function(matriculaAlumno, profesor, materia, titulo, texto, callback) {
   const comentario = {
     matricula: matriculaAlumno,
     profesor: profesor,
     materia: materia,
-    fecha: fecha,
     titulo: titulo,
     texto: texto
   }
@@ -120,6 +119,17 @@ module.exports.comentarioExist = function(matriculaAlumno, titulo, callback) {
     }
   }
   Admin.findOne(query, callback);
+}
+
+module.exports.editComentario = function(matricula, titulo, texto, callback) {
+  Admin.updateMany({
+    "comentarios.matricula": matricula,
+    "comentarios.titulo": titulo
+  }, {
+    $set: {
+      "comentarios.$.texto": texto
+    }
+  }, callback);
 }
 
 module.exports.deleteComentario = function(matriculaAlumno, titulo, callback) {
