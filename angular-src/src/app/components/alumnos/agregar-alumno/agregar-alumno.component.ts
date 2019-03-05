@@ -25,6 +25,7 @@ export class AgregarAlumnoComponent implements OnInit {
   grado: String;
   grupo: String;
   fechaNacimiento: String;
+  email: String;
   password: String;
   passwordConfirmation: String;
 
@@ -50,6 +51,7 @@ export class AgregarAlumnoComponent implements OnInit {
       grado: this.grado,
       grupo: this.grupo,
       fechaNacimiento: this.fechaNacimiento,
+      email: this.email,
       password: this.password
     }
 
@@ -66,6 +68,7 @@ export class AgregarAlumnoComponent implements OnInit {
           this.grado = null;
           this.grupo = null;
           this.fechaNacimiento = null;
+          this.email = null;
           this.password = null;
           this.passwordConfirmation = null;
         } else {

@@ -6,6 +6,7 @@ const config = require('../config/database');
 const Alumno = require('../models/alumno');
 
 
+
 router.post('/register', (req, res, next) => {
   let newAlumno = new Alumno({
     permiso: req.body.permiso,
@@ -18,6 +19,7 @@ router.post('/register', (req, res, next) => {
     grado: req.body.grado,
     grupo: req.body.grupo,
     fechaNacimiento: req.body.fechaNacimiento,
+    email: req.body.email,
     password: req.body.password
   });
 
@@ -83,6 +85,7 @@ router.post('/authenticate', (req, res, next) => {
             grado: alumno.grado,
             grupo: alumno.grupo,
             fechaNacimiento: alumno.fechaNacimiento,
+            email: alumno.email,
             materias: alumno.materias,
             comentarios: alumno.comentarios
           }
@@ -162,6 +165,7 @@ router.post('/getAlumno', (req, res, next) => {
           grado: alumno.grado,
           grupo: alumno.grupo,
           fechaNacimiento: alumno.fechaNacimiento,
+          email: alumno.email,
           materias: alumno.materias,
           comentarios: alumno.comentarios
         }
