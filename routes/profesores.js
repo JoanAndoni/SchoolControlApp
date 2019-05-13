@@ -15,7 +15,7 @@ router.post('/register', (req, res, next) => {
     materno: req.body.materno,
     posicion: req.body.posicion,
     telefono: req.body.telefono,
-    correo: req.body.correo,
+    email: req.body.email,
     password: req.body.password
   });
 
@@ -76,7 +76,7 @@ router.post('/authenticate', (req, res, next) => {
             materno: profesor.materno,
             posicion: profesor.posicion,
             telefono: profesor.telefono,
-            correo: profesor.correo,
+            email: profesor.email,
             clases: profesor.clases
           }
         });
@@ -180,7 +180,7 @@ router.post('/getProfesor', (req, res, next) => {
           materno: profesor.materno,
           posicion: profesor.posicion,
           telefono: profesor.telefono,
-          correo: profesor.correo,
+          email: profesor.email,
           clases: profesor.clases
         }
       });

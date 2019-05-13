@@ -45,7 +45,7 @@
           <p class="list-group-item-text m-1">{{ profesor.matricula }}</p>
           <p class="list-group-item-text m-1">{{ profesor.posicion }}</p>
           <p class="list-group-item-text m-1">{{ profesor.telefono }}</p>
-          <p class="list-group-item-text m-1">{{ profesor.correo }}</p>
+          <p class="list-group-item-text m-1">{{ profesor.email }}</p>
         </div>
       </div>
     </div>
@@ -53,7 +53,7 @@
       <br>
       <button type="button" (click)="verProfesor(profesor.matricula)" class="btn btn-outline-info btn-md btn-block">Ver</button>
       <br><br>
-      <button type="button" (click)="eliminarProfesor(profesor.matricula)" class="btn btn-outline-danger btn-md btn-block">Eliminar</button>
+      <button type="button" (click)="eliminarProfesor(profesor.nombre, profesor.paterno, profesor.materno, profesor.matricula)" class="btn btn-outline-danger btn-md btn-block">Eliminar</button>
     </div>
   </div>
 </div>
@@ -74,7 +74,7 @@
           <p class="list-group-item-text m-1">{{ profesor.matricula }}</p>
           <p class="list-group-item-text m-1">{{ profesor.posicion }}</p>
           <p class="list-group-item-text m-1">{{ profesor.telefono }}</p>
-          <p class="list-group-item-text m-1">{{ profesor.correo }}</p>
+          <p class="list-group-item-text m-1">{{ profesor.email }}</p>
         </div>
       </div>
     </div>
@@ -82,7 +82,7 @@
       <br>
       <button type="button" (click)="verProfesor(profesor.matricula)" class="btn btn-outline-info btn-md btn-block">Ver</button>
       <br><br>
-      <button type="button" (click)="eliminarProfesor(profesor.matricula)" class="btn btn-outline-danger btn-md btn-block">Eliminar</button>
+      <button type="button" (click)="eliminarProfesor(profesor.nombre, profesor.paterno, profesor.materno, profesor.matricula)" class="btn btn-outline-danger btn-md btn-block">Eliminar</button>
     </div>
   </div>
 </div>

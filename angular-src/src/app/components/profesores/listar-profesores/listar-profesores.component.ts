@@ -9,6 +9,9 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 // Bring out the Router so we can redirect from the code
 import { Router } from '@angular/router';
 
+import { MatDialog } from '@angular/material';
+import { ConfirmationDialogComponent } from '../../shared/confirmation-dialog/confirmation-dialog.component';
+
 @Component({
   selector: 'app-listar-profesores',
   templateUrl: './listar-profesores.component.html',
@@ -24,7 +27,8 @@ export class ListarProfesoresComponent implements OnInit {
   constructor(
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) {
   }
 
@@ -71,20 +75,28 @@ export class ListarProfesoresComponent implements OnInit {
     this.router.navigate(['/clases']);
   }
 
-  eliminarProfesor(matricula) {
+  eliminarProfesor(nombres, paterno, materno, matricula) {
     const profesor = {
       matricula: matricula
     }
-
-    this.authService.eliminarProfesor(profesor).subscribe(data => {
-      if (data.success) {
-        this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
-        this.profesor = null;
-        this.profesores = null;
-      } else {
-        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      width: '50vh',
+      height: '50vh',
+      data: "¿Desea eliminar a el profesor " + nombres + " " + paterno + " " + materno + "?"
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.authService.eliminarProfesor(profesor).subscribe(data => {
+          if (data.success) {
+            this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+            this.profesor = null;
+            this.profesores = null;
+          } else {
+            this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+          }
+          this.ngOnInit();
+        });
       }
-      this.ngOnInit();
     });
   }
 

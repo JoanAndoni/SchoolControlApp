@@ -98,8 +98,9 @@ export class ListarAlumnosComponent implements OnInit {
       matricula: matricula
     }
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
-      width: '350px',
-      data: "¿Deseas eliminar a el alumno " + nombres + " " + paterno + " " + materno + "?"
+      width: '50vh',
+      height: '50vh',
+      data: "¿Desea eliminar a el alumno " + nombres + " " + paterno + " " + materno + "?"
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {

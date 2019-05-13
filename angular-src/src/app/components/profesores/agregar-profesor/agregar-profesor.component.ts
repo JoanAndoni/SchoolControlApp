@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // Import of the services
-// import { ValidateService } from '../../../services/validate.service';
+import { ValidateService } from '../../../services/validate.service';
 import { AuthService } from '../../../services/auth.service';
 
 // Import of the module for the flash messages
@@ -23,13 +23,14 @@ export class AgregarProfesorComponent implements OnInit {
   materno: String;
   posicion: String;
   telefono: String;
-  correo: String;
+  email: String;
   password: String;
   passwordConfirmation: String;
 
   constructor(
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
+    private validateService: ValidateService,
     private router: Router
   ) {
   }
@@ -46,32 +47,35 @@ export class AgregarProfesorComponent implements OnInit {
       materno: this.materno,
       posicion: this.posicion,
       telefono: this.telefono,
-      correo: this.correo,
+      email: this.email,
       password: this.password
     }
 
     if (this.password === this.passwordConfirmation) {
-      this.authService.registerProfesor(profesor).subscribe(data => {
-        if (data.success) {
-          this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
-          this.matricula = null;
-          this.nombre = null;
-          this.paterno = null;
-          this.materno = null;
-          this.posicion = null;
-          this.telefono = null;
-          this.correo = null;
-          this.password = null;
-          this.passwordConfirmation = null;
-          this.router.navigate(['/profesores']);
-        } else {
-          this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-        }
-      });
-    }
-    else {
+      if (this.validateService.validateEmail(this.email)) {
+        this.authService.registerProfesor(profesor).subscribe(data => {
+          if (data.success) {
+            this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+            this.matricula = null;
+            this.nombre = null;
+            this.paterno = null;
+            this.materno = null;
+            this.posicion = null;
+            this.telefono = null;
+            this.email = null;
+            this.password = null;
+            this.passwordConfirmation = null;
+          } else {
+            this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+          }
+        });
+      } else {
+        this.flashMessage.show('Ingrese un correo valido', { cssClass: 'alert-danger', timeout: 3000 });
+      }
+    } else {
       this.flashMessage.show('Las contraseñas no coinciden', { cssClass: 'alert-danger', timeout: 3000 });
     }
+    window.scroll(0, 0);
   }
 
 }
