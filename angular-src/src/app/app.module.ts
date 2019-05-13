@@ -43,6 +43,11 @@ import { AuthService } from './services/auth.service';
 // Libraries
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { JwtModule } from '@auth0/angular-jwt';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// @import ‘~@angular/material/prebuilt-themes/deeppurple-amber.css’;
 
 // Guards
 import { AuthGuard } from './guards/auth.guard';
@@ -52,6 +57,7 @@ import { AlumnoAdminGuard } from './guards/alumnoAdmin.guard';
 import { ProfesorGuard } from './guards/profesor.guard';
 import { ProfesorAdminGuard } from './guards/profesorAdmin.guard';
 import { AdminGuard } from './guards/admin.guard';
+import { ConfirmationDialogComponent } from './components/shared/confirmation-dialog/confirmation-dialog.component';
 
 // Array for the routing
 const appRoutes: Routes = [
@@ -91,7 +97,8 @@ const appRoutes: Routes = [
     ClasesComponent,
     VerAlumnosGrupoComponent,
     EditarAlumnoComponent,
-    ListComentariosComponent
+    ListComentariosComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -108,7 +115,13 @@ const appRoutes: Routes = [
           return localStorage.getItem('id_token');
         }
       }
-    })
+    }),
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule
+  ],
+  entryComponents: [
+    ConfirmationDialogComponent
   ],
   providers: [
     ValidateService,

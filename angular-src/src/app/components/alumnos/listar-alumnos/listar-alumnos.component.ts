@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 // Import of the services
 import { AuthService } from '../../../services/auth.service';
@@ -8,6 +8,9 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 
 // Bring out the Router so we can redirect from the code
 import { Router } from '@angular/router';
+
+import { MatDialog } from '@angular/material';
+import { ConfirmationDialogComponent } from '../../shared/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-listar-alumnos',
@@ -28,7 +31,8 @@ export class ListarAlumnosComponent implements OnInit {
   constructor(
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) {
   }
 
@@ -89,19 +93,28 @@ export class ListarAlumnosComponent implements OnInit {
     this.router.navigate(['/verAlumno']);
   }
 
-  eliminarAlumno(matricula) {
+  eliminarAlumno(nombres, paterno, materno, matricula): void {
     const alumno = {
       matricula: matricula
     }
-    this.authService.eliminarAlumno(alumno).subscribe(data => {
-      if (data.success) {
-        this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
-        this.alumno = null;
-        this.alumnos = null;
-      } else {
-        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      width: '350px',
+      data: "¿Deseas eliminar a el alumno " + nombres + " " + paterno + " " + materno + "?"
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.authService.eliminarAlumno(alumno).subscribe(data => {
+          if (data.success) {
+            this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+            this.alumno = null;
+            this.alumnos = null;
+          } else {
+            this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+          }
+          window.scroll(0, 0);
+          this.ngOnInit();
+        });
       }
-      this.ngOnInit();
     });
   }
 
