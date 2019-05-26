@@ -34,7 +34,7 @@ export class ClasesComponent implements OnInit {
         this.profesor = profile.profesor;
       });
     } else if (this.authService.adminLoggedIn()) {
-      this.matricula = this.authService.getMatricualVerProfesor();
+      this.matricula = this.authService.getMatriculaVerProfesor();
       const profesor = {
         matricula: this.matricula
       }
@@ -52,15 +52,7 @@ export class ClasesComponent implements OnInit {
   }
 
   saveGrupoAlumnos(nivel, grado, grupo, nombreMateria, profesor) {
-    const grupoSend = {
-      nivel: nivel,
-      grado: grado,
-      grupo: grupo,
-      nombreMateria: nombreMateria,
-      profesor: profesor
-    }
-    this.authService.setGrupo(grupoSend);
-    this.router.navigate(['/grupo']);
+    this.router.navigate(['/grupo', nombreMateria, profesor, nivel, grado, grupo]);
   }
 
   addClase() {

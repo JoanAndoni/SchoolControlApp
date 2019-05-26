@@ -261,7 +261,7 @@ export class AuthService {
     this.matriculaVerProfesor = matricula;
   }
 
-  getMatricualVerProfesor() {
+  getMatriculaVerProfesor() {
     return this.matriculaVerProfesor;
   }
 

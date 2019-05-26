@@ -3,6 +3,8 @@ import { Component, OnInit, Input } from '@angular/core';
 // Import of the services
 import { AuthService } from '../../../services/auth.service';
 
+import { ActivatedRoute } from '@angular/router';
+
 // Import of the module for the flash messages
 import { FlashMessagesService } from 'angular2-flash-messages';
 
@@ -40,15 +42,19 @@ export class VerAlumnoComponent implements OnInit {
   constructor(
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    window.scroll(0, 0);
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.matricula = params.get('id');
+    });
+    const alumno = {
+      matricula: this.matricula
+    }
     if (this.authService.adminLoggedIn()) {
-      this.matricula = this.authService.getMatriculaAlumno();
-      const alumno = {
-        matricula: this.matricula
-      }
       this.authService.buscarAlumnoMatricula(alumno).subscribe(data => {
         if (data.success) {
           this.alumno = data.alumno;

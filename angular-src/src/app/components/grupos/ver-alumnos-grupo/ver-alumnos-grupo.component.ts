@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from '../../../services/auth.service';
+import { ActivatedRoute } from '@angular/router';
 
 // Import of the module for the flash messages
 import { FlashMessagesService } from 'angular2-flash-messages';
@@ -13,17 +14,39 @@ import { Router } from '@angular/router';
   styleUrls: ['./ver-alumnos-grupo.component.css']
 })
 export class VerAlumnosGrupoComponent implements OnInit {
+  // VARIABLES PARA RECIBIR LOS ARGUMENTOS
+  grupo_nombreMateria: string;
+  grupo_profesor: string;
+  grupo_nivel: string;
+  grupo_grado: string;
+  grupo_grupo: string;
+
   grupo: any;
   alumnos: any;
 
   constructor(
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.grupo = this.authService.getGrupo();
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.grupo_nombreMateria = params.get('nombre');
+      this.grupo_profesor = params.get('profesor');
+      this.grupo_nivel = params.get('nivel');
+      this.grupo_grado = params.get('grado');
+      this.grupo_grupo = params.get('grupo');
+    });
+
+    this.grupo = {
+      nivel: this.grupo_nivel,
+      grado: this.grupo_grado,
+      grupo: this.grupo_grupo,
+      nombreMateria: this.grupo_nombreMateria,
+      profesor: this.grupo_profesor
+    }
 
     if (this.authService.profesorLoggedIn() || this.authService.adminLoggedIn()) {
       this.authService.buscarAlumnosGrupo(this.grupo).subscribe(grupo => {
@@ -44,7 +67,7 @@ export class VerAlumnosGrupoComponent implements OnInit {
   }
 
   editarAlumno(matricula) {
-    this.authService.setMatriculaAlumno(matricula);
-    this.router.navigate(['/editarAlumno']);
+    // this.authService.setMatriculaAlumno(matricula);
+    this.router.navigate(['/editarAlumno', this.grupo_nombreMateria, this.grupo_profesor, this.grupo_nivel, this.grupo_grado, this.grupo_grupo, matricula]);
   }
 }

@@ -14,6 +14,8 @@ export class NavbarComponent implements OnInit {
   showDropdown: boolean = false;
   innerWidth: any;
 
+  user: any;
+
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = event.target.innerWidth;
@@ -36,6 +38,12 @@ export class NavbarComponent implements OnInit {
     this.innerWidth = window.innerWidth;
     if (this.innerWidth < 995) {
       this.isResponsive = true;
+      this.showDropdown = false;
+    }
+
+    if (this.authService.alumnoLoggedIn()) {
+      this.user = JSON.parse(localStorage.getItem('user'));
+      console.log(this.user.matricula);
     }
   }
 
@@ -45,6 +53,12 @@ export class NavbarComponent implements OnInit {
     } else if (!this.showDropdown) {
       this.showDropdown = true;
     }
+  }
+
+  verAlumno() {
+    window.scroll(0, 0);
+    console.log(this.user.matricula);
+    this.router.navigate(['/verAlumno', this.user.matricula]);
   }
 
   onLogoutClick() {

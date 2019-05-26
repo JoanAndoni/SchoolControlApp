@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 // Import of the services
 import { AuthService } from '../../../services/auth.service';
 
+import { ActivatedRoute } from '@angular/router';
+
 // Import of the module for the flash messages
 import { FlashMessagesService } from 'angular2-flash-messages';
 
@@ -14,7 +16,15 @@ import { Router } from '@angular/router';
   templateUrl: './editar-alumno.component.html',
   styleUrls: ['./editar-alumno.component.css']
 })
+
 export class EditarAlumnoComponent implements OnInit {
+  // VARIABLES PARA RECIBIR LOS ARGUMENTOS
+  grupo_nombreMateria: string;
+  grupo_profesor: string;
+  grupo_nivel: string;
+  grupo_grado: string;
+  grupo_grupo: string;
+
   matricula: any;
   alumno: any;
   grupo: any;
@@ -31,15 +41,32 @@ export class EditarAlumnoComponent implements OnInit {
   constructor(
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.matricula = this.authService.getMatriculaAlumno();
-    this.grupo = this.authService.getGrupo();
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.grupo_nombreMateria = params.get('nombre');
+      this.grupo_profesor = params.get('profesor');
+      this.grupo_nivel = params.get('nivel');
+      this.grupo_grado = params.get('grado');
+      this.grupo_grupo = params.get('grupo');
+      this.matricula = params.get('id');
+    });
+
+    this.grupo = {
+      nivel: this.grupo_nivel,
+      grado: this.grupo_grado,
+      grupo: this.grupo_grupo,
+      nombreMateria: this.grupo_nombreMateria,
+      profesor: this.grupo_profesor
+    }
+
     const alumno = {
       matricula: this.matricula
     }
+
     this.authService.buscarAlumnoMatricula(alumno).subscribe(data => {
       if (data.success) {
         this.alumno = data.alumno;
@@ -81,6 +108,7 @@ export class EditarAlumnoComponent implements OnInit {
       } else {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
       }
+      window.scroll(0, 0);
       this.ngOnInit();
     });
   }
@@ -91,12 +119,15 @@ export class EditarAlumnoComponent implements OnInit {
         this.calificacionesCambiar = materia.calificaciones;
       }
     }
+
     this.calificacionesCambiar[this.trimestre - 1] = this.calificacion;
+
     const calificaciones = {
       matricula: this.matricula,
       nombreMateria: this.materiaCalificaciones,
       calificaciones: this.calificacionesCambiar
     }
+
     this.authService.cambiarCalificaciones(calificaciones).subscribe(data => {
       if (data.success) {
         this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });

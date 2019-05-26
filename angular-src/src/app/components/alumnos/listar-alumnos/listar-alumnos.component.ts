@@ -94,9 +94,8 @@ export class ListarAlumnosComponent implements OnInit {
   }
 
   verAlumno(matricula) {
-    this.authService.setMatriculaAlumno(matricula);
     window.scroll(0, 0);
-    this.router.navigate(['/verAlumno']);
+    this.router.navigate(['/verAlumno', matricula]);
   }
 
   eliminarAlumno(nombres, paterno, materno, matricula): void {
