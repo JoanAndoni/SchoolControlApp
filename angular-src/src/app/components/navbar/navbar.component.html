@@ -1,5 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand">Colegio Example</a>
+
+  <a class="navbar-brand" *ngIf="!isResponsive">Colegio Example</a>
+
+  <div class="topNav" *ngIf="isResponsive">
+    <a class="navbar-brand">Colegio Example</a>
+    <button *ngIf="isResponsive " class="navbar-toggler botonFinal" type="button" data-toggle="collapse" datigaa-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navtion">
+      <span class="navbar-toggler-icon" (click)="makeDropdown()"></span>
+    </button>
+  </div>
 
   <ul class="navbar-nav mr-auto" *ngIf="!isResponsive">
     <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/']">Principal</a></li>
@@ -21,12 +29,6 @@
     <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/login']">Ingresar</a></li>
     <li *ngIf="authService.loggedIn()" class="nav-item"><a class="nav-link" (click)="onLogoutClick()" href="#">Salir</a></li>
   </ul>
-
-  <!-- <ul class="navbar-nav" > -->
-  <button *ngIf="isResponsive " class="navbar-toggler" type="button" data-toggle="collapse" datigaa-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navtion">
-    <span class="navbar-toggler-icon" (click)="makeDropdown()"></span>
-  </button>
-  <!-- </ul> -->
 
   <ul class="navbar-nav mr-auto" *ngIf="showDropdown">
     <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/']">Principal</a></li>

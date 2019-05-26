@@ -1,3 +1,11 @@
 .navbar {
   padding: 10px 20px;
 }
+
+.topNav {
+  width: 100vw;
+}
+
+.botonFinal {
+  float: right;
+}
