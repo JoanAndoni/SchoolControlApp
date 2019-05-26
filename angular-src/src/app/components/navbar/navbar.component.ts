@@ -10,6 +10,10 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  isResponsive: boolean = false;
+  showDropdown: boolean = false;
+  showButton: boolean = true;
+  innerWidth: any;
 
   constructor(
     private authService: AuthService,
@@ -18,7 +22,20 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.innerWidth = window.innerWidth;
+    if (this.innerWidth < 995) {
+      this.isResponsive = true;
+    }
+  }
 
+  makeDropdown() {
+    if (this.showDropdown) {
+      this.showDropdown = false;
+      this.showButton = true;
+    } else if (!this.showDropdown) {
+      this.showDropdown = true;
+      this.showButton = false;
+    }
   }
 
   onLogoutClick() {

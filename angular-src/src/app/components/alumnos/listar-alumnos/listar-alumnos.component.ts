@@ -18,6 +18,8 @@ import { ConfirmationDialogComponent } from '../../shared/confirmation-dialog/co
   styleUrls: ['./listar-alumnos.component.css']
 })
 export class ListarAlumnosComponent implements OnInit {
+  niveles: String[] = ['Preescolar', 'Primaria', 'Secundaria'];
+
   matricula: String;
   nombre: String;
 
@@ -48,6 +50,7 @@ export class ListarAlumnosComponent implements OnInit {
         this.alumno = data.alumno;
       } else {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+        window.scroll(0, 0);
       }
     });
     this.alumnos = null;
@@ -63,6 +66,7 @@ export class ListarAlumnosComponent implements OnInit {
         this.alumnos = data.alumnos;
       } else {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+        window.scroll(0, 0);
       }
     });
     this.alumno = null;
@@ -80,6 +84,7 @@ export class ListarAlumnosComponent implements OnInit {
         this.alumnos = data.alumnos;
       } else {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+        window.scroll(0, 0);
       }
     });
     this.alumno = null;
@@ -90,6 +95,7 @@ export class ListarAlumnosComponent implements OnInit {
 
   verAlumno(matricula) {
     this.authService.setMatriculaAlumno(matricula);
+    window.scroll(0, 0);
     this.router.navigate(['/verAlumno']);
   }
 

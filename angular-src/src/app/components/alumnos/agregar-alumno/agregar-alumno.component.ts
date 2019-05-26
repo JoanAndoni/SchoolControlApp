@@ -13,6 +13,8 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   styleUrls: ['./agregar-alumno.component.css']
 })
 export class AgregarAlumnoComponent implements OnInit {
+  niveles: String[] = ['Preescolar', 'Primaria', 'Secundaria'];
+
   matricula: String;
   curp: String;
   nombre: String;

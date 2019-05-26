@@ -26,10 +26,10 @@ export class VerAlumnoComponent implements OnInit {
   editComentario: boolean;
   comentarioEdit: any;
 
-  newNombreProfesor: String;
-  newNombreMateria: String;
+  newNombreProfesor: String = "";
+  newNombreMateria: String = "";
 
-  nombreMateriaDelete: String;
+  nombreMateriaDelete: String = "";
 
   niveles: String[] = ["Preescolar", "Primaria", "Secundaria"];
 
@@ -141,6 +141,7 @@ export class VerAlumnoComponent implements OnInit {
       } else {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
       }
+      window.scroll(0, 0);
       this.ngOnInit();
     });
   }
@@ -157,6 +158,7 @@ export class VerAlumnoComponent implements OnInit {
       } else {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
       }
+      window.scroll(0, 0);
       this.ngOnInit();
     });
   }

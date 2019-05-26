@@ -15,18 +15,18 @@ const config = require('./config/database');
 // Configuration of the mail sending
 // using SendGrid's v3 Node.js Library
 // https://github.com/sendgrid/sendgrid-nodejs
-const sgMail = require('@sendgrid/mail');
-const SENDGRID_API_KEY = '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';
-sgMail.setApiKey(SENDGRID_API_KEY);
-const msg = {
-  to: 'mcr_joan@hotmail.com',
-  from: 'dchrua@gmail.com',
-  subject: 'Sending with SendGrid is Fun',
-  text: 'and easy to do anywhere, even with Node.js',
-  html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-};
-console.log(msg);
-sgMail.send(msg);
+// const sgMail = require('@sendgrid/mail');
+// const SENDGRID_API_KEY = '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';
+// sgMail.setApiKey(SENDGRID_API_KEY);
+// const msg = {
+//   to: 'mcr_joan@hotmail.com',
+//   from: 'dchrua@gmail.com',
+//   subject: 'Sending with SendGrid is Fun',
+//   text: 'and easy to do anywhere, even with Node.js',
+//   html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+// };
+// console.log(msg);
+// sgMail.send(msg);
 
 // Connect to the database
 mongoose.connect(config.database, {
