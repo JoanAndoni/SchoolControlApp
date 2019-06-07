@@ -47,6 +47,7 @@ export class ListComentariosComponent implements OnInit {
       } else {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
       }
+      window.scroll(0, 0);
       this.ngOnInit();
     });
   }
@@ -74,11 +75,12 @@ export class ListComentariosComponent implements OnInit {
     }
     this.authService.editarAdminComentario(comentario).subscribe(data => {
       if (data.success) {
-        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+        this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
       } else {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
       }
       this.ngOnInit();
+      window.scroll(0, 0);
       this.comentarioEdit = null;
     });
     this.editComentario = false;
@@ -123,6 +125,7 @@ export class ListComentariosComponent implements OnInit {
       } else {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
       }
+      window.scroll(0, 0);
       this.ngOnInit();
     });
   }

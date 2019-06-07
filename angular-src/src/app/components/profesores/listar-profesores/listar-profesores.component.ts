@@ -71,8 +71,9 @@ export class ListarProfesoresComponent implements OnInit {
   }
 
   verProfesor(matricula) {
-    this.authService.setMatriculaVerProfesor(matricula);
-    this.router.navigate(['/clases']);
+    // this.authService.setMatriculaVerProfesor(matricula);
+    this.router.navigate(['/clases', matricula]);
+    window.scroll(0, 0);
   }
 
   eliminarProfesor(nombres, paterno, materno, matricula) {
@@ -94,6 +95,7 @@ export class ListarProfesoresComponent implements OnInit {
           } else {
             this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
           }
+          window.scroll(0, 0);
           this.ngOnInit();
         });
       }

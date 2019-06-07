@@ -100,6 +100,9 @@ export class VerAlumnoComponent implements OnInit {
     } else if (this.authService.alumnoLoggedIn()) {
       this.authService.getProfileAlumno().subscribe(profile => {
         this.alumno = profile.alumno;
+        if (this.matricula != profile.alumno.matricula) {
+          this.router.navigate(['/verAlumno', profile.alumno.matricula]);
+        }
         let indexMateria: number = 0;
         let sumaMateria: number = 0;
         let sum1: number = 0;

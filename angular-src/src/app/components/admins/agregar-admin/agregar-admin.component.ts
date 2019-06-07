@@ -41,15 +41,16 @@ export class AgregarAdminComponent implements OnInit {
       this.authService.registerAdmin(admin).subscribe(data => {
         if (data.success) {
           this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
-          // this.router.navigate(['/login']);
+          window.location.reload();
         } else {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-          // this.router.navigate(['/admins']);
+          window.scroll(0, 0);
         }
       });
     }
     else {
       this.flashMessage.show('Las contraseñas no coinciden', { cssClass: 'alert-danger', timeout: 3000 });
+      window.scroll(0, 0);
     }
   }
 

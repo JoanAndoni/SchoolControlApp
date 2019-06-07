@@ -67,7 +67,7 @@ const appRoutes: Routes = [
   { path: 'verAlumno/:id', component: VerAlumnoComponent, canActivate: [AlumnoAdminGuard] },
   { path: 'editarAlumno/:nombre/:profesor/:nivel/:grado/:grupo/:id', component: EditarAlumnoComponent, canActivate: [ProfesorGuard] },
   { path: 'profesores', component: ProfesoresComponent, canActivate: [AdminGuard] },
-  { path: 'clases', component: ClasesComponent, canActivate: [ProfesorAdminGuard] },
+  { path: 'clases/:id', component: ClasesComponent, canActivate: [ProfesorAdminGuard] },
   { path: 'grupo/:nombre/:profesor/:nivel/:grado/:grupo', component: VerAlumnosGrupoComponent, canActivate: [ProfesorAdminGuard] },
   { path: 'admins', component: AdminsComponent, canActivate: [AdminGuard] },
   { path: 'comentarios', component: ListComentariosComponent, canActivate: [AdminGuard] },

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from '../../../services/auth.service';
 
+import { ActivatedRoute } from '@angular/router';
+
 // Import of the module for the flash messages
 import { FlashMessagesService } from 'angular2-flash-messages';
 
@@ -12,6 +14,7 @@ import { Router } from '@angular/router';
   templateUrl: './clases.component.html',
   styleUrls: ['./clases.component.css']
 })
+
 export class ClasesComponent implements OnInit {
   matricula: String = "";
   profesor: any;
@@ -25,7 +28,8 @@ export class ClasesComponent implements OnInit {
   constructor(
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -34,7 +38,10 @@ export class ClasesComponent implements OnInit {
         this.profesor = profile.profesor;
       });
     } else if (this.authService.adminLoggedIn()) {
-      this.matricula = this.authService.getMatriculaVerProfesor();
+      // this.matricula = this.authService.getMatriculaVerProfesor();
+      this.activatedRoute.paramMap.subscribe(params => {
+        this.matricula = params.get('id');
+      });
       const profesor = {
         matricula: this.matricula
       }

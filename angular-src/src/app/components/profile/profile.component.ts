@@ -65,6 +65,7 @@ export class ProfileComponent implements OnInit {
           return false;
         });
     } else {
+      window.scroll(0, 0);
       this.flashMessage.show("Perfil no encontrado", { cssClass: 'alert-danger', timeout: 3000 });
       this.router.navigate(['/dashboard']);
     }
@@ -84,6 +85,7 @@ export class ProfileComponent implements OnInit {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
         this.router.navigate(['/profile']);
       }
+      window.scroll(0, 0);
     },
       err => {
         console.log(err);
@@ -125,6 +127,7 @@ export class ProfileComponent implements OnInit {
         } else {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
         }
+        window.scroll(0, 0);
       },
         err => {
           console.log(err);
@@ -148,6 +151,7 @@ export class ProfileComponent implements OnInit {
           } else {
             this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
           }
+          window.scroll(0, 0);
         },
           err => {
             console.log(err);
@@ -165,6 +169,7 @@ export class ProfileComponent implements OnInit {
           } else {
             this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
           }
+          window.scroll(0, 0);
         },
           err => {
             console.log(err);
