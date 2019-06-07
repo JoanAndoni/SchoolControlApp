@@ -21,6 +21,8 @@ export class VerAlumnosGrupoComponent implements OnInit {
   grupo_grado: string;
   grupo_grupo: string;
 
+  profesor_matricula: string;
+
   grupo: any;
   alumnos: any;
 
@@ -48,26 +50,44 @@ export class VerAlumnosGrupoComponent implements OnInit {
       profesor: this.grupo_profesor
     }
 
-    if (this.authService.profesorLoggedIn() || this.authService.adminLoggedIn()) {
-      this.authService.buscarAlumnosGrupo(this.grupo).subscribe(grupo => {
-        if (grupo.success) {
-          this.alumnos = grupo.alumnos;
+    if (this.authService.profesorLoggedIn()) {
+      this.authService.getProfileProfesor().subscribe(profile => {
+        this.profesor_matricula = profile.profesor.matricula;
+      },
+        err => {
+          console.log(err);
+          return false;
+        });
+    } else if (this.authService.adminLoggedIn) {
+      const profesor = {
+        nombre: this.grupo_profesor
+      }
+      this.authService.buscarProfesoresNombre(profesor).subscribe(data => {
+        if (data.success) {
+          console.log(data.profesores);
+          console.log(data.profesores[0].matricula);
+          this.profesor_matricula = data.profesores[0].matricula;
         } else {
-          this.flashMessage.show(grupo.msg, { cssClass: 'alert-danger', timeout: 3000 });
-          if (this.authService.profesorLoggedIn()) {
-            this.router.navigate(['/clases']);
-          } else if (this.authService.adminLoggedIn()) {
-            this.router.navigate(['/profesores']);
-          }
+          this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
         }
       });
-    } else {
-      this.router.navigate(['/']);
     }
+
+    this.authService.buscarAlumnosGrupo(this.grupo).subscribe(grupo => {
+      if (grupo.success) {
+        this.alumnos = grupo.alumnos;
+      } else {
+        this.flashMessage.show(grupo.msg, { cssClass: 'alert-danger', timeout: 3000 });
+        if (this.authService.profesorLoggedIn()) {
+          this.router.navigate(['/clases', this.profesor_matricula]);
+        } else if (this.authService.adminLoggedIn()) {
+          this.router.navigate(['/clases', this.profesor_matricula]);
+        }
+      }
+    });
   }
 
   editarAlumno(matricula) {
-    // this.authService.setMatriculaAlumno(matricula);
     this.router.navigate(['/editarAlumno', this.grupo_nombreMateria, this.grupo_profesor, this.grupo_nivel, this.grupo_grado, this.grupo_grupo, matricula]);
   }
 }

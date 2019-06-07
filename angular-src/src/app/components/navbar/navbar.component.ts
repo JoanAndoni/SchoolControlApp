@@ -44,7 +44,9 @@ export class NavbarComponent implements OnInit {
 
     if (this.authService.alumnoLoggedIn()) {
       this.user = JSON.parse(localStorage.getItem('user'));
-      // console.log(this.user.matricula);
+      this.matricula = this.user.matricula;
+    } else if (this.authService.profesorLoggedIn()) {
+      this.user = JSON.parse(localStorage.getItem('user'));
       this.matricula = this.user.matricula;
     }
   }
@@ -55,12 +57,6 @@ export class NavbarComponent implements OnInit {
     } else if (!this.showDropdown) {
       this.showDropdown = true;
     }
-  }
-
-  verAlumno() {
-    window.scroll(0, 0);
-    // console.log(this.user.matricula);
-    this.router.navigate(['/verAlumno', this.user.matricula]);
   }
 
   onLogoutClick() {

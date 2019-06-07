@@ -12,7 +12,7 @@
   <ul class="navbar-nav mr-auto" *ngIf="!isResponsive">
     <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/']">Principal</a></li>
     <li *ngIf="authService.alumnoLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/verAlumno', this.matricula]">Calificaciones</a></li>
-    <li *ngIf="authService.profesorLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/clases']">Clases</a></li>
+    <li *ngIf="authService.profesorLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/clases', this.matricula]">Clases</a></li>
     <li ngbDropdown *ngIf="authService.adminLoggedIn()" class="nav-item dropdown show">
       <a ngbDropdownToggle class="nav-link dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;" role="button" aria-haspopup="true" aria-expanded="true">Administración</a>
       <div ngbDropdownMenu class="dropdown-menu show" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">
@@ -33,7 +33,7 @@
   <ul class="navbar-nav mr-auto" *ngIf="showDropdown">
     <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/']">Principal</a></li>
     <li *ngIf="authService.alumnoLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/verAlumno', this.user.matricula]">Calificaciones</a></li>
-    <li *ngIf="authService.profesorLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/clases']">Clases</a></li>
+    <li *ngIf="authService.profesorLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a class="nav-link" [routerLink]="['/clases', this.user.matricula]">Clases</a></li>
     <li ngbDropdown *ngIf="authService.adminLoggedIn()" class="nav-item dropdown show">
       <a ngbDropdownToggle class="nav-link dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;" role="button" aria-haspopup="true" aria-expanded="true">Administración</a>
       <div ngbDropdownMenu class="dropdown-menu show" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">

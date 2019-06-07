@@ -33,15 +33,18 @@ export class ClasesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.matricula = params.get('id');
+    });
+
     if (this.authService.profesorLoggedIn()) {
       this.authService.getProfileProfesor().subscribe(profile => {
         this.profesor = profile.profesor;
+        if (this.profesor.matricula != this.matricula) {
+          this.router.navigate(['/clases', this.profesor.matricula]);
+        }
       });
     } else if (this.authService.adminLoggedIn()) {
-      // this.matricula = this.authService.getMatriculaVerProfesor();
-      this.activatedRoute.paramMap.subscribe(params => {
-        this.matricula = params.get('id');
-      });
       const profesor = {
         matricula: this.matricula
       }
