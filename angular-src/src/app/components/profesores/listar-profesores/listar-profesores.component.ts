@@ -20,6 +20,7 @@ import { ConfirmationDialogComponent } from '../../shared/confirmation-dialog/co
 export class ListarProfesoresComponent implements OnInit {
   matricula: String;
   nombre: String;
+  apellido: String;
 
   profesor: any;
   profesores: any;
@@ -57,8 +58,10 @@ export class ListarProfesoresComponent implements OnInit {
 
   buscarProfesoresNombre() {
     const profesor = {
-      nombre: this.nombre
+      nombre: this.nombre,
+      paterno: this.apellido
     }
+
     this.authService.buscarProfesoresNombre(profesor).subscribe(data => {
       if (data.success) {
         this.profesores = data.profesores;
@@ -66,8 +69,10 @@ export class ListarProfesoresComponent implements OnInit {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
       }
     });
+
     this.profesor = null;
     this.nombre = null;
+    this.apellido = null;
   }
 
   verProfesor(matricula) {

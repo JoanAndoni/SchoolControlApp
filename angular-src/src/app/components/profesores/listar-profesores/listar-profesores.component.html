@@ -3,7 +3,7 @@
     <h2>Buscar Profesores</h2><br>
 
     <div class="form-group row">
-      <label class="col-sm-4 p-2 col-form-label">Matricula</label>
+      <label class="col-sm-3 p-2 col-form-label">Matricula</label>
       <div class="col-sm-8 pull-left text-left">
         <input type="text" class="form-control" name="matricula" [(ngModel)]="matricula" placeholder="Matricula . ." [ngModelOptions]="{standalone: true}">
       </div>
@@ -12,17 +12,20 @@
     <hr class="featurette-divider">
 
     <div class="form-group row">
-      <label class="col-sm-4 p-2 col-form-label">Nombre(s)</label>
-      <div class="col-sm-8">
+      <label class="col-sm-3 p-2 col-form-label">Nombre</label>
+      <div class="col-sm-4">
         <input type="text" class="form-control" name="nombre" [(ngModel)]="nombre" placeholder="Nombre(s) . ." [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="apellido" [(ngModel)]="apellido" placeholder="Apellido paterno . ." [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
-      <div class="col-sm-12" *ngIf="matricula && !nombre">
+      <div class="col-sm-12" *ngIf="matricula && !nombre && !apellido">
         <button type="submit" (click)="buscarProfesorMatricula()" class="btn btn-primary btn-md btn-block">Buscar</button>
       </div>
-      <div class="col-sm-12" *ngIf="!matricula && nombre">
+      <div class="col-sm-12" *ngIf="!matricula && nombre && apellido">
         <button type="submit" (click)="buscarProfesoresNombre()" class="btn btn-primary btn-md btn-block">Buscar</button>
       </div>
     </div>
@@ -35,25 +38,19 @@
     <div class="col-md-9 pull-left text-left">
       <h4 class="list-group-item-heading m-1">{{ profesor.nombre }} {{ profesor.paterno }} {{ profesor.materno }}</h4>
       <div class="row">
-        <div class="col-md-3">
-          <p class="font-weight-bold text-uppercase m-1">Matricula: </p>
-          <p class="font-weight-bold text-uppercase m-1">Posicion: </p>
-          <p class="font-weight-bold text-uppercase m-1">Telefono: </p>
-          <p class="font-weight-bold text-uppercase m-1">Correo: </p>
-        </div>
-        <div class="col-md-8">
-          <p class="list-group-item-text m-1">{{ profesor.matricula }}</p>
-          <p class="list-group-item-text m-1">{{ profesor.posicion }}</p>
-          <p class="list-group-item-text m-1">{{ profesor.telefono }}</p>
-          <p class="list-group-item-text m-1">{{ profesor.email }}</p>
+        <div class="col-md-12">
+          <p class="font-weight-bold text-uppercase m-1">Matricula: <a style="font-weight: normal; text-transform: none;">{{ profesor.matricula }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Posición: <a style="font-weight: normal; text-transform: none;">{{ profesor.posicion }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Telefono: <a style="font-weight: normal; text-transform: none;">{{ profesor.telefono }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Correo: <a style="font-weight: normal; text-transform: none;">{{ profesor.email }}</a></p>
         </div>
       </div>
     </div>
     <div class="col-md-3 pull-right">
       <br>
-      <button type="button" (click)="verProfesor(profesor.matricula)" class="btn btn-outline-info btn-md btn-block">Ver</button>
+      <button type="button" (click)="verProfesor(profesor.matricula)" class="btn btn-outline-info btn-md btn-block" style="overflow: hidden !important; padding: 0.5rem 0.5rem !important;">Ver</button>
       <br><br>
-      <button type="button" (click)="eliminarProfesor(profesor.nombre, profesor.paterno, profesor.materno, profesor.matricula)" class="btn btn-outline-danger btn-md btn-block">Eliminar</button>
+      <button type="button" (click)="eliminarProfesor(profesor.nombre, profesor.paterno, profesor.materno, profesor.matricula)" class="btn btn-outline-danger btn-md btn-block" style="overflow: hidden !important; padding: 0.5rem 0.5rem !important;">Eliminar</button>
     </div>
   </div>
 </div>
@@ -64,17 +61,11 @@
     <div class="col-md-9 pull-left text-left">
       <h4 class="list-group-item-heading m-1">{{ profesor.nombre }} {{ profesor.paterno }} {{ profesor.materno }}</h4>
       <div class="row">
-        <div class="col-md-3">
-          <p class="font-weight-bold text-uppercase m-1">Matricula: </p>
-          <p class="font-weight-bold text-uppercase m-1">Posicion: </p>
-          <p class="font-weight-bold text-uppercase m-1">Telefono: </p>
-          <p class="font-weight-bold text-uppercase m-1">Correo: </p>
-        </div>
-        <div class="col-md-8">
-          <p class="list-group-item-text m-1">{{ profesor.matricula }}</p>
-          <p class="list-group-item-text m-1">{{ profesor.posicion }}</p>
-          <p class="list-group-item-text m-1">{{ profesor.telefono }}</p>
-          <p class="list-group-item-text m-1">{{ profesor.email }}</p>
+        <div class="col-md-12">
+          <p class="font-weight-bold text-uppercase m-1">Matricula: <a style="font-weight: normal; text-transform: none;">{{ profesor.matricula }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Posición: <a style="font-weight: normal; text-transform: none;">{{ profesor.posicion }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Telefono: <a style="font-weight: normal; text-transform: none;">{{ profesor.telefono }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Correo: <a style="font-weight: normal; text-transform: none;">{{ profesor.email }}</a></p>
         </div>
       </div>
     </div>

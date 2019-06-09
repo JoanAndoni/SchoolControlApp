@@ -58,31 +58,22 @@
     <div class="col-md-9 pull-left text-left">
       <h4 class="list-group-item-heading m-1">{{ alumno.nombre }} {{ alumno.paterno }} {{ alumno.materno }}</h4>
       <div class="row">
-        <div class="col-md-3">
-          <p class="font-weight-bold text-uppercase m-1">Matricula: </p>
-          <p class="font-weight-bold text-uppercase m-1">CURP: </p>
-          <p class="font-weight-bold text-uppercase m-1">Nivel: </p>
-          <p class="font-weight-bold text-uppercase m-1">Grado: </p>
-          <p class="font-weight-bold text-uppercase m-1">Grupo: </p>
-          <p class="font-weight-bold text-uppercase m-1">Nacimiento: </p>
-          <p class="font-weight-bold text-uppercase m-1">Email: </p>
-        </div>
-        <div class="col-md-8">
-          <p class="list-group-item-text m-1">{{ alumno.matricula }}</p>
-          <p class="list-group-item-text m-1">{{ alumno.curp }}</p>
-          <p class="list-group-item-text m-1">{{ alumno.nivel }}</p>
-          <p class="list-group-item-text m-1">{{ alumno.grado }}°</p>
-          <p class="list-group-item-text m-1">"{{ alumno.grupo }}"</p>
-          <p class="list-group-item-text m-1">{{ alumno.fechaNacimiento }}</p>
-          <p class="list-group-item-text m-1">{{ alumno.email }}</p>
+        <div class="col-md-12">
+          <p class="font-weight-bold text-uppercase m-1">Matricula: <a style="font-weight: normal; text-transform: none;">{{ alumno.matricula }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">CURP: <a style="font-weight: normal; text-transform: none;">{{ alumno.curp }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Nivel: <a style="font-weight: normal; text-transform: none;">{{ alumno.nivel }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Grado: <a style="font-weight: normal; text-transform: none;">{{ alumno.grado }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Grupo: <a style="font-weight: normal; text-transform: none;">{{ alumno.grupo }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Nacimiento: <a style="font-weight: normal; text-transform: none;">{{ alumno.fechaNacimiento }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Email: <a style="font-weight: normal; text-transform: none;">{{ alumno.email }}</a></p>
         </div>
       </div>
     </div>
     <div class="col-md-3 pull-right">
       <br>
-      <button type="button" (click)="verAlumno(alumno.matricula)" class="btn btn-outline-info btn-md btn-block">Ver</button>
+      <button type="button" (click)="verAlumno(alumno.matricula)" class="btn btn-outline-info btn-md btn-block" style="overflow: hidden !important; padding: 0.5rem 0.5rem !important;">Ver</button>
       <br><br>
-      <button type="button" (click)="eliminarAlumno(alumno.nombre, alumno.paterno, alumno.materno, alumno.matricula)" class="btn btn-outline-danger btn-md btn-block">Eliminar</button>
+      <button type="button" (click)="eliminarAlumno(alumno.nombre, alumno.paterno, alumno.materno, alumno.matricula)" class="btn btn-outline-danger btn-md btn-block" style="overflow: hidden !important; padding: 0.5rem 0.5rem !important;">Eliminar</button>
     </div>
   </div>
 </div>
@@ -93,31 +84,22 @@
     <div class="col-md-9 pull-left text-left">
       <h4 class="list-group-item-heading m-1">{{ alumno.nombre }} {{ alumno.paterno }} {{ alumno.materno }}</h4>
       <div class="row">
-        <div class="col-md-3">
-          <p class="font-weight-bold text-uppercase m-1">Matricula: </p>
-          <p class="font-weight-bold text-uppercase m-1">CURP: </p>
-          <p class="font-weight-bold text-uppercase m-1">Nivel: </p>
-          <p class="font-weight-bold text-uppercase m-1">Grado: </p>
-          <p class="font-weight-bold text-uppercase m-1">Grupo: </p>
-          <p class="font-weight-bold text-uppercase m-1">Nacimiento: </p>
-          <p class="font-weight-bold text-uppercase m-1">Email: </p>
-        </div>
-        <div class="col-md-8">
-          <p class="list-group-item-text m-1">{{ alumno.matricula }}</p>
-          <p class="list-group-item-text m-1">{{ alumno.curp }}</p>
-          <p class="list-group-item-text m-1">{{ alumno.nivel }}</p>
-          <p class="list-group-item-text m-1">{{ alumno.grado }}°</p>
-          <p class="list-group-item-text m-1">"{{ alumno.grupo }}"</p>
-          <p class="list-group-item-text m-1">{{ alumno.fechaNacimiento }}</p>
-          <p class="list-group-item-text m-1">{{ alumno.email }}</p>
+        <div class="col-md-12">
+          <p class="font-weight-bold text-uppercase m-1">Matricula: <a style="font-weight: normal; text-transform: none;">{{ alumno.matricula }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">CURP: <a style="font-weight: normal; text-transform: none;">{{ alumno.curp }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Nivel: <a style="font-weight: normal; text-transform: none;">{{ alumno.nivel }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Grado: <a style="font-weight: normal; text-transform: none;">{{ alumno.grado }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Grupo: <a style="font-weight: normal; text-transform: none;">{{ alumno.grupo }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Nacimiento: <a style="font-weight: normal; text-transform: none;">{{ alumno.fechaNacimiento }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Email: <a style="font-weight: normal; text-transform: none;">{{ alumno.email }}</a></p>
         </div>
       </div>
     </div>
     <div class="col-md-3 pull-right">
       <br>
-      <button type="button" (click)="verAlumno(alumno.matricula)" class="btn btn-outline-info btn-md btn-block">Ver</button>
+      <button type="button" (click)="verAlumno(alumno.matricula)" class="btn btn-outline-info btn-md btn-block" style="overflow: hidden !important; padding: 0.5rem 0.5rem !important;">Ver</button>
       <br><br>
-      <button type="button" (click)="eliminarAlumno(alumno.nombre, alumno.paterno, alumno.materno, alumno.matricula)" class="btn btn-outline-danger btn-md btn-block">Eliminar</button>
+      <button type="button" (click)="eliminarAlumno(alumno.nombre, alumno.paterno, alumno.materno, alumno.matricula)" class="btn btn-outline-danger btn-md btn-block" style="overflow: hidden !important; padding: 0.5rem 0.5rem !important;">Eliminar</button>
     </div>
   </div>
 </div>
