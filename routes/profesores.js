@@ -195,7 +195,8 @@ router.post('/getProfesor', (req, res, next) => {
 
 router.post('/getProfesoresNombre', (req, res, next) => {
   let nombre = req.body.nombre;
-  Profesor.getProfesoresByNombre(nombre, (err, profesores) => {
+  let paterno = req.body.paterno;
+  Profesor.getProfesoresByNombre(nombre, paterno, (err, profesores) => {
     if (err) throw err;
     if (profesores.length > 0) {
       return res.json({
@@ -216,17 +217,17 @@ router.post('/getProfesoresNombreByGroup', (req, res, next) => {
   let grado = req.body.grado;
   let grupo = req.body.grupo;
 
-  Profesor.profesoresClase(nivel, grado, grupo, (err, profesores) => {
+  Profesor.profesoresClase(nivel, grado, grupo, (err, clases) => {
     if (err) throw err;
-    if (profesores.length > 0) {
+    if (clases.length > 0) {
       return res.json({
         success: true,
-        profesores
+        clases
       });
     } else {
       return res.json({
         success: false,
-        msg: 'No existe ningun profesor con clases en ese grupo'
+        msg: 'No hay clases para ese grupo'
       });
     }
   })

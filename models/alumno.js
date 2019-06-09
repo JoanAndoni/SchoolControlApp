@@ -291,7 +291,9 @@ module.exports.editGrupoAlumno = function(matricula, nivel, grado, grupo, callba
   Alumno.updateOne(query, {
     nivel: nivel,
     grado: grado,
-    grupo: grupo
+    grupo: grupo,
+    materias: [],
+    comentarios: []
   }, callback);
 
 }

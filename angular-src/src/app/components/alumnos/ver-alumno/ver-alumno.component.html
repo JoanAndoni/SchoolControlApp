@@ -4,28 +4,37 @@
   <hr class="featurette-divider">
 
   <div *ngIf="this.authService.adminLoggedIn()">
-    <div class="row justify-content-around text-center">
+
+    <!-- BOTON PARA EDITAR GRUPO -->
+    <div *ngIf="!this.editGrupo" class="row text-center justify-content-end align-items-center m-2">
+      <small id="emailHelp" class="form-text text-muted m-2">Al editar el grupo del alumno se eliminarán las materias y comentarios previamente asignados del alumno.</small>
+      <button type="button" (click)="editarGrupo()" class="btn btn-outline-info">Editar grupo</button>
+    </div>
+
+    <!-- EDITAR GRUPO DEL ALUMNO -->
+    <div *ngIf="this.editGrupo" class="row justify-content-around text-center">
       <div class="form-group row justify-content-center">
-        <label class="col-md-1 p-2 col-form-label">Nivel</label>
+        <label class="col-md-1 p-2 col-form-label">Nivel:</label>
         <div class="col-md-3">
           <select class="form-control" name="nivel" [(ngModel)]="nivel">
             <option *ngFor="let nivel of niveles" [value]="nivel">{{nivel}}</option>
           </select>
         </div>
-        <label class="col-md-1 p-2 col-form-label">Grado</label>
+        <label class="col-md-1 p-2 col-form-label">Grado:</label>
         <div class="col-md-3">
           <input type="number" class="form-control" name="grado" [(ngModel)]="grado" placeholder="Grado . ." [ngModelOptions]="{standalone: true}">
         </div>
-        <label class="col-md-1 p-2 col-form-label">Grupo</label>
+        <label class="col-md-1 p-2 col-form-label">Grupo:</label>
         <div class="col-md-3">
           <input type="text" class="form-control" name="grupo" [(ngModel)]="grupo" placeholder="Grupo . ." [ngModelOptions]="{standalone: true}">
         </div>
       </div>
     </div>
-    <div class="modal-footer">
-      <small id="emailHelp" class="form-text text-muted">Al editar el grupo del alumno se tendran que editar las clases correspondientes</small>
-      <button type="button" (click)="editarGrupoAlumno()" class="btn btn-outline-info">Editar grupo </button>
+    <div *ngIf="this.editGrupo" class="row text-center justify-content-end align-items-center m-2">
+      <button type="button" (click)="editarGrupo()" class="btn btn-danger m-2">Cancelar</button>
+      <button *ngIf="this.nivel && this.grado && this.grupo" type="button" (click)="editarGrupoAlumno()" class="btn btn-info m-2">Editar</button>
     </div>
+
   </div>
 
   <div class="table-responsive">
@@ -73,7 +82,7 @@
               <label class="col-md-6 p-2 col-form-label">Profesor</label>
               <div class="col-md-6 ">
                 <select class="form-control" [(ngModel)]="newNombreProfesor">
-                  <option *ngFor="let profesor of profesoresGrupo" [value]="profesor.nombre">{{profesor.nombre}}</option>
+                  <option *ngFor="let profesor of profesoresGrupo" [value]="profesor._id">{{profesor._id}}</option>
                 </select>
               </div>
             </div>
@@ -81,7 +90,7 @@
               <label class="col-md-6 p-2 col-form-label">Clase</label>
               <div class="col-md-6">
                 <div *ngFor="let profesor of profesoresGrupo">
-                  <select class="form-control" *ngIf="profesor.nombre === newNombreProfesor" [(ngModel)]="newNombreMateria">
+                  <select class="form-control" *ngIf="profesor._id === newNombreProfesor" [(ngModel)]="newNombreMateria">
                     <option *ngFor="let clase of profesor.clases" [value]="clase.nombreClase">{{clase.nombreClase}}</option>
                   </select>
                 </div>

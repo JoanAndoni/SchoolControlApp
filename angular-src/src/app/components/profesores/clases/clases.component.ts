@@ -61,8 +61,8 @@ export class ClasesComponent implements OnInit {
     }
   }
 
-  saveGrupoAlumnos(nivel, grado, grupo, nombreMateria, profesor) {
-    this.router.navigate(['/grupo', nombreMateria, profesor, nivel, grado, grupo]);
+  saveGrupoAlumnos(nivel, grado, grupo, nombreMateria, profesor, profesorPaterno) {
+    this.router.navigate(['/grupo', nombreMateria, profesor, profesorPaterno, nivel, grado, grupo]);
   }
 
   addClase() {

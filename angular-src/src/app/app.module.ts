@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 // Components alumno
@@ -34,7 +33,7 @@ import { AgregarAdminComponent } from './components/admins/agregar-admin/agregar
 import { ListComentariosComponent } from './components/admins/list-comentarios/list-comentarios.component';
 
 // Grupos
-import { VerAlumnosGrupoComponent } from './components/grupos/ver-alumnos-grupo/ver-alumnos-grupo.component';
+import { GruposComponent } from './components/grupos/grupos.component';
 
 // Services
 import { ValidateService } from './services/validate.service';
@@ -68,11 +67,10 @@ const appRoutes: Routes = [
   { path: 'editarAlumno/:nombre/:profesor/:nivel/:grado/:grupo/:id', component: EditarAlumnoComponent, canActivate: [ProfesorGuard] },
   { path: 'profesores', component: ProfesoresComponent, canActivate: [AdminGuard] },
   { path: 'clases/:id', component: ClasesComponent, canActivate: [ProfesorAdminGuard] },
-  { path: 'grupo/:nombre/:profesor/:nivel/:grado/:grupo', component: VerAlumnosGrupoComponent, canActivate: [ProfesorAdminGuard] },
+  { path: 'grupo/:nombre/:profesor/:paterno/:nivel/:grado/:grupo', component: GruposComponent, canActivate: [ProfesorAdminGuard] },
   { path: 'admins', component: AdminsComponent, canActivate: [AdminGuard] },
   { path: 'comentarios', component: ListComentariosComponent, canActivate: [AdminGuard] },
   // Protect the following routes if youre logged in
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
 ]
 
@@ -82,7 +80,6 @@ const appRoutes: Routes = [
     NavbarComponent,
     LoginComponent,
     HomeComponent,
-    DashboardComponent,
     ProfileComponent,
     AlumnosComponent,
     AgregarAlumnoComponent,
@@ -95,7 +92,7 @@ const appRoutes: Routes = [
     VerAlumnoComponent,
     ListarAdminsComponent,
     ClasesComponent,
-    VerAlumnosGrupoComponent,
+    GruposComponent,
     EditarAlumnoComponent,
     ListComentariosComponent,
     ConfirmationDialogComponent

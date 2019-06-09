@@ -11,39 +11,53 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 // Bring out the Router so we can redirect from the code
 import { Router } from '@angular/router';
 
+import { MatDialog } from '@angular/material';
+import { ConfirmationDialogComponent } from '../../shared/confirmation-dialog/confirmation-dialog.component';
+
 @Component({
   selector: 'app-ver-alumno',
   templateUrl: './ver-alumno.component.html',
   styleUrls: ['./ver-alumno.component.css']
 })
 export class VerAlumnoComponent implements OnInit {
+  // VARIABLES PARA INICIAR EL COMPONENTE
   matricula: String = "";
-  alumno: Object;
+  alumno: any;
+
+  // VARIABLES PARA EL CAMBIO DE GRUPO
+  nivel: String;
+  grado: String;
+  grupo: String;
+  editGrupo: boolean;
+
+  // ARRAY PARA EL DISPLAY DE NIVELES
+  niveles: String[] = ["Preescolar", "Primaria", "Secundaria"];
+
+  // VARIABLES PARA LOS PROMEDIOS
   promediosMaterias: number[] = [0, 0, 0, 0, 0, 0, 0];
   promediosTrimestres: number[] = [];
   promedioFinal: number;
 
+  // VARIABLE PARA RECIBIR A LOS PROFESORES CON SUS GRUPOS
   profesoresGrupo: any;
 
-  editComentario: boolean;
-  comentarioEdit: any;
-
+  // VARIABLES PARA AGREGAR MATERIAS AL ALUMNO
   newNombreProfesor: String = "";
   newNombreMateria: String = "";
 
+  // VARIABLE PARA ELIMINAR MATERIA DEL ALUMNO
   nombreMateriaDelete: String = "";
 
-  niveles: String[] = ["Preescolar", "Primaria", "Secundaria"];
-
-  nivel: String;
-  grado: String;
-  grupo: String;
+  // VARIABLES PARA EDITAR UN COMENTARIO
+  editComentario: boolean;
+  comentarioEdit: any;
 
   constructor(
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -58,6 +72,10 @@ export class VerAlumnoComponent implements OnInit {
       this.authService.buscarAlumnoMatricula(alumno).subscribe(data => {
         if (data.success) {
           this.alumno = data.alumno;
+          if (data.alumno.materias.length > 0) {
+            this.nombreMateriaDelete = data.alumno.materias[0].nombreMateria;
+          }
+
           const grupo = {
             nivel: data.alumno.nivel,
             grado: data.alumno.grado,
@@ -65,9 +83,15 @@ export class VerAlumnoComponent implements OnInit {
           }
           this.authService.getProfesoresGrupo(grupo).subscribe(data => {
             if (data.success) {
-              this.profesoresGrupo = data.profesores;
+              this.profesoresGrupo = data.clases;
+              if (this.profesoresGrupo.length > 0) {
+                this.newNombreProfesor = this.profesoresGrupo[0]._id;
+              }
             }
           });
+
+
+          // PROMEDIO DE MATERIAS
           let indexMateria: number = 0;
           let sumaMateria: number = 0;
           let sum1: number = 0;
@@ -92,6 +116,8 @@ export class VerAlumnoComponent implements OnInit {
             sumTotal += this.promediosTrimestres[i];
           }
           this.promedioFinal = sumTotal / this.promediosTrimestres.length;
+          //******************//
+
         } else {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
           this.router.navigate(['/alumnos']);
@@ -103,6 +129,7 @@ export class VerAlumnoComponent implements OnInit {
         if (this.matricula != profile.alumno.matricula) {
           this.router.navigate(['/verAlumno', profile.alumno.matricula]);
         }
+
         let indexMateria: number = 0;
         let sumaMateria: number = 0;
         let sum1: number = 0;
@@ -143,16 +170,21 @@ export class VerAlumnoComponent implements OnInit {
       nombreMateria: this.newNombreMateria,
       profesor: this.newNombreProfesor
     }
-
-    this.authService.agregarMateria(materia).subscribe(data => {
-      if (data.success) {
-        this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
-      } else {
-        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-      }
-      window.scroll(0, 0);
-      this.ngOnInit();
-    });
+    if (this.newNombreMateria === "") {
+      this.flashMessage.show("Selecciona una clase válida", { cssClass: 'alert-danger', timeout: 3000 });
+    } else {
+      this.authService.agregarMateria(materia).subscribe(data => {
+        if (data.success) {
+          this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+          this.newNombreMateria = "";
+          this.nombreMateriaDelete = "";
+          this.ngOnInit();
+        } else {
+          this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+        }
+      });
+    }
+    window.scroll(0, 0);
   }
 
   eliminarMateria() {
@@ -164,11 +196,12 @@ export class VerAlumnoComponent implements OnInit {
     this.authService.eliminarMateria(materia).subscribe(data => {
       if (data.success) {
         this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+        this.nombreMateriaDelete = "";
+        this.ngOnInit();
       } else {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
       }
       window.scroll(0, 0);
-      this.ngOnInit();
     });
   }
 
@@ -225,27 +258,51 @@ export class VerAlumnoComponent implements OnInit {
     }
   }
 
+  editarGrupo() {
+    if (this.editGrupo) {
+      this.nivel = null;
+      this.grado = null;
+      this.grupo = null;
+      this.editGrupo = false;
+    } else {
+      this.editGrupo = true;
+    }
+  }
+
   editarGrupoAlumno() {
     if (this.authService.adminLoggedIn()) {
-      const grupo = {
-        matricula: this.matricula,
-        nivel: this.nivel,
-        grado: this.grado,
-        grupo: this.grupo
-      }
-      this.authService.editarGrupo(grupo).subscribe(data => {
-        if (data.success) {
-          this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+      const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+        width: '50vh',
+        height: '50vh',
+        data: "¿Desea cambiar el grupo de " + this.alumno.nombre + " " + this.alumno.paterno + " " + this.alumno.materno + ", aceptando que se eliminarán las materias y comentarios previamente asignados del alumno?"
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          const grupo = {
+            matricula: this.matricula,
+            nivel: this.nivel,
+            grado: this.grado,
+            grupo: this.grupo
+          }
+          this.authService.editarGrupo(grupo).subscribe(data => {
+            if (data.success) {
+              this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+              this.nivel = null;
+              this.grado = null;
+              this.grupo = null;
+              window.location.reload();
+            } else {
+              this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+              this.editGrupo = false;
+            }
+          });
+        } else {
           this.nivel = null;
           this.grado = null;
           this.grupo = null;
-        } else {
-          this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+          this.editGrupo = false;
         }
-        this.ngOnInit();
       });
-    } else {
-      this.router.navigate(['/alumnos']);
     }
   }
 }

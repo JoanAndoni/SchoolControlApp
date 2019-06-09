@@ -24,19 +24,27 @@ export class EditarAlumnoComponent implements OnInit {
   grupo_nivel: string;
   grupo_grado: string;
   grupo_grupo: string;
-
   matricula: any;
+
+  // VARIBALES GENERALES PARA EL COMPONENTE
   alumno: any;
   grupo: any;
+
+  // VARIABLES PARA LOS COMPONENTES
   titulo: any;
   comentario: any;
-  nombreMateria: any;
-  promediosMaterias: number[] = [0, 0, 0];
 
-  calificacionesCambiar: number[];
+  // VARIABLES PARA EL REQUEST CAMBIO DE CALIFICACIONES
   materiaCalificaciones: String;
-  calificacion: number;
+  calificacionesCambiar: number[];
+
+  // VARIABLES PARA CALIFICAR MATERIA
   trimestre: number;
+  calificacion: number;
+  trimestres: number[] = [1, 2, 3]
+
+  // VARIABLE PARA EL DISPLAY DE PROMEDIOS
+  promediosMaterias: number[] = [0, 0, 0];
 
   constructor(
     private flashMessage: FlashMessagesService,

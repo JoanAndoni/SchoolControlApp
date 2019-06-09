@@ -71,9 +71,10 @@ module.exports.getProfesorByMatricula = function(matricula, callback) {
 }
 
 // Make the query and bring one alumno by the matricula from the DB
-module.exports.getProfesoresByNombre = function(nombre, callback) {
+module.exports.getProfesoresByNombre = function(nombre, paterno, callback) {
   const query = {
-    nombre: nombre
+    nombre: nombre,
+    paterno: paterno
   }
 
   Profesor.find(query, null, {
@@ -184,28 +185,22 @@ module.exports.deleteClase = function(matricula, nombreClase, nivel, grado, grup
 }
 
 module.exports.profesoresClase = function(nivel, grado, grupo, callback) {
-  const query = {
-    clases: {
-      $elemMatch: {
-        nivel: nivel,
-        grado: grado,
-        grupo: grupo
+  Profesor.aggregate([{
+    "$unwind": "$clases"
+  }, {
+    "$match": {
+      "clases.nivel": nivel,
+      "clases.grado": grado,
+      "clases.grupo": grupo
+    }
+  }, {
+    "$group": {
+      _id: "$nombre",
+      clases: {
+        $push: "$clases"
       }
     }
-  }
-
-  const projection = {
-    nombre: 1,
-    clases: {
-      $elemMatch: {
-        nivel: nivel,
-        grado: grado,
-        grupo: grupo
-      }
-    }
-  }
-
-  Profesor.find(query, projection, callback);
+  }], callback);
 }
 
 module.exports.getAllProfesores = function(callback) {

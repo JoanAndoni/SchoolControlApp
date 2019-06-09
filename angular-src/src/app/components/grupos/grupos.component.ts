@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from '../../../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute } from '@angular/router';
 
 // Import of the module for the flash messages
@@ -9,14 +9,15 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-ver-alumnos-grupo',
-  templateUrl: './ver-alumnos-grupo.component.html',
-  styleUrls: ['./ver-alumnos-grupo.component.css']
+  selector: 'app-grupos',
+  templateUrl: './grupos.component.html',
+  styleUrls: ['./grupos.component.css']
 })
-export class VerAlumnosGrupoComponent implements OnInit {
+export class GruposComponent implements OnInit {
   // VARIABLES PARA RECIBIR LOS ARGUMENTOS
   grupo_nombreMateria: string;
   grupo_profesor: string;
+  grupo_profesor_paterno: string;
   grupo_nivel: string;
   grupo_grado: string;
   grupo_grupo: string;
@@ -37,6 +38,7 @@ export class VerAlumnosGrupoComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(params => {
       this.grupo_nombreMateria = params.get('nombre');
       this.grupo_profesor = params.get('profesor');
+      this.grupo_profesor_paterno = params.get('paterno');
       this.grupo_nivel = params.get('nivel');
       this.grupo_grado = params.get('grado');
       this.grupo_grupo = params.get('grupo');
@@ -60,17 +62,18 @@ export class VerAlumnosGrupoComponent implements OnInit {
         });
     } else if (this.authService.adminLoggedIn) {
       const profesor = {
-        nombre: this.grupo_profesor
+        nombre: this.grupo_profesor,
+        paterno: this.grupo_profesor_paterno
       }
+
       this.authService.buscarProfesoresNombre(profesor).subscribe(data => {
         if (data.success) {
-          console.log(data.profesores);
-          console.log(data.profesores[0].matricula);
           this.profesor_matricula = data.profesores[0].matricula;
         } else {
           this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
         }
       });
+
     }
 
     this.authService.buscarAlumnosGrupo(this.grupo).subscribe(grupo => {
