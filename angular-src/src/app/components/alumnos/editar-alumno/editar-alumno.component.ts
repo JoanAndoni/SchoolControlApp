@@ -84,7 +84,7 @@ export class EditarAlumnoComponent implements OnInit {
             for (var i = 0; i < materia.calificaciones.length; i++) {
               sum += materia.calificaciones[i];
             }
-            this.promedioMateria = sum / materia.calificaciones.length;
+            this.promedioMateria = Math.round((sum / materia.calificaciones.length) * 100) / 100;
           }
         }
       } else {
