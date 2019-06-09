@@ -102,33 +102,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/navbar/navbar.component */ "./src/app/components/navbar/navbar.component.ts");
 /* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
 /* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
-/* harmony import */ var _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/dashboard/dashboard.component */ "./src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/profile/profile.component */ "./src/app/components/profile/profile.component.ts");
-/* harmony import */ var _components_alumnos_alumnos_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/alumnos/alumnos.component */ "./src/app/components/alumnos/alumnos.component.ts");
-/* harmony import */ var _components_alumnos_agregar_alumno_agregar_alumno_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/alumnos/agregar-alumno/agregar-alumno.component */ "./src/app/components/alumnos/agregar-alumno/agregar-alumno.component.ts");
-/* harmony import */ var _components_alumnos_listar_alumnos_listar_alumnos_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/alumnos/listar-alumnos/listar-alumnos.component */ "./src/app/components/alumnos/listar-alumnos/listar-alumnos.component.ts");
-/* harmony import */ var _components_alumnos_ver_alumno_ver_alumno_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/alumnos/ver-alumno/ver-alumno.component */ "./src/app/components/alumnos/ver-alumno/ver-alumno.component.ts");
-/* harmony import */ var _components_alumnos_editar_alumno_editar_alumno_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/alumnos/editar-alumno/editar-alumno.component */ "./src/app/components/alumnos/editar-alumno/editar-alumno.component.ts");
-/* harmony import */ var _components_profesores_profesores_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/profesores/profesores.component */ "./src/app/components/profesores/profesores.component.ts");
-/* harmony import */ var _components_profesores_agregar_profesor_agregar_profesor_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/profesores/agregar-profesor/agregar-profesor.component */ "./src/app/components/profesores/agregar-profesor/agregar-profesor.component.ts");
-/* harmony import */ var _components_profesores_listar_profesores_listar_profesores_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/profesores/listar-profesores/listar-profesores.component */ "./src/app/components/profesores/listar-profesores/listar-profesores.component.ts");
-/* harmony import */ var _components_profesores_clases_clases_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/profesores/clases/clases.component */ "./src/app/components/profesores/clases/clases.component.ts");
-/* harmony import */ var _components_admins_admins_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/admins/admins.component */ "./src/app/components/admins/admins.component.ts");
-/* harmony import */ var _components_admins_listar_admins_listar_admins_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/admins/listar-admins/listar-admins.component */ "./src/app/components/admins/listar-admins/listar-admins.component.ts");
-/* harmony import */ var _components_admins_agregar_admin_agregar_admin_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/admins/agregar-admin/agregar-admin.component */ "./src/app/components/admins/agregar-admin/agregar-admin.component.ts");
-/* harmony import */ var _components_grupos_ver_alumnos_grupo_ver_alumnos_grupo_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/grupos/ver-alumnos-grupo/ver-alumnos-grupo.component */ "./src/app/components/grupos/ver-alumnos-grupo/ver-alumnos-grupo.component.ts");
+/* harmony import */ var _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/profile/profile.component */ "./src/app/components/profile/profile.component.ts");
+/* harmony import */ var _components_alumnos_alumnos_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/alumnos/alumnos.component */ "./src/app/components/alumnos/alumnos.component.ts");
+/* harmony import */ var _components_alumnos_agregar_alumno_agregar_alumno_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/alumnos/agregar-alumno/agregar-alumno.component */ "./src/app/components/alumnos/agregar-alumno/agregar-alumno.component.ts");
+/* harmony import */ var _components_alumnos_listar_alumnos_listar_alumnos_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/alumnos/listar-alumnos/listar-alumnos.component */ "./src/app/components/alumnos/listar-alumnos/listar-alumnos.component.ts");
+/* harmony import */ var _components_alumnos_ver_alumno_ver_alumno_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/alumnos/ver-alumno/ver-alumno.component */ "./src/app/components/alumnos/ver-alumno/ver-alumno.component.ts");
+/* harmony import */ var _components_alumnos_editar_alumno_editar_alumno_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/alumnos/editar-alumno/editar-alumno.component */ "./src/app/components/alumnos/editar-alumno/editar-alumno.component.ts");
+/* harmony import */ var _components_profesores_profesores_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/profesores/profesores.component */ "./src/app/components/profesores/profesores.component.ts");
+/* harmony import */ var _components_profesores_agregar_profesor_agregar_profesor_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/profesores/agregar-profesor/agregar-profesor.component */ "./src/app/components/profesores/agregar-profesor/agregar-profesor.component.ts");
+/* harmony import */ var _components_profesores_listar_profesores_listar_profesores_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/profesores/listar-profesores/listar-profesores.component */ "./src/app/components/profesores/listar-profesores/listar-profesores.component.ts");
+/* harmony import */ var _components_profesores_clases_clases_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/profesores/clases/clases.component */ "./src/app/components/profesores/clases/clases.component.ts");
+/* harmony import */ var _components_admins_admins_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/admins/admins.component */ "./src/app/components/admins/admins.component.ts");
+/* harmony import */ var _components_admins_listar_admins_listar_admins_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/admins/listar-admins/listar-admins.component */ "./src/app/components/admins/listar-admins/listar-admins.component.ts");
+/* harmony import */ var _components_admins_agregar_admin_agregar_admin_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/admins/agregar-admin/agregar-admin.component */ "./src/app/components/admins/agregar-admin/agregar-admin.component.ts");
+/* harmony import */ var _components_admins_list_comentarios_list_comentarios_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/admins/list-comentarios/list-comentarios.component */ "./src/app/components/admins/list-comentarios/list-comentarios.component.ts");
+/* harmony import */ var _components_grupos_grupos_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/grupos/grupos.component */ "./src/app/components/grupos/grupos.component.ts");
 /* harmony import */ var _services_validate_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./services/validate.service */ "./src/app/services/validate.service.ts");
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./services/auth.service */ "./src/app/services/auth.service.ts");
 /* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
 /* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_28___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_28__);
 /* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
-/* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
-/* harmony import */ var _guards_notAuth_guard__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./guards/notAuth.guard */ "./src/app/guards/notAuth.guard.ts");
-/* harmony import */ var _guards_alumno_guard__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./guards/alumno.guard */ "./src/app/guards/alumno.guard.ts");
-/* harmony import */ var _guards_alumnoAdmin_guard__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./guards/alumnoAdmin.guard */ "./src/app/guards/alumnoAdmin.guard.ts");
-/* harmony import */ var _guards_profesor_guard__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./guards/profesor.guard */ "./src/app/guards/profesor.guard.ts");
-/* harmony import */ var _guards_profesorAdmin_guard__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./guards/profesorAdmin.guard */ "./src/app/guards/profesorAdmin.guard.ts");
-/* harmony import */ var _guards_admin_guard__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./guards/admin.guard */ "./src/app/guards/admin.guard.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
+/* harmony import */ var _guards_notAuth_guard__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./guards/notAuth.guard */ "./src/app/guards/notAuth.guard.ts");
+/* harmony import */ var _guards_alumno_guard__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./guards/alumno.guard */ "./src/app/guards/alumno.guard.ts");
+/* harmony import */ var _guards_alumnoAdmin_guard__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./guards/alumnoAdmin.guard */ "./src/app/guards/alumnoAdmin.guard.ts");
+/* harmony import */ var _guards_profesor_guard__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./guards/profesor.guard */ "./src/app/guards/profesor.guard.ts");
+/* harmony import */ var _guards_profesorAdmin_guard__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./guards/profesorAdmin.guard */ "./src/app/guards/profesorAdmin.guard.ts");
+/* harmony import */ var _guards_admin_guard__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./guards/admin.guard */ "./src/app/guards/admin.guard.ts");
+/* harmony import */ var _components_shared_confirmation_dialog_confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./components/shared/confirmation-dialog/confirmation-dialog.component */ "./src/app/components/shared/confirmation-dialog/confirmation-dialog.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -143,7 +147,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 // Components
-
 
 
 
@@ -164,6 +167,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 // Grupos
 
 // Services
@@ -172,7 +176,12 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 // Libraries
 
 
+
+
+
+// @import ‘~@angular/material/prebuilt-themes/deeppurple-amber.css’;
 // Guards
+
 
 
 
@@ -183,17 +192,17 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 // Array for the routing
 var appRoutes = [
     { path: '', component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"] },
-    { path: 'login', component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_9__["LoginComponent"], canActivate: [_guards_notAuth_guard__WEBPACK_IMPORTED_MODULE_31__["NotAuthGuard"]] },
-    { path: 'alumnos', component: _components_alumnos_alumnos_component__WEBPACK_IMPORTED_MODULE_13__["AlumnosComponent"], canActivate: [_guards_admin_guard__WEBPACK_IMPORTED_MODULE_36__["AdminGuard"]] },
-    { path: 'verAlumno', component: _components_alumnos_ver_alumno_ver_alumno_component__WEBPACK_IMPORTED_MODULE_16__["VerAlumnoComponent"], canActivate: [_guards_alumnoAdmin_guard__WEBPACK_IMPORTED_MODULE_33__["AlumnoAdminGuard"]] },
-    { path: 'editarAlumno', component: _components_alumnos_editar_alumno_editar_alumno_component__WEBPACK_IMPORTED_MODULE_17__["EditarAlumnoComponent"], canActivate: [_guards_profesor_guard__WEBPACK_IMPORTED_MODULE_34__["ProfesorGuard"]] },
-    { path: 'profesores', component: _components_profesores_profesores_component__WEBPACK_IMPORTED_MODULE_18__["ProfesoresComponent"], canActivate: [_guards_admin_guard__WEBPACK_IMPORTED_MODULE_36__["AdminGuard"]] },
-    { path: 'clases', component: _components_profesores_clases_clases_component__WEBPACK_IMPORTED_MODULE_21__["ClasesComponent"], canActivate: [_guards_profesorAdmin_guard__WEBPACK_IMPORTED_MODULE_35__["ProfesorAdminGuard"]] },
-    { path: 'grupo', component: _components_grupos_ver_alumnos_grupo_ver_alumnos_grupo_component__WEBPACK_IMPORTED_MODULE_25__["VerAlumnosGrupoComponent"], canActivate: [_guards_profesorAdmin_guard__WEBPACK_IMPORTED_MODULE_35__["ProfesorAdminGuard"]] },
-    { path: 'admins', component: _components_admins_admins_component__WEBPACK_IMPORTED_MODULE_22__["AdminsComponent"], canActivate: [_guards_admin_guard__WEBPACK_IMPORTED_MODULE_36__["AdminGuard"]] },
+    { path: 'login', component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_9__["LoginComponent"], canActivate: [_guards_notAuth_guard__WEBPACK_IMPORTED_MODULE_34__["NotAuthGuard"]] },
+    { path: 'alumnos', component: _components_alumnos_alumnos_component__WEBPACK_IMPORTED_MODULE_12__["AlumnosComponent"], canActivate: [_guards_admin_guard__WEBPACK_IMPORTED_MODULE_39__["AdminGuard"]] },
+    { path: 'verAlumno/:id', component: _components_alumnos_ver_alumno_ver_alumno_component__WEBPACK_IMPORTED_MODULE_15__["VerAlumnoComponent"], canActivate: [_guards_alumnoAdmin_guard__WEBPACK_IMPORTED_MODULE_36__["AlumnoAdminGuard"]] },
+    { path: 'editarAlumno/:nombre/:profesor/:nivel/:grado/:grupo/:id', component: _components_alumnos_editar_alumno_editar_alumno_component__WEBPACK_IMPORTED_MODULE_16__["EditarAlumnoComponent"], canActivate: [_guards_profesor_guard__WEBPACK_IMPORTED_MODULE_37__["ProfesorGuard"]] },
+    { path: 'profesores', component: _components_profesores_profesores_component__WEBPACK_IMPORTED_MODULE_17__["ProfesoresComponent"], canActivate: [_guards_admin_guard__WEBPACK_IMPORTED_MODULE_39__["AdminGuard"]] },
+    { path: 'clases/:id', component: _components_profesores_clases_clases_component__WEBPACK_IMPORTED_MODULE_20__["ClasesComponent"], canActivate: [_guards_profesorAdmin_guard__WEBPACK_IMPORTED_MODULE_38__["ProfesorAdminGuard"]] },
+    { path: 'grupo/:nombre/:profesor/:paterno/:nivel/:grado/:grupo', component: _components_grupos_grupos_component__WEBPACK_IMPORTED_MODULE_25__["GruposComponent"], canActivate: [_guards_profesorAdmin_guard__WEBPACK_IMPORTED_MODULE_38__["ProfesorAdminGuard"]] },
+    { path: 'admins', component: _components_admins_admins_component__WEBPACK_IMPORTED_MODULE_21__["AdminsComponent"], canActivate: [_guards_admin_guard__WEBPACK_IMPORTED_MODULE_39__["AdminGuard"]] },
+    { path: 'comentarios', component: _components_admins_list_comentarios_list_comentarios_component__WEBPACK_IMPORTED_MODULE_24__["ListComentariosComponent"], canActivate: [_guards_admin_guard__WEBPACK_IMPORTED_MODULE_39__["AdminGuard"]] },
     // Protect the following routes if youre logged in
-    { path: 'dashboard', component: _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_11__["DashboardComponent"], canActivate: [_guards_admin_guard__WEBPACK_IMPORTED_MODULE_36__["AdminGuard"]] },
-    { path: 'profile', component: _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_12__["ProfileComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_30__["AuthGuard"]] },
+    { path: 'profile', component: _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_11__["ProfileComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_33__["AuthGuard"]] },
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -205,21 +214,22 @@ var AppModule = /** @class */ (function () {
                 _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_8__["NavbarComponent"],
                 _components_login_login_component__WEBPACK_IMPORTED_MODULE_9__["LoginComponent"],
                 _components_home_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"],
-                _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_11__["DashboardComponent"],
-                _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_12__["ProfileComponent"],
-                _components_alumnos_alumnos_component__WEBPACK_IMPORTED_MODULE_13__["AlumnosComponent"],
-                _components_alumnos_agregar_alumno_agregar_alumno_component__WEBPACK_IMPORTED_MODULE_14__["AgregarAlumnoComponent"],
-                _components_alumnos_listar_alumnos_listar_alumnos_component__WEBPACK_IMPORTED_MODULE_15__["ListarAlumnosComponent"],
-                _components_profesores_profesores_component__WEBPACK_IMPORTED_MODULE_18__["ProfesoresComponent"],
-                _components_profesores_agregar_profesor_agregar_profesor_component__WEBPACK_IMPORTED_MODULE_19__["AgregarProfesorComponent"],
-                _components_profesores_listar_profesores_listar_profesores_component__WEBPACK_IMPORTED_MODULE_20__["ListarProfesoresComponent"],
-                _components_admins_admins_component__WEBPACK_IMPORTED_MODULE_22__["AdminsComponent"],
-                _components_admins_agregar_admin_agregar_admin_component__WEBPACK_IMPORTED_MODULE_24__["AgregarAdminComponent"],
-                _components_alumnos_ver_alumno_ver_alumno_component__WEBPACK_IMPORTED_MODULE_16__["VerAlumnoComponent"],
-                _components_admins_listar_admins_listar_admins_component__WEBPACK_IMPORTED_MODULE_23__["ListarAdminsComponent"],
-                _components_profesores_clases_clases_component__WEBPACK_IMPORTED_MODULE_21__["ClasesComponent"],
-                _components_grupos_ver_alumnos_grupo_ver_alumnos_grupo_component__WEBPACK_IMPORTED_MODULE_25__["VerAlumnosGrupoComponent"],
-                _components_alumnos_editar_alumno_editar_alumno_component__WEBPACK_IMPORTED_MODULE_17__["EditarAlumnoComponent"]
+                _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_11__["ProfileComponent"],
+                _components_alumnos_alumnos_component__WEBPACK_IMPORTED_MODULE_12__["AlumnosComponent"],
+                _components_alumnos_agregar_alumno_agregar_alumno_component__WEBPACK_IMPORTED_MODULE_13__["AgregarAlumnoComponent"],
+                _components_alumnos_listar_alumnos_listar_alumnos_component__WEBPACK_IMPORTED_MODULE_14__["ListarAlumnosComponent"],
+                _components_profesores_profesores_component__WEBPACK_IMPORTED_MODULE_17__["ProfesoresComponent"],
+                _components_profesores_agregar_profesor_agregar_profesor_component__WEBPACK_IMPORTED_MODULE_18__["AgregarProfesorComponent"],
+                _components_profesores_listar_profesores_listar_profesores_component__WEBPACK_IMPORTED_MODULE_19__["ListarProfesoresComponent"],
+                _components_admins_admins_component__WEBPACK_IMPORTED_MODULE_21__["AdminsComponent"],
+                _components_admins_agregar_admin_agregar_admin_component__WEBPACK_IMPORTED_MODULE_23__["AgregarAdminComponent"],
+                _components_alumnos_ver_alumno_ver_alumno_component__WEBPACK_IMPORTED_MODULE_15__["VerAlumnoComponent"],
+                _components_admins_listar_admins_listar_admins_component__WEBPACK_IMPORTED_MODULE_22__["ListarAdminsComponent"],
+                _components_profesores_clases_clases_component__WEBPACK_IMPORTED_MODULE_20__["ClasesComponent"],
+                _components_grupos_grupos_component__WEBPACK_IMPORTED_MODULE_25__["GruposComponent"],
+                _components_alumnos_editar_alumno_editar_alumno_component__WEBPACK_IMPORTED_MODULE_16__["EditarAlumnoComponent"],
+                _components_admins_list_comentarios_list_comentarios_component__WEBPACK_IMPORTED_MODULE_24__["ListComentariosComponent"],
+                _components_shared_confirmation_dialog_confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_40__["ConfirmationDialogComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -236,18 +246,24 @@ var AppModule = /** @class */ (function () {
                             return localStorage.getItem('id_token');
                         }
                     }
-                })
+                }),
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_32__["BrowserAnimationsModule"],
+                _angular_material_dialog__WEBPACK_IMPORTED_MODULE_30__["MatDialogModule"],
+                _angular_material_button__WEBPACK_IMPORTED_MODULE_31__["MatButtonModule"]
+            ],
+            entryComponents: [
+                _components_shared_confirmation_dialog_confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_40__["ConfirmationDialogComponent"]
             ],
             providers: [
                 _services_validate_service__WEBPACK_IMPORTED_MODULE_26__["ValidateService"],
                 _services_auth_service__WEBPACK_IMPORTED_MODULE_27__["AuthService"],
-                _guards_auth_guard__WEBPACK_IMPORTED_MODULE_30__["AuthGuard"],
-                _guards_notAuth_guard__WEBPACK_IMPORTED_MODULE_31__["NotAuthGuard"],
-                _guards_alumno_guard__WEBPACK_IMPORTED_MODULE_32__["AlumnoGuard"],
-                _guards_alumnoAdmin_guard__WEBPACK_IMPORTED_MODULE_33__["AlumnoAdminGuard"],
-                _guards_profesor_guard__WEBPACK_IMPORTED_MODULE_34__["ProfesorGuard"],
-                _guards_profesorAdmin_guard__WEBPACK_IMPORTED_MODULE_35__["ProfesorAdminGuard"],
-                _guards_admin_guard__WEBPACK_IMPORTED_MODULE_36__["AdminGuard"]
+                _guards_auth_guard__WEBPACK_IMPORTED_MODULE_33__["AuthGuard"],
+                _guards_notAuth_guard__WEBPACK_IMPORTED_MODULE_34__["NotAuthGuard"],
+                _guards_alumno_guard__WEBPACK_IMPORTED_MODULE_35__["AlumnoGuard"],
+                _guards_alumnoAdmin_guard__WEBPACK_IMPORTED_MODULE_36__["AlumnoAdminGuard"],
+                _guards_profesor_guard__WEBPACK_IMPORTED_MODULE_37__["ProfesorGuard"],
+                _guards_profesorAdmin_guard__WEBPACK_IMPORTED_MODULE_38__["ProfesorAdminGuard"],
+                _guards_admin_guard__WEBPACK_IMPORTED_MODULE_39__["AdminGuard"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         })
@@ -395,16 +411,17 @@ var AgregarAdminComponent = /** @class */ (function () {
             this.authService.registerAdmin(admin).subscribe(function (data) {
                 if (data.success) {
                     _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
-                    // this.router.navigate(['/login']);
+                    window.location.reload();
                 }
                 else {
                     _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-                    // this.router.navigate(['/admins']);
+                    window.scroll(0, 0);
                 }
             });
         }
         else {
             this.flashMessage.show('Las contraseñas no coinciden', { cssClass: 'alert-danger', timeout: 3000 });
+            window.scroll(0, 0);
         }
     };
     AgregarAdminComponent = __decorate([
@@ -424,6 +441,184 @@ var AgregarAdminComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/admins/list-comentarios/list-comentarios.component.css":
+/*!***********************************************************************************!*\
+  !*** ./src/app/components/admins/list-comentarios/list-comentarios.component.css ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYWRtaW5zL2xpc3QtY29tZW50YXJpb3MvbGlzdC1jb21lbnRhcmlvcy5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/admins/list-comentarios/list-comentarios.component.html":
+/*!************************************************************************************!*\
+  !*** ./src/app/components/admins/list-comentarios/list-comentarios.component.html ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"user?.comentarios.length > 0\" class=\"position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light\">\n\n  <h1 *ngIf=\"!editComentario\">Comentarios</h1>\n  <h1 *ngIf=\"editComentario\">Editar comentario</h1>\n\n  <div *ngIf=\"!editComentario\">\n    <div *ngFor=\"let comentario of user?.comentarios; index as i\" class=\"overflow-hidden position-relative p-4 m-md-1 bg-light\">\n      <div class=\"row\">\n        <div class=\"col-md-12 pull-left text-left\">\n          <div class=\"d-flex justify-content-between\">\n            <h3 class=\"mb-1\">{{ comentario.titulo }}</h3>\n          </div>\n          <h4 class=\"list-group-item-heading m-1\">Alumno: {{ comentario.matricula }}</h4>\n          <h6 class=\"list-group-item-heading m-1\">Profesor: {{ comentario.profesor }}</h6>\n          <h6 class=\"list-group-item-heading m-1\">Materia: {{ comentario.materia }}</h6>\n          <div class=\"row\">\n            <div class=\"col-md-12\">\n              <p class=\"m-2\">{{ comentario.texto }}</p>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"this.authService.adminLoggedIn()\" class=\"modal-footer\">\n        <button type=\"button\" (click)=\"eliminarComentario(comentario.matricula, comentario.titulo)\" class=\"btn btn-outline-danger btn-md m-2\">No autorizar</button>\n        <button type=\"button\" (click)=\"editarComentario(comentario.matricula, comentario.profesor, comentario.materia, comentario.titulo, comentario.texto)\" class=\"btn btn-outline-warning btn-md m-2\">Editar</button>\n        <button type=\"button\" (click)=\"autorizarComentario(comentario.matricula, comentario.profesor, comentario.materia, comentario.titulo, comentario.texto)\" class=\"btn btn-outline-success btn-md m-2\">Autorizar</button>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"editComentario\" class=\"overflow-hidden position-relative p-4 m-md-1 bg-light\">\n    <div class=\"row\">\n      <div class=\"col-md-12 pull-left text-left\">\n        <div class=\"d-flex justify-content-between\">\n          <h3 class=\"mb-1\">{{ this.comentarioEdit.titulo }}</h3>\n        </div>\n        <h4 class=\"list-group-item-heading m-1\">Alumno: {{ this.comentarioEdit.matricula }}</h4>\n        <h6 class=\"list-group-item-heading m-1\">Profesor: {{ this.comentarioEdit.profesor }}</h6>\n        <h6 class=\"list-group-item-heading m-1\">Materia: {{ this.comentarioEdit.materia }}</h6>\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <textarea class=\"form-control\" name=\"comentarioTexto\" [(ngModel)]=\"this.comentarioEdit.texto\" placeholder=\"Comentario . .\" [ngModelOptions]=\"{standalone: true}\" rows=\"4\"></textarea>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"modal-footer\">\n      <button type=\"button\" (click)=\"cancelarPost()\" class=\"btn btn-danger\">Cancelar</button>\n      <button type=\"button\" (click)=\"editarPost()\" class=\"btn btn-info\">Aceptar</button>\n    </div>\n  </div>\n\n</div>\n\n<div *ngIf=\"user?.comentarios.length == 0\" class=\"position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light\">\n  <h1>No hay comentarios para revisar</h1>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/admins/list-comentarios/list-comentarios.component.ts":
+/*!**********************************************************************************!*\
+  !*** ./src/app/components/admins/list-comentarios/list-comentarios.component.ts ***!
+  \**********************************************************************************/
+/*! exports provided: ListComentariosComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListComentariosComponent", function() { return ListComentariosComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+// Import of the module for the flash messages
+
+
+var ListComentariosComponent = /** @class */ (function () {
+    function ListComentariosComponent(flashMessage, authService, router) {
+        this.flashMessage = flashMessage;
+        this.authService = authService;
+        this.router = router;
+    }
+    ListComentariosComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.editComentario = false;
+        this.authService.getProfileAdmin().subscribe(function (profile) {
+            _this.user = profile.admin;
+        }, function (err) {
+            console.log(err);
+            return false;
+        });
+    };
+    ListComentariosComponent.prototype.eliminarComentario = function (matricula, titulo) {
+        var _this = this;
+        var comentario = {
+            matricula: matricula,
+            titulo: titulo
+        };
+        this.authService.eliminarAdminComentario(comentario).subscribe(function (data) {
+            if (data.success) {
+                _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+            }
+            else {
+                _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+            }
+            window.scroll(0, 0);
+            _this.ngOnInit();
+        });
+    };
+    ListComentariosComponent.prototype.editarComentario = function (matricula, profesor, materia, titulo, texto) {
+        this.editComentario = true;
+        this.comentarioEdit = {
+            matricula: matricula,
+            titulo: titulo,
+            texto: texto,
+            profesor: profesor,
+            materia: materia
+        };
+    };
+    ListComentariosComponent.prototype.cancelarPost = function () {
+        this.editComentario = false;
+    };
+    ListComentariosComponent.prototype.editarPost = function () {
+        var _this = this;
+        var comentario = {
+            matricula: this.comentarioEdit.matricula,
+            titulo: this.comentarioEdit.titulo,
+            texto: this.comentarioEdit.texto
+        };
+        this.authService.editarAdminComentario(comentario).subscribe(function (data) {
+            if (data.success) {
+                _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+            }
+            else {
+                _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+            }
+            _this.ngOnInit();
+            window.scroll(0, 0);
+            _this.comentarioEdit = null;
+        });
+        this.editComentario = false;
+    };
+    ListComentariosComponent.prototype.autorizarComentario = function (matricula, profesor, nombreMateria, titulo, texto) {
+        var _this = this;
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+        if (dd < 10)
+            dd = '0' + dd;
+        if (mm < 10)
+            mm = '0' + mm;
+        today = mm + '/' + dd + '/' + yyyy;
+        this.fecha = today;
+        var comentario = {
+            matricula: matricula,
+            profesor: profesor,
+            materia: nombreMateria,
+            fecha: this.fecha,
+            titulo: titulo,
+            texto: texto
+        };
+        this.authService.agregarComentario(comentario).subscribe(function (data) {
+            if (data.success) {
+                _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+                var comentarioEliminar = {
+                    matricula: matricula,
+                    titulo: titulo
+                };
+                _this.authService.eliminarAdminComentario(comentarioEliminar).subscribe(function (data) {
+                    if (data.success) {
+                        // this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+                    }
+                    else {
+                        _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                    }
+                    _this.ngOnInit();
+                });
+            }
+            else {
+                _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+            }
+            window.scroll(0, 0);
+            _this.ngOnInit();
+        });
+    };
+    ListComentariosComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-list-comentarios',
+            template: __webpack_require__(/*! ./list-comentarios.component.html */ "./src/app/components/admins/list-comentarios/list-comentarios.component.html"),
+            styles: [__webpack_require__(/*! ./list-comentarios.component.css */ "./src/app/components/admins/list-comentarios/list-comentarios.component.css")]
+        }),
+        __metadata("design:paramtypes", [angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__["FlashMessagesService"],
+            _services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+    ], ListComentariosComponent);
+    return ListComentariosComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/admins/listar-admins/listar-admins.component.css":
 /*!*****************************************************************************!*\
   !*** ./src/app/components/admins/listar-admins/listar-admins.component.css ***!
@@ -431,7 +626,7 @@ var AgregarAdminComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYWRtaW5zL2xpc3Rhci1hZG1pbnMvbGlzdGFyLWFkbWlucy5jb21wb25lbnQuY3NzIn0= */"
+module.exports = ".list-group-item-heading {\n  text-transform: none !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9hZG1pbnMvbGlzdGFyLWFkbWlucy9saXN0YXItYWRtaW5zLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwrQkFBK0I7QUFDakMiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2FkbWlucy9saXN0YXItYWRtaW5zL2xpc3Rhci1hZG1pbnMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5saXN0LWdyb3VwLWl0ZW0taGVhZGluZyB7XG4gIHRleHQtdHJhbnNmb3JtOiBub25lICFpbXBvcnRhbnQ7XG59Il19 */"
 
 /***/ }),
 
@@ -524,7 +719,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"position-relative overflow-hidden p-3 m-md-1 bg-light\">\n  <form>\n    <h2>Agregar Alumno</h2><br>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 col-form-label p-2 text-center\">Matricula</label>\n      <div class=\"col-sm-7 pull-left text-left\">\n        <input type=\"text\" class=\"form-control\" name=\"matricula\" [(ngModel)]=\"matricula\" placeholder=\"Matricula . .\" [ngModelOptions]=\"{standalone: true}\">\n        <small id=\"passwordHelpBlock\" class=\"form-text text-muted\">\n          Ejemplo: K208 <br>\n          (k)208 - Nivel Escolar <br>\n          K: Preescolar<br>\n          P: Primaria <br>\n          S: Secundaria <br>\n          k(2)08 - Número de grado <br>\n          k2(08) - Número de alumno\n        </small>\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">CURP</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" name=\"curp\" [(ngModel)]=\"curp\" placeholder=\"CURP . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Nombre(s)</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" name=\"nombre\" [(ngModel)]=\"nombre\" placeholder=\"Nombre(s) . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Apellido Paterno</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" name=\"paterno\" [(ngModel)]=\"paterno\" placeholder=\"Paterno . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Apellido Materno</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" name=\"materno\" [(ngModel)]=\"materno\" placeholder=\"Materno . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Nivel</label>\n      <div class=\"col-sm-7 pull-left text-left\">\n        <input type=\"radio\" value=\"Preescolar\" name=\"nivel\" [(ngModel)]=\"nivel\" required> Preescolar\n        <br>\n        <input type=\"radio\" value=\"Primaria\" name=\"nivel\" [(ngModel)]=\"nivel\" required> Primaria\n        <br>\n        <input type=\"radio\" value=\"Secundaria\" name=\"nivel\" [(ngModel)]=\"nivel\" required> Secundaria\n      </div>\n    </div>\n\n    <div class=\" form-group row\">\n      <label for=\"grado\" class=\"col-sm-5 p-2 col-form-label\">Grado</label>\n      <div class=\"col-sm-7\">\n        <input type=\"number\" class=\"form-control\" name=\"grado\" [(ngModel)]=\"grado\" placeholder=\"Grado . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Grupo</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" name=\"grupo\" [(ngModel)]=\"grupo\" placeholder=\"Grupo . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Fecha de nacimiento</label>\n      <div class=\"col-sm-7\">\n        <input type=\"date\" class=\"form-control\" name=\"fecha\" [(ngModel)]=\"fechaNacimiento\" placeholder=\"Fecha de nacimiento . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Contraseña</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" name=\"contrasena\" [(ngModel)]=\"password\" placeholder=\"Contraseña . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Confirmación de contraseña</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" name=\"confirmacion\" [(ngModel)]=\"passwordConfirmation\" placeholder=\"Confirmacion . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <div class=\"col-sm-12\" *ngIf=\"matricula && curp && nombre && paterno && materno && grado && fechaNacimiento && password && passwordConfirmation\">\n        <button type=\"submit\" (click)=\"agregarAlumno()\" class=\"btn btn-primary btn-md btn-block\">Confirmar</button>\n      </div>\n    </div>\n\n  </form>\n</div>"
+module.exports = "<div class=\"position-relative overflow-hidden p-3 m-md-1 bg-light\">\n  <form>\n    <h2>Agregar Alumno</h2><br>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 col-form-label p-2 text-center\">Matricula</label>\n      <div class=\"col-sm-7 pull-left text-left\">\n        <input type=\"text\" class=\"form-control\" name=\"matricula\" [(ngModel)]=\"matricula\" placeholder=\"Matricula . .\" [ngModelOptions]=\"{standalone: true}\">\n        <small id=\"passwordHelpBlock\" class=\"form-text text-muted\">\n          Ejemplo: K208 <br>\n          (k)208 - Nivel Escolar <br>\n          K: Preescolar<br>\n          P: Primaria <br>\n          S: Secundaria <br>\n          k(2)08 - Número de grado <br>\n          k2(08) - Número de alumno\n        </small>\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">CURP</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" name=\"curp\" [(ngModel)]=\"curp\" placeholder=\"CURP . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Nombre(s)</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" name=\"nombre\" [(ngModel)]=\"nombre\" placeholder=\"Nombre(s) . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Apellido Paterno</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" name=\"paterno\" [(ngModel)]=\"paterno\" placeholder=\"Paterno . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Apellido Materno</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" name=\"materno\" [(ngModel)]=\"materno\" placeholder=\"Materno . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Nivel</label>\n      <div class=\"col-sm-7 pull-left text-left\">\n        <select class=\"form-control\" name=\"nivel\" [(ngModel)]=\"nivel\" placeholder=\"Nivel . .\" [ngModelOptions]=\"{standalone: true}\">\n          <option *ngFor=\"let nivel_ of niveles\" [value]=\"nivel_\">{{nivel_}}</option>\n        </select>\n      </div>\n    </div>\n\n    <div class=\" form-group row\">\n      <label for=\"grado\" class=\"col-sm-5 p-2 col-form-label\">Grado</label>\n      <div class=\"col-sm-7\">\n        <input type=\"number\" class=\"form-control\" name=\"grado\" [(ngModel)]=\"grado\" placeholder=\"Grado . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Grupo</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" name=\"grupo\" [(ngModel)]=\"grupo\" placeholder=\"Grupo . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Fecha de nacimiento</label>\n      <div class=\"col-sm-7\">\n        <input type=\"date\" class=\"form-control\" name=\"fecha\" [(ngModel)]=\"fechaNacimiento\" placeholder=\"Fecha de nacimiento . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Email de contacto</label>\n      <div class=\"col-sm-7\">\n        <input type=\"email\" class=\"form-control\" name=\"email\" [(ngModel)]=\"email\" placeholder=\"Email . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Contraseña</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" name=\"contrasena\" [(ngModel)]=\"password\" placeholder=\"Contraseña . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Confirmación de contraseña</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" name=\"confirmacion\" [(ngModel)]=\"passwordConfirmation\" placeholder=\"Confirmacion . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <div class=\"col-sm-12\" *ngIf=\"matricula && curp && nombre && paterno && materno && nivel && grado && fechaNacimiento && email && password && passwordConfirmation\">\n        <button type=\"submit\" (click)=\"agregarAlumno()\" class=\"btn btn-primary btn-md btn-block\">Confirmar</button>\n      </div>\n    </div>\n\n  </form>\n</div>"
 
 /***/ }),
 
@@ -539,10 +734,10 @@ module.exports = "<div class=\"position-relative overflow-hidden p-3 m-md-1 bg-l
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AgregarAlumnoComponent", function() { return AgregarAlumnoComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/auth.service */ "./src/app/services/auth.service.ts");
-/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
-/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_validate_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/validate.service */ "./src/app/services/validate.service.ts");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -554,17 +749,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 // Import of the services
-// import { ValidateService } from '../../../services/validate.service';
+
 
 // Import of the module for the flash messages
 
-// Bring out the Router so we can redirect from the code
-
 var AgregarAlumnoComponent = /** @class */ (function () {
-    function AgregarAlumnoComponent(flashMessage, authService, router) {
+    function AgregarAlumnoComponent(flashMessage, authService, validateService) {
         this.flashMessage = flashMessage;
         this.authService = authService;
-        this.router = router;
+        this.validateService = validateService;
+        this.niveles = ['Preescolar', 'Primaria', 'Secundaria'];
     }
     AgregarAlumnoComponent.prototype.ngOnInit = function () {
     };
@@ -581,32 +775,40 @@ var AgregarAlumnoComponent = /** @class */ (function () {
             grado: this.grado,
             grupo: this.grupo,
             fechaNacimiento: this.fechaNacimiento,
+            email: this.email,
             password: this.password
         };
         if (this.password === this.passwordConfirmation) {
-            this.authService.registerAlumno(alumno).subscribe(function (data) {
-                if (data.success) {
-                    _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
-                    _this.matricula = null;
-                    _this.curp = null;
-                    _this.nombre = null;
-                    _this.paterno = null;
-                    _this.materno = null;
-                    _this.nivel = null;
-                    _this.grado = null;
-                    _this.grupo = null;
-                    _this.fechaNacimiento = null;
-                    _this.password = null;
-                    _this.passwordConfirmation = null;
-                }
-                else {
-                    _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-                }
-            });
+            if (this.validateService.validateEmail(this.email)) {
+                this.authService.registerAlumno(alumno).subscribe(function (data) {
+                    if (data.success) {
+                        _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+                        _this.matricula = null;
+                        _this.curp = null;
+                        _this.nombre = null;
+                        _this.paterno = null;
+                        _this.materno = null;
+                        _this.nivel = null;
+                        _this.grado = null;
+                        _this.grupo = null;
+                        _this.fechaNacimiento = null;
+                        _this.email = null;
+                        _this.password = null;
+                        _this.passwordConfirmation = null;
+                    }
+                    else {
+                        _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                    }
+                });
+            }
+            else {
+                this.flashMessage.show('Ingrese un correo valido', { cssClass: 'alert-danger', timeout: 3000 });
+            }
         }
         else {
             this.flashMessage.show('Las contraseñas no coinciden', { cssClass: 'alert-danger', timeout: 3000 });
         }
+        window.scroll(0, 0);
     };
     AgregarAlumnoComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -614,9 +816,9 @@ var AgregarAlumnoComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./agregar-alumno.component.html */ "./src/app/components/alumnos/agregar-alumno/agregar-alumno.component.html"),
             styles: [__webpack_require__(/*! ./agregar-alumno.component.css */ "./src/app/components/alumnos/agregar-alumno/agregar-alumno.component.css")]
         }),
-        __metadata("design:paramtypes", [angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__["FlashMessagesService"],
-            _services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+        __metadata("design:paramtypes", [angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"],
+            _services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"],
+            _services_validate_service__WEBPACK_IMPORTED_MODULE_1__["ValidateService"]])
     ], AgregarAlumnoComponent);
     return AgregarAlumnoComponent;
 }());
@@ -706,7 +908,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light\">\n  <h1>Calificaciones de {{alumno?.nombre}} {{alumno?.materno}} {{alumno?.paterno}}</h1>\n  <div class=\"table-responsive\">\n    <table class=\"table table-striped table-sm\">\n      <thead>\n        <tr>\n          <th> </th>\n          <th class=\"font-weight-bold\">Primer trimestre</th>\n          <th class=\"font-weight-bold\">Segundo trimestre</th>\n          <th class=\"font-weight-bold\">Tercer trimestre</th>\n          <th class=\"font-weight-bold\">Promedio por materia</th>\n        </tr>\n      </thead>\n      <tbody *ngFor=\"let materia of alumno?.materias; index as i\">\n        <tr *ngIf=\"materia.nombreMateria === grupo.nombreMateria\">\n          <td class=\"font-weight-bold\">{{materia.nombreMateria}}</td>\n          <td>{{materia.calificaciones[0]}}</td>\n          <td>{{materia.calificaciones[1]}}</td>\n          <td>{{materia.calificaciones[2]}}</td>\n          <td class=\"font-weight-bold\">{{promediosMaterias[i]}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n  <div *ngIf=\"this.authService.profesorLoggedIn()\">\n    <div class=\"row justify-content-around\">\n      <div class=\"col-md-6 overflow-hidden position-relative p-4 m-md-1 bg-light\">\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <h3 class=\"mb-1\">Calificar materia</h3>\n            <hr class=\"featurette-divider\">\n            <div class=\"form-group row\">\n              <label class=\"col-sm-5 p-2 col-form-label\">Trimestre</label>\n              <div class=\"col-sm-7 pull-left text-left\">\n                <input type=\"number\" class=\"form-control\" name=\"trimestre\" [(ngModel)]=\"trimestre\" placeholder=\"Trimestre . .\" [ngModelOptions]=\"{standalone: true}\">\n              </div>\n            </div>\n\n            <div class=\" form-group row\">\n              <label class=\"col-sm-5 p-2 col-form-label\">Nombre de la materia</label>\n              <div *ngFor=\"let materia of alumno?.materias; index as i\">\n                <div class=\"col-sm-12\" *ngIf=\"materia.nombreMateria === grupo.nombreMateria\">\n                  <select class=\"form-control\" [(ngModel)]=\"materiaCalificaciones\">\n                    <option [value]=\"materia.nombreMateria\">{{materia.nombreMateria}}</option>\n                  </select>\n                </div>\n              </div>\n            </div>\n\n            <div class=\" form-group row\">\n              <label class=\"col-sm-5 p-2 col-form-label\">Calificación</label>\n              <div class=\"col-sm-7\">\n                <input type=\"number\" class=\"form-control\" name=\"calificacion\" [(ngModel)]=\"calificacion\" placeholder=\"Calificación . .\" [ngModelOptions]=\"{standalone: true}\">\n              </div>\n            </div>\n          </div>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" (click)=\"calificarMateria()\" class=\"btn btn-outline-info\">Calificar</button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light\">\n  <h1>Comentarios</h1>\n  <hr class=\"featurette-divider\">\n  <div *ngFor=\"let comentario of alumno?.comentarios; index as i\">\n    <div *ngIf=\"comentario.materia === grupo.nombreMateria\" class=\"row overflow-hidden position-relative p-4 m-md-1 bg-light\">\n      <div class=\"col-md-12 pull-left text-left\">\n        <div class=\"d-flex justify-content-between\">\n          <h3 class=\"mb-1\">{{ comentario.titulo }}</h3>\n          <p class=\"mb-1\">{{ comentario.fecha }}</p>\n        </div>\n        <h6 class=\"list-group-item-heading m-1\">Profesor: {{ comentario.profesor }}</h6>\n        <h6 class=\"list-group-item-heading m-1\">Materia: {{ comentario.materia }}</h6>\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <p class=\"m-2\">{{ comentario.texto }}</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Agregar comentario</h5>\n      </div>\n      <div class=\"modal-body\">\n        <div class=\"position-relative overflow-hidden p-3 m-md-1\">\n          <div class=\"form-group\">\n            <label class=\"col-md-12 p-2 col-form-label\">Titulo</label>\n            <div class=\"form-group row\">\n              <div class=\"col-sm-12\">\n                <input type=\"text\" class=\"form-control\" name=\"titulo\" [(ngModel)]=\"titulo\" placeholder=\"Titulo . .\" [ngModelOptions]=\"{standalone: true}\">\n              </div>\n            </div>\n            <div class=\"form-group row\">\n              <textarea class=\"form-control\" name=\"comentario\" [(ngModel)]=\"comentario\" placeholder=\"Comentario . .\" [ngModelOptions]=\"{standalone: true}\" rows=\"4\"></textarea>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"button\" (click)=\"comentar()\" class=\"btn btn-primary\">Comentar</button>\n      </div>\n    </div>\n  </div>\n\n</div>"
+module.exports = "<div class=\"position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light\">\n  <h1>Calificaciones de {{alumno?.nombre}} {{alumno?.materno}} {{alumno?.paterno}}</h1>\n  <div class=\"table-responsive\">\n    <table class=\"table table-striped table-sm\">\n      <thead>\n        <tr>\n          <th> </th>\n          <th class=\"font-weight-bold\">Primer trimestre</th>\n          <th class=\"font-weight-bold\">Segundo trimestre</th>\n          <th class=\"font-weight-bold\">Tercer trimestre</th>\n          <th class=\"font-weight-bold\">Promedio por materia</th>\n        </tr>\n      </thead>\n      <tbody *ngFor=\"let materia of alumno?.materias; index as i\">\n        <tr *ngIf=\"materia.nombreMateria === grupo.nombreMateria\">\n          <td class=\"font-weight-bold\">{{materia.nombreMateria}}</td>\n          <td>{{materia.calificaciones[0]}}</td>\n          <td>{{materia.calificaciones[1]}}</td>\n          <td>{{materia.calificaciones[2]}}</td>\n          <td class=\"font-weight-bold\">{{promedioMateria}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n  <div class=\"row justify-content-around\">\n    <div class=\"col-md-6 overflow-hidden position-relative p-4 m-md-1 bg-light\">\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <h3 class=\"mb-1\">Calificar {{ this.grupo_nombreMateria }}</h3>\n          <hr class=\"featurette-divider\">\n\n          <div class=\"form-group row\">\n            <label class=\"col-sm-5 p-2 col-form-label\">Trimestre</label>\n            <div class=\"col-sm-7 pull-left text-left\">\n              <select class=\"form-control\" name=\"trimestre\" [(ngModel)]=\"trimestre\" placeholder=\"Trimestre . .\" [ngModelOptions]=\"{standalone: true}\">\n                <option *ngFor=\"let trimestre of trimestres\" [value]=\"trimestre\">{{trimestre}}</option>\n              </select>\n            </div>\n          </div>\n\n          <div class=\" form-group row\">\n            <label class=\"col-sm-5 p-2 col-form-label\">Calificación</label>\n            <div class=\"col-sm-7\">\n              <input type=\"number\" class=\"form-control\" name=\"calificacion\" [(ngModel)]=\"calificacion\" placeholder=\"Calificación . .\" [ngModelOptions]=\"{standalone: true}\">\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"button\" (click)=\"calificarMateria()\" class=\"btn btn-outline-info\">Calificar</button>\n      </div>\n    </div>\n  </div>\n\n</div>\n\n<div class=\"position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light\">\n  <h1>Comentarios</h1>\n  <hr class=\"featurette-divider\">\n  <div *ngFor=\"let comentario of alumno?.comentarios; index as i\">\n    <div *ngIf=\"comentario.materia === grupo.nombreMateria\" class=\"row overflow-hidden position-relative p-4 m-md-1 bg-light\">\n      <div class=\"col-md-12 pull-left text-left\">\n        <div class=\"d-flex justify-content-between\">\n          <h3 class=\"mb-1\">{{ comentario.titulo }}</h3>\n          <p class=\"mb-1\">{{ comentario.fecha }}</p>\n        </div>\n        <h6 class=\"list-group-item-heading m-1\">Profesor: {{ comentario.profesor }}</h6>\n        <h6 class=\"list-group-item-heading m-1\">Materia: {{ comentario.materia }}</h6>\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <p class=\"m-2\">{{ comentario.texto }}</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Agregar comentario</h5>\n      </div>\n      <div class=\"modal-body\">\n        <div class=\"position-relative overflow-hidden p-3 m-md-1\">\n          <div class=\"form-group\">\n\n            <label class=\"col-md-12 p-2 col-form-label\">Titulo</label>\n            <div class=\"form-group row\">\n              <div class=\"col-sm-12\">\n                <input type=\"text\" class=\"form-control\" name=\"titulo\" [(ngModel)]=\"titulo\" placeholder=\"Titulo . .\" [ngModelOptions]=\"{standalone: true}\">\n              </div>\n            </div>\n\n            <label class=\"col-md-12 p-2 col-form-label\">Comentario</label>\n            <div class=\"form-group row\">\n              <div class=\"col-sm-12\">\n                <textarea class=\"form-control\" name=\"comentario\" [(ngModel)]=\"comentario\" placeholder=\"Comentario . .\" [ngModelOptions]=\"{standalone: true}\" rows=\"4\"></textarea>\n              </div>\n            </div>\n\n          </div>\n        </div>\n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"button\" (click)=\"comentar()\" class=\"btn btn-primary\">Mandar comentario a revisión</button>\n      </div>\n    </div>\n  </div>\n\n</div>"
 
 /***/ }),
 
@@ -722,9 +924,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditarAlumnoComponent", function() { return EditarAlumnoComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/auth.service */ "./src/app/services/auth.service.ts");
-/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
-/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -737,58 +939,58 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 // Import of the services
 
+
 // Import of the module for the flash messages
 
 // Bring out the Router so we can redirect from the code
 
 var EditarAlumnoComponent = /** @class */ (function () {
-    function EditarAlumnoComponent(flashMessage, authService, router) {
+    function EditarAlumnoComponent(flashMessage, authService, router, activatedRoute) {
         this.flashMessage = flashMessage;
         this.authService = authService;
         this.router = router;
-        this.promediosMaterias = [0, 0, 0];
+        this.activatedRoute = activatedRoute;
+        this.trimestres = [1, 2, 3];
+        // VARIABLE PARA EL DISPLAY DE PROMEDIOS
+        this.promedioMateria = null;
     }
     EditarAlumnoComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth() + 1;
-        var yyyy = today.getFullYear();
-        if (dd < 10)
-            dd = '0' + dd;
-        if (mm < 10)
-            mm = '0' + mm;
-        today = mm + '/' + dd + '/' + yyyy;
-        this.fecha = today;
-        this.matricula = this.authService.getMatriculaAlumno();
-        this.grupo = this.authService.getGrupo();
+        this.activatedRoute.paramMap.subscribe(function (params) {
+            _this.grupo_nombreMateria = params.get('nombre');
+            _this.grupo_profesor = params.get('profesor');
+            _this.grupo_nivel = params.get('nivel');
+            _this.grupo_grado = params.get('grado');
+            _this.grupo_grupo = params.get('grupo');
+            _this.matricula = params.get('id');
+        });
+        this.grupo = {
+            nivel: this.grupo_nivel,
+            grado: this.grupo_grado,
+            grupo: this.grupo_grupo,
+            nombreMateria: this.grupo_nombreMateria,
+            profesor: this.grupo_profesor
+        };
         var alumno = {
             matricula: this.matricula
         };
         this.authService.buscarAlumnoMatricula(alumno).subscribe(function (data) {
             if (data.success) {
                 _this.alumno = data.alumno;
-                var indexMateria = 0;
-                var sumaMateria = 0;
-                var sum1 = 0;
-                var sum2 = 0;
-                var sum3 = 0;
+                var sum = 0;
                 for (var _i = 0, _a = data.alumno.materias; _i < _a.length; _i++) {
                     var materia = _a[_i];
-                    sumaMateria = 0;
-                    for (var i = 0; i < materia.calificaciones.length; i++) {
-                        sumaMateria += materia.calificaciones[i];
+                    if (materia.nombreMateria === _this.grupo_nombreMateria) {
+                        for (var i = 0; i < materia.calificaciones.length; i++) {
+                            sum += materia.calificaciones[i];
+                        }
+                        _this.promedioMateria = Math.round((sum / materia.calificaciones.length) * 100) / 100;
                     }
-                    sum1 += materia.calificaciones[0];
-                    sum2 += materia.calificaciones[1];
-                    sum3 += materia.calificaciones[2];
-                    _this.promediosMaterias[indexMateria] = Math.round((sumaMateria / materia.calificaciones.length) * 100) / 100;
-                    indexMateria += 1;
                 }
             }
             else {
                 _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-                _this.router.navigate(['/clases']);
+                _this.router.navigate(['/']);
             }
         });
     };
@@ -798,17 +1000,19 @@ var EditarAlumnoComponent = /** @class */ (function () {
             matricula: this.matricula,
             profesor: this.grupo.profesor,
             materia: this.grupo.nombreMateria,
-            fecha: this.fecha,
             titulo: this.titulo,
             texto: this.comentario
         };
-        this.authService.agregarComentario(comentario).subscribe(function (data) {
+        this.authService.agregarAdminComentario(comentario).subscribe(function (data) {
             if (data.success) {
                 _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+                _this.titulo = null;
+                _this.comentario = null;
             }
             else {
                 _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
             }
+            window.scroll(0, 0);
             _this.ngOnInit();
         });
     };
@@ -816,23 +1020,26 @@ var EditarAlumnoComponent = /** @class */ (function () {
         var _this = this;
         for (var _i = 0, _a = this.alumno.materias; _i < _a.length; _i++) {
             var materia = _a[_i];
-            if (materia.nombreMateria === this.materiaCalificaciones) {
+            if (materia.nombreMateria === this.grupo_nombreMateria) {
                 this.calificacionesCambiar = materia.calificaciones;
             }
         }
         this.calificacionesCambiar[this.trimestre - 1] = this.calificacion;
         var calificaciones = {
             matricula: this.matricula,
-            nombreMateria: this.materiaCalificaciones,
+            nombreMateria: this.grupo_nombreMateria,
             calificaciones: this.calificacionesCambiar
         };
         this.authService.cambiarCalificaciones(calificaciones).subscribe(function (data) {
             if (data.success) {
                 _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+                _this.trimestre = null;
+                _this.calificacion = null;
             }
             else {
                 _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
             }
+            window.scroll(0, 0);
             _this.ngOnInit();
         });
     };
@@ -842,9 +1049,10 @@ var EditarAlumnoComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./editar-alumno.component.html */ "./src/app/components/alumnos/editar-alumno/editar-alumno.component.html"),
             styles: [__webpack_require__(/*! ./editar-alumno.component.css */ "./src/app/components/alumnos/editar-alumno/editar-alumno.component.css")]
         }),
-        __metadata("design:paramtypes", [angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__["FlashMessagesService"],
+        __metadata("design:paramtypes", [angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"],
             _services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
     ], EditarAlumnoComponent);
     return EditarAlumnoComponent;
 }());
@@ -871,7 +1079,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"position-relative overflow-hidden p-3 m-md-1 bg-light\">\n  <form>\n    <h2>Buscar Alumnos</h2><br>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-4 p-2 col-form-label\">Por matricula</label>\n      <div class=\"col-sm-8 pull-left text-left\">\n        <input type=\"text\" class=\"form-control\" name=\"matricula\" [(ngModel)]=\"matricula\" placeholder=\"Matricula . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <hr class=\"featurette-divider\">\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-4 p-2 col-form-label\">Por nombre(s)</label>\n      <div class=\"col-sm-8\">\n        <input type=\"text\" class=\"form-control\" name=\"nombre\" [(ngModel)]=\"nombre\" placeholder=\"Nombre(s) . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <hr class=\"featurette-divider\">\n\n    <label class=\"col-sm-4 p-2 col-form-label\">Por grupo</label>\n    <div class=\"form-group row\">\n      <div class=\"col-sm-4\">\n        <input type=\"text\" class=\"form-control\" name=\"nivel\" [(ngModel)]=\"nivel\" placeholder=\"Nivel . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"number\" class=\"form-control\" name=\"grado\" [(ngModel)]=\"grado\" placeholder=\"Grado . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" class=\"form-control\" name=\"grupo\" [(ngModel)]=\"grupo\" placeholder=\"Grupo . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <div class=\"col-sm-12\" *ngIf=\"matricula && !nombre && !nivel && !grado && !grupo\">\n        <button type=\"submit\" (click)=\"buscarAlumnoMatricula()\" class=\"btn btn-primary btn-md btn-block\">Buscar</button>\n      </div>\n      <div class=\"col-sm-12\" *ngIf=\"!matricula && nombre && !nivel && !grado && !grupo\">\n        <button type=\"submit\" (click)=\"buscarAlumnosNombre()\" class=\"btn btn-primary btn-md btn-block\">Buscar</button>\n      </div>\n      <div class=\"col-sm-12\" *ngIf=\"!matricula && !nombre && nivel && grado && grupo\">\n        <button type=\"submit\" (click)=\"buscarAlumnosGrupo()\" class=\"btn btn-primary btn-md btn-block\">Buscar</button>\n      </div>\n    </div>\n  </form>\n</div>\n\n<hr *ngIf=\"alumnos\" class=\"featurette-divider\">\n<div *ngFor=\"let alumno of alumnos\" class=\"overflow-hidden position-relative p-4 m-md-1 bg-light\">\n  <div class=\"row\">\n    <div class=\"col-md-9 pull-left text-left\">\n      <h4 class=\"list-group-item-heading m-1\">{{ alumno.nombre }} {{ alumno.paterno }} {{ alumno.materno }}</h4>\n      <div class=\"row\">\n        <div class=\"col-md-3\">\n          <p class=\"font-weight-bold text-uppercase m-1\">Matricula: </p>\n          <p class=\"font-weight-bold text-uppercase m-1\">CURP: </p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Nivel: </p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Grado: </p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Grupo: </p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Nacimiento: </p>\n        </div>\n        <div class=\"col-md-8\">\n          <p class=\"list-group-item-text m-1\">{{ alumno.matricula }}</p>\n          <p class=\"list-group-item-text m-1\">{{ alumno.curp }}</p>\n          <p class=\"list-group-item-text m-1\">{{ alumno.nivel }}</p>\n          <p class=\"list-group-item-text m-1\">{{ alumno.grado }}°</p>\n          <p class=\"list-group-item-text m-1\">\"{{ alumno.grupo }}\"</p>\n          <p class=\"list-group-item-text m-1\">{{ alumno.fechaNacimiento }}</p>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-3 pull-right\">\n      <br>\n      <button type=\"button\" (click)=\"verAlumno(alumno.matricula)\" class=\"btn btn-outline-info btn-md btn-block\">Ver</button>\n      <br><br>\n      <button type=\"button\" (click)=\"eliminarAlumno(alumno.matricula)\" class=\"btn btn-outline-danger btn-md btn-block\">Eliminar</button>\n    </div>\n  </div>\n</div>\n\n<hr *ngIf=\"alumno\" class=\"featurette-divider\">\n<div *ngIf=\"alumno\" class=\"overflow-hidden position-relative p-4 m-md-1 bg-light\">\n  <div class=\"row\">\n    <div class=\"col-md-9 pull-left text-left\">\n      <h4 class=\"list-group-item-heading m-1\">{{ alumno.nombre }} {{ alumno.paterno }} {{ alumno.materno }}</h4>\n      <div class=\"row\">\n        <div class=\"col-md-3\">\n          <p class=\"font-weight-bold text-uppercase m-1\">Matricula: </p>\n          <p class=\"font-weight-bold text-uppercase m-1\">CURP: </p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Nivel: </p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Grado: </p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Grupo: </p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Nacimiento: </p>\n        </div>\n        <div class=\"col-md-8\">\n          <p class=\"list-group-item-text m-1\">{{ alumno.matricula }}</p>\n          <p class=\"list-group-item-text m-1\">{{ alumno.curp }}</p>\n          <p class=\"list-group-item-text m-1\">{{ alumno.nivel }}</p>\n          <p class=\"list-group-item-text m-1\">{{ alumno.grado }}°</p>\n          <p class=\"list-group-item-text m-1\">\"{{ alumno.grupo }}\"</p>\n          <p class=\"list-group-item-text m-1\">{{ alumno.fechaNacimiento }}</p>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-3 pull-right\">\n      <br>\n      <button type=\"button\" (click)=\"verAlumno(alumno.matricula)\" class=\"btn btn-outline-info btn-md btn-block\">Ver</button>\n      <br><br>\n      <button type=\"button\" (click)=\"eliminarAlumno(alumno.matricula)\" class=\"btn btn-outline-danger btn-md btn-block\">Eliminar</button>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"position-relative overflow-hidden p-3 m-md-1 bg-light\">\n  <form>\n    <h2>Buscar Alumnos</h2><br>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-4 p-2 col-form-label font-weight-bold\">Por matricula</label>\n      <div class=\"col-sm-8 pull-left text-left\">\n        <input type=\"text\" class=\"form-control\" name=\"matricula\" [(ngModel)]=\"matricula\" placeholder=\"Matricula . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <hr class=\"featurette-divider\">\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-4 p-2 col-form-label font-weight-bold\">Por nombre(s)</label>\n      <div class=\"col-sm-8\">\n        <input type=\"text\" class=\"form-control\" name=\"nombre\" [(ngModel)]=\"nombre\" placeholder=\"Nombre(s) . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <hr class=\"featurette-divider\">\n\n    <label class=\"col-sm-4 p-2 col-form-label font-weight-bold\">Por grupo</label>\n    <div class=\"form-group row\">\n      <div class=\"col-sm-4\">\n        <label class=\"col-sm-4 p-1 col-form-label\">Nivel</label>\n        <select class=\"form-control\" name=\"nivel\" [(ngModel)]=\"nivel\" placeholder=\"Nivel . .\" [ngModelOptions]=\"{standalone: true}\">\n          <option *ngFor=\"let nivel_ of niveles\" [value]=\"nivel_\">{{nivel_}}</option>\n        </select>\n      </div>\n      <div class=\"col-sm-4\">\n        <label class=\"col-sm-4 p-1 col-form-label\">Grado</label>\n        <input type=\"number\" class=\"form-control\" name=\"grado\" [(ngModel)]=\"grado\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n      <div class=\"col-sm-4\">\n        <label class=\"col-sm-4 p-1 col-form-label\">Grupo</label>\n        <input type=\"text\" class=\"form-control\" name=\"grupo\" [(ngModel)]=\"grupo\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <div class=\"col-sm-12\" *ngIf=\"matricula && !nombre && !nivel && !grado && !grupo\">\n        <button type=\"submit\" (click)=\"buscarAlumnoMatricula()\" class=\"btn btn-primary btn-md btn-block\">Buscar</button>\n      </div>\n      <div class=\"col-sm-12\" *ngIf=\"!matricula && nombre && !nivel && !grado && !grupo\">\n        <button type=\"submit\" (click)=\"buscarAlumnosNombre()\" class=\"btn btn-primary btn-md btn-block\">Buscar</button>\n      </div>\n      <div class=\"col-sm-12\" *ngIf=\"!matricula && !nombre && nivel && grado && grupo\">\n        <button type=\"submit\" (click)=\"buscarAlumnosGrupo()\" class=\"btn btn-primary btn-md btn-block\">Buscar</button>\n      </div>\n    </div>\n  </form>\n</div>\n\n<hr *ngIf=\"alumnos\" class=\"featurette-divider\">\n<div *ngFor=\"let alumno of alumnos\" class=\"overflow-hidden position-relative p-4 m-md-1 bg-light\">\n  <div class=\"row\">\n    <div class=\"col-md-9 pull-left text-left\">\n      <h4 class=\"list-group-item-heading m-1\">{{ alumno.nombre }} {{ alumno.paterno }} {{ alumno.materno }}</h4>\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <p class=\"font-weight-bold text-uppercase m-1\">Matricula: <a style=\"font-weight: normal; text-transform: none;\">{{ alumno.matricula }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">CURP: <a style=\"font-weight: normal; text-transform: none;\">{{ alumno.curp }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Nivel: <a style=\"font-weight: normal; text-transform: none;\">{{ alumno.nivel }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Grado: <a style=\"font-weight: normal; text-transform: none;\">{{ alumno.grado }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Grupo: <a style=\"font-weight: normal; text-transform: none;\">{{ alumno.grupo }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Nacimiento: <a style=\"font-weight: normal; text-transform: none;\">{{ alumno.fechaNacimiento }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Email: <a style=\"font-weight: normal; text-transform: none;\">{{ alumno.email }}</a></p>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-3 pull-right\">\n      <br>\n      <button type=\"button\" (click)=\"verAlumno(alumno.matricula)\" class=\"btn btn-outline-info btn-md btn-block\" style=\"overflow: hidden !important; padding: 0.5rem 0.5rem !important;\">Ver</button>\n      <br><br>\n      <button type=\"button\" (click)=\"eliminarAlumno(alumno.nombre, alumno.paterno, alumno.materno, alumno.matricula)\" class=\"btn btn-outline-danger btn-md btn-block\" style=\"overflow: hidden !important; padding: 0.5rem 0.5rem !important;\">Eliminar</button>\n    </div>\n  </div>\n</div>\n\n<hr *ngIf=\"alumno\" class=\"featurette-divider\">\n<div *ngIf=\"alumno\" class=\"overflow-hidden position-relative p-4 m-md-1 bg-light\">\n  <div class=\"row\">\n    <div class=\"col-md-9 pull-left text-left\">\n      <h4 class=\"list-group-item-heading m-1\">{{ alumno.nombre }} {{ alumno.paterno }} {{ alumno.materno }}</h4>\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <p class=\"font-weight-bold text-uppercase m-1\">Matricula: <a style=\"font-weight: normal; text-transform: none;\">{{ alumno.matricula }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">CURP: <a style=\"font-weight: normal; text-transform: none;\">{{ alumno.curp }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Nivel: <a style=\"font-weight: normal; text-transform: none;\">{{ alumno.nivel }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Grado: <a style=\"font-weight: normal; text-transform: none;\">{{ alumno.grado }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Grupo: <a style=\"font-weight: normal; text-transform: none;\">{{ alumno.grupo }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Nacimiento: <a style=\"font-weight: normal; text-transform: none;\">{{ alumno.fechaNacimiento }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Email: <a style=\"font-weight: normal; text-transform: none;\">{{ alumno.email }}</a></p>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-3 pull-right\">\n      <br>\n      <button type=\"button\" (click)=\"verAlumno(alumno.matricula)\" class=\"btn btn-outline-info btn-md btn-block\" style=\"overflow: hidden !important; padding: 0.5rem 0.5rem !important;\">Ver</button>\n      <br><br>\n      <button type=\"button\" (click)=\"eliminarAlumno(alumno.nombre, alumno.paterno, alumno.materno, alumno.matricula)\" class=\"btn btn-outline-danger btn-md btn-block\" style=\"overflow: hidden !important; padding: 0.5rem 0.5rem !important;\">Eliminar</button>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -890,6 +1098,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
 /* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _shared_confirmation_dialog_confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared/confirmation-dialog/confirmation-dialog.component */ "./src/app/components/shared/confirmation-dialog/confirmation-dialog.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -906,11 +1116,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 // Bring out the Router so we can redirect from the code
 
+
+
 var ListarAlumnosComponent = /** @class */ (function () {
-    function ListarAlumnosComponent(flashMessage, authService, router) {
+    function ListarAlumnosComponent(flashMessage, authService, router, dialog) {
         this.flashMessage = flashMessage;
         this.authService = authService;
         this.router = router;
+        this.dialog = dialog;
+        this.niveles = ['Preescolar', 'Primaria', 'Secundaria'];
     }
     ListarAlumnosComponent.prototype.ngOnInit = function () {
     };
@@ -925,6 +1139,7 @@ var ListarAlumnosComponent = /** @class */ (function () {
             }
             else {
                 _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                window.scroll(0, 0);
             }
         });
         this.alumnos = null;
@@ -941,6 +1156,7 @@ var ListarAlumnosComponent = /** @class */ (function () {
             }
             else {
                 _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                window.scroll(0, 0);
             }
         });
         this.alumno = null;
@@ -959,6 +1175,7 @@ var ListarAlumnosComponent = /** @class */ (function () {
             }
             else {
                 _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                window.scroll(0, 0);
             }
         });
         this.alumno = null;
@@ -967,24 +1184,34 @@ var ListarAlumnosComponent = /** @class */ (function () {
         this.grupo = null;
     };
     ListarAlumnosComponent.prototype.verAlumno = function (matricula) {
-        this.authService.setMatriculaAlumno(matricula);
-        this.router.navigate(['/verAlumno']);
+        window.scroll(0, 0);
+        this.router.navigate(['/verAlumno', matricula]);
     };
-    ListarAlumnosComponent.prototype.eliminarAlumno = function (matricula) {
+    ListarAlumnosComponent.prototype.eliminarAlumno = function (nombres, paterno, materno, matricula) {
         var _this = this;
         var alumno = {
             matricula: matricula
         };
-        this.authService.eliminarAlumno(alumno).subscribe(function (data) {
-            if (data.success) {
-                _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
-                _this.alumno = null;
-                _this.alumnos = null;
+        var dialogRef = this.dialog.open(_shared_confirmation_dialog_confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_5__["ConfirmationDialogComponent"], {
+            width: '50vh',
+            height: '50vh',
+            data: "¿Desea eliminar a el alumno " + nombres + " " + paterno + " " + materno + "?"
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+            if (result) {
+                _this.authService.eliminarAlumno(alumno).subscribe(function (data) {
+                    if (data.success) {
+                        _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+                        _this.alumno = null;
+                        _this.alumnos = null;
+                    }
+                    else {
+                        _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                    }
+                    window.scroll(0, 0);
+                    _this.ngOnInit();
+                });
             }
-            else {
-                _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-            }
-            _this.ngOnInit();
         });
     };
     ListarAlumnosComponent = __decorate([
@@ -995,7 +1222,8 @@ var ListarAlumnosComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__["FlashMessagesService"],
             _services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialog"]])
     ], ListarAlumnosComponent);
     return ListarAlumnosComponent;
 }());
@@ -1022,7 +1250,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light\">\n  <h1>Calificaciones de {{alumno?.nombre}} {{alumno?.materno}} {{alumno?.paterno}}</h1>\n  <h5 class=\"m-3\">{{alumno?.nivel}} {{alumno?.grado}}° \"{{alumno?.grupo}}\"</h5>\n  <hr class=\"featurette-divider\">\n\n  <div *ngIf=\"this.authService.adminLoggedIn()\">\n    <div class=\"row justify-content-around text-center\">\n      <div class=\"form-group row justify-content-center\">\n        <label class=\"col-md-1 p-2 col-form-label\">Nivel</label>\n        <div class=\"col-md-3\">\n          <select class=\"form-control\" name=\"nivel\" [(ngModel)]=\"nivel\">\n            <option *ngFor=\"let nivel of niveles\" [value]=\"nivel\">{{nivel}}</option>\n          </select>\n        </div>\n        <label class=\"col-md-1 p-2 col-form-label\">Grado</label>\n        <div class=\"col-md-3\">\n          <input type=\"number\" class=\"form-control\" name=\"grado\" [(ngModel)]=\"grado\" placeholder=\"Grado . .\" [ngModelOptions]=\"{standalone: true}\">\n        </div>\n        <label class=\"col-md-1 p-2 col-form-label\">Grupo</label>\n        <div class=\"col-md-3\">\n          <input type=\"text\" class=\"form-control\" name=\"grupo\" [(ngModel)]=\"grupo\" placeholder=\"Grupo . .\" [ngModelOptions]=\"{standalone: true}\">\n        </div>\n      </div>\n    </div>\n    <div class=\"modal-footer\">\n      <small id=\"emailHelp\" class=\"form-text text-muted\">Al editar el grupo del alumno se tendran que editar las clases correspondientes</small>\n      <button type=\"button\" (click)=\"editarGrupoAlumno()\" class=\"btn btn-outline-info\">Editar grupo </button>\n    </div>\n  </div>\n\n  <div class=\"table-responsive\">\n    <table class=\"table table-striped table-sm\">\n      <thead>\n        <tr>\n          <th> </th>\n          <th class=\"font-weight-bold\">Primer trimestre</th>\n          <th class=\"font-weight-bold\">Segundo trimestre</th>\n          <th class=\"font-weight-bold\">Tercer trimestre</th>\n          <th class=\"font-weight-bold\">Promedio por materia</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let materia of alumno?.materias; index as i\">\n          <td class=\"font-weight-bold\">{{materia.nombreMateria}}\n            <small id=\"passwordHelpBlock\" class=\"form-text text-muted\">\n              {{materia.profesor}}\n            </small>\n          </td>\n          <td>{{materia.calificaciones[0]}}</td>\n          <td>{{materia.calificaciones[1]}}</td>\n          <td>{{materia.calificaciones[2]}}</td>\n          <td class=\"font-weight-bold\">{{promediosMaterias[i]}}</td>\n        </tr>\n        <tr class=\"font-weight-bold\">\n          <td class=\"text-uppercase\">Promedio trimestral</td>\n          <td>{{promediosTrimestres[0]}}</td>\n          <td>{{promediosTrimestres[1]}}</td>\n          <td>{{promediosTrimestres[2]}}</td>\n          <td>{{promedioFinal}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n  <div *ngIf=\"this.authService.adminLoggedIn()\">\n    <div class=\"row justify-content-around\">\n      <div class=\"col-md-5 overflow-hidden position-relative p-4 m-md-1 bg-light\">\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <h3 class=\"mb-1\">Agregar materia</h3>\n            <hr class=\"featurette-divider\">\n            <div class=\"form-group row justify-content-center\">\n              <label class=\"col-md-6 p-2 col-form-label\">Profesor</label>\n              <div class=\"col-md-6 \">\n                <select class=\"form-control\" [(ngModel)]=\"newNombreProfesor\">\n                  <option *ngFor=\"let profesor of profesoresGrupo\" [value]=\"profesor.nombre\">{{profesor.nombre}}</option>\n                </select>\n              </div>\n            </div>\n            <div class=\"form-group row justify-content-center\">\n              <label class=\"col-md-6 p-2 col-form-label\">Clase</label>\n              <div class=\"col-md-6\">\n                <div *ngFor=\"let profesor of profesoresGrupo\">\n                  <select class=\"form-control\" *ngIf=\"profesor.nombre === newNombreProfesor\" [(ngModel)]=\"newNombreMateria\">\n                    <option *ngFor=\"let clase of profesor.clases\" [value]=\"clase.nombreClase\">{{clase.nombreClase}}</option>\n                  </select>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" (click)=\"agregarMateria()\" class=\"btn btn-outline-info\">Agregar</button>\n        </div>\n      </div>\n      <div class=\"col-md-5 overflow-hidden position-relative p-4 m-md-1 bg-light\">\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <h3 class=\"mb-1\">Eliminar materia</h3>\n            <hr class=\"featurette-divider\">\n            <div class=\"form-group row justify-content-center\">\n              <label class=\"col-md-6 p-2 col-form-label\">Clase</label>\n              <div class=\"col-md-6 \">\n                <select class=\"form-control\" [(ngModel)]=\"nombreMateriaDelete\">\n                  <option *ngFor=\"let materia of this.alumno?.materias\" [value]=\"materia.nombreMateria\">{{materia.nombreMateria}}</option>\n                </select>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" (click)=\"eliminarMateria()\" class=\"btn btn-outline-danger\">Eliminar</button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div *ngIf=\"alumno?.comentarios.length > 0\" class=\"position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light\">\n\n  <h1 *ngIf=\"!editComentario\">Comentarios</h1>\n  <h1 *ngIf=\"editComentario\">Editar Comentario</h1>\n\n  <div *ngIf=\"!editComentario\">\n    <div *ngFor=\"let comentario of alumno?.comentarios; index as i\" class=\"overflow-hidden position-relative p-4 m-md-1 bg-light\">\n      <div class=\"row\">\n        <div class=\"col-md-12 pull-left text-left\">\n          <div class=\"d-flex justify-content-between\">\n            <h3 class=\"mb-1\">{{ comentario.titulo }}</h3>\n            <p class=\"mb-1\">{{ comentario.fecha }}</p>\n          </div>\n          <h6 class=\"list-group-item-heading m-1\">Profesor: {{ comentario.profesor }}</h6>\n          <h6 class=\"list-group-item-heading m-1\">Materia: {{ comentario.materia }}</h6>\n          <div class=\"row\">\n            <div class=\"col-md-12\">\n              <p class=\"m-2\">{{ comentario.texto }}</p>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"this.authService.adminLoggedIn()\" class=\"modal-footer\">\n        <button type=\"button\" (click)=\"editarComentario(comentario.titulo, comentario.fecha, comentario.profesor, comentario.materia, comentario.texto)\" class=\"btn btn-outline-warning btn-md m-2\">Editar</button>\n        <button type=\"button\" (click)=\"eliminarComentario(comentario.titulo)\" class=\"btn btn-outline-danger btn-md m-2\">Eliminar</button>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"editComentario\" class=\"overflow-hidden position-relative p-4 m-md-1 bg-light\">\n    <div class=\"row\">\n      <div class=\"col-md-12 pull-left text-left\">\n        <div class=\"d-flex justify-content-between\">\n          <h3 class=\"mb-1\">{{ this.comentarioEdit.titulo }}</h3>\n          <p class=\"mb-1\">{{ this.comentarioEdit.fecha }}</p>\n        </div>\n        <h6 class=\"list-group-item-heading m-1\">Profesor: {{ this.comentarioEdit.profesor }}</h6>\n        <h6 class=\"list-group-item-heading m-1\">Materia: {{ this.comentarioEdit.materia }}</h6>\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <textarea class=\"form-control\" name=\"comentarioTexto\" [(ngModel)]=\"this.comentarioEdit.texto\" placeholder=\"Comentario . .\" [ngModelOptions]=\"{standalone: true}\" rows=\"4\"></textarea>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"modal-footer\">\n      <button type=\"button\" (click)=\"cancelarPost()\" class=\"btn btn-danger\">Cancelar</button>\n      <button type=\"button\" (click)=\"editarPost()\" class=\"btn btn-info\">Aceptar</button>\n    </div>\n  </div>\n\n</div>"
+module.exports = "<div class=\"position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light\">\n  <h1>Calificaciones de {{alumno?.nombre}} {{alumno?.materno}} {{alumno?.paterno}}</h1>\n  <h5 class=\"m-3\">{{alumno?.nivel}} {{alumno?.grado}}° \"{{alumno?.grupo}}\"</h5>\n  <hr class=\"featurette-divider\">\n\n  <div *ngIf=\"this.authService.adminLoggedIn()\">\n\n    <!-- BOTON PARA EDITAR GRUPO -->\n    <div *ngIf=\"!this.editGrupo\" class=\"row text-center justify-content-end align-items-center m-2\">\n      <small id=\"emailHelp\" class=\"form-text text-muted m-2\">Al editar el grupo del alumno se eliminarán las materias y comentarios previamente asignados del alumno.</small>\n      <button type=\"button\" (click)=\"editarGrupo()\" class=\"btn btn-outline-info\">Editar grupo</button>\n    </div>\n\n    <!-- EDITAR GRUPO DEL ALUMNO -->\n    <div *ngIf=\"this.editGrupo\" class=\"row justify-content-around text-center\">\n      <div class=\"form-group row justify-content-center\">\n        <label class=\"col-md-1 p-2 col-form-label\">Nivel:</label>\n        <div class=\"col-md-3\">\n          <select class=\"form-control\" name=\"nivel\" [(ngModel)]=\"nivel\">\n            <option *ngFor=\"let nivel of niveles\" [value]=\"nivel\">{{nivel}}</option>\n          </select>\n        </div>\n        <label class=\"col-md-1 p-2 col-form-label\">Grado:</label>\n        <div class=\"col-md-3\">\n          <input type=\"number\" class=\"form-control\" name=\"grado\" [(ngModel)]=\"grado\" placeholder=\"Grado . .\" [ngModelOptions]=\"{standalone: true}\">\n        </div>\n        <label class=\"col-md-1 p-2 col-form-label\">Grupo:</label>\n        <div class=\"col-md-3\">\n          <input type=\"text\" class=\"form-control\" name=\"grupo\" [(ngModel)]=\"grupo\" placeholder=\"Grupo . .\" [ngModelOptions]=\"{standalone: true}\">\n        </div>\n      </div>\n    </div>\n    <div *ngIf=\"this.editGrupo\" class=\"row text-center justify-content-end align-items-center m-2\">\n      <button type=\"button\" (click)=\"editarGrupo()\" class=\"btn btn-danger m-2\">Cancelar</button>\n      <button *ngIf=\"this.nivel && this.grado && this.grupo\" type=\"button\" (click)=\"editarGrupoAlumno()\" class=\"btn btn-info m-2\">Editar</button>\n    </div>\n\n  </div>\n\n  <div class=\"table-responsive\">\n    <table class=\"table table-striped table-sm\">\n      <thead>\n        <tr>\n          <th> </th>\n          <th class=\"font-weight-bold\">Primer trimestre</th>\n          <th class=\"font-weight-bold\">Segundo trimestre</th>\n          <th class=\"font-weight-bold\">Tercer trimestre</th>\n          <th class=\"font-weight-bold\">Promedio por materia</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let materia of alumno?.materias; index as i\">\n          <td class=\"font-weight-bold\">{{materia.nombreMateria}}\n            <small id=\"passwordHelpBlock\" class=\"form-text text-muted\">\n              {{materia.profesor}}\n            </small>\n          </td>\n          <td>{{materia.calificaciones[0]}}</td>\n          <td>{{materia.calificaciones[1]}}</td>\n          <td>{{materia.calificaciones[2]}}</td>\n          <td class=\"font-weight-bold\">{{promediosMaterias[i]}}</td>\n        </tr>\n        <tr class=\"font-weight-bold\">\n          <td class=\"text-uppercase\">Promedio trimestral</td>\n          <td>{{promediosTrimestres[0]}}</td>\n          <td>{{promediosTrimestres[1]}}</td>\n          <td>{{promediosTrimestres[2]}}</td>\n          <td>{{promedioFinal}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n  <div *ngIf=\"this.authService.adminLoggedIn()\">\n    <div class=\"row justify-content-around\">\n      <div class=\"col-md-5 overflow-hidden position-relative p-4 m-md-1 bg-light\">\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <h3 class=\"mb-1\">Agregar materia</h3>\n            <hr class=\"featurette-divider\">\n            <div class=\"form-group row justify-content-center\">\n              <label class=\"col-md-6 p-2 col-form-label\">Profesor</label>\n              <div class=\"col-md-6 \">\n                <select class=\"form-control\" [(ngModel)]=\"newNombreProfesor\">\n                  <option *ngFor=\"let profesor of profesoresGrupo\" [value]=\"profesor._id\">{{profesor._id}}</option>\n                </select>\n              </div>\n            </div>\n            <div class=\"form-group row justify-content-center\">\n              <label class=\"col-md-6 p-2 col-form-label\">Clase</label>\n              <div class=\"col-md-6\">\n                <div *ngFor=\"let profesor of profesoresGrupo\">\n                  <select class=\"form-control\" *ngIf=\"profesor._id === newNombreProfesor\" [(ngModel)]=\"newNombreMateria\">\n                    <option *ngFor=\"let clase of profesor.clases\" [value]=\"clase.nombreClase\">{{clase.nombreClase}}</option>\n                  </select>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" (click)=\"agregarMateria()\" class=\"btn btn-outline-info\">Agregar</button>\n        </div>\n      </div>\n      <div class=\"col-md-5 overflow-hidden position-relative p-4 m-md-1 bg-light\">\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <h3 class=\"mb-1\">Eliminar materia</h3>\n            <hr class=\"featurette-divider\">\n            <div class=\"form-group row justify-content-center\">\n              <label class=\"col-md-6 p-2 col-form-label\">Clase</label>\n              <div class=\"col-md-6 \">\n                <select class=\"form-control\" [(ngModel)]=\"nombreMateriaDelete\">\n                  <option *ngFor=\"let materia of this.alumno?.materias\" [value]=\"materia.nombreMateria\">{{materia.nombreMateria}}</option>\n                </select>\n              </div>\n            </div>\n          </div>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" (click)=\"eliminarMateria()\" class=\"btn btn-outline-danger\">Eliminar</button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div *ngIf=\"alumno?.comentarios.length > 0\" class=\"position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light\">\n\n  <h1 *ngIf=\"!editComentario\">Comentarios</h1>\n  <h1 *ngIf=\"editComentario\">Editar Comentario</h1>\n\n  <div *ngIf=\"!editComentario\">\n    <div *ngFor=\"let comentario of alumno?.comentarios; index as i\" class=\"overflow-hidden position-relative p-4 m-md-1 bg-light\">\n      <div class=\"row\">\n        <div class=\"col-md-12 pull-left text-left\">\n          <div class=\"d-flex justify-content-between\">\n            <h3 class=\"mb-1\">{{ comentario.titulo }}</h3>\n            <p class=\"mb-1\">{{ comentario.fecha }}</p>\n          </div>\n          <h6 class=\"list-group-item-heading m-1\">Profesor: {{ comentario.profesor }}</h6>\n          <h6 class=\"list-group-item-heading m-1\">Materia: {{ comentario.materia }}</h6>\n          <div class=\"row\">\n            <div class=\"col-md-12\">\n              <p class=\"m-2\">{{ comentario.texto }}</p>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div *ngIf=\"this.authService.adminLoggedIn()\" class=\"modal-footer\">\n        <button type=\"button\" (click)=\"editarComentario(comentario.titulo, comentario.fecha, comentario.profesor, comentario.materia, comentario.texto)\" class=\"btn btn-outline-warning btn-md m-2\">Editar</button>\n        <button type=\"button\" (click)=\"eliminarComentario(comentario.titulo)\" class=\"btn btn-outline-danger btn-md m-2\">Eliminar</button>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"editComentario\" class=\"overflow-hidden position-relative p-4 m-md-1 bg-light\">\n    <div class=\"row\">\n      <div class=\"col-md-12 pull-left text-left\">\n        <div class=\"d-flex justify-content-between\">\n          <h3 class=\"mb-1\">{{ this.comentarioEdit.titulo }}</h3>\n          <p class=\"mb-1\">{{ this.comentarioEdit.fecha }}</p>\n        </div>\n        <h6 class=\"list-group-item-heading m-1\">Profesor: {{ this.comentarioEdit.profesor }}</h6>\n        <h6 class=\"list-group-item-heading m-1\">Materia: {{ this.comentarioEdit.materia }}</h6>\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <textarea class=\"form-control\" name=\"comentarioTexto\" [(ngModel)]=\"this.comentarioEdit.texto\" placeholder=\"Comentario . .\" [ngModelOptions]=\"{standalone: true}\" rows=\"4\"></textarea>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"modal-footer\">\n      <button type=\"button\" (click)=\"cancelarPost()\" class=\"btn btn-danger\">Cancelar</button>\n      <button type=\"button\" (click)=\"editarPost()\" class=\"btn btn-info\">Aceptar</button>\n    </div>\n  </div>\n\n</div>"
 
 /***/ }),
 
@@ -1038,9 +1266,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VerAlumnoComponent", function() { return VerAlumnoComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/auth.service */ "./src/app/services/auth.service.ts");
-/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
-/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _shared_confirmation_dialog_confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared/confirmation-dialog/confirmation-dialog.component */ "./src/app/components/shared/confirmation-dialog/confirmation-dialog.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1053,30 +1283,49 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 // Import of the services
 
+
 // Import of the module for the flash messages
 
 // Bring out the Router so we can redirect from the code
 
+
+
 var VerAlumnoComponent = /** @class */ (function () {
-    function VerAlumnoComponent(flashMessage, authService, router) {
+    function VerAlumnoComponent(flashMessage, authService, router, activatedRoute, dialog) {
         this.flashMessage = flashMessage;
         this.authService = authService;
         this.router = router;
+        this.activatedRoute = activatedRoute;
+        this.dialog = dialog;
+        // VARIABLES PARA INICIAR EL COMPONENTE
         this.matricula = "";
+        // ARRAY PARA EL DISPLAY DE NIVELES
+        this.niveles = ["Preescolar", "Primaria", "Secundaria"];
+        // VARIABLES PARA LOS PROMEDIOS
         this.promediosMaterias = [0, 0, 0, 0, 0, 0, 0];
         this.promediosTrimestres = [];
-        this.niveles = ["Preescolar", "Primaria", "Secundaria"];
+        // VARIABLES PARA AGREGAR MATERIAS AL ALUMNO
+        this.newNombreProfesor = "";
+        this.newNombreMateria = "";
+        // VARIABLE PARA ELIMINAR MATERIA DEL ALUMNO
+        this.nombreMateriaDelete = "";
     }
     VerAlumnoComponent.prototype.ngOnInit = function () {
         var _this = this;
+        window.scroll(0, 0);
+        this.activatedRoute.paramMap.subscribe(function (params) {
+            _this.matricula = params.get('id');
+        });
+        var alumno = {
+            matricula: this.matricula
+        };
         if (this.authService.adminLoggedIn()) {
-            this.matricula = this.authService.getMatriculaAlumno();
-            var alumno = {
-                matricula: this.matricula
-            };
             this.authService.buscarAlumnoMatricula(alumno).subscribe(function (data) {
                 if (data.success) {
                     _this.alumno = data.alumno;
+                    if (data.alumno.materias.length > 0) {
+                        _this.nombreMateriaDelete = data.alumno.materias[0].nombreMateria;
+                    }
                     var grupo = {
                         nivel: data.alumno.nivel,
                         grado: data.alumno.grado,
@@ -1084,9 +1333,13 @@ var VerAlumnoComponent = /** @class */ (function () {
                     };
                     _this.authService.getProfesoresGrupo(grupo).subscribe(function (data) {
                         if (data.success) {
-                            _this.profesoresGrupo = data.profesores;
+                            _this.profesoresGrupo = data.clases;
+                            if (_this.profesoresGrupo.length > 0) {
+                                _this.newNombreProfesor = _this.profesoresGrupo[0]._id;
+                            }
                         }
                     });
+                    // PROMEDIO DE MATERIAS
                     var indexMateria = 0;
                     var sumaMateria = 0;
                     var sum1 = 0;
@@ -1112,6 +1365,7 @@ var VerAlumnoComponent = /** @class */ (function () {
                         sumTotal += _this.promediosTrimestres[i];
                     }
                     _this.promedioFinal = sumTotal / _this.promediosTrimestres.length;
+                    //******************//
                 }
                 else {
                     _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
@@ -1122,6 +1376,9 @@ var VerAlumnoComponent = /** @class */ (function () {
         else if (this.authService.alumnoLoggedIn()) {
             this.authService.getProfileAlumno().subscribe(function (profile) {
                 _this.alumno = profile.alumno;
+                if (_this.matricula != profile.alumno.matricula) {
+                    _this.router.navigate(['/verAlumno', profile.alumno.matricula]);
+                }
                 var indexMateria = 0;
                 var sumaMateria = 0;
                 var sum1 = 0;
@@ -1163,15 +1420,23 @@ var VerAlumnoComponent = /** @class */ (function () {
             nombreMateria: this.newNombreMateria,
             profesor: this.newNombreProfesor
         };
-        this.authService.agregarMateria(materia).subscribe(function (data) {
-            if (data.success) {
-                _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
-            }
-            else {
-                _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-            }
-            _this.ngOnInit();
-        });
+        if (this.newNombreMateria === "") {
+            this.flashMessage.show("Selecciona una clase válida", { cssClass: 'alert-danger', timeout: 3000 });
+        }
+        else {
+            this.authService.agregarMateria(materia).subscribe(function (data) {
+                if (data.success) {
+                    _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+                    _this.newNombreMateria = "";
+                    _this.nombreMateriaDelete = "";
+                    _this.ngOnInit();
+                }
+                else {
+                    _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                }
+            });
+        }
+        window.scroll(0, 0);
     };
     VerAlumnoComponent.prototype.eliminarMateria = function () {
         var _this = this;
@@ -1182,11 +1447,13 @@ var VerAlumnoComponent = /** @class */ (function () {
         this.authService.eliminarMateria(materia).subscribe(function (data) {
             if (data.success) {
                 _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+                _this.nombreMateriaDelete = "";
+                _this.ngOnInit();
             }
             else {
                 _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
             }
-            _this.ngOnInit();
+            window.scroll(0, 0);
         });
     };
     VerAlumnoComponent.prototype.editarComentario = function (titulo, fecha, profesor, materia, texto) {
@@ -1217,6 +1484,7 @@ var VerAlumnoComponent = /** @class */ (function () {
                 _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
             }
             _this.ngOnInit();
+            _this.comentarioEdit = null;
         });
         this.editComentario = false;
     };
@@ -1241,30 +1509,54 @@ var VerAlumnoComponent = /** @class */ (function () {
             this.router.navigate(['/alumnos']);
         }
     };
+    VerAlumnoComponent.prototype.editarGrupo = function () {
+        if (this.editGrupo) {
+            this.nivel = null;
+            this.grado = null;
+            this.grupo = null;
+            this.editGrupo = false;
+        }
+        else {
+            this.editGrupo = true;
+        }
+    };
     VerAlumnoComponent.prototype.editarGrupoAlumno = function () {
         var _this = this;
         if (this.authService.adminLoggedIn()) {
-            var grupo = {
-                matricula: this.matricula,
-                nivel: this.nivel,
-                grado: this.grado,
-                grupo: this.grupo
-            };
-            this.authService.editarGrupo(grupo).subscribe(function (data) {
-                if (data.success) {
-                    _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+            var dialogRef = this.dialog.open(_shared_confirmation_dialog_confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_5__["ConfirmationDialogComponent"], {
+                width: '50vh',
+                height: '50vh',
+                data: "¿Desea cambiar el grupo de " + this.alumno.nombre + " " + this.alumno.paterno + " " + this.alumno.materno + ", aceptando que se eliminarán las materias y comentarios previamente asignados del alumno?"
+            });
+            dialogRef.afterClosed().subscribe(function (result) {
+                if (result) {
+                    var grupo = {
+                        matricula: _this.matricula,
+                        nivel: _this.nivel,
+                        grado: _this.grado,
+                        grupo: _this.grupo
+                    };
+                    _this.authService.editarGrupo(grupo).subscribe(function (data) {
+                        if (data.success) {
+                            _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+                            _this.nivel = null;
+                            _this.grado = null;
+                            _this.grupo = null;
+                            window.location.reload();
+                        }
+                        else {
+                            _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                            _this.editGrupo = false;
+                        }
+                    });
+                }
+                else {
                     _this.nivel = null;
                     _this.grado = null;
                     _this.grupo = null;
+                    _this.editGrupo = false;
                 }
-                else {
-                    _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-                }
-                _this.ngOnInit();
             });
-        }
-        else {
-            this.router.navigate(['/alumnos']);
         }
     };
     VerAlumnoComponent = __decorate([
@@ -1273,9 +1565,11 @@ var VerAlumnoComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./ver-alumno.component.html */ "./src/app/components/alumnos/ver-alumno/ver-alumno.component.html"),
             styles: [__webpack_require__(/*! ./ver-alumno.component.css */ "./src/app/components/alumnos/ver-alumno/ver-alumno.component.css")]
         }),
-        __metadata("design:paramtypes", [angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__["FlashMessagesService"],
+        __metadata("design:paramtypes", [angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"],
             _services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialog"]])
     ], VerAlumnoComponent);
     return VerAlumnoComponent;
 }());
@@ -1284,84 +1578,21 @@ var VerAlumnoComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/components/dashboard/dashboard.component.css":
-/*!**************************************************************!*\
-  !*** ./src/app/components/dashboard/dashboard.component.css ***!
-  \**************************************************************/
+/***/ "./src/app/components/grupos/grupos.component.css":
+/*!********************************************************!*\
+  !*** ./src/app/components/grupos/grupos.component.css ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "svg {\n  width: 15px;\n  height: 15px;\n  margin-right: 10px;\n}\n\n.nav-item {\n  height: 2.5em;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9kYXNoYm9hcmQvZGFzaGJvYXJkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFXO0VBQ1gsWUFBWTtFQUNaLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGFBQWE7QUFDZiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZGFzaGJvYXJkL2Rhc2hib2FyZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsic3ZnIHtcbiAgd2lkdGg6IDE1cHg7XG4gIGhlaWdodDogMTVweDtcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xufVxuXG4ubmF2LWl0ZW0ge1xuICBoZWlnaHQ6IDIuNWVtO1xufSJdfQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZ3J1cG9zL2dydXBvcy5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
-/***/ "./src/app/components/dashboard/dashboard.component.html":
-/*!***************************************************************!*\
-  !*** ./src/app/components/dashboard/dashboard.component.html ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container-fluid\">\n  <div class=\"row\">\n    <nav class=\"col-md-2 d-none d-md-block bg-light sidebar\">\n      <div class=\"sidebar-sticky\">\n        <ul class=\"navbar-nav mt-auto\">\n\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"#\">\n              <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-home\">\n                <path d=\"M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"></path>\n                <polyline points=\"9 22 9 12 15 12 15 22\"></polyline>\n              </svg>\n              Dashboard\n            </a>\n          </li>\n\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"#\">\n              <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-file\">\n                <path d=\"M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z\"></path>\n                <polyline points=\"13 2 13 9 20 9\"></polyline>\n              </svg>\n              Orders\n            </a>\n          </li>\n\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\" #\">\n              <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-shopping-cart\">\n                <circle cx=\"9\" cy=\"21\" r=\"1\"></circle>\n                <circle cx=\"20\" cy=\"21\" r=\"1\"></circle>\n                <path d=\"M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6\"></path>\n              </svg>\n              Products\n            </a>\n          </li>\n\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\" #\">\n              <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-users\">\n                <path d=\"M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\"></path>\n                <circle cx=\"9\" cy=\"7\" r=\"4\"></circle>\n                <path d=\"M23 21v-2a4 4 0 0 0-3-3.87\"></path>\n                <path d=\"M16 3.13a4 4 0 0 1 0 7.75\"></path>\n              </svg>\n              Customers\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\" #\">\n              <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-bar-chart-2\">\n                <line x1=\"18\" y1=\"20\" x2=\"18\" y2=\"10\"></line>\n                <line x1=\"12\" y1=\"20\" x2=\"12\" y2=\"4\"></line>\n                <line x1=\"6\" y1=\"20\" x2=\"6\" y2=\"14\"></line>\n              </svg>\n              Reports\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\" #\">\n              <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-layers\">\n                <polygon points=\"12 2 2 7 12 12 22 7 12 2\"></polygon>\n                <polyline points=\"2 17 12 22 22 17\"></polyline>\n                <polyline points=\"2 12 12 17 22 12\"></polyline>\n              </svg>\n              Integrate\n            </a>\n          </li>\n        </ul>\n      </div>\n    </nav>\n\n    <main role=\"main\" class=\"col-md-9 ml-sm-auto col-lg-10 px-4\">\n      <div class=\"chartjs-size-monitor\" style=\"position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;\">\n        <div class=\"chartjs-size-monitor-expand\" style=\"position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;\">\n          <div style=\"position:absolute;width:1000000px;height:1000000px;left:0;top:0\"></div>\n        </div>\n        <div class=\"chartjs-size-monitor-shrink\" style=\"position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;\">\n          <div style=\"position:absolute;width:200%;height:200%;left:0; top:0\"></div>\n        </div>\n      </div>\n\n      <div class=\"d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom\">\n        <h1 class=\"h2\">Dashboard</h1>\n        <div class=\"btn-toolbar mb-2 mb-md-0\">\n          <div class=\"btn-group mr-2\">\n            <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\" style=\"margin: 0px 4px;\">Share</button>\n            <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\" style=\"margin: 0px 4px;\">Export</button>\n          </div>\n          <button type=\"button\" class=\"btn btn-sm btn-outline-secondary dropdown-toggle\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-calendar\">\n              <rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect>\n              <line x1=\"16\" y1=\"2\" x2=\"16\" y2=\"6\"></line>\n              <line x1=\"8\" y1=\"2\" x2=\"8\" y2=\"6\"></line>\n              <line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"></line>\n            </svg>\n            This week\n          </button>\n        </div>\n      </div>\n\n      <!-- ADD A CHART -->\n\n      <h2>Section title</h2>\n      <div class=\"table-responsive\">\n        <table class=\"table table-striped table-sm\">\n          <thead>\n            <tr>\n              <th>#</th>\n              <th>Header</th>\n              <th>Header</th>\n              <th>Header</th>\n              <th>Header</th>\n            </tr>\n          </thead>\n          <tbody>\n            <tr>\n              <td>1,001</td>\n              <td>Lorem</td>\n              <td>ipsum</td>\n              <td>dolor</td>\n              <td>sit</td>\n            </tr>\n            <tr>\n              <td>1,002</td>\n              <td>amet</td>\n              <td>consectetur</td>\n              <td>adipiscing</td>\n              <td>elit</td>\n            </tr>\n            <tr>\n              <td>1,003</td>\n              <td>Integer</td>\n              <td>nec</td>\n              <td>odio</td>\n              <td>Praesent</td>\n            </tr>\n            <tr>\n              <td>1,003</td>\n              <td>libero</td>\n              <td>Sed</td>\n              <td>cursus</td>\n              <td>ante</td>\n            </tr>\n            <tr>\n              <td>1,004</td>\n              <td>dapibus</td>\n              <td>diam</td>\n              <td>Sed</td>\n              <td>nisi</td>\n            </tr>\n            <tr>\n              <td>1,005</td>\n              <td>Nulla</td>\n              <td>quis</td>\n              <td>sem</td>\n              <td>at</td>\n            </tr>\n            <tr>\n              <td>1,006</td>\n              <td>nibh</td>\n              <td>elementum</td>\n              <td>imperdiet</td>\n              <td>Duis</td>\n            </tr>\n            <tr>\n              <td>1,007</td>\n              <td>sagittis</td>\n              <td>ipsum</td>\n              <td>Praesent</td>\n              <td>mauris</td>\n            </tr>\n            <tr>\n              <td>1,008</td>\n              <td>Fusce</td>\n              <td>nec</td>\n              <td>tellus</td>\n              <td>sed</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </main>\n\n  </div>\n</div>"
-
-/***/ }),
-
-/***/ "./src/app/components/dashboard/dashboard.component.ts":
-/*!*************************************************************!*\
-  !*** ./src/app/components/dashboard/dashboard.component.ts ***!
-  \*************************************************************/
-/*! exports provided: DashboardComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardComponent", function() { return DashboardComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent() {
-    }
-    DashboardComponent.prototype.ngOnInit = function () {
-    };
-    DashboardComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-dashboard',
-            template: __webpack_require__(/*! ./dashboard.component.html */ "./src/app/components/dashboard/dashboard.component.html"),
-            styles: [__webpack_require__(/*! ./dashboard.component.css */ "./src/app/components/dashboard/dashboard.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], DashboardComponent);
-    return DashboardComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/grupos/ver-alumnos-grupo/ver-alumnos-grupo.component.css":
-/*!*************************************************************************************!*\
-  !*** ./src/app/components/grupos/ver-alumnos-grupo/ver-alumnos-grupo.component.css ***!
-  \*************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZ3J1cG9zL3Zlci1hbHVtbm9zLWdydXBvL3Zlci1hbHVtbm9zLWdydXBvLmNvbXBvbmVudC5jc3MifQ== */"
-
-/***/ }),
-
-/***/ "./src/app/components/grupos/ver-alumnos-grupo/ver-alumnos-grupo.component.html":
-/*!**************************************************************************************!*\
-  !*** ./src/app/components/grupos/ver-alumnos-grupo/ver-alumnos-grupo.component.html ***!
-  \**************************************************************************************/
+/***/ "./src/app/components/grupos/grupos.component.html":
+/*!*********************************************************!*\
+  !*** ./src/app/components/grupos/grupos.component.html ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1369,21 +1600,21 @@ module.exports = "<div *ngIf=\"alumnos\" class=\"position-relative overflow-hidd
 
 /***/ }),
 
-/***/ "./src/app/components/grupos/ver-alumnos-grupo/ver-alumnos-grupo.component.ts":
-/*!************************************************************************************!*\
-  !*** ./src/app/components/grupos/ver-alumnos-grupo/ver-alumnos-grupo.component.ts ***!
-  \************************************************************************************/
-/*! exports provided: VerAlumnosGrupoComponent */
+/***/ "./src/app/components/grupos/grupos.component.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/components/grupos/grupos.component.ts ***!
+  \*******************************************************/
+/*! exports provided: GruposComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VerAlumnosGrupoComponent", function() { return VerAlumnosGrupoComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GruposComponent", function() { return GruposComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/auth.service */ "./src/app/services/auth.service.ts");
-/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
-/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1395,53 +1626,86 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 // Import of the module for the flash messages
 
 
-var VerAlumnosGrupoComponent = /** @class */ (function () {
-    function VerAlumnosGrupoComponent(flashMessage, authService, router) {
+var GruposComponent = /** @class */ (function () {
+    function GruposComponent(flashMessage, authService, router, activatedRoute) {
         this.flashMessage = flashMessage;
         this.authService = authService;
         this.router = router;
+        this.activatedRoute = activatedRoute;
     }
-    VerAlumnosGrupoComponent.prototype.ngOnInit = function () {
+    GruposComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.grupo = this.authService.getGrupo();
-        if (this.authService.profesorLoggedIn() || this.authService.adminLoggedIn()) {
-            this.authService.buscarAlumnosGrupo(this.grupo).subscribe(function (grupo) {
-                if (grupo.success) {
-                    _this.alumnos = grupo.alumnos;
+        this.activatedRoute.paramMap.subscribe(function (params) {
+            _this.grupo_nombreMateria = params.get('nombre');
+            _this.grupo_profesor = params.get('profesor');
+            _this.grupo_profesor_paterno = params.get('paterno');
+            _this.grupo_nivel = params.get('nivel');
+            _this.grupo_grado = params.get('grado');
+            _this.grupo_grupo = params.get('grupo');
+        });
+        this.grupo = {
+            nivel: this.grupo_nivel,
+            grado: this.grupo_grado,
+            grupo: this.grupo_grupo,
+            nombreMateria: this.grupo_nombreMateria,
+            profesor: this.grupo_profesor
+        };
+        if (this.authService.profesorLoggedIn()) {
+            this.authService.getProfileProfesor().subscribe(function (profile) {
+                _this.profesor_matricula = profile.profesor.matricula;
+            }, function (err) {
+                console.log(err);
+                return false;
+            });
+        }
+        else if (this.authService.adminLoggedIn) {
+            var profesor = {
+                nombre: this.grupo_profesor,
+                paterno: this.grupo_profesor_paterno
+            };
+            this.authService.buscarProfesoresNombre(profesor).subscribe(function (data) {
+                if (data.success) {
+                    _this.profesor_matricula = data.profesores[0].matricula;
                 }
                 else {
-                    _this.flashMessage.show(grupo.msg, { cssClass: 'alert-danger', timeout: 3000 });
-                    if (_this.authService.profesorLoggedIn()) {
-                        _this.router.navigate(['/clases']);
-                    }
-                    else if (_this.authService.adminLoggedIn()) {
-                        _this.router.navigate(['/profesores']);
-                    }
+                    _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
                 }
             });
         }
-        else {
-            this.router.navigate(['/']);
-        }
+        this.authService.buscarAlumnosGrupo(this.grupo).subscribe(function (grupo) {
+            if (grupo.success) {
+                _this.alumnos = grupo.alumnos;
+            }
+            else {
+                _this.flashMessage.show(grupo.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                if (_this.authService.profesorLoggedIn()) {
+                    _this.router.navigate(['/clases', _this.profesor_matricula]);
+                }
+                else if (_this.authService.adminLoggedIn()) {
+                    _this.router.navigate(['/clases', _this.profesor_matricula]);
+                }
+            }
+        });
     };
-    VerAlumnosGrupoComponent.prototype.editarAlumno = function (matricula) {
-        this.authService.setMatriculaAlumno(matricula);
-        this.router.navigate(['/editarAlumno']);
+    GruposComponent.prototype.editarAlumno = function (matricula) {
+        this.router.navigate(['/editarAlumno', this.grupo_nombreMateria, this.grupo_profesor, this.grupo_nivel, this.grupo_grado, this.grupo_grupo, matricula]);
     };
-    VerAlumnosGrupoComponent = __decorate([
+    GruposComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-ver-alumnos-grupo',
-            template: __webpack_require__(/*! ./ver-alumnos-grupo.component.html */ "./src/app/components/grupos/ver-alumnos-grupo/ver-alumnos-grupo.component.html"),
-            styles: [__webpack_require__(/*! ./ver-alumnos-grupo.component.css */ "./src/app/components/grupos/ver-alumnos-grupo/ver-alumnos-grupo.component.css")]
+            selector: 'app-grupos',
+            template: __webpack_require__(/*! ./grupos.component.html */ "./src/app/components/grupos/grupos.component.html"),
+            styles: [__webpack_require__(/*! ./grupos.component.css */ "./src/app/components/grupos/grupos.component.css")]
         }),
-        __metadata("design:paramtypes", [angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__["FlashMessagesService"],
+        __metadata("design:paramtypes", [angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"],
             _services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
-    ], VerAlumnosGrupoComponent);
-    return VerAlumnosGrupoComponent;
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+    ], GruposComponent);
+    return GruposComponent;
 }());
 
 
@@ -1626,6 +1890,7 @@ var LoginComponent = /** @class */ (function () {
                 });
                 _this.router.navigate(['/login']);
             }
+            window.scroll(0, 0);
         });
     };
     LoginComponent = __decorate([
@@ -1652,7 +1917,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".navbar {\n  height: 25px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uYXZiYXIvbmF2YmFyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFZO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL25hdmJhci9uYXZiYXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5uYXZiYXIge1xuICBoZWlnaHQ6IDI1cHg7XG59Il19 */"
+module.exports = ".navbar {\n  padding: 10px 20px;\n}\n\n.topNav {\n  width: 100vw;\n}\n\n.botonFinal {\n  float: right;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uYXZiYXIvbmF2YmFyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxZQUFZO0FBQ2QiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL25hdmJhci9uYXZiYXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5uYXZiYXIge1xuICBwYWRkaW5nOiAxMHB4IDIwcHg7XG59XG5cbi50b3BOYXYge1xuICB3aWR0aDogMTAwdnc7XG59XG5cbi5ib3RvbkZpbmFsIHtcbiAgZmxvYXQ6IHJpZ2h0O1xufSJdfQ== */"
 
 /***/ }),
 
@@ -1663,7 +1928,7 @@ module.exports = ".navbar {\n  height: 25px;\n}\n/*# sourceMappingURL=data:appli
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n  <a class=\"navbar-brand\">Colegio Example</a>\n  <ul class=\"navbar-nav mr-auto p-2\">\n    <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/']\">Principal</a></li>\n    <li *ngIf=\"authService.alumnoLoggedIn()\" class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/verAlumno']\">Calificaciones</a></li>\n    <li *ngIf=\"authService.profesorLoggedIn()\" class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/clases']\">Clases</a></li>\n    <li ngbDropdown *ngIf=\"authService.adminLoggedIn()\" class=\"nav-item dropdown show\">\n      <a ngbDropdownToggle class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" style=\"cursor: pointer;\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">Administración</a>\n      <div ngbDropdownMenu class=\"dropdown-menu show\" x-placement=\"bottom-start\" style=\"position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);\">\n        <a class=\"dropdown-item\"><a class=\"nav-link dropdown-item\" [routerLink]=\"['/alumnos']\" style=\"color: black;\">Alumnos</a></a>\n        <a class=\"dropdown-item\"><a class=\"nav-link dropdown-item\" [routerLink]=\"['/profesores']\" style=\"color: black;\">Profesores</a></a>\n        <a class=\"dropdown-item\"><a class=\"nav-link dropdown-item\" [routerLink]=\"['/admins']\" style=\"color: black;\">Administradores</a></a>\n      </div>\n    </li>\n  </ul>\n  <ul class=\"navbar-nav \">\n    <!-- <li *ngIf=\"authService.adminLoggedIn()\" class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard</a></li> -->\n    <li *ngIf=\"authService.loggedIn()\" class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/profile']\">Perfil</a></li>\n    <li *ngIf=\"!authService.loggedIn()\" class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/login']\">Ingresar</a></li>\n    <li *ngIf=\"authService.loggedIn()\" class=\"nav-item\"><a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Salir</a></li>\n  </ul>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n\n  <a class=\"navbar-brand\" *ngIf=\"!isResponsive\">Colegio Example</a>\n\n  <div class=\"topNav\" *ngIf=\"isResponsive\">\n    <a class=\"navbar-brand\">Colegio Example</a>\n    <button *ngIf=\"isResponsive \" class=\"navbar-toggler botonFinal\" type=\"button\" data-toggle=\"collapse\" datigaa-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navtion\">\n      <span class=\"navbar-toggler-icon\" (click)=\"makeDropdown()\"></span>\n    </button>\n  </div>\n\n  <ul class=\"navbar-nav mr-auto\" *ngIf=\"!isResponsive\">\n    <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/']\">Principal</a></li>\n    <li *ngIf=\"authService.alumnoLoggedIn()\" class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/verAlumno', this.matricula]\">Calificaciones</a></li>\n    <li *ngIf=\"authService.profesorLoggedIn()\" class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/clases', this.matricula]\">Clases</a></li>\n    <li ngbDropdown *ngIf=\"authService.adminLoggedIn()\" class=\"nav-item dropdown show\">\n      <a ngbDropdownToggle class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" style=\"cursor: pointer;\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">Administración</a>\n      <div ngbDropdownMenu class=\"dropdown-menu show\" x-placement=\"bottom-start\" style=\"position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);\">\n        <a class=\"dropdown-item\"><a class=\"nav-link dropdown-item\" [routerLink]=\"['/alumnos']\" style=\"color: black;\">Alumnos</a></a>\n        <a class=\"dropdown-item\"><a class=\"nav-link dropdown-item\" [routerLink]=\"['/profesores']\" style=\"color: black;\">Profesores</a></a>\n        <a class=\"dropdown-item\"><a class=\"nav-link dropdown-item\" [routerLink]=\"['/admins']\" style=\"color: black;\">Administradores</a></a>\n      </div>\n    </li>\n    <li *ngIf=\"authService.adminLoggedIn()\" class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/comentarios']\">Comentarios</a></li>\n  </ul>\n\n  <ul class=\"navbar-nav\" *ngIf=\"!isResponsive\">\n    <li *ngIf=\"authService.loggedIn()\" class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/profile']\">Perfil</a></li>\n    <li *ngIf=\"!authService.loggedIn()\" class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/login']\">Ingresar</a></li>\n    <li *ngIf=\"authService.loggedIn()\" class=\"nav-item\"><a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Salir</a></li>\n  </ul>\n\n  <ul class=\"navbar-nav mr-auto\" *ngIf=\"showDropdown\">\n    <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/']\">Principal</a></li>\n    <li *ngIf=\"authService.alumnoLoggedIn()\" class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/verAlumno', this.user.matricula]\">Calificaciones</a></li>\n    <li *ngIf=\"authService.profesorLoggedIn()\" class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/clases', this.user.matricula]\">Clases</a></li>\n    <li ngbDropdown *ngIf=\"authService.adminLoggedIn()\" class=\"nav-item dropdown show\">\n      <a ngbDropdownToggle class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" style=\"cursor: pointer;\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"true\">Administración</a>\n      <div ngbDropdownMenu class=\"dropdown-menu show\" x-placement=\"bottom-start\" style=\"position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);\">\n        <a class=\"dropdown-item\"><a class=\"nav-link dropdown-item\" [routerLink]=\"['/alumnos']\" style=\"color: black;\">Alumnos</a></a>\n        <a class=\"dropdown-item\"><a class=\"nav-link dropdown-item\" [routerLink]=\"['/profesores']\" style=\"color: black;\">Profesores</a></a>\n        <a class=\"dropdown-item\"><a class=\"nav-link dropdown-item\" [routerLink]=\"['/admins']\" style=\"color: black;\">Administradores</a></a>\n      </div>\n    </li>\n    <li *ngIf=\"authService.adminLoggedIn()\" class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/comentarios']\">Comentarios</a></li>\n  </ul>\n\n  <ul class=\"navbar-nav\" *ngIf=\"showDropdown\">\n    <li *ngIf=\"authService.loggedIn()\" class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/profile']\">Perfil</a></li>\n    <li *ngIf=\"!authService.loggedIn()\" class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\"><a class=\"nav-link\" [routerLink]=\"['/login']\">Ingresar</a></li>\n    <li *ngIf=\"authService.loggedIn()\" class=\"nav-item\"><a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Salir</a></li>\n  </ul>\n\n</nav>"
 
 /***/ }),
 
@@ -1700,8 +1965,43 @@ var NavbarComponent = /** @class */ (function () {
         this.authService = authService;
         this.router = router;
         this.flashMessage = flashMessage;
+        this.isResponsive = false;
+        this.showDropdown = false;
+        this.matricula = "";
     }
+    NavbarComponent.prototype.onResize = function (event) {
+        this.innerWidth = event.target.innerWidth;
+        if (this.innerWidth < 995) {
+            this.isResponsive = true;
+            this.showDropdown = false;
+        }
+        else {
+            this.isResponsive = false;
+            this.showDropdown = false;
+        }
+    };
     NavbarComponent.prototype.ngOnInit = function () {
+        this.innerWidth = window.innerWidth;
+        if (this.innerWidth < 995) {
+            this.isResponsive = true;
+            this.showDropdown = false;
+        }
+        if (this.authService.alumnoLoggedIn()) {
+            this.user = JSON.parse(localStorage.getItem('user'));
+            this.matricula = this.user.matricula;
+        }
+        else if (this.authService.profesorLoggedIn()) {
+            this.user = JSON.parse(localStorage.getItem('user'));
+            this.matricula = this.user.matricula;
+        }
+    };
+    NavbarComponent.prototype.makeDropdown = function () {
+        if (this.showDropdown) {
+            this.showDropdown = false;
+        }
+        else if (!this.showDropdown) {
+            this.showDropdown = true;
+        }
     };
     NavbarComponent.prototype.onLogoutClick = function () {
         // Send the instruction to clear the local storage and the memory of the user logged in
@@ -1713,6 +2013,12 @@ var NavbarComponent = /** @class */ (function () {
         this.router.navigate(['/login']);
         return false;
     };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('window:resize', ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", void 0)
+    ], NavbarComponent.prototype, "onResize", null);
     NavbarComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-navbar',
@@ -1748,7 +2054,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"position-relative overflow-hidden p-3 m-md-1 bg-light\">\n  <form>\n    <h2>Agregar Profesor</h2><br>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Matricula</label>\n      <div class=\"col-sm-7 pull-left text-left\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Matricula . .\" [(ngModel)]=\"matricula\" [ngModelOptions]=\"{standalone: true}\">\n        <small id=\"passwordHelpBlock\" class=\"form-text text-muted\">\n          Ejemplo: P12 <br>\n          (P)12 - Profesor<br>\n          P(12) - Número de profesor\n        </small>\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Nombre(s)</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Nombre(s) . .\" [(ngModel)]=\"nombre\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Apellido Paterno</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Paterno . .\" [(ngModel)]=\"paterno\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Apellido Materno</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Materno . .\" [(ngModel)]=\"materno\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Posición</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Posición . .\" [(ngModel)]=\"posicion\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Teléfono</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Teléfono . .\" [(ngModel)]=\"telefono\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Correo</label>\n      <div class=\"col-sm-7\">\n        <input type=\"mail\" class=\"form-control\" placeholder=\"Correo . .\" [(ngModel)]=\"correo\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label for=\"contrasena\" class=\"col-sm-5 p-2 col-form-label\">Contraseña</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Contraseña . .\" [(ngModel)]=\"password\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Confirmación de contraseña</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Confirmacion . .\" [(ngModel)]=\"passwordConfirmation\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <!-- HACER LOS NGMODEL -->\n    <div class=\"form-group row\">\n      <div class=\"col-sm-12\" *ngIf=\"matricula && posicion && nombre && paterno && materno && telefono && correo && password && passwordConfirmation\">\n        <button type=\"submit\" (click)=\"agregarProfesor()\" class=\"btn btn-primary btn-md btn-block\">Confirmar</button>\n      </div>\n    </div>\n\n  </form>\n</div>"
+module.exports = "<div class=\"position-relative overflow-hidden p-3 m-md-1 bg-light\">\n  <form>\n    <h2>Agregar Profesor</h2><br>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Matricula</label>\n      <div class=\"col-sm-7 pull-left text-left\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Matricula . .\" [(ngModel)]=\"matricula\" [ngModelOptions]=\"{standalone: true}\">\n        <small id=\"passwordHelpBlock\" class=\"form-text text-muted\">\n          Ejemplo: P12 <br>\n          (P)12 - Profesor<br>\n          P(12) - Número de profesor\n        </small>\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Nombre(s)</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Nombre(s) . .\" [(ngModel)]=\"nombre\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Apellido Paterno</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Paterno . .\" [(ngModel)]=\"paterno\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Apellido Materno</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Materno . .\" [(ngModel)]=\"materno\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Posición</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Posición . .\" [(ngModel)]=\"posicion\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Teléfono</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Teléfono . .\" [(ngModel)]=\"telefono\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Correo</label>\n      <div class=\"col-sm-7\">\n        <input type=\"mail\" class=\"form-control\" placeholder=\"Correo . .\" [(ngModel)]=\"email\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label for=\"contrasena\" class=\"col-sm-5 p-2 col-form-label\">Contraseña</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Contraseña . .\" [(ngModel)]=\"password\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-5 p-2 col-form-label\">Confirmación de contraseña</label>\n      <div class=\"col-sm-7\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Confirmacion . .\" [(ngModel)]=\"passwordConfirmation\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <!-- HACER LOS NGMODEL -->\n    <div class=\"form-group row\">\n      <div class=\"col-sm-12\" *ngIf=\"matricula && posicion && nombre && paterno && materno && telefono && email && password && passwordConfirmation\">\n        <button type=\"submit\" (click)=\"agregarProfesor()\" class=\"btn btn-primary btn-md btn-block\">Confirmar</button>\n      </div>\n    </div>\n\n  </form>\n</div>"
 
 /***/ }),
 
@@ -1763,10 +2069,11 @@ module.exports = "<div class=\"position-relative overflow-hidden p-3 m-md-1 bg-l
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AgregarProfesorComponent", function() { return AgregarProfesorComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/auth.service */ "./src/app/services/auth.service.ts");
-/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
-/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_validate_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/validate.service */ "./src/app/services/validate.service.ts");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1778,16 +2085,17 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 // Import of the services
-// import { ValidateService } from '../../../services/validate.service';
+
 
 // Import of the module for the flash messages
 
 // Bring out the Router so we can redirect from the code
 
 var AgregarProfesorComponent = /** @class */ (function () {
-    function AgregarProfesorComponent(flashMessage, authService, router) {
+    function AgregarProfesorComponent(flashMessage, authService, validateService, router) {
         this.flashMessage = flashMessage;
         this.authService = authService;
+        this.validateService = validateService;
         this.router = router;
     }
     AgregarProfesorComponent.prototype.ngOnInit = function () {
@@ -1802,32 +2110,37 @@ var AgregarProfesorComponent = /** @class */ (function () {
             materno: this.materno,
             posicion: this.posicion,
             telefono: this.telefono,
-            correo: this.correo,
+            email: this.email,
             password: this.password
         };
         if (this.password === this.passwordConfirmation) {
-            this.authService.registerProfesor(profesor).subscribe(function (data) {
-                if (data.success) {
-                    _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
-                    _this.matricula = null;
-                    _this.nombre = null;
-                    _this.paterno = null;
-                    _this.materno = null;
-                    _this.posicion = null;
-                    _this.telefono = null;
-                    _this.correo = null;
-                    _this.password = null;
-                    _this.passwordConfirmation = null;
-                    _this.router.navigate(['/profesores']);
-                }
-                else {
-                    _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-                }
-            });
+            if (this.validateService.validateEmail(this.email)) {
+                this.authService.registerProfesor(profesor).subscribe(function (data) {
+                    if (data.success) {
+                        _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+                        _this.matricula = null;
+                        _this.nombre = null;
+                        _this.paterno = null;
+                        _this.materno = null;
+                        _this.posicion = null;
+                        _this.telefono = null;
+                        _this.email = null;
+                        _this.password = null;
+                        _this.passwordConfirmation = null;
+                    }
+                    else {
+                        _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                    }
+                });
+            }
+            else {
+                this.flashMessage.show('Ingrese un correo valido', { cssClass: 'alert-danger', timeout: 3000 });
+            }
         }
         else {
             this.flashMessage.show('Las contraseñas no coinciden', { cssClass: 'alert-danger', timeout: 3000 });
         }
+        window.scroll(0, 0);
     };
     AgregarProfesorComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1835,9 +2148,10 @@ var AgregarProfesorComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./agregar-profesor.component.html */ "./src/app/components/profesores/agregar-profesor/agregar-profesor.component.html"),
             styles: [__webpack_require__(/*! ./agregar-profesor.component.css */ "./src/app/components/profesores/agregar-profesor/agregar-profesor.component.css")]
         }),
-        __metadata("design:paramtypes", [angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__["FlashMessagesService"],
-            _services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+        __metadata("design:paramtypes", [angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"],
+            _services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"],
+            _services_validate_service__WEBPACK_IMPORTED_MODULE_1__["ValidateService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
     ], AgregarProfesorComponent);
     return AgregarProfesorComponent;
 }());
@@ -1864,7 +2178,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light\">\n  <h1>Clases de {{profesor?.nombre}} {{profesor?.materno}} {{profesor?.paterno}}</h1>\n  <hr class=\"featurette-divider\">\n  <div class=\"card-deck mb-3 text-center justify-content-around\">\n\n    <div *ngFor=\"let clase of profesor?.clases; let i = index\" class=\"card mb-4 shadow-sm\" style=\"min-width: 350px; max-width: 350px\">\n      <div class=\"card-header\">\n        <h3 class=\"my-0 font-weight-normal\">{{clase.nombreClase}}</h3>\n      </div>\n      <div class=\"card-body\">\n        <h4 class=\"card-title pricing-card-title\">{{clase.grado}}° \"{{clase.grupo}}\"</h4>\n        <ul class=\"list-unstyled mt-3 mb-4\">\n          <li>{{clase.nivel}}</li>\n        </ul>\n        <button (click)=\"saveGrupoAlumnos(clase.nivel, clase.grado, clase.grupo, clase.nombreClase, profesor.nombre)\" type=\"button\" class=\"btn btn-outline-info btn-md btn-block\">Ver grupo</button>\n        <button *ngIf=\"this.authService.adminLoggedIn()\" (click)=\"deleteClase(clase.nombreClase, clase.nivel, clase.grado, clase.grupo)\" type=\"button\" class=\"btn btn-outline-danger btn-md btn-block\">Eliminar grupo</button>\n      </div>\n    </div>\n\n  </div>\n\n  <div *ngIf=\"this.authService.adminLoggedIn()\" class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Agregar clase</h5>\n      </div>\n      <div class=\"modal-body\">\n        <div class=\"position-relative overflow-hidden p-3 m-md-1\">\n          <div class=\"form-group\">\n            <label class=\"col-md-12 p-2 col-form-label\">Nombre de la materia</label>\n            <div class=\"form-group row\">\n              <div class=\"col-sm-12\">\n                <input type=\"text\" class=\"form-control\" name=\"nombreClase\" [(ngModel)]=\"nombreClase\" placeholder=\"Nombre de la clase . .\" [ngModelOptions]=\"{standalone: true}\">\n              </div>\n            </div>\n            <label class=\"col-md-12 p-2 col-form-label\">Nivel</label>\n            <div class=\"form-group row\">\n              <div class=\"col-sm-12\">\n                <select class=\"form-control\" name=\"nivel\" [(ngModel)]=\"nivel\" placeholder=\"Grado . .\">\n                  <option value=\"Preescolar\">Preescolar</option>\n                  <option value=\"Primaria\">Primaria</option>\n                  <option value=\"Secundaria\">Secundaria</option>\n                </select>\n              </div>\n            </div>\n            <label class=\"col-md-12 p-2 col-form-label\">Grado</label>\n            <div class=\"form-group row\">\n              <div class=\"col-sm-12\">\n                <input type=\"number\" class=\"form-control\" name=\"grado\" [(ngModel)]=\"grado\" placeholder=\"Grado . .\" [ngModelOptions]=\"{standalone: true}\">\n              </div>\n            </div>\n            <label class=\"col-md-12 p-2 col-form-label\">Grupo</label>\n            <div class=\"form-group row\">\n              <div class=\"col-sm-12\">\n                <input type=\"text\" class=\"form-control\" name=\"grupo\" [(ngModel)]=\"grupo\" placeholder=\"Grupo . .\" [ngModelOptions]=\"{standalone: true}\">\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"modal-footer\">\n        <button *ngIf=\"nombreClase && nivel && grado && grupo\" type=\"button\" (click)=\"addClase()\" class=\"btn btn-outline-info\">Agregar</button>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light\">\n  <h1>Clases de {{profesor?.nombre}} {{profesor?.materno}} {{profesor?.paterno}}</h1>\n  <hr class=\"featurette-divider\">\n  <div class=\"card-deck mb-3 text-center justify-content-around\">\n\n    <div *ngFor=\"let clase of profesor?.clases; let i = index\" class=\"card mb-4 shadow-sm\" style=\"min-width: 350px; max-width: 350px\">\n      <div class=\"card-header\">\n        <h3 class=\"my-0 font-weight-normal\">{{clase.nombreClase}}</h3>\n      </div>\n      <div class=\"card-body\">\n        <h4 class=\"card-title pricing-card-title\">{{clase.grado}}° \"{{clase.grupo}}\"</h4>\n        <ul class=\"list-unstyled mt-3 mb-4\">\n          <li>{{clase.nivel}}</li>\n        </ul>\n        <button (click)=\"saveGrupoAlumnos(clase.nivel, clase.grado, clase.grupo, clase.nombreClase, profesor.nombre, profesor.paterno)\" type=\"button\" class=\"btn btn-outline-info btn-md btn-block\">Ver grupo</button>\n        <button *ngIf=\"this.authService.adminLoggedIn()\" (click)=\"deleteClase(clase.nombreClase, clase.nivel, clase.grado, clase.grupo)\" type=\"button\" class=\"btn btn-outline-danger btn-md btn-block\">Eliminar grupo</button>\n      </div>\n    </div>\n\n  </div>\n\n  <div *ngIf=\"this.authService.adminLoggedIn()\" class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\">Agregar clase</h5>\n      </div>\n      <div class=\"modal-body\">\n        <div class=\"position-relative overflow-hidden p-3 m-md-1\">\n          <div class=\"form-group\">\n            <label class=\"col-md-12 p-2 col-form-label\">Nombre de la materia</label>\n            <div class=\"form-group row\">\n              <div class=\"col-sm-12\">\n                <input type=\"text\" class=\"form-control\" name=\"nombreClase\" [(ngModel)]=\"nombreClase\" placeholder=\"Nombre de la clase . .\" [ngModelOptions]=\"{standalone: true}\">\n              </div>\n            </div>\n            <label class=\"col-md-12 p-2 col-form-label\">Nivel</label>\n            <div class=\"form-group row\">\n              <div class=\"col-sm-12\">\n                <select class=\"form-control\" name=\"nivel\" [(ngModel)]=\"nivel\" placeholder=\"Grado . .\">\n                  <option value=\"Preescolar\">Preescolar</option>\n                  <option value=\"Primaria\">Primaria</option>\n                  <option value=\"Secundaria\">Secundaria</option>\n                </select>\n              </div>\n            </div>\n            <label class=\"col-md-12 p-2 col-form-label\">Grado</label>\n            <div class=\"form-group row\">\n              <div class=\"col-sm-12\">\n                <input type=\"number\" class=\"form-control\" name=\"grado\" [(ngModel)]=\"grado\" placeholder=\"Grado . .\" [ngModelOptions]=\"{standalone: true}\">\n              </div>\n            </div>\n            <label class=\"col-md-12 p-2 col-form-label\">Grupo</label>\n            <div class=\"form-group row\">\n              <div class=\"col-sm-12\">\n                <input type=\"text\" class=\"form-control\" name=\"grupo\" [(ngModel)]=\"grupo\" placeholder=\"Grupo . .\" [ngModelOptions]=\"{standalone: true}\">\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"modal-footer\">\n        <button *ngIf=\"nombreClase && nivel && grado && grupo\" type=\"button\" (click)=\"addClase()\" class=\"btn btn-outline-info\">Agregar</button>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1880,9 +2194,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClasesComponent", function() { return ClasesComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/auth.service */ "./src/app/services/auth.service.ts");
-/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
-/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1894,25 +2208,32 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 // Import of the module for the flash messages
 
 
 var ClasesComponent = /** @class */ (function () {
-    function ClasesComponent(flashMessage, authService, router) {
+    function ClasesComponent(flashMessage, authService, router, activatedRoute) {
         this.flashMessage = flashMessage;
         this.authService = authService;
         this.router = router;
+        this.activatedRoute = activatedRoute;
         this.matricula = "";
     }
     ClasesComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.activatedRoute.paramMap.subscribe(function (params) {
+            _this.matricula = params.get('id');
+        });
         if (this.authService.profesorLoggedIn()) {
             this.authService.getProfileProfesor().subscribe(function (profile) {
                 _this.profesor = profile.profesor;
+                if (_this.profesor.matricula != _this.matricula) {
+                    _this.router.navigate(['/clases', _this.profesor.matricula]);
+                }
             });
         }
         else if (this.authService.adminLoggedIn()) {
-            this.matricula = this.authService.getMatricualVerProfesor();
             var profesor = {
                 matricula: this.matricula
             };
@@ -1930,16 +2251,8 @@ var ClasesComponent = /** @class */ (function () {
             this.router.navigate(['/']);
         }
     };
-    ClasesComponent.prototype.saveGrupoAlumnos = function (nivel, grado, grupo, nombreMateria, profesor) {
-        var grupoSend = {
-            nivel: nivel,
-            grado: grado,
-            grupo: grupo,
-            nombreMateria: nombreMateria,
-            profesor: profesor
-        };
-        this.authService.setGrupo(grupoSend);
-        this.router.navigate(['/grupo']);
+    ClasesComponent.prototype.saveGrupoAlumnos = function (nivel, grado, grupo, nombreMateria, profesor, profesorPaterno) {
+        this.router.navigate(['/grupo', nombreMateria, profesor, profesorPaterno, nivel, grado, grupo]);
     };
     ClasesComponent.prototype.addClase = function () {
         var _this = this;
@@ -2000,9 +2313,10 @@ var ClasesComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./clases.component.html */ "./src/app/components/profesores/clases/clases.component.html"),
             styles: [__webpack_require__(/*! ./clases.component.css */ "./src/app/components/profesores/clases/clases.component.css")]
         }),
-        __metadata("design:paramtypes", [angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__["FlashMessagesService"],
+        __metadata("design:paramtypes", [angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"],
             _services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
     ], ClasesComponent);
     return ClasesComponent;
 }());
@@ -2029,7 +2343,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"position-relative overflow-hidden p-3 m-md-1 bg-light\">\n  <form>\n    <h2>Buscar Profesores</h2><br>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-4 p-2 col-form-label\">Matricula</label>\n      <div class=\"col-sm-8 pull-left text-left\">\n        <input type=\"text\" class=\"form-control\" name=\"matricula\" [(ngModel)]=\"matricula\" placeholder=\"Matricula . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <hr class=\"featurette-divider\">\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-4 p-2 col-form-label\">Nombre(s)</label>\n      <div class=\"col-sm-8\">\n        <input type=\"text\" class=\"form-control\" name=\"nombre\" [(ngModel)]=\"nombre\" placeholder=\"Nombre(s) . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <div class=\"col-sm-12\" *ngIf=\"matricula && !nombre\">\n        <button type=\"submit\" (click)=\"buscarProfesorMatricula()\" class=\"btn btn-primary btn-md btn-block\">Buscar</button>\n      </div>\n      <div class=\"col-sm-12\" *ngIf=\"!matricula && nombre\">\n        <button type=\"submit\" (click)=\"buscarProfesoresNombre()\" class=\"btn btn-primary btn-md btn-block\">Buscar</button>\n      </div>\n    </div>\n  </form>\n</div>\n\n<hr *ngIf=\"profesores\" class=\"featurette-divider\">\n<div *ngFor=\"let profesor of profesores\" class=\"overflow-hidden position-relative p-4 m-md-1 bg-light\">\n  <div class=\"row\">\n    <div class=\"col-md-9 pull-left text-left\">\n      <h4 class=\"list-group-item-heading m-1\">{{ profesor.nombre }} {{ profesor.paterno }} {{ profesor.materno }}</h4>\n      <div class=\"row\">\n        <div class=\"col-md-3\">\n          <p class=\"font-weight-bold text-uppercase m-1\">Matricula: </p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Posicion: </p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Telefono: </p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Correo: </p>\n        </div>\n        <div class=\"col-md-8\">\n          <p class=\"list-group-item-text m-1\">{{ profesor.matricula }}</p>\n          <p class=\"list-group-item-text m-1\">{{ profesor.posicion }}</p>\n          <p class=\"list-group-item-text m-1\">{{ profesor.telefono }}</p>\n          <p class=\"list-group-item-text m-1\">{{ profesor.correo }}</p>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-3 pull-right\">\n      <br>\n      <button type=\"button\" (click)=\"verProfesor(profesor.matricula)\" class=\"btn btn-outline-info btn-md btn-block\">Ver</button>\n      <br><br>\n      <button type=\"button\" (click)=\"eliminarProfesor(profesor.matricula)\" class=\"btn btn-outline-danger btn-md btn-block\">Eliminar</button>\n    </div>\n  </div>\n</div>\n\n<hr *ngIf=\"profesor\" class=\"featurette-divider\">\n<div *ngIf=\"profesor\" class=\"overflow-hidden position-relative p-4 m-md-1 bg-light\">\n  <div class=\"row\">\n    <div class=\"col-md-9 pull-left text-left\">\n      <h4 class=\"list-group-item-heading m-1\">{{ profesor.nombre }} {{ profesor.paterno }} {{ profesor.materno }}</h4>\n      <div class=\"row\">\n        <div class=\"col-md-3\">\n          <p class=\"font-weight-bold text-uppercase m-1\">Matricula: </p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Posicion: </p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Telefono: </p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Correo: </p>\n        </div>\n        <div class=\"col-md-8\">\n          <p class=\"list-group-item-text m-1\">{{ profesor.matricula }}</p>\n          <p class=\"list-group-item-text m-1\">{{ profesor.posicion }}</p>\n          <p class=\"list-group-item-text m-1\">{{ profesor.telefono }}</p>\n          <p class=\"list-group-item-text m-1\">{{ profesor.correo }}</p>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-3 pull-right\">\n      <br>\n      <button type=\"button\" (click)=\"verProfesor(profesor.matricula)\" class=\"btn btn-outline-info btn-md btn-block\">Ver</button>\n      <br><br>\n      <button type=\"button\" (click)=\"eliminarProfesor(profesor.matricula)\" class=\"btn btn-outline-danger btn-md btn-block\">Eliminar</button>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"position-relative overflow-hidden p-3 m-md-1 bg-light\">\n  <form>\n    <h2>Buscar Profesores</h2><br>\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-3 p-2 col-form-label\">Matricula</label>\n      <div class=\"col-sm-8 pull-left text-left\">\n        <input type=\"text\" class=\"form-control\" name=\"matricula\" [(ngModel)]=\"matricula\" placeholder=\"Matricula . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <hr class=\"featurette-divider\">\n\n    <div class=\"form-group row\">\n      <label class=\"col-sm-3 p-2 col-form-label\">Nombre</label>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" class=\"form-control\" name=\"nombre\" [(ngModel)]=\"nombre\" placeholder=\"Nombre(s) . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n      <div class=\"col-sm-4\">\n        <input type=\"text\" class=\"form-control\" name=\"apellido\" [(ngModel)]=\"apellido\" placeholder=\"Apellido paterno . .\" [ngModelOptions]=\"{standalone: true}\">\n      </div>\n    </div>\n\n    <div class=\"form-group row\">\n      <div class=\"col-sm-12\" *ngIf=\"matricula && !nombre && !apellido\">\n        <button type=\"submit\" (click)=\"buscarProfesorMatricula()\" class=\"btn btn-primary btn-md btn-block\">Buscar</button>\n      </div>\n      <div class=\"col-sm-12\" *ngIf=\"!matricula && nombre && apellido\">\n        <button type=\"submit\" (click)=\"buscarProfesoresNombre()\" class=\"btn btn-primary btn-md btn-block\">Buscar</button>\n      </div>\n    </div>\n  </form>\n</div>\n\n<hr *ngIf=\"profesores\" class=\"featurette-divider\">\n<div *ngFor=\"let profesor of profesores\" class=\"overflow-hidden position-relative p-4 m-md-1 bg-light\">\n  <div class=\"row\">\n    <div class=\"col-md-9 pull-left text-left\">\n      <h4 class=\"list-group-item-heading m-1\">{{ profesor.nombre }} {{ profesor.paterno }} {{ profesor.materno }}</h4>\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <p class=\"font-weight-bold text-uppercase m-1\">Matricula: <a style=\"font-weight: normal; text-transform: none;\">{{ profesor.matricula }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Posición: <a style=\"font-weight: normal; text-transform: none;\">{{ profesor.posicion }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Telefono: <a style=\"font-weight: normal; text-transform: none;\">{{ profesor.telefono }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Correo: <a style=\"font-weight: normal; text-transform: none;\">{{ profesor.email }}</a></p>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-3 pull-right\">\n      <br>\n      <button type=\"button\" (click)=\"verProfesor(profesor.matricula)\" class=\"btn btn-outline-info btn-md btn-block\" style=\"overflow: hidden !important; padding: 0.5rem 0.5rem !important;\">Ver</button>\n      <br><br>\n      <button type=\"button\" (click)=\"eliminarProfesor(profesor.nombre, profesor.paterno, profesor.materno, profesor.matricula)\" class=\"btn btn-outline-danger btn-md btn-block\" style=\"overflow: hidden !important; padding: 0.5rem 0.5rem !important;\">Eliminar</button>\n    </div>\n  </div>\n</div>\n\n<hr *ngIf=\"profesor\" class=\"featurette-divider\">\n<div *ngIf=\"profesor\" class=\"overflow-hidden position-relative p-4 m-md-1 bg-light\">\n  <div class=\"row\">\n    <div class=\"col-md-9 pull-left text-left\">\n      <h4 class=\"list-group-item-heading m-1\">{{ profesor.nombre }} {{ profesor.paterno }} {{ profesor.materno }}</h4>\n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <p class=\"font-weight-bold text-uppercase m-1\">Matricula: <a style=\"font-weight: normal; text-transform: none;\">{{ profesor.matricula }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Posición: <a style=\"font-weight: normal; text-transform: none;\">{{ profesor.posicion }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Telefono: <a style=\"font-weight: normal; text-transform: none;\">{{ profesor.telefono }}</a></p>\n          <p class=\"font-weight-bold text-uppercase m-1\">Correo: <a style=\"font-weight: normal; text-transform: none;\">{{ profesor.email }}</a></p>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-md-3 pull-right\">\n      <br>\n      <button type=\"button\" (click)=\"verProfesor(profesor.matricula)\" class=\"btn btn-outline-info btn-md btn-block\">Ver</button>\n      <br><br>\n      <button type=\"button\" (click)=\"eliminarProfesor(profesor.nombre, profesor.paterno, profesor.materno, profesor.matricula)\" class=\"btn btn-outline-danger btn-md btn-block\">Eliminar</button>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -2048,6 +2362,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
 /* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _shared_confirmation_dialog_confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared/confirmation-dialog/confirmation-dialog.component */ "./src/app/components/shared/confirmation-dialog/confirmation-dialog.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2064,11 +2380,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 // Bring out the Router so we can redirect from the code
 
+
+
 var ListarProfesoresComponent = /** @class */ (function () {
-    function ListarProfesoresComponent(flashMessage, authService, router) {
+    function ListarProfesoresComponent(flashMessage, authService, router, dialog) {
         this.flashMessage = flashMessage;
         this.authService = authService;
         this.router = router;
+        this.dialog = dialog;
     }
     ListarProfesoresComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -2097,7 +2416,8 @@ var ListarProfesoresComponent = /** @class */ (function () {
     ListarProfesoresComponent.prototype.buscarProfesoresNombre = function () {
         var _this = this;
         var profesor = {
-            nombre: this.nombre
+            nombre: this.nombre,
+            paterno: this.apellido
         };
         this.authService.buscarProfesoresNombre(profesor).subscribe(function (data) {
             if (data.success) {
@@ -2109,26 +2429,38 @@ var ListarProfesoresComponent = /** @class */ (function () {
         });
         this.profesor = null;
         this.nombre = null;
+        this.apellido = null;
     };
     ListarProfesoresComponent.prototype.verProfesor = function (matricula) {
-        this.authService.setMatriculaVerProfesor(matricula);
-        this.router.navigate(['/clases']);
+        // this.authService.setMatriculaVerProfesor(matricula);
+        this.router.navigate(['/clases', matricula]);
+        window.scroll(0, 0);
     };
-    ListarProfesoresComponent.prototype.eliminarProfesor = function (matricula) {
+    ListarProfesoresComponent.prototype.eliminarProfesor = function (nombres, paterno, materno, matricula) {
         var _this = this;
         var profesor = {
             matricula: matricula
         };
-        this.authService.eliminarProfesor(profesor).subscribe(function (data) {
-            if (data.success) {
-                _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
-                _this.profesor = null;
-                _this.profesores = null;
+        var dialogRef = this.dialog.open(_shared_confirmation_dialog_confirmation_dialog_component__WEBPACK_IMPORTED_MODULE_5__["ConfirmationDialogComponent"], {
+            width: '50vh',
+            height: '50vh',
+            data: "¿Desea eliminar a el profesor " + nombres + " " + paterno + " " + materno + "?"
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+            if (result) {
+                _this.authService.eliminarProfesor(profesor).subscribe(function (data) {
+                    if (data.success) {
+                        _this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+                        _this.profesor = null;
+                        _this.profesores = null;
+                    }
+                    else {
+                        _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                    }
+                    window.scroll(0, 0);
+                    _this.ngOnInit();
+                });
             }
-            else {
-                _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-            }
-            _this.ngOnInit();
         });
     };
     ListarProfesoresComponent = __decorate([
@@ -2139,7 +2471,8 @@ var ListarProfesoresComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__["FlashMessagesService"],
             _services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialog"]])
     ], ListarProfesoresComponent);
     return ListarProfesoresComponent;
 }());
@@ -2301,6 +2634,7 @@ var ProfileComponent = /** @class */ (function () {
             });
         }
         else {
+            window.scroll(0, 0);
             this.flashMessage.show("Perfil no encontrado", { cssClass: 'alert-danger', timeout: 3000 });
             this.router.navigate(['/dashboard']);
         }
@@ -2321,6 +2655,7 @@ var ProfileComponent = /** @class */ (function () {
                 _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
                 _this.router.navigate(['/profile']);
             }
+            window.scroll(0, 0);
         }, function (err) {
             console.log(err);
             return false;
@@ -2362,6 +2697,7 @@ var ProfileComponent = /** @class */ (function () {
                 else {
                     _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
                 }
+                window.scroll(0, 0);
             }, function (err) {
                 console.log(err);
                 return false;
@@ -2386,6 +2722,7 @@ var ProfileComponent = /** @class */ (function () {
                     else {
                         _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
                     }
+                    window.scroll(0, 0);
                 }, function (err) {
                     console.log(err);
                     return false;
@@ -2404,6 +2741,7 @@ var ProfileComponent = /** @class */ (function () {
                     else {
                         _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
                     }
+                    window.scroll(0, 0);
                 }, function (err) {
                     console.log(err);
                     return false;
@@ -2422,6 +2760,78 @@ var ProfileComponent = /** @class */ (function () {
             _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], ProfileComponent);
     return ProfileComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/shared/confirmation-dialog/confirmation-dialog.component.css":
+/*!*****************************************************************************************!*\
+  !*** ./src/app/components/shared/confirmation-dialog/confirmation-dialog.component.css ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvc2hhcmVkL2NvbmZpcm1hdGlvbi1kaWFsb2cvY29uZmlybWF0aW9uLWRpYWxvZy5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/shared/confirmation-dialog/confirmation-dialog.component.html":
+/*!******************************************************************************************!*\
+  !*** ./src/app/components/shared/confirmation-dialog/confirmation-dialog.component.html ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"alignment-confirmation\">\n  <div mat-dialog-content style=\"text-align: center;\">\n    <p class=\"font-weight-bold text-uppercase m-1\">{{message}}</p>\n  </div>\n\n  <div mat-dialog-actions>\n    <button type=\"button\" class=\"btn btn-outline-danger btn-md btn-block\" (click)=\"onNoClick()\">No</button>\n    <button type=\"button\" class=\"btn btn-outline-info btn-md btn-block\" [mat-dialog-close]=\"true\" cdkFocusInitial>Si</button>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/shared/confirmation-dialog/confirmation-dialog.component.ts":
+/*!****************************************************************************************!*\
+  !*** ./src/app/components/shared/confirmation-dialog/confirmation-dialog.component.ts ***!
+  \****************************************************************************************/
+/*! exports provided: ConfirmationDialogComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConfirmationDialogComponent", function() { return ConfirmationDialogComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+var ConfirmationDialogComponent = /** @class */ (function () {
+    function ConfirmationDialogComponent(dialogRef, message) {
+        this.dialogRef = dialogRef;
+        this.message = message;
+    }
+    ConfirmationDialogComponent.prototype.onNoClick = function () {
+        this.dialogRef.close();
+    };
+    ConfirmationDialogComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-confirmation-dialog',
+            template: __webpack_require__(/*! ./confirmation-dialog.component.html */ "./src/app/components/shared/confirmation-dialog/confirmation-dialog.component.html"),
+            styles: [__webpack_require__(/*! ./confirmation-dialog.component.css */ "./src/app/components/shared/confirmation-dialog/confirmation-dialog.component.css")]
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], String])
+    ], ConfirmationDialogComponent);
+    return ConfirmationDialogComponent;
 }());
 
 
@@ -3030,7 +3440,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.setMatriculaVerProfesor = function (matricula) {
         this.matriculaVerProfesor = matricula;
     };
-    AuthService.prototype.getMatricualVerProfesor = function () {
+    AuthService.prototype.getMatriculaVerProfesor = function () {
         return this.matriculaVerProfesor;
     };
     /************ ADMIN ************/
@@ -3062,6 +3472,24 @@ var AuthService = /** @class */ (function () {
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
         return this.http.get('http://localhost:3000/admin/profile', { headers: headers })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+    };
+    AuthService.prototype.agregarAdminComentario = function (comentario) {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('http://localhost:3000/admin/addComentario', comentario, { headers: headers })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+    };
+    AuthService.prototype.editarAdminComentario = function (comentario) {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('http://localhost:3000/admin/editComentario', comentario, { headers: headers })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
+    };
+    AuthService.prototype.eliminarAdminComentario = function (comentario) {
+        var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('http://localhost:3000/admin/deleteComentario', comentario, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     AuthService.prototype.getAdmins = function () {
@@ -3224,7 +3652,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/andoni/Documents/Angular/ColegioMEAN_V1/angular-src/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/andoni/Documents/Angular/ColegioMEAN/angular-src/src/main.ts */"./src/main.ts");
 
 
 /***/ })
