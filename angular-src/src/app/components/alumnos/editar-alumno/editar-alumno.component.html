@@ -17,7 +17,7 @@
           <td>{{materia.calificaciones[0]}}</td>
           <td>{{materia.calificaciones[1]}}</td>
           <td>{{materia.calificaciones[2]}}</td>
-          <td class="font-weight-bold">{{promediosMaterias[i]}}</td>
+          <td class="font-weight-bold">{{promedioMateria}}</td>
         </tr>
       </tbody>
     </table>
@@ -28,25 +28,15 @@
       <div class="col-md-6 overflow-hidden position-relative p-4 m-md-1 bg-light">
         <div class="row">
           <div class="col-md-12">
-            <h3 class="mb-1">Calificar materia</h3>
+            <h3 class="mb-1">Calificar {{ this.grupo_nombreMateria }}</h3>
             <hr class="featurette-divider">
+
             <div class="form-group row">
               <label class="col-sm-5 p-2 col-form-label">Trimestre</label>
               <div class="col-sm-7 pull-left text-left">
                 <select class="form-control" name="trimestre" [(ngModel)]="trimestre" placeholder="Trimestre . ." [ngModelOptions]="{standalone: true}">
                   <option *ngFor="let trimestre of trimestres" [value]="trimestre">{{trimestre}}</option>
                 </select>
-              </div>
-            </div>
-
-            <div class=" form-group row">
-              <label class="col-sm-5 p-2 col-form-label">Nombre de la materia</label>
-              <div class="col-sm-7" *ngFor="let materia of alumno?.materias; index as i">
-                <div *ngIf="materia.nombreMateria === grupo.nombreMateria">
-                  <select class="form-control" [(ngModel)]="materiaCalificaciones">
-                    <option [value]="materia.nombreMateria">{{materia.nombreMateria}}</option>
-                  </select>
-                </div>
               </div>
             </div>
 
@@ -95,15 +85,21 @@
       <div class="modal-body">
         <div class="position-relative overflow-hidden p-3 m-md-1">
           <div class="form-group">
+
             <label class="col-md-12 p-2 col-form-label">Titulo</label>
             <div class="form-group row">
               <div class="col-sm-12">
                 <input type="text" class="form-control" name="titulo" [(ngModel)]="titulo" placeholder="Titulo . ." [ngModelOptions]="{standalone: true}">
               </div>
             </div>
+
+            <label class="col-md-12 p-2 col-form-label">Comentario</label>
             <div class="form-group row">
-              <textarea class="form-control" name="comentario" [(ngModel)]="comentario" placeholder="Comentario . ." [ngModelOptions]="{standalone: true}" rows="4"></textarea>
+              <div class="col-sm-12">
+                <textarea class="form-control" name="comentario" [(ngModel)]="comentario" placeholder="Comentario . ." [ngModelOptions]="{standalone: true}" rows="4"></textarea>
+              </div>
             </div>
+
           </div>
         </div>
       </div>

@@ -44,7 +44,7 @@ export class EditarAlumnoComponent implements OnInit {
   trimestres: number[] = [1, 2, 3]
 
   // VARIABLE PARA EL DISPLAY DE PROMEDIOS
-  promediosMaterias: number[] = [0, 0, 0];
+  promedioMateria: number = null;
 
   constructor(
     private flashMessage: FlashMessagesService,
@@ -78,25 +78,18 @@ export class EditarAlumnoComponent implements OnInit {
     this.authService.buscarAlumnoMatricula(alumno).subscribe(data => {
       if (data.success) {
         this.alumno = data.alumno;
-        let indexMateria: number = 0;
-        let sumaMateria: number = 0;
-        let sum1: number = 0;
-        let sum2: number = 0;
-        let sum3: number = 0;
+        let sum: number = 0;
         for (let materia of data.alumno.materias) {
-          sumaMateria = 0;
-          for (var i = 0; i < materia.calificaciones.length; i++) {
-            sumaMateria += materia.calificaciones[i];
+          if (materia.nombreMateria === this.grupo_nombreMateria) {
+            for (var i = 0; i < materia.calificaciones.length; i++) {
+              sum += materia.calificaciones[i];
+            }
+            this.promedioMateria = sum / materia.calificaciones.length;
           }
-          sum1 += materia.calificaciones[0];
-          sum2 += materia.calificaciones[1];
-          sum3 += materia.calificaciones[2];
-          this.promediosMaterias[indexMateria] = Math.round((sumaMateria / materia.calificaciones.length) * 100) / 100;
-          indexMateria += 1;
         }
       } else {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
-        this.router.navigate(['/clases']);
+        this.router.navigate(['/']);
       }
     });
   }
@@ -113,6 +106,8 @@ export class EditarAlumnoComponent implements OnInit {
     this.authService.agregarAdminComentario(comentario).subscribe(data => {
       if (data.success) {
         this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+        this.titulo = null;
+        this.comentario = null;
       } else {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
       }
@@ -123,7 +118,7 @@ export class EditarAlumnoComponent implements OnInit {
 
   calificarMateria() {
     for (let materia of this.alumno.materias) {
-      if (materia.nombreMateria === this.materiaCalificaciones) {
+      if (materia.nombreMateria === this.grupo_nombreMateria) {
         this.calificacionesCambiar = materia.calificaciones;
       }
     }
@@ -132,16 +127,19 @@ export class EditarAlumnoComponent implements OnInit {
 
     const calificaciones = {
       matricula: this.matricula,
-      nombreMateria: this.materiaCalificaciones,
+      nombreMateria: this.grupo_nombreMateria,
       calificaciones: this.calificacionesCambiar
     }
 
     this.authService.cambiarCalificaciones(calificaciones).subscribe(data => {
       if (data.success) {
         this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+        this.trimestre = null;
+        this.calificacion = null;
       } else {
         this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
       }
+      window.scroll(0, 0);
       this.ngOnInit();
     });
   }
