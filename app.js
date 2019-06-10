@@ -50,6 +50,7 @@ const app = express();
 const alumnos = require('./routes/alumnos');
 const profesores = require('./routes/profesores');
 const admins = require('./routes/admins');
+const generales = require('./routes/generales');
 
 // Port Number
 const port = 3000;
@@ -72,6 +73,7 @@ require('./config/passport')(passport);
 app.use('/alumnos', alumnos);
 app.use('/profesores', profesores);
 app.use('/admin', admins);
+app.use('/generales', generales);
 
 // Index Route / show as invalid end point
 app.get('/', (req, res) => {

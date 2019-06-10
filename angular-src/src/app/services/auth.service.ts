@@ -337,6 +337,36 @@ export class AuthService {
       .pipe(map(res => res.json()));
   }
 
+  /************ ESCUELA ************/
+
+  getEscuela() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/generales/getSchool', { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  agregarComunicado(comunicado) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/generales/addComunicado', comunicado, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  editarComunicado(comunicado) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/generales/editComunicado', comunicado, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  eliminarComunicado(comunicado) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/generales/deleteComunicado', comunicado, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
   /************ GENERAL ************/
 
 
