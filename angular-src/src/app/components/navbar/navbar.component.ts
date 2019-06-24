@@ -15,6 +15,7 @@ export class NavbarComponent implements OnInit {
   innerWidth: any;
 
   user: any;
+  escuela: any;
   matricula: String = "";
 
   @HostListener('window:resize', ['$event'])
@@ -41,6 +42,14 @@ export class NavbarComponent implements OnInit {
       this.isResponsive = true;
       this.showDropdown = false;
     }
+
+    this.authService.getEscuela().subscribe(data => {
+      if (data.success) {
+        this.escuela = data.escuela;
+      } else {
+        this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+      }
+    });
 
     if (this.authService.alumnoLoggedIn()) {
       this.user = JSON.parse(localStorage.getItem('user'));

@@ -48,14 +48,46 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" (click)="calificarMateria()" class="btn btn-outline-info">Calificar</button>
+        <button type="button" (click)="calificarMateria()" class="btn btn-info">Calificar</button>
       </div>
     </div>
   </div>
 
 </div>
 
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Agregar comentario</h5>
+    </div>
+    <div class="modal-body">
+      <div class="position-relative overflow-hidden p-3 m-md-1">
+        <div class="form-group">
+
+          <label class="col-md-12 p-2 col-form-label">Titulo</label>
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="titulo" [(ngModel)]="titulo" placeholder="Titulo . ." [ngModelOptions]="{standalone: true}">
+            </div>
+          </div>
+
+          <label class="col-md-12 p-2 col-form-label">Comentario</label>
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <textarea class="form-control" name="comentario" [(ngModel)]="comentario" placeholder="Comentario . ." [ngModelOptions]="{standalone: true}" rows="4"></textarea>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" (click)="comentar()" class="btn btn-success">Mandar comentario a revisión</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="alumno?.comentarios.length > 0" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
   <h1>Comentarios</h1>
   <hr class="featurette-divider">
   <div *ngFor="let comentario of alumno?.comentarios; index as i">
@@ -75,37 +107,4 @@
       </div>
     </div>
   </div>
-
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Agregar comentario</h5>
-      </div>
-      <div class="modal-body">
-        <div class="position-relative overflow-hidden p-3 m-md-1">
-          <div class="form-group">
-
-            <label class="col-md-12 p-2 col-form-label">Titulo</label>
-            <div class="form-group row">
-              <div class="col-sm-12">
-                <input type="text" class="form-control" name="titulo" [(ngModel)]="titulo" placeholder="Titulo . ." [ngModelOptions]="{standalone: true}">
-              </div>
-            </div>
-
-            <label class="col-md-12 p-2 col-form-label">Comentario</label>
-            <div class="form-group row">
-              <div class="col-sm-12">
-                <textarea class="form-control" name="comentario" [(ngModel)]="comentario" placeholder="Comentario . ." [ngModelOptions]="{standalone: true}" rows="4"></textarea>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" (click)="comentar()" class="btn btn-primary">Mandar comentario a revisión</button>
-      </div>
-    </div>
-  </div>
-
 </div>

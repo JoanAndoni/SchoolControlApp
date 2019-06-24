@@ -6,6 +6,14 @@ const GeneralSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  shortName: {
+    type: String,
+    required: true
+  },
+  text: {
+    type: String,
+    required: true
+  },
   comunicados: [{
     fecha: {
       type: String
@@ -56,12 +64,13 @@ module.exports.comunicadoExist = function(titulo, callback) {
   General.findOne(query, callback);
 }
 
-module.exports.editComunicado = function(titulo, texto, callback) {
+module.exports.editComunicado = function(titulo, texto, fecha, callback) {
   General.updateMany({
     "comunicados.titulo": titulo
   }, {
     $set: {
-      "comunicados.$.texto": texto
+      "comunicados.$.texto": texto,
+      "comunicados.$.fecha": fecha
     }
   }, callback);
 }

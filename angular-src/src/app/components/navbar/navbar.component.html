@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-  <a class="navbar-brand" *ngIf="!isResponsive">Colegio Example</a>
+  <a class="navbar-brand" *ngIf="!isResponsive">{{escuela?.shortName}}</a>
 
   <div class="topNav" *ngIf="isResponsive">
-    <a class="navbar-brand">Colegio Example</a>
+    <a class="navbar-brand">{{escuela?.shortName}}</a>
     <button *ngIf="isResponsive " class="navbar-toggler botonFinal" type="button" data-toggle="collapse" datigaa-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navtion">
       <span class="navbar-toggler-icon" (click)="makeDropdown()"></span>
     </button>

@@ -5,31 +5,22 @@ const router = express.Router();
 
 router.post('/register', (req, res, next) => {
   let newSchool = new General({
-    name: req.body.name
+    name: req.body.name,
+    shortName: req.body.shortName,
+    text: req.body.text
   });
 
-  const name = req.body.name;
-
-  General.getSchoolByName(name, (err, school) => {
-    if (school) {
+  // Add the user to the db
+  General.addSchool(newSchool, (err, school) => {
+    if (err) {
       res.json({
         success: false,
-        msg: 'Ya existe una escuela con ese nombre'
+        msg: 'No se ha podido crear la escuela'
       });
     } else {
-      // Add the user to the db
-      General.addSchool(newSchool, (err, school) => {
-        if (err) {
-          res.json({
-            success: false,
-            msg: 'No se ha podido crear la escuela'
-          });
-        } else {
-          res.json({
-            success: true,
-            msg: 'La escuela se creo exitosamente'
-          });
-        }
+      res.json({
+        success: true,
+        msg: 'La escuela se creo exitosamente'
       });
     }
   });
@@ -86,11 +77,12 @@ router.post('/addComunicado', (req, res, next) => {
 router.post('/editComunicado', (req, res, next) => {
   let titulo = req.body.titulo;
   let texto = req.body.texto;
+  let fecha = req.body.fecha;
 
   General.comunicadoExist(titulo, (err, comunicado) => {
     if (err) throw err;
     if (comunicado) {
-      General.editComunicado(titulo, texto, (err, comunicado) => {
+      General.editComunicado(titulo, texto, fecha, (err, comunicado) => {
         if (err) {
           res.json({
             success: false,

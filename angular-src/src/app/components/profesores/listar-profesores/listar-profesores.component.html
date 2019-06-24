@@ -23,10 +23,10 @@
 
     <div class="form-group row">
       <div class="col-sm-12" *ngIf="matricula && !nombre && !apellido">
-        <button type="submit" (click)="buscarProfesorMatricula()" class="btn btn-primary btn-md btn-block">Buscar</button>
+        <button type="submit" (click)="buscarProfesorMatricula()" class="btn btn-success btn-md btn-block">Buscar</button>
       </div>
       <div class="col-sm-12" *ngIf="!matricula && nombre && apellido">
-        <button type="submit" (click)="buscarProfesoresNombre()" class="btn btn-primary btn-md btn-block">Buscar</button>
+        <button type="submit" (click)="buscarProfesoresNombre()" class="btn btn-success btn-md btn-block">Buscar</button>
       </div>
     </div>
   </form>
@@ -48,9 +48,9 @@
     </div>
     <div class="col-md-3 pull-right">
       <br>
-      <button type="button" (click)="verProfesor(profesor.matricula)" class="btn btn-outline-info btn-md btn-block" style="overflow: hidden !important; padding: 0.5rem 0.5rem !important;">Ver</button>
+      <button type="button" (click)="verProfesor(profesor.matricula)" class="btn btn-info btn-md btn-block" style="overflow: hidden !important; padding: 0.5rem 0.5rem !important;">Ver</button>
       <br><br>
-      <button type="button" (click)="eliminarProfesor(profesor.nombre, profesor.paterno, profesor.materno, profesor.matricula)" class="btn btn-outline-danger btn-md btn-block" style="overflow: hidden !important; padding: 0.5rem 0.5rem !important;">Eliminar</button>
+      <button type="button" (click)="eliminarProfesor(profesor.nombre, profesor.paterno, profesor.materno, profesor.matricula)" class="btn btn-danger btn-md btn-block" style="overflow: hidden !important; padding: 0.5rem 0.5rem !important;">Eliminar</button>
     </div>
   </div>
 </div>
@@ -71,9 +71,9 @@
     </div>
     <div class="col-md-3 pull-right">
       <br>
-      <button type="button" (click)="verProfesor(profesor.matricula)" class="btn btn-outline-info btn-md btn-block">Ver</button>
+      <button type="button" (click)="verProfesor(profesor.matricula)" class="btn btn-info btn-md btn-block">Ver</button>
       <br><br>
-      <button type="button" (click)="eliminarProfesor(profesor.nombre, profesor.paterno, profesor.materno, profesor.matricula)" class="btn btn-outline-danger btn-md btn-block">Eliminar</button>
+      <button type="button" (click)="eliminarProfesor(profesor.nombre, profesor.paterno, profesor.materno, profesor.matricula)" class="btn btn-danger btn-md btn-block">Eliminar</button>
     </div>
   </div>
 </div>

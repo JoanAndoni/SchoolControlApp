@@ -64,6 +64,7 @@ export class ListComentariosComponent implements OnInit {
   }
 
   cancelarPost() {
+    this.comentarioEdit = null;
     this.editComentario = false;
   }
 

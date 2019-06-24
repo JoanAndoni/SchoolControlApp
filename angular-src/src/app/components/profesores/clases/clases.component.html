@@ -12,8 +12,8 @@
         <ul class="list-unstyled mt-3 mb-4">
           <li>{{clase.nivel}}</li>
         </ul>
-        <button (click)="saveGrupoAlumnos(clase.nivel, clase.grado, clase.grupo, clase.nombreClase, profesor.nombre, profesor.paterno)" type="button" class="btn btn-outline-info btn-md btn-block">Ver grupo</button>
-        <button *ngIf="this.authService.adminLoggedIn()" (click)="deleteClase(clase.nombreClase, clase.nivel, clase.grado, clase.grupo)" type="button" class="btn btn-outline-danger btn-md btn-block">Eliminar grupo</button>
+        <button (click)="saveGrupoAlumnos(clase.nivel, clase.grado, clase.grupo, clase.nombreClase, profesor.nombre, profesor.paterno)" type="button" class="btn btn-info btn-md btn-block">Ver grupo</button>
+        <button *ngIf="this.authService.adminLoggedIn()" (click)="deleteClase(clase.nombreClase, clase.nivel, clase.grado, clase.grupo)" type="button" class="btn btn-danger btn-md btn-block">Eliminar grupo</button>
       </div>
     </div>
 
@@ -59,7 +59,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button *ngIf="nombreClase && nivel && grado && grupo" type="button" (click)="addClase()" class="btn btn-outline-info">Agregar</button>
+        <button *ngIf="nombreClase && nivel && grado && grupo" type="button" (click)="addClase()" class="btn btn-info">Agregar</button>
       </div>
     </div>
   </div>

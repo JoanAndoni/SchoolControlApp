@@ -8,7 +8,7 @@
     <!-- BOTON PARA EDITAR GRUPO -->
     <div *ngIf="!this.editGrupo" class="row text-center justify-content-end align-items-center m-2">
       <small id="emailHelp" class="form-text text-muted m-2">Al editar el grupo del alumno se eliminarán las materias y comentarios previamente asignados del alumno.</small>
-      <button type="button" (click)="editarGrupo()" class="btn btn-outline-info">Editar grupo</button>
+      <button type="button" (click)="editarGrupo()" class="btn btn-info">Editar grupo</button>
     </div>
 
     <!-- EDITAR GRUPO DEL ALUMNO -->
@@ -99,7 +99,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" (click)="agregarMateria()" class="btn btn-outline-info">Agregar</button>
+          <button type="button" (click)="agregarMateria()" class="btn btn-info">Agregar</button>
         </div>
       </div>
       <div class="col-md-5 overflow-hidden position-relative p-4 m-md-1 bg-light">
@@ -118,7 +118,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" (click)="eliminarMateria()" class="btn btn-outline-danger">Eliminar</button>
+          <button type="button" (click)="eliminarMateria()" class="btn btn-danger">Eliminar</button>
         </div>
       </div>
     </div>
@@ -148,8 +148,8 @@
         </div>
       </div>
       <div *ngIf="this.authService.adminLoggedIn()" class="modal-footer">
-        <button type="button" (click)="editarComentario(comentario.titulo, comentario.fecha, comentario.profesor, comentario.materia, comentario.texto)" class="btn btn-outline-warning btn-md m-2">Editar</button>
-        <button type="button" (click)="eliminarComentario(comentario.titulo)" class="btn btn-outline-danger btn-md m-2">Eliminar</button>
+        <button type="button" (click)="editarComentario(comentario.titulo, comentario.fecha, comentario.profesor, comentario.materia, comentario.texto)" class="btn btn-warning btn-md m-2">Editar</button>
+        <button type="button" (click)="eliminarComentario(comentario.titulo)" class="btn btn-danger btn-md m-2">Eliminar</button>
       </div>
     </div>
   </div>

@@ -1,25 +1,102 @@
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
   <div class="col-md-12 p-lg-5 mx-auto my-6">
-    <h1 class="display-4 font-weight-normal">Colegio EXAMPLE administración</h1>
-    <p class="lead font-weight-normal">Aplicación web que lleva el control de calificaciones tareas con roles de profesores, alumnos y un admin</p>
+    <h1 class="display-4 font-weight-normal">{{escuela?.name}}</h1>
+    <p class="lead font-weight-normal">{{escuela?.text}}</p>
     <div *ngIf="!this.authService.loggedIn()">
-      <a class="btn btn-outline-primary buttonsMargins" [routerLink]="['/login']">Ingresar</a>
+      <a class="btn btn btn-outline-primary buttonsMargins" [routerLink]="['/login']">Ingresar</a>
     </div>
   </div>
 </div>
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-  <div class="row">
-    <div class="col-md-4">
-      <h3>First column</h3>
-      <p>Hey there we are making a try</p>
-    </div>
-    <div class="col-md-4">
-      <h3>Second column</h3>
-      <p>Hey there we are making a try</p>
-    </div>
-    <div class="col-md-4">
-      <h3>Third column</h3>
-      <p>Hey there we are making a try</p>
+
+<div *ngIf="this.authService.adminLoggedIn()" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+
+  <div class="modal-header">
+    <h2 class="modal-title">Agregar comunicado</h2>
+  </div>
+
+  <div class="modal-body">
+    <div class="position-relative overflow-hidden p-3 m-md-1">
+      <div class="form-group" style="text-align: center;">
+
+        <label class="col-md-12 p-2 col-form-label">Titulo</label>
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <input type="text" style="text-align: center;" class="form-control" name="titulo" [(ngModel)]="titulo" placeholder="" [ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+
+        <label class="col-md-12 p-2 col-form-label">Comunicado</label>
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <textarea class="form-control" name="comunicado" [(ngModel)]="comunicado" placeholder="Texto . ." [ngModelOptions]="{standalone: true}" rows="4"></textarea>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
+
+  <div class="modal-footer">
+    <button type="button" (click)="agregarComunicado()" class="btn btn-success btn-md btn-block ">Publicar</button>
+  </div>
+
+</div>
+
+<div *ngIf="escuela?.comunicados.length > 0" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+
+  <h1 *ngIf="!editComunicado">Comunicados</h1>
+  <h1 *ngIf="editComunicado">Editar comunicado</h1>
+
+  <div *ngIf="!editComunicado">
+    <div *ngFor="let comunicado of escuela?.comunicados" class="overflow-hidden position-relative p-4 mt-4 bg-light">
+      <div class="row">
+        <div class="col-md-12 pull-left text-left">
+
+          <div class="d-flex justify-content-between">
+            <h3 class="mb-1">{{ comunicado.titulo }}</h3>
+            <p class="mb-1">{{ comunicado.fecha }}</p>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <p class="m-2">{{ comunicado.texto }}</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div *ngIf="this.authService.adminLoggedIn()" class="modal-footer">
+        <button type="button" (click)="editarComunicado(comunicado.titulo, comunicado.texto)" class="btn btn-warning btn-md m-2">Editar</button>
+        <button type="button" (click)="eliminarComunicado(comunicado.titulo)" class="btn btn-danger btn-md m-2">Eliminar</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="editComunicado" class="overflow-hidden position-relative p-4 m-md-1 bg-light">
+    <div class="row">
+      <div class="col-md-12 pull-left text-left">
+
+        <div class="d-flex justify-content-between">
+          <h3 class="mb-1">{{ this.comunicadoEdit.titulo }}</h3>
+          <p class="mb-1">{{ this.comunicadoEdit.fecha }}</p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <textarea class="form-control mt-4" name="comunicadoTexto" [(ngModel)]="this.comunicadoEdit.texto" placeholder="Comunicado . ." [ngModelOptions]="{standalone: true}" rows="4"></textarea>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" (click)="cancelComunicadoEdit()" class="btn btn-danger">Cancelar</button>
+      <button type="button" (click)="nowEditComunicado()" class="btn btn-info">Aceptar</button>
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf="escuela?.comunicados.length == 0" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <h1>No hay comunicados</h1>
 </div>
