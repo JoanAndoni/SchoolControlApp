@@ -42,61 +42,65 @@
 
 </div>
 
-<div *ngIf="escuela?.comunicados.length > 0" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+<div *ngIf="this.authService.loggedIn()">
 
-  <h1 *ngIf="!editComunicado">Comunicados</h1>
-  <h1 *ngIf="editComunicado">Editar comunicado</h1>
+  <div *ngIf="escuela?.comunicados.length > 0" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
 
-  <div *ngIf="!editComunicado">
-    <div *ngFor="let comunicado of escuela?.comunicados" class="overflow-hidden position-relative p-4 mt-4 bg-light">
+    <h1 *ngIf="!editComunicado">Comunicados</h1>
+    <h1 *ngIf="editComunicado">Editar comunicado</h1>
+
+    <div *ngIf="!editComunicado">
+      <div *ngFor="let comunicado of escuela?.comunicados" class="overflow-hidden position-relative p-4 mt-4 bg-light">
+        <div class="row">
+          <div class="col-md-12 pull-left text-left">
+
+            <div class="d-flex justify-content-between">
+              <h3 class="mb-1">{{ comunicado.titulo }}</h3>
+              <p class="mb-1">{{ comunicado.fecha }}</p>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <p class="m-2">{{ comunicado.texto }}</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div *ngIf="this.authService.adminLoggedIn()" class="modal-footer">
+          <button type="button" (click)="editarComunicado(comunicado.titulo, comunicado.texto)" class="btn btn-warning btn-md m-2">Editar</button>
+          <button type="button" (click)="eliminarComunicado(comunicado.titulo)" class="btn btn-danger btn-md m-2">Eliminar</button>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="editComunicado" class="overflow-hidden position-relative p-4 m-md-1 bg-light">
       <div class="row">
         <div class="col-md-12 pull-left text-left">
 
           <div class="d-flex justify-content-between">
-            <h3 class="mb-1">{{ comunicado.titulo }}</h3>
-            <p class="mb-1">{{ comunicado.fecha }}</p>
+            <h3 class="mb-1">{{ this.comunicadoEdit.titulo }}</h3>
+            <p class="mb-1">{{ this.comunicadoEdit.fecha }}</p>
           </div>
 
           <div class="row">
             <div class="col-md-12">
-              <p class="m-2">{{ comunicado.texto }}</p>
+              <textarea class="form-control mt-4" name="comunicadoTexto" [(ngModel)]="this.comunicadoEdit.texto" placeholder="Comunicado . ." [ngModelOptions]="{standalone: true}" rows="4"></textarea>
             </div>
           </div>
 
         </div>
       </div>
-      <div *ngIf="this.authService.adminLoggedIn()" class="modal-footer">
-        <button type="button" (click)="editarComunicado(comunicado.titulo, comunicado.texto)" class="btn btn-warning btn-md m-2">Editar</button>
-        <button type="button" (click)="eliminarComunicado(comunicado.titulo)" class="btn btn-danger btn-md m-2">Eliminar</button>
+      <div class="modal-footer">
+        <button type="button" (click)="cancelComunicadoEdit()" class="btn btn-danger">Cancelar</button>
+        <button type="button" (click)="nowEditComunicado()" class="btn btn-info">Aceptar</button>
       </div>
     </div>
+
   </div>
 
-  <div *ngIf="editComunicado" class="overflow-hidden position-relative p-4 m-md-1 bg-light">
-    <div class="row">
-      <div class="col-md-12 pull-left text-left">
-
-        <div class="d-flex justify-content-between">
-          <h3 class="mb-1">{{ this.comunicadoEdit.titulo }}</h3>
-          <p class="mb-1">{{ this.comunicadoEdit.fecha }}</p>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <textarea class="form-control mt-4" name="comunicadoTexto" [(ngModel)]="this.comunicadoEdit.texto" placeholder="Comunicado . ." [ngModelOptions]="{standalone: true}" rows="4"></textarea>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button type="button" (click)="cancelComunicadoEdit()" class="btn btn-danger">Cancelar</button>
-      <button type="button" (click)="nowEditComunicado()" class="btn btn-info">Aceptar</button>
-    </div>
+  <div *ngIf="escuela?.comunicados.length == 0" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <h1>No hay comunicados</h1>
   </div>
 
-</div>
-
-<div *ngIf="escuela?.comunicados.length == 0" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-  <h1>No hay comunicados</h1>
 </div>

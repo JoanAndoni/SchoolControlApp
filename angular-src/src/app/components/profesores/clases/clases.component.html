@@ -58,8 +58,8 @@
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button *ngIf="nombreClase && nivel && grado && grupo" type="button" (click)="addClase()" class="btn btn-info">Agregar</button>
+      <div *ngIf="nombreClase && nivel && grado && grupo" class="modal-footer">
+        <button type="button" (click)="addClase()" class="btn btn-info">Agregar</button>
       </div>
     </div>
   </div>
