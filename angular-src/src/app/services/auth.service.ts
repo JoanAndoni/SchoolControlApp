@@ -346,6 +346,13 @@ export class AuthService {
       .pipe(map(res => res.json()));
   }
 
+  getMatriculas() {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/generales/getMatriculas', { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
   agregarComunicado(comunicado) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -357,6 +364,13 @@ export class AuthService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/generales/editComunicado', comunicado, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
+  editarMatriculas(matriculas) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/generales/updateMatriculas', matriculas, { headers: headers })
       .pipe(map(res => res.json()));
   }
 

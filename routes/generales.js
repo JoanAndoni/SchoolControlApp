@@ -7,7 +7,8 @@ router.post('/register', (req, res, next) => {
   let newSchool = new General({
     name: req.body.name,
     shortName: req.body.shortName,
-    text: req.body.text
+    text: req.body.text,
+    matriculas: 0
   });
 
   // Add the user to the db
@@ -41,6 +42,40 @@ router.post('/getSchool', (req, res, next) => {
     }
   });
 
+});
+
+router.post('/getMatriculas', (req, res, next) => {
+  General.getMatriculas((err, matriculas) => {
+    if (err) {
+      res.json({
+        success: false,
+        msg: 'No se han podido ver las matriculas'
+      });
+    } else {
+      res.json({
+        success: true,
+        matriculas: matriculas[0].matriculas
+      });
+    }
+  });
+});
+
+router.post('/updateMatriculas', (req, res, next) => {
+  let matr = req.body.matriculas;
+
+  General.updateMatriculas(matr, (err, matriculas) => {
+    if (err) {
+      res.json({
+        success: false,
+        msg: 'No se han podido modificar las matriculas'
+      });
+    } else {
+      res.json({
+        success: true,
+        msg: 'Las matriculas han sido modificadas'
+      });
+    }
+  });
 });
 
 router.post('/addComunicado', (req, res, next) => {

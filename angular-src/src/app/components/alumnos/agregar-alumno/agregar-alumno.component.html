@@ -5,16 +5,7 @@
     <div class="form-group row">
       <label class="col-sm-5 col-form-label p-2 text-center">Matricula</label>
       <div class="col-sm-7 pull-left text-left">
-        <input type="text" class="form-control" name="matricula" [(ngModel)]="matricula" placeholder="Matricula . ." [ngModelOptions]="{standalone: true}">
-        <small id="passwordHelpBlock" class="form-text text-muted">
-          Ejemplo: K208 <br>
-          (k)208 - Nivel Escolar <br>
-          K: Preescolar<br>
-          P: Primaria <br>
-          S: Secundaria <br>
-          k(2)08 - Número de grado <br>
-          k2(08) - Número de alumno
-        </small>
+        <input type="text" class="form-control" disabled="disabled" name="matricula" [(ngModel)]="matricula" placeholder="Matricula . ." [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 

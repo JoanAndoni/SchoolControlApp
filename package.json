@@ -15,7 +15,7 @@
     "express": "*",
     "jsonwebtoken": "*",
     "mongoose": "*",
-    "nodemon": "^1.18.10",
+    "nodemon": "^1.19.3",
     "passport": "*",
     "passport-jwt": "*",
     "to": "^0.2.9",

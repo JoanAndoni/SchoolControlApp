@@ -30,6 +30,8 @@ export class AgregarAlumnoComponent implements OnInit {
   password: String;
   passwordConfirmation: String;
 
+  matriculas: Number;
+
   constructor(
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
@@ -38,6 +40,18 @@ export class AgregarAlumnoComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.authService.getMatriculas().subscribe(data => {
+      if (data.success) {
+        this.matriculas = (data.matriculas+1);
+        this.matricula = 'A';
+        for (let index = data.matriculas.toString().length; index < 5; index++) {
+          this.matricula = this.matricula + '0';
+        }
+        this.matricula = this.matricula + (data.matriculas + 1);
+      } else {
+        this.matriculas = -1;
+      }
+    });
   }
 
   agregarAlumno() {
@@ -56,7 +70,7 @@ export class AgregarAlumnoComponent implements OnInit {
       numero: this.numero,
       email: this.email,
       password: this.password
-    }
+    };
 
     if (this.password === this.passwordConfirmation) {
       if (this.validateService.validateEmail(this.email)) {
@@ -77,6 +91,14 @@ export class AgregarAlumnoComponent implements OnInit {
             this.email = null;
             this.password = null;
             this.passwordConfirmation = null;
+
+            const queryMatriculas = {
+              matriculas: this.matriculas
+            };
+
+            this.authService.editarMatriculas(queryMatriculas).subscribe(update => {});
+            this.ngOnInit();
+
           } else {
             this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
           }
