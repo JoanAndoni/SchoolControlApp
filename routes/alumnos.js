@@ -19,6 +19,8 @@ router.post('/register', (req, res, next) => {
     grado: req.body.grado,
     grupo: req.body.grupo,
     fechaNacimiento: req.body.fechaNacimiento,
+    padre: req.body.padre,
+    numero: req.body.numero,
     email: req.body.email,
     password: req.body.password
   });
@@ -85,6 +87,8 @@ router.post('/authenticate', (req, res, next) => {
             grado: alumno.grado,
             grupo: alumno.grupo,
             fechaNacimiento: alumno.fechaNacimiento,
+            padre: alumno.padre,
+            numero: alumno.numero,
             email: alumno.email,
             materias: alumno.materias,
             comentarios: alumno.comentarios
@@ -165,6 +169,8 @@ router.post('/getAlumno', (req, res, next) => {
           grado: alumno.grado,
           grupo: alumno.grupo,
           fechaNacimiento: alumno.fechaNacimiento,
+          padre: alumno.padre,
+          numero: alumno.numero,
           email: alumno.email,
           materias: alumno.materias,
           comentarios: alumno.comentarios

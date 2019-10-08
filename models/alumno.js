@@ -43,6 +43,14 @@ const AlumnoSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  padre: {
+    type: String,
+    required: true
+  },
+  numero: {
+    type: String,
+    required: true
+  },
   email: {
     type: String,
     required: true

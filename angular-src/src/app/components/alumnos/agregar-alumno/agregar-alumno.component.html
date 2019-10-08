@@ -77,6 +77,20 @@
     </div>
 
     <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Nombre de padre o tutor</label>
+      <div class="col-sm-7">
+        <input type="padre" class="form-control" name="padre" [(ngModel)]="padre" placeholder="Nombre . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Teléfono de contacto</label>
+      <div class="col-sm-7">
+        <input type="numero" class="form-control" name="numero" [(ngModel)]="numero" placeholder="Numero . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
       <label class="col-sm-5 p-2 col-form-label">Email de contacto</label>
       <div class="col-sm-7">
         <input type="email" class="form-control" name="email" [(ngModel)]="email" placeholder="Email . ." [ngModelOptions]="{standalone: true}">
@@ -98,7 +112,7 @@
     </div>
 
     <div class="form-group row">
-      <div class="col-sm-12" *ngIf="matricula && curp && nombre && paterno && materno && nivel && grado && fechaNacimiento && email && password && passwordConfirmation">
+      <div class="col-sm-12" *ngIf="matricula && curp && nombre && paterno && materno && padre && numero && nivel && grado && fechaNacimiento && email && password && passwordConfirmation">
         <button type="submit" (click)="agregarAlumno()" class="btn btn-success btn-md btn-block">Confirmar</button>
       </div>
     </div>
