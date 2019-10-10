@@ -18,6 +18,10 @@ const GeneralSchema = mongoose.Schema({
     type: Number,
     required: true
   },
+  matriculasProfesores: {
+    type: Number,
+    required: true
+  },
   comunicados: [{
     fecha: {
       type: String
@@ -43,6 +47,10 @@ module.exports.getSchool = function(callback) {
 
 module.exports.getMatriculas = function(callback) {
   General.find({}, {matriculas:1},callback)
+}
+
+module.exports.getMatriculasProfesores = function(callback) {
+  General.find({}, {matriculasProfesores:1},callback)
 }
 
 module.exports.addComunicado = function(fecha, titulo, texto, callback) {
@@ -85,6 +93,10 @@ module.exports.editComunicado = function(titulo, texto, fecha, callback) {
 
 module.exports.updateMatriculas = function(matr, callback) {
   General.updateMany({ }, { matriculas: matr }, callback);
+}
+
+module.exports.updateMatriculasProfesores = function(matr, callback) {
+  General.updateMany({ }, { matriculasProfesores: matr }, callback);
 }
 
 module.exports.deleteComunicado = function(titulo, callback) {

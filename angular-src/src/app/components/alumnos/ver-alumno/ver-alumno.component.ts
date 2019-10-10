@@ -54,7 +54,7 @@ export class VerAlumnoComponent implements OnInit {
 
   constructor(
     private flashMessage: FlashMessagesService,
-    private authService: AuthService,
+    public authService: AuthService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     public dialog: MatDialog
@@ -67,7 +67,7 @@ export class VerAlumnoComponent implements OnInit {
     });
     const alumno = {
       matricula: this.matricula
-    }
+    };
     if (this.authService.adminLoggedIn()) {
       this.authService.buscarAlumnoMatricula(alumno).subscribe(data => {
         if (data.success) {

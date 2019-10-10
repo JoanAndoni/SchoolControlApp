@@ -27,6 +27,8 @@ export class AgregarProfesorComponent implements OnInit {
   password: String;
   passwordConfirmation: String;
 
+  matriculas: Number;
+
   constructor(
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
@@ -36,6 +38,18 @@ export class AgregarProfesorComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.authService.getMatriculasProfesores().subscribe(data => {
+      if (data.success) {
+        this.matriculas = (data.matriculasProfesores+1);
+        this.matricula = 'P';
+        for (let index = data.matriculasProfesores.toString().length; index < 4; index++) {
+          this.matricula = this.matricula + '0';
+        }
+        this.matricula = this.matricula + (data.matriculasProfesores + 1);
+      } else {
+        this.matriculas = -1;
+      }
+    });
   }
 
   agregarProfesor() {
@@ -65,6 +79,13 @@ export class AgregarProfesorComponent implements OnInit {
             this.email = null;
             this.password = null;
             this.passwordConfirmation = null;
+
+            const queryMatriculas = {
+              matriculas: this.matriculas
+            };
+
+            this.authService.editarMatriculasProfesores(queryMatriculas).subscribe(update => {});
+            this.ngOnInit();
           } else {
             this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
           }

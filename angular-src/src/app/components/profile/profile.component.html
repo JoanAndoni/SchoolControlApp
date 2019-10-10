@@ -1,6 +1,6 @@
 <div *ngIf="user" class="position-relative overflow-hidden p-3 p-md-3 m-md-3 text-center bg-light">
   <div class="col-md-8 p-lg-5 mx-auto my-6" *ngIf="typeUser === 0">
-    <h2 class="page-header">{{user.nombre}} {{user.materno}} {{user.paterno}}</h2>
+    <h2 class="page-header">{{user.nombre}} {{user.paterno}} {{user.materno}}</h2>
     <hr class="featurette-divider">
     <ul class="list-group">
       <a class="m-sm-1 list-group-item flex-column align-items-start ">
@@ -42,7 +42,7 @@
     </ul>
   </div>
   <div class="col-md-8 p-lg-5 mx-auto my-6" *ngIf="typeUser === 1">
-    <h2 class="page-header">{{user.nombre}} {{user.materno}} {{user.paterno}}</h2>
+    <h2 class="page-header">{{user.nombre}} {{user.paterno}} {{user.materno}}</h2>
     <hr class="featurette-divider">
     <ul class="list-group">
       <a class="m-sm-1 list-group-item flex-column align-items-start ">
@@ -66,7 +66,7 @@
       <a class="m-sm-1 list-group-item flex-column align-items-start ">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">Correo</h5>
-          <p class="mb-1">{{user.correo}}</p>
+          <p class="mb-1">{{user.email}}</p>
         </div>
       </a>
     </ul>

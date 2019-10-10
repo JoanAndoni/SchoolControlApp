@@ -34,7 +34,7 @@
       </div>
       <div class="col-sm-4">
         <label class="col-sm-4 p-1 col-form-label">Grupo</label>
-        <input type="text" class="form-control" name="grupo" [(ngModel)]="grupo" [ngModelOptions]="{standalone: true}">
+        <input type="text" class="form-control" name="grupo" [(ngModel)]="grupo" [ngModelOptions]="{standalone: true}" onkeyup="this.value = this.value.toUpperCase();">
       </div>
     </div>
 
@@ -61,13 +61,22 @@
         <div class="col-md-12">
           <p class="font-weight-bold text-uppercase m-1">Matricula: <a style="font-weight: normal; text-transform: none;">{{ alumno.matricula }}</a></p>
           <p class="font-weight-bold text-uppercase m-1">CURP: <a style="font-weight: normal; text-transform: none;">{{ alumno.curp }}</a></p>
-          <p class="font-weight-bold text-uppercase m-1">Nivel: <a style="font-weight: normal; text-transform: none;">{{ alumno.nivel }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Escolaridad: <a style="font-weight: normal; text-transform: none;">{{ alumno.grado }}° de {{ alumno.nivel }} grupo "{{ alumno.grupo }}"</a></p>
+          <!-- <p class="font-weight-bold text-uppercase m-1">Nivel: <a style="font-weight: normal; text-transform: none;">{{ alumno.nivel }}</a></p>
           <p class="font-weight-bold text-uppercase m-1">Grado: <a style="font-weight: normal; text-transform: none;">{{ alumno.grado }}</a></p>
-          <p class="font-weight-bold text-uppercase m-1">Grupo: <a style="font-weight: normal; text-transform: none;">{{ alumno.grupo }}</a></p>
-          <p class="font-weight-bold text-uppercase m-1">Nacimiento: <a style="font-weight: normal; text-transform: none;">{{ alumno.fechaNacimiento }}</a></p>
-          <p class="font-weight-bold text-uppercase m-1">Padre o tutor: <a style="font-weight: normal; text-transform: none;">{{ alumno.padre }}</a></p>
-          <p class="font-weight-bold text-uppercase m-1">Teléfono: <a style="font-weight: normal; text-transform: none;">{{ alumno.numero }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Grupo: <a style="font-weight: normal; text-transform: none;">{{ alumno.grupo }}</a></p> -->
           <p class="font-weight-bold text-uppercase m-1">Email: <a style="font-weight: normal; text-transform: none;">{{ alumno.email }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Teléfono: <a style="font-weight: normal; text-transform: none;">{{ alumno.telefono }}</a></p>
+          <br><h5>Datos del primer padre o tutor</h5>
+          <p class="font-weight-bold text-uppercase m-1">Nombre: <a style="font-weight: normal; text-transform: none;">{{ alumno.padres.primero.nombre }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Teléfono: <a style="font-weight: normal; text-transform: none;">{{ alumno.padres.primero.telefono }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Celular: <a style="font-weight: normal; text-transform: none;">{{ alumno.padres.primero.celular }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Email: <a style="font-weight: normal; text-transform: none;">{{ alumno.padres.primero.email }}</a></p>
+          <br><h5>Datos del segundo padre o tutor</h5>
+          <p class="font-weight-bold text-uppercase m-1">Nombre: <a style="font-weight: normal; text-transform: none;">{{ alumno.padres.segundo.nombre }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Teléfono: <a style="font-weight: normal; text-transform: none;">{{ alumno.padres.segundo.telefono }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Celular: <a style="font-weight: normal; text-transform: none;">{{ alumno.padres.segundo.celular }}</a></p>
+          <p class="font-weight-bold text-uppercase m-1">Email: <a style="font-weight: normal; text-transform: none;">{{ alumno.padres.segundo.email }}</a></p>
         </div>
       </div>
     </div>
@@ -86,17 +95,26 @@
     <div class="col-md-9 pull-left text-left">
       <h4 class="list-group-item-heading m-1">{{ alumno.nombre }} {{ alumno.paterno }} {{ alumno.materno }}</h4>
       <div class="row">
-        <div class="col-md-12">
-          <p class="font-weight-bold text-uppercase m-1">Matricula: <a style="font-weight: normal; text-transform: none;">{{ alumno.matricula }}</a></p>
-          <p class="font-weight-bold text-uppercase m-1">CURP: <a style="font-weight: normal; text-transform: none;">{{ alumno.curp }}</a></p>
-          <p class="font-weight-bold text-uppercase m-1">Nivel: <a style="font-weight: normal; text-transform: none;">{{ alumno.nivel }}</a></p>
-          <p class="font-weight-bold text-uppercase m-1">Grado: <a style="font-weight: normal; text-transform: none;">{{ alumno.grado }}</a></p>
-          <p class="font-weight-bold text-uppercase m-1">Grupo: <a style="font-weight: normal; text-transform: none;">{{ alumno.grupo }}</a></p>
-          <p class="font-weight-bold text-uppercase m-1">Nacimiento: <a style="font-weight: normal; text-transform: none;">{{ alumno.fechaNacimiento }}</a></p>
-          <p class="font-weight-bold text-uppercase m-1">Padre o tutor: <a style="font-weight: normal; text-transform: none;">{{ alumno.padre }}</a></p>
-          <p class="font-weight-bold text-uppercase m-1">Teléfono: <a style="font-weight: normal; text-transform: none;">{{ alumno.numero }}</a></p>
-          <p class="font-weight-bold text-uppercase m-1">Email: <a style="font-weight: normal; text-transform: none;">{{ alumno.email }}</a></p>
-        </div>
+          <div class="col-md-12">
+            <p class="font-weight-bold text-uppercase m-1">Matricula: <a style="font-weight: normal; text-transform: none;">{{ alumno.matricula }}</a></p>
+            <p class="font-weight-bold text-uppercase m-1">CURP: <a style="font-weight: normal; text-transform: none;">{{ alumno.curp }}</a></p>
+            <p class="font-weight-bold text-uppercase m-1">Escolaridad: <a style="font-weight: normal; text-transform: none;">{{ alumno.grado }}° de {{ alumno.nivel }} grupo "{{ alumno.grupo }}"</a></p>
+            <!-- <p class="font-weight-bold text-uppercase m-1">Nivel: <a style="font-weight: normal; text-transform: none;">{{ alumno.nivel }}</a></p>
+            <p class="font-weight-bold text-uppercase m-1">Grado: <a style="font-weight: normal; text-transform: none;">{{ alumno.grado }}</a></p>
+            <p class="font-weight-bold text-uppercase m-1">Grupo: <a style="font-weight: normal; text-transform: none;">{{ alumno.grupo }}</a></p> -->
+            <p class="font-weight-bold text-uppercase m-1">Email: <a style="font-weight: normal; text-transform: none;">{{ alumno.email }}</a></p>
+            <p class="font-weight-bold text-uppercase m-1">Teléfono: <a style="font-weight: normal; text-transform: none;">{{ alumno.telefono }}</a></p>
+            <br><h5>Datos del primer padre o tutor</h5>
+            <p class="font-weight-bold text-uppercase m-1">Nombre: <a style="font-weight: normal; text-transform: none;">{{ alumno.padres.primero.nombre }}</a></p>
+            <p class="font-weight-bold text-uppercase m-1">Teléfono: <a style="font-weight: normal; text-transform: none;">{{ alumno.padres.primero.telefono }}</a></p>
+            <p class="font-weight-bold text-uppercase m-1">Celular: <a style="font-weight: normal; text-transform: none;">{{ alumno.padres.primero.celular }}</a></p>
+            <p class="font-weight-bold text-uppercase m-1">Email: <a style="font-weight: normal; text-transform: none;">{{ alumno.padres.primero.email }}</a></p>
+            <br><h5>Datos del segundo padre o tutor</h5>
+            <p class="font-weight-bold text-uppercase m-1">Nombre: <a style="font-weight: normal; text-transform: none;">{{ alumno.padres.segundo.nombre }}</a></p>
+            <p class="font-weight-bold text-uppercase m-1">Teléfono: <a style="font-weight: normal; text-transform: none;">{{ alumno.padres.segundo.telefono }}</a></p>
+            <p class="font-weight-bold text-uppercase m-1">Celular: <a style="font-weight: normal; text-transform: none;">{{ alumno.padres.segundo.celular }}</a></p>
+            <p class="font-weight-bold text-uppercase m-1">Email: <a style="font-weight: normal; text-transform: none;">{{ alumno.padres.segundo.email }}</a></p>
+            </div>
       </div>
     </div>
     <div class="col-md-3 pull-right">

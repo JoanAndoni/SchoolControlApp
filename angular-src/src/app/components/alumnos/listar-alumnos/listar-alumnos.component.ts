@@ -77,7 +77,7 @@ export class ListarAlumnosComponent implements OnInit {
     const grupo = {
       nivel: this.nivel,
       grado: this.grado,
-      grupo: this.grupo
+      grupo: this.grupo.toUpperCase()
     }
     this.authService.buscarAlumnosGrupoRaw(grupo).subscribe(data => {
       if (data.success) {

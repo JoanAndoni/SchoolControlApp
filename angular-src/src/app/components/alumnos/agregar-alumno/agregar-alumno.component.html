@@ -5,42 +5,68 @@
     <div class="form-group row">
       <label class="col-sm-5 col-form-label p-2 text-center">Matricula</label>
       <div class="col-sm-7 pull-left text-left">
-        <input type="text" class="form-control" disabled="disabled" name="matricula" [(ngModel)]="matricula" placeholder="Matricula . ." [ngModelOptions]="{standalone: true}">
+        <input type="text" class="form-control" disabled="disabled" name="matricula" [(ngModel)]="matricula"
+          placeholder="Matricula . ." [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-5 p-2 col-form-label">CURP</label>
+      <label class="col-sm-5 p-2 col-form-label">Contraseña</label>
       <div class="col-sm-7">
-        <input type="text" class="form-control" name="curp" [(ngModel)]="curp" placeholder="CURP . ." [ngModelOptions]="{standalone: true}">
+        <input type="text" class="form-control" name="contrasena" [(ngModel)]="password" placeholder="Contraseña . ."
+          [ngModelOptions]="{standalone: true}">
       </div>
     </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Confirmación de contraseña</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="confirmacion" [(ngModel)]="passwordConfirmation"
+          placeholder="Confirmacion . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <br>
+    <h4>Personales</h4>
+    <br>
 
     <div class="form-group row">
       <label class="col-sm-5 p-2 col-form-label">Nombre(s)</label>
       <div class="col-sm-7">
-        <input type="text" class="form-control" name="nombre" [(ngModel)]="nombre" placeholder="Nombre(s) . ." [ngModelOptions]="{standalone: true}">
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="nombre" placeholder="Nombre(s) . ."
+          [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
       <label class="col-sm-5 p-2 col-form-label">Apellido Paterno</label>
       <div class="col-sm-7">
-        <input type="text" class="form-control" name="paterno" [(ngModel)]="paterno" placeholder="Paterno . ." [ngModelOptions]="{standalone: true}">
+        <input type="text" class="form-control" name="paterno" [(ngModel)]="paterno" placeholder="Paterno . ."
+          [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
       <label class="col-sm-5 p-2 col-form-label">Apellido Materno</label>
       <div class="col-sm-7">
-        <input type="text" class="form-control" name="materno" [(ngModel)]="materno" placeholder="Materno . ." [ngModelOptions]="{standalone: true}">
+        <input type="text" class="form-control" name="materno" [(ngModel)]="materno" placeholder="Materno . ."
+          [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">CURP</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="curp" [(ngModel)]="curp" placeholder="CURP . ."
+          [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
       <label class="col-sm-5 p-2 col-form-label">Nivel</label>
       <div class="col-sm-7 pull-left text-left">
-        <select class="form-control" name="nivel" [(ngModel)]="nivel" placeholder="Nivel . ." [ngModelOptions]="{standalone: true}">
+        <select class="form-control" name="nivel" [(ngModel)]="nivel" placeholder="Nivel . ."
+          [ngModelOptions]="{standalone: true}">
           <option *ngFor="let nivel_ of niveles" [value]="nivel_">{{nivel_}}</option>
         </select>
       </div>
@@ -49,61 +75,443 @@
     <div class=" form-group row">
       <label for="grado" class="col-sm-5 p-2 col-form-label">Grado</label>
       <div class="col-sm-7">
-        <input type="number" class="form-control" name="grado" [(ngModel)]="grado" placeholder="Grado . ." [ngModelOptions]="{standalone: true}">
+        <input type="number" class="form-control" name="grado" [(ngModel)]="grado" placeholder="Grado . ."
+          [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
       <label class="col-sm-5 p-2 col-form-label">Grupo</label>
       <div class="col-sm-7">
-        <input type="text" class="form-control" name="grupo" [(ngModel)]="grupo" placeholder="Grupo . ." [ngModelOptions]="{standalone: true}">
+        <input type="text" class="form-control" name="grupo" [(ngModel)]="grupo" placeholder="Grupo . ."
+          [ngModelOptions]="{standalone: true}" onkeyup="this.value = this.value.toUpperCase();">
       </div>
     </div>
 
     <div class="form-group row">
       <label class="col-sm-5 p-2 col-form-label">Fecha de nacimiento</label>
       <div class="col-sm-7">
-        <input type="date" class="form-control" name="fecha" [(ngModel)]="fechaNacimiento" placeholder="Fecha de nacimiento . ." [ngModelOptions]="{standalone: true}">
+        <input type="date" class="form-control" name="fecha" [(ngModel)]="fechaNacimiento"
+          placeholder="Fecha de nacimiento . ." [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-5 p-2 col-form-label">Nombre de padre o tutor</label>
+      <label class="col-sm-5 p-2 col-form-label">Entidad de nacimiento</label>
       <div class="col-sm-7">
-        <input type="padre" class="form-control" name="padre" [(ngModel)]="padre" placeholder="Nombre . ." [ngModelOptions]="{standalone: true}">
+        <input type="text" class="form-control" name="entidadNacimiento" [(ngModel)]="entidadNacimiento"
+          placeholder="Entidad . ." [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-5 p-2 col-form-label">Teléfono de contacto</label>
+      <label class="col-sm-5 p-2 col-form-label">Nacionalidad</label>
       <div class="col-sm-7">
-        <input type="numero" class="form-control" name="numero" [(ngModel)]="numero" placeholder="Numero . ." [ngModelOptions]="{standalone: true}">
+        <input type="text" class="form-control" name="nacionalidad" [(ngModel)]="nacionalidad"
+          placeholder="Nacionalidad . ." [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
+    <br>
+    <h4>Físicos</h4>
+    <br>
+
     <div class="form-group row">
-      <label class="col-sm-5 p-2 col-form-label">Email de contacto</label>
+      <label class="col-sm-5 p-2 col-form-label">Sexo</label>
+      <div class="col-sm-7 pull-left text-left">
+        <select class="form-control" name="sexo" [(ngModel)]="sexo" placeholder="Sexo . ."
+          [ngModelOptions]="{standalone: true}">
+          <option value="H">H</option>
+          <option value="M">M</option>
+        </select>
+      </div>
+    </div>
+
+    <div class=" form-group row">
+      <label for="peso" class="col-sm-5 p-2 col-form-label">Peso (kg)</label>
       <div class="col-sm-7">
-        <input type="email" class="form-control" name="email" [(ngModel)]="email" placeholder="Email . ." [ngModelOptions]="{standalone: true}">
+        <input type="number" class="form-control" name="peso" [(ngModel)]="peso" placeholder="Peso . ."
+          [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
-    <div class="form-group row">
-      <label class="col-sm-5 p-2 col-form-label">Contraseña</label>
+    <div class=" form-group row">
+      <label for="estatura" class="col-sm-5 p-2 col-form-label">Estatura (cm)</label>
       <div class="col-sm-7">
-        <input type="text" class="form-control" name="contrasena" [(ngModel)]="password" placeholder="Contraseña . ." [ngModelOptions]="{standalone: true}">
+        <input type="number" class="form-control" name="estatura" [(ngModel)]="estatura" placeholder="Estatura . ."
+          [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-5 p-2 col-form-label">Confirmación de contraseña</label>
+      <label class="col-sm-5 p-2 col-form-label">Discapacidad</label>
       <div class="col-sm-7">
-        <input type="text" class="form-control" name="confirmacion" [(ngModel)]="passwordConfirmation" placeholder="Confirmacion . ." [ngModelOptions]="{standalone: true}">
+        <input type="text" class="form-control" name="discapacidad" [(ngModel)]="discapacidad"
+          placeholder="Discapacidad . ." [ngModelOptions]="{standalone: true}">
       </div>
     </div>
 
     <div class="form-group row">
-      <div class="col-sm-12" *ngIf="matricula && curp && nombre && paterno && materno && padre && numero && nivel && grado && fechaNacimiento && email && password && passwordConfirmation">
+      <label class="col-sm-5 p-2 col-form-label">Uso de lentes</label>
+      <div class="col-sm-7 pull-left text-left">
+        <select class="form-control" name="lentes" [(ngModel)]="lentes" placeholder="Uso de lentes . ."
+          [ngModelOptions]="{standalone: true}">
+          <option value="Si">Si</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Grupo sanguineo</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="grupoSanguineo" [(ngModel)]="grupoSanguineo"
+          placeholder="Grupo sanguineo . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <br>
+    <h4>Domicilio</h4>
+    <br>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Entidad</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="entidad" [(ngModel)]="entidad" placeholder="Entidad . ."
+          [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Municipio</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="municipio" [(ngModel)]="municipio" placeholder="Municipio . ."
+          [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Colonia</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="colonia" [(ngModel)]="colonia" placeholder="Colonia . ."
+          [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Calle</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="calle" [(ngModel)]="calle" placeholder="Calle . ."
+          [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-3 p-2 col-form-label">No. Ext</label>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="numeroExt" [(ngModel)]="numeroExt" placeholder="No . ."
+          [ngModelOptions]="{standalone: true}">
+      </div>
+      <label class="col-sm-3 p-2 col-form-label">No. Int</label>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="numeroInt" [(ngModel)]="numeroInt" placeholder="No . ."
+          [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Referencia del domicilio</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="referencia" [(ngModel)]="referencia" placeholder="Referencia . ."
+          [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Entre las calles</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="entreCalles" [(ngModel)]="entreCalles" placeholder="Calles . ."
+          [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Teléfono</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="telefono" [(ngModel)]="telefono" placeholder="Teléfono . ."
+          [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Código postal</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="cp" [(ngModel)]="cp" placeholder="CP . ."
+          [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <br>
+    <h3>Contacto</h3>
+    <br>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Correo electrónico</label>
+      <div class="col-sm-7">
+        <input type="email" class="form-control" name="email" [(ngModel)]="email" placeholder="Correo electrónico . ."
+          [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Red Social</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="redSocial" [(ngModel)]="redSocial" placeholder="Red social . ."
+          [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <br>
+    <h3>Primer padre o tutor</h3>
+    <br>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">CURP</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="curp" [(ngModel)]="padre1curp" placeholder="Curp . ."
+          [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Nombre completo</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="padre1nombre"
+          placeholder="Nombre completo . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Sexo</label>
+      <div class="col-sm-7 pull-left text-left">
+        <select class="form-control" name="sexo" [(ngModel)]="padre1sexo" placeholder="Sexo . ."
+          [ngModelOptions]="{standalone: true}">
+          <option value="H">H</option>
+          <option value="M">M</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Fecha de nacimiento</label>
+      <div class="col-sm-7">
+        <input type="date" class="form-control" name="fecha" [(ngModel)]="padre1fechaNacimiento"
+          placeholder="Fecha de nacimiento . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Entidad de nacimiento</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="entidadNacimiento" [(ngModel)]="padre1entidadNacimiento"
+          placeholder="Entidad . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Nacionalidad</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="nacionalidad" [(ngModel)]="padre1nacionalidad"
+          placeholder="Nacionalidad . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Grado de estudios</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="gradoEstudios" [(ngModel)]="padre1gradoEstudios"
+          placeholder="Grado de estudios . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Parentesco</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="parentesco" [(ngModel)]="padre1parentesco"
+          placeholder="Parentesco . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Ocupación</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="ocupacion" [(ngModel)]="padre1ocupacion"
+          placeholder="Ocupación . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Estado civil</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="estadoCivil" [(ngModel)]="padre1estadoCivil"
+          placeholder="Estado civil . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Correo electrónico</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="email" [(ngModel)]="padre1email"
+          placeholder="Correo electrónico . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Teléfono</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="telefono" [(ngModel)]="padre1telefono"
+          placeholder="Teléfono . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Celular</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="celular" [(ngModel)]="padre1celular"
+          placeholder="Celular . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Red social</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="redSocial" [(ngModel)]="padre1redSocial"
+          placeholder="Red social . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <br>
+    <h3>Segundo padre o tutor</h3>
+    <br>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">CURP</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="curp" [(ngModel)]="padre2curp" placeholder="Curp . ."
+          [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Nombre completo</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="padre2nombre"
+          placeholder="Nombre completo . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Sexo</label>
+      <div class="col-sm-7 pull-left text-left">
+        <select class="form-control" name="sexo" [(ngModel)]="padre2sexo" placeholder="Sexo . ."
+          [ngModelOptions]="{standalone: true}">
+          <option value="H">H</option>
+          <option value="M">M</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Fecha de nacimiento</label>
+      <div class="col-sm-7">
+        <input type="date" class="form-control" name="fecha" [(ngModel)]="padre2fechaNacimiento"
+          placeholder="Fecha de nacimiento . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Entidad de nacimiento</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="entidadNacimiento" [(ngModel)]="padre2entidadNacimiento"
+          placeholder="Entidad . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Nacionalidad</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="nacionalidad" [(ngModel)]="padre2nacionalidad"
+          placeholder="Nacionalidad . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Grado de estudios</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="gradoEstudios" [(ngModel)]="padre2gradoEstudios"
+          placeholder="Grado de estudios . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Parentesco</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="parentesco" [(ngModel)]="padre2parentesco"
+          placeholder="Parentesco . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Ocupación</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="ocupacion" [(ngModel)]="padre2ocupacion"
+          placeholder="Ocupación . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Estado civil</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="estadoCivil" [(ngModel)]="padre2estadoCivil"
+          placeholder="Estado civil . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Correo electrónico</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="email" [(ngModel)]="padre2email"
+          placeholder="Correo electrónico . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Teléfono</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="telefono" [(ngModel)]="padre2telefono"
+          placeholder="Teléfono . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Celular</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="celular" [(ngModel)]="padre2celular"
+          placeholder="Celular . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-5 p-2 col-form-label">Red social</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" name="redSocial" [(ngModel)]="padre2redSocial"
+          placeholder="Red social . ." [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-12"
+        *ngIf="matricula && password && passwordConfirmation && nombre && paterno && materno && curp && nivel && grado && grupo && fechaNacimiento && entidadNacimiento && nacionalidad && sexo && peso && estatura && discapacidad && lentes && grupoSanguineo && entidad && municipio && colonia && calle && numeroExt && numeroInt && referencia && entreCalles && telefono && cp && email && redSocial">
         <button type="submit" (click)="agregarAlumno()" class="btn btn-success btn-md btn-block">Confirmar</button>
       </div>
     </div>
