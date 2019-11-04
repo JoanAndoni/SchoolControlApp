@@ -179,11 +179,8 @@ export class AgregarAlumnoComponent implements OnInit {
       }
     };
 
-    console.log(alumno);
-
     if (this.password === this.passwordConfirmation) {
       if (this.validateService.validateEmail(this.email)) {
-
         this.authService.registerAlumno(alumno).subscribe(data => {
           if (data.success) {
             this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
@@ -262,6 +259,7 @@ export class AgregarAlumnoComponent implements OnInit {
 
           } else {
             this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+            this.ngOnInit();
           }
         });
       } else {

@@ -27,8 +27,11 @@ export class VerAlumnoComponent implements OnInit {
   // VARIABLES PARA EL CAMBIO DE GRUPO
   nivel: String;
   grado: String;
-  grupo: String;
+  grupo: String = "A";
+
   editGrupo: boolean;
+  editAlumno: boolean;
+
 
   // ARRAY PARA EL DISPLAY DE NIVELES
   niveles: String[] = ["Preescolar", "Primaria", "Secundaria"];
@@ -72,6 +75,8 @@ export class VerAlumnoComponent implements OnInit {
       this.authService.buscarAlumnoMatricula(alumno).subscribe(data => {
         if (data.success) {
           this.alumno = data.alumno;
+          const parts = data.alumno.fechaNacimiento.split('-');
+          this.alumno.fechaNacimiento = new Date(parts[2], parts[1] - 1, parts[0]).toISOString().split('T')[0];
           if (data.alumno.materias.length > 0) {
             this.nombreMateriaDelete = data.alumno.materias[0].nombreMateria;
           }
@@ -262,7 +267,7 @@ export class VerAlumnoComponent implements OnInit {
     if (this.editGrupo) {
       this.nivel = null;
       this.grado = null;
-      this.grupo = null;
+      this.grupo = 'A';
       this.editGrupo = false;
     } else {
       this.editGrupo = true;
@@ -274,6 +279,7 @@ export class VerAlumnoComponent implements OnInit {
       const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
         width: '50vh',
         height: '50vh',
+        // tslint:disable-next-line: max-line-length
         data: "¿Desea cambiar el grupo de " + this.alumno.nombre + " " + this.alumno.paterno + " " + this.alumno.materno + ", aceptando que se eliminarán las materias y comentarios previamente asignados del alumno?"
       });
       dialogRef.afterClosed().subscribe(result => {
@@ -282,14 +288,14 @@ export class VerAlumnoComponent implements OnInit {
             matricula: this.matricula,
             nivel: this.nivel,
             grado: this.grado,
-            grupo: this.grupo
+            grupo: this.grupo.toUpperCase()
           }
           this.authService.editarGrupo(grupo).subscribe(data => {
             if (data.success) {
               this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
               this.nivel = null;
               this.grado = null;
-              this.grupo = null;
+              this.grupo = 'A';
               window.location.reload();
             } else {
               this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
@@ -299,8 +305,111 @@ export class VerAlumnoComponent implements OnInit {
         } else {
           this.nivel = null;
           this.grado = null;
-          this.grupo = null;
+          this.grupo = 'A';
           this.editGrupo = false;
+        }
+      });
+    }
+  }
+
+  editarAlumno() {
+    if (this.editAlumno) {
+      this.editAlumno = false;
+    } else {
+      this.editAlumno = true;
+    }
+  }
+
+  editarAlumnoDatos() {
+    if (this.authService.adminLoggedIn()) {
+      const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+        width: '50vh',
+        height: '50vh',
+        // tslint:disable-next-line: max-line-length
+        data: '¿Desea cambiar los datos de ' + this.alumno.nombre + ' ' + this.alumno.paterno + ' ' + this.alumno.materno + ', aceptando que no se podrá recuperar la información?'
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          const dataAlumno = {
+            nombre: this.alumno.nombre,
+            paterno: this.alumno.paterno,
+            materno: this.alumno.materno,
+            curp: this.alumno.curp,
+            fechaNacimiento: this.alumno.fechaNacimiento,
+            entidadNacimiento: this.alumno.entidadNacimiento,
+            nacionalidad: this.alumno.nacionalidad,
+
+            sexo: this.alumno.sexo,
+            peso: this.alumno.peso,
+            estatura: this.alumno.estatura,
+            discapacidad: this.alumno.discapacidad,
+            lentes: this.alumno.lentes,
+            grupoSanguineo: this.alumno.grupoSanguineo,
+
+            entidad: this.alumno.entidad,
+            municipio: this.alumno.municipio,
+            colonia: this.alumno.colonia,
+            calle: this.alumno.calle,
+            numeroExt: this.alumno.numeroExt,
+            numeroInt: this.alumno.numeroInt,
+            referencia: this.alumno.referencia,
+            entreCalles: this.alumno.entreCalles,
+            telefono: this.alumno.telefono,
+            cp: this.alumno.cp,
+
+            email: this.alumno.email,
+            redSocial: this.alumno.redSocial,
+
+            padres: {
+              primero: {
+                curp: this.alumno.padres.primero.curp,
+                nombre: this.alumno.padres.primero.nombre,
+                sexo: this.alumno.padres.primero.sexo,
+                fechaNacimiento: this.alumno.padres.primero.fechaNacimiento,
+                entidadNacimiento: this.alumno.padres.primero.entidadNacimiento,
+                nacionalidad: this.alumno.padres.primero.nacionalidad,
+                gradoEstudios: this.alumno.padres.primero.gradoEstudios,
+                parentesco: this.alumno.padres.primero.parentesco,
+                ocupacion: this.alumno.padres.primero.ocupacion,
+                estadoCivil: this.alumno.padres.primero.estadoCivil,
+                email: this.alumno.padres.primero.email,
+                telefono: this.alumno.padres.primero.telefono,
+                celular: this.alumno.padres.primero.celular,
+                redSocial: this.alumno.padres.primero.redSocial
+              },
+              segundo: {
+                curp: this.alumno.padres.primero.curp,
+                nombre: this.alumno.padres.primero.nombre,
+                sexo: this.alumno.padres.primero.sexo,
+                fechaNacimiento: this.alumno.padres.primero.fechaNacimiento,
+                entidadNacimiento: this.alumno.padres.primero.entidadNacimiento,
+                nacionalidad: this.alumno.padres.primero.nacionalidad,
+                gradoEstudios: this.alumno.padres.primero.gradoEstudios,
+                parentesco: this.alumno.padres.primero.parentesco,
+                ocupacion: this.alumno.padres.primero.ocupacion,
+                estadoCivil: this.alumno.padres.primero.estadoCivil,
+                email: this.alumno.padres.primero.email,
+                telefono: this.alumno.padres.primero.telefono,
+                celular: this.alumno.padres.primero.celular,
+                redSocial: this.alumno.padres.primero.redSocial
+              }
+            }
+          };
+          const nuevoAlumno = {
+            matricula: this.matricula,
+            alumno: dataAlumno
+          };
+          this.authService.editarAlumno(nuevoAlumno).subscribe(data => {
+            if (data.success) {
+              this.flashMessage.show(data.msg, { cssClass: 'alert-success', timeout: 3000 });
+              window.location.reload();
+            } else {
+              this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+              this.editAlumno = false;
+            }
+          });
+        } else {
+          this.editAlumno = false;
         }
       });
     }

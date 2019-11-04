@@ -83,6 +83,13 @@ export class AuthService {
       .pipe(map(res => res.json()));
   }
 
+  editarAlumno(alumno) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/alumnos/updateAlumno', alumno, { headers: headers })
+      .pipe(map(res => res.json()));
+  }
+
   buscarAlumnosGrupoRaw(grupo) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');

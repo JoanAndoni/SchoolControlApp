@@ -1,41 +1,100 @@
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-  <h1>Calificaciones de {{alumno?.nombre}} {{alumno?.materno}} {{alumno?.paterno}}</h1>
-  <h5 class="m-3">{{alumno?.nivel}} {{alumno?.grado}}° "{{alumno?.grupo}}"</h5>
-  <hr class="featurette-divider">
+  <h1>{{alumno?.nombre}} {{alumno?.paterno}} {{alumno?.materno}}</h1>
+  <h4 class="m-3">{{alumno?.grado}}° de {{alumno?.nivel}} grupo "{{alumno?.grupo}}"</h4>
+  <h4>{{this.matricula}}</h4>
 
   <div *ngIf="this.authService.adminLoggedIn()">
 
-    <!-- BOTON PARA EDITAR GRUPO -->
-    <div *ngIf="!this.editGrupo" class="row text-center justify-content-end align-items-center m-2">
-      <small id="emailHelp" class="form-text text-muted m-2">Al editar el grupo del alumno se eliminarán las materias y comentarios previamente asignados del alumno.</small>
-      <button type="button" (click)="editarGrupo()" class="btn btn-info">Editar grupo</button>
+    <!-- BOTONES PARA EDITAR ALUMNO Y GRUPO -->
+    <div *ngIf="!this.editAlumno && !this.editGrupo" class="row text-center justify-content-center m-2">
+      <button type="button" (click)="editarAlumno()" class="btn btn-info m-2">Editar alumno</button>
+      <button type="button" (click)="editarGrupo()" class="btn btn-info m-2">Editar grupo</button>
+    </div>
+
+    <!-- EDITAR DATOS DEL ALUMNO -->
+    <hr *ngIf="this.editAlumno" class="featurette-divider">
+    <div *ngIf="this.editAlumno" class="row justify-content-around text-center">
+      <div class="form-group">
+        <h5>Personales</h5>
+        <div class="form-group row justify-content-center">
+          <label class="col-md-1 p-2 col-form-label">Nombre(s):</label>
+          <div class="col-md-3">
+            <input type="text" class="form-control" name="nombre" [(ngModel)]="alumno.nombre"
+              placeholder="Nombre(s) . ." [ngModelOptions]="{standalone: true}">
+          </div>
+          <label class="col-md-1 p-2 col-form-label">Apellido paterno:</label>
+          <div class="col-md-3">
+            <input type="text" class="form-control" name="paterno" [(ngModel)]="alumno.paterno"
+              placeholder="Paterno . ." [ngModelOptions]="{standalone: true}">
+          </div>
+          <label class="col-md-1 p-2 col-form-label">Apellido materno:</label>
+          <div class="col-md-3">
+            <input type="text" class="form-control" name="materno" [(ngModel)]="alumno.materno"
+              placeholder="Materno . ." [ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+          <label class="col-md-1 p-2 col-form-label">CURP:</label>
+          <div class="col-md-3">
+            <input type="text" class="form-control" name="curp" [(ngModel)]="alumno.curp" placeholder="CURP . ."
+              [ngModelOptions]="{standalone: true}">
+          </div>
+          <label class="col-md-1 p-2 col-form-label">Fecha de nacimiento:</label>
+          <div class="col-md-3">
+            <input type="date" class="form-control" name="fechaNacimiento" [(ngModel)]="alumno.fechaNacimiento"
+              placeholder="Fecha de nacimiento . ." [ngModelOptions]="{standalone: true}">
+          </div>
+          <label class="col-md-1 p-2 col-form-label">Entidad de nacimiento:</label>
+          <div class="col-md-3">
+            <input type="text" class="form-control" name="entidadNacimiento" [(ngModel)]="alumno.entidadNacimiento"
+              placeholder="Entidad de nacimiento . ." [ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div *ngIf="this.editAlumno" class="row text-center justify-content-end align-items-center m-2">
+      <button type="button" (click)="editarAlumno()" class="btn btn-danger m-2">Cancelar</button>
+      <button type="button" (click)="editarAlumnoDatos()" class="btn btn-info m-2">Editar</button>
     </div>
 
     <!-- EDITAR GRUPO DEL ALUMNO -->
+    <hr *ngIf="this.editGrupo" class="featurette-divider">
     <div *ngIf="this.editGrupo" class="row justify-content-around text-center">
-      <div class="form-group row justify-content-center">
-        <label class="col-md-1 p-2 col-form-label">Nivel:</label>
-        <div class="col-md-3">
-          <select class="form-control" name="nivel" [(ngModel)]="nivel">
-            <option *ngFor="let nivel of niveles" [value]="nivel">{{nivel}}</option>
-          </select>
-        </div>
-        <label class="col-md-1 p-2 col-form-label">Grado:</label>
-        <div class="col-md-3">
-          <input type="number" class="form-control" name="grado" [(ngModel)]="grado" placeholder="Grado . ." [ngModelOptions]="{standalone: true}">
-        </div>
-        <label class="col-md-1 p-2 col-form-label">Grupo:</label>
-        <div class="col-md-3">
-          <input type="text" class="form-control" name="grupo" [(ngModel)]="grupo" placeholder="Grupo . ." [ngModelOptions]="{standalone: true}">
+      <div class="form-group">
+        <h5>Editar grupo</h5>
+        <div class="form-group row justify-content-center">
+          <label class="col-md-1 p-2 col-form-label">Nivel:</label>
+          <div class="col-md-3">
+            <select class="form-control" name="nivel" [(ngModel)]="nivel">
+              <option *ngFor="let nivel of niveles" [value]="nivel">{{nivel}}</option>
+            </select>
+          </div>
+          <label class="col-md-1 p-2 col-form-label">Grado:</label>
+          <div class="col-md-3">
+            <input type="number" class="form-control" name="grado" [(ngModel)]="grado" placeholder="Grado . ."
+              [ngModelOptions]="{standalone: true}">
+          </div>
+          <label class="col-md-1 p-2 col-form-label">Grupo:</label>
+          <div class="col-md-3">
+            <input type="text" class="form-control" name="grupo" [(ngModel)]="grupo" placeholder="Grupo . ."
+              [ngModelOptions]="{standalone: true}" onkeyup="this.value = this.value.toUpperCase();">
+          </div>
         </div>
       </div>
     </div>
+
     <div *ngIf="this.editGrupo" class="row text-center justify-content-end align-items-center m-2">
       <button type="button" (click)="editarGrupo()" class="btn btn-danger m-2">Cancelar</button>
-      <button *ngIf="this.nivel && this.grado && this.grupo" type="button" (click)="editarGrupoAlumno()" class="btn btn-info m-2">Editar</button>
+      <button *ngIf="this.nivel && this.grado && this.grupo" type="button" (click)="editarGrupoAlumno()"
+        class="btn btn-info m-2">Editar</button>
     </div>
-
   </div>
+
+  <br>
+  <h2>Calificaciones</h2>
 
   <div class="table-responsive">
     <table class="table table-striped table-sm">
@@ -90,8 +149,10 @@
               <label class="col-md-6 p-2 col-form-label">Clase</label>
               <div class="col-md-6">
                 <div *ngFor="let profesor of profesoresGrupo">
-                  <select class="form-control" *ngIf="profesor._id === newNombreProfesor" [(ngModel)]="newNombreMateria">
-                    <option *ngFor="let clase of profesor.clases" [value]="clase.nombreClase">{{clase.nombreClase}}</option>
+                  <select class="form-control" *ngIf="profesor._id === newNombreProfesor"
+                    [(ngModel)]="newNombreMateria">
+                    <option *ngFor="let clase of profesor.clases" [value]="clase.nombreClase">{{clase.nombreClase}}
+                    </option>
                   </select>
                 </div>
               </div>
@@ -111,7 +172,8 @@
               <label class="col-md-6 p-2 col-form-label">Clase</label>
               <div class="col-md-6 ">
                 <select class="form-control" [(ngModel)]="nombreMateriaDelete">
-                  <option *ngFor="let materia of this.alumno?.materias" [value]="materia.nombreMateria">{{materia.nombreMateria}}</option>
+                  <option *ngFor="let materia of this.alumno?.materias" [value]="materia.nombreMateria">
+                    {{materia.nombreMateria}}</option>
                 </select>
               </div>
             </div>
@@ -125,21 +187,23 @@
   </div>
 </div>
 
-<div *ngIf="alumno?.comentarios.length > 0" class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+<div *ngIf="alumno?.comentarios.length > 0"
+  class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
 
   <h1 *ngIf="!editComentario">Comentarios</h1>
   <h1 *ngIf="editComentario">Editar Comentario</h1>
 
   <div *ngIf="!editComentario">
-    <div *ngFor="let comentario of alumno?.comentarios; index as i" class="overflow-hidden position-relative p-4 m-md-1 bg-light">
+    <div *ngFor="let comentario of alumno?.comentarios; index as i"
+      class="overflow-hidden position-relative p-4 m-md-1 bg-light">
       <div class="row">
         <div class="col-md-12 pull-left text-left">
           <div class="d-flex justify-content-between">
             <h3 class="mb-1">{{ comentario.titulo }}</h3>
             <p class="mb-1">{{ comentario.fecha }}</p>
           </div>
-          <h6 class="list-group-item-heading m-1">Profesor: {{ comentario.profesor }}</h6>
-          <h6 class="list-group-item-heading m-1">Materia: {{ comentario.materia }}</h6>
+          <h5 class="list-group-item-heading m-1">Profesor: {{ comentario.profesor }}</h5>
+          <h5 class="list-group-item-heading m-1">Materia: {{ comentario.materia }}</h5>
           <div class="row">
             <div class="col-md-12">
               <p class="m-2">{{ comentario.texto }}</p>
@@ -148,8 +212,11 @@
         </div>
       </div>
       <div *ngIf="this.authService.adminLoggedIn()" class="modal-footer">
-        <button type="button" (click)="editarComentario(comentario.titulo, comentario.fecha, comentario.profesor, comentario.materia, comentario.texto)" class="btn btn-warning btn-md m-2">Editar</button>
-        <button type="button" (click)="eliminarComentario(comentario.titulo)" class="btn btn-danger btn-md m-2">Eliminar</button>
+        <button type="button"
+          (click)="editarComentario(comentario.titulo, comentario.fecha, comentario.profesor, comentario.materia, comentario.texto)"
+          class="btn btn-warning btn-md m-2">Editar</button>
+        <button type="button" (click)="eliminarComentario(comentario.titulo)"
+          class="btn btn-danger btn-md m-2">Eliminar</button>
       </div>
     </div>
   </div>
@@ -161,11 +228,12 @@
           <h3 class="mb-1">{{ this.comentarioEdit.titulo }}</h3>
           <p class="mb-1">{{ this.comentarioEdit.fecha }}</p>
         </div>
-        <h6 class="list-group-item-heading m-1">Profesor: {{ this.comentarioEdit.profesor }}</h6>
-        <h6 class="list-group-item-heading m-1">Materia: {{ this.comentarioEdit.materia }}</h6>
+        <h5 class="list-group-item-heading m-1">Profesor: {{ this.comentarioEdit.profesor }}</h5>
+        <h5 class="list-group-item-heading m-1">Materia: {{ this.comentarioEdit.materia }}</h5>
         <div class="row">
           <div class="col-md-12">
-            <textarea class="form-control mt-4" name="comentarioTexto" [(ngModel)]="this.comentarioEdit.texto" placeholder="Comentario . ." [ngModelOptions]="{standalone: true}" rows="4"></textarea>
+            <textarea class="form-control mt-4" name="comentarioTexto" [(ngModel)]="this.comentarioEdit.texto"
+              placeholder="Comentario . ." [ngModelOptions]="{standalone: true}" rows="4"></textarea>
           </div>
         </div>
       </div>

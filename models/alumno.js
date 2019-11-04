@@ -411,14 +411,13 @@ module.exports.materiaExist = function(matricula, nombreMateria, callback) {
 
 module.exports.deleteMateria = function(matricula, nombreMateria, callback) {
   const query = {
-    matricula: matricula,
     $pull: {
       materias: {
         nombreMateria: nombreMateria
       }
     }
   };
-  Alumno.updateOne(query, callback);
+  Alumno.updateOne({ matricula: matricula }, query, callback);
 };
 
 module.exports.updateCalificaciones = function(
