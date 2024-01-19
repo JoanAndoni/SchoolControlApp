@@ -9,20 +9,29 @@ router.post('/register', (req, res, next) => {
     shortName: req.body.shortName,
     text: req.body.text,
     matriculas: 0,
-    matriculasProfesores: 0
+    matriculasProfesores: 0,
   });
 
-  // Add the user to the db
-  General.addSchool(newSchool, (err, school) => {
-    if (err) {
+  General.getSchoolByName(newSchool.name, (err, existentSchool) => {
+    if (existentSchool) {
       res.json({
         success: false,
-        msg: 'No se ha podido crear la escuela'
+        msg: 'La escuela ya existe en la base de datos',
       });
     } else {
-      res.json({
-        success: true,
-        msg: 'La escuela se creo exitosamente'
+      // Add the user to the db
+      General.addSchool(newSchool, (err, school) => {
+        if (err) {
+          res.json({
+            success: false,
+            msg: 'No se ha podido crear la escuela',
+          });
+        } else {
+          res.json({
+            success: true,
+            msg: 'La escuela se creo exitosamente',
+          });
+        }
       });
     }
   });
@@ -33,16 +42,15 @@ router.post('/getSchool', (req, res, next) => {
     if (err) {
       res.json({
         success: false,
-        msg: 'No se ha podido crear la escuela'
+        msg: 'No se ha podido crear la escuela',
       });
     } else {
       res.json({
         success: true,
-        escuela: school[0]
+        escuela: school[0],
       });
     }
   });
-
 });
 
 router.post('/getMatriculas', (req, res, next) => {
@@ -50,12 +58,12 @@ router.post('/getMatriculas', (req, res, next) => {
     if (err) {
       res.json({
         success: false,
-        msg: 'No se han podido ver las matriculas'
+        msg: 'No se han podido ver las matriculas',
       });
     } else {
       res.json({
         success: true,
-        matriculas: matriculas[0].matriculas
+        matriculas: matriculas[0].matriculas,
       });
     }
   });
@@ -68,12 +76,12 @@ router.post('/updateMatriculas', (req, res, next) => {
     if (err) {
       res.json({
         success: false,
-        msg: 'No se han podido modificar las matriculas'
+        msg: 'No se han podido modificar las matriculas',
       });
     } else {
       res.json({
         success: true,
-        msg: 'Las matriculas han sido modificadas'
+        msg: 'Las matriculas han sido modificadas',
       });
     }
   });
@@ -84,12 +92,12 @@ router.post('/getMatriculasProfesores', (req, res, next) => {
     if (err) {
       res.json({
         success: false,
-        msg: 'No se han podido ver las matriculas'
+        msg: 'No se han podido ver las matriculas',
       });
     } else {
       res.json({
         success: true,
-        matriculasProfesores: matriculas[0].matriculasProfesores
+        matriculasProfesores: matriculas[0].matriculasProfesores,
       });
     }
   });
@@ -102,12 +110,12 @@ router.post('/updateMatriculasProfesores', (req, res, next) => {
     if (err) {
       res.json({
         success: false,
-        msg: 'No se han podido modificar las matriculas'
+        msg: 'No se han podido modificar las matriculas',
       });
     } else {
       res.json({
         success: true,
-        msg: 'Las matriculas han sido modificadas'
+        msg: 'Las matriculas han sido modificadas',
       });
     }
   });
@@ -125,20 +133,19 @@ router.post('/addComunicado', (req, res, next) => {
         if (err) {
           res.json({
             success: false,
-            msg: 'No se pudo agregar el comunicado a la base de datos'
+            msg: 'No se pudo agregar el comunicado a la base de datos',
           });
         } else {
           res.json({
             success: true,
-            msg: 'El comunicado se ha registrado en la base de datos exitosamente'
+            msg: 'El comunicado se ha registrado en la base de datos exitosamente',
           });
         }
       });
-
     } else {
       res.json({
         success: false,
-        msg: 'El comunicado con ese titulo ya existe en la base de datos'
+        msg: 'El comunicado con ese titulo ya existe en la base de datos',
       });
     }
   });
@@ -156,19 +163,19 @@ router.post('/editComunicado', (req, res, next) => {
         if (err) {
           res.json({
             success: false,
-            msg: 'No se pudo editar el comunicado'
+            msg: 'No se pudo editar el comunicado',
           });
         } else {
           res.json({
             success: true,
-            msg: 'El comunicado se ha editado exitosamente'
+            msg: 'El comunicado se ha editado exitosamente',
           });
         }
       });
     } else {
       res.json({
         success: false,
-        msg: 'El comunicado no existe en la base de datos'
+        msg: 'El comunicado no existe en la base de datos',
       });
     }
   });
@@ -182,19 +189,19 @@ router.post('/deleteComunicado', (req, res, next) => {
     if (!comunicado) {
       res.json({
         success: false,
-        msg: 'El comunicado no existe'
+        msg: 'El comunicado no existe',
       });
     } else {
       General.deleteComunicado(titulo, (err, comunicado) => {
         if (err) {
           res.json({
             success: false,
-            msg: 'No se pudo eliminar el comunicado'
+            msg: 'No se pudo eliminar el comunicado',
           });
         } else {
           res.json({
             success: true,
-            msg: 'El comunicado se ha eliminado exitosamente'
+            msg: 'El comunicado se ha eliminado exitosamente',
           });
         }
       });
